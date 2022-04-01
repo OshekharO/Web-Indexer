@@ -27,6 +27,18 @@
         "url": "https://movie.squeezebox.dev",
         "status": 3
     },
+    "ShoowProvider": {
+        "name": "Shoow",
+        "url": "https://shoow.in",
+        "status": 3,
+        "icon": "https://shoow.in/android-chrome-384x384.png"
+    },
+    "MoviesverseProvider": {
+        "name": "Moviesverse",
+        "url": "https://moviesverse.biz",
+        "status": 3,
+        "icon": "https://moviesverse.biz/wp-content/uploads/2019/07/cropped-favicon-192x192.png"
+    },
     "VmoveeProvider": {
         "name": "Vmovee",
         "url": "https://www.vmovee.watch",
