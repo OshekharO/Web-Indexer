@@ -17,10 +17,22 @@
         "status": 3,
         "icon": "https://prmovies.bz/wp-content/uploads/2022/03/100595544-play-button-round-green-3d-icon-symbol-.jpg"
     },
+    "FlixtorProvider": {
+        "name": "Flixtor",
+        "url": "https://flixtor.video",
+        "status": 3,
+        "icon": "https://s1.bunnycdn.ru/assets/sites/flixtor/logo.png"
+    },
     "OlgplyProvider": {
         "name": "Olgply",
         "url": "https://olgply.com",
         "status": 3
+    },
+    "SolarmovieProvider": {
+        "name": "Solarmovie",
+        "url": "https://www2.solarmovie.to",
+        "status": 3,
+        "icon": "https://www2.solarmovie.to/icon/apple-touch-icon.png"
     },
     "SqueezeboxProvider": {
         "name": "Squeezebox",
@@ -75,6 +87,12 @@
         "status": 3,
         "icon": "https://i.ibb.co/L1NN0F7/logo-1.png"
     },
+    "CinevezProvider": {
+        "name": "Cinevez",
+        "url": "https://cinevez.ws",
+        "status": 3,
+        "icon": "https://cinevez.ws/wp-content/uploads/2020/11/logo.png"
+    },
     "FmoviesProvider": {
         "name": "Fmovies.to",
         "url": "https://fmovies.to/",
@@ -86,6 +104,18 @@
         "url": "https://sflix.pro",
         "status": 3,
         "icon": "https://s1.bunnycdn.ru/assets/sites/sflix/logo.png"
+    },
+    "WatchMoviesProvider": {
+        "name": "Watch Movies",
+        "url": "https://www.watch-movies.com.pk",
+        "status": 3,
+        "icon": "https://www.watch-movies.com.pk/wp-content/themes/dramatvpk/images/favicon.ico"
+    },
+    "UwatchfreeProvider": {
+        "name": "Uwatchfree",
+        "url": "https://www.uwatchfree.so",
+        "status": 3,
+        "icon": "https://www.uwatchfree.so/logo.png"
     },
     "FilmymeetProvider": {
         "name": "Filmymeet",
@@ -250,10 +280,28 @@
         "status": 5,
         "icon": "https://kayoanime.com/wp-content/uploads/2020/07/Kayoanimelogo.png"
     },
+    "Anime5sProvider": {
+        "name": "Anime5s",
+        "url": "https://anime5s.com",
+        "status": 5,
+        "icon": "https://anime5s.com/static/images/logo/logo_new_4symbols_original%20100px.png"
+    },
     "AnimeWorldProvider": {
         "name": "Anime World",
         "url": "https://anime-world.in",
         "status": 5
+    },
+    "AnimeacademyProvider": {
+        "name": "Animeacademy",
+        "url": "https://animeacademy.in",
+        "status": 5,
+        "icon": "https://animeacademy.in/wp-content/uploads/2019/12/ANIMEACADEMY.IN-1-250x83.png"
+    },
+    "DeadtoonsProvider": {
+        "name": "Deadtoons",
+        "url": "https://deadtoons.net",
+        "status": 5,
+        "icon": "https://deadtoons.b-cdn.net/apple-touch-icon.png"
     },
     "AnimetProvider": {
         "name": "Animet",
@@ -270,11 +318,23 @@
         "url": "https://tenshi.moe",
         "status": 5
     },
+    "RareToonsProvider": {
+        "name": "RareToons",
+        "url": "https://raretoonshindi.net",
+        "status": 5,
+        "icon": "https://raretoonshindi.net/wp-content/uploads/2020/09/mini-logo.png"
+    },
     "GenoanimeProvider": {
         "name": "Genoanime",
         "url": "https://www.genoanime.com",
         "status": 5,
         "icon": "https://www.genoanime.com/img/gen.gif"
+    },
+    "AnimegoProvider": {
+        "name": "Animego",
+        "url": "https://animego.se",
+        "status": 5,
+        "icon": "https://animego.se/assets/images/logo.png"
     },
     "TwistProvider": {
         "name": "Twist",
@@ -476,6 +536,12 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/vendz/Cineapp/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
+    "StreamerProvider": {
+        "name": "Streamer",
+        "url": "https://github.com/StreamerApp/Streamer",
+        "status": 4,
+        "icon": "https://i.ibb.co/w48m3Z7/images.jpg"
+    },
     "AnimeXStreamProvider": {
         "name": "AnimeXStream",
         "url": "https://github.com/mukul500/AnimeXStream/",
@@ -627,6 +693,12 @@
         "status": 2,
         "icon": "https://www.privacytools.io/img/apps/lesspass.svg"
     },
+    "NovelEbookProvider": {
+        "name": "Novel Ebook",
+        "url": "https://novel-ebook.com",
+        "status": 2,
+        "icon": "https://novel-ebook.com/favicon.png"
+    },
     "LnmtlProvider": {
         "name": "Lnmtl",
         "url": "https://lnmtl.com",
@@ -637,6 +709,12 @@
         "url": "https://daonovel.com",
         "status": 2,
         "icon": "https://daonovel.com/wp-content/uploads/2019/02/cropped-favicon.png"
+    },
+    "RanobesProvider": {
+        "name": "Ranobes",
+        "url": "https://ranobes.net",
+        "status": 2,
+        "icon": "https://ranobes.net/templates/Dark/images/favicon.ico"
     },
     "BoxnovelProvider": {
         "name": "Boxnovel",
