@@ -159,7 +159,7 @@
       var mainContainer = document.getElementById("siteList");
       status.innerHTML = "Fetching...";
       $(document).ready(function () {
-        $.getJSON("https://raw.githubusercontent.com/OshekharO/Website-Indexer/main/providers.json",
+        $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json",
           function (data) {
             status.innerHTML = "Parsing...";
             for (var key in data) {
