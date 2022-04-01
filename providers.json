@@ -1,0 +1,889 @@
+{
+    "EcinemaProvider": {
+        "name": "Ecinema",
+        "url": "https://ecinema.ml",
+        "status": 3,
+        "icon": "https://ik.imagekit.io/nap/eCinema/eCinema_Logo_X2vcmwMm4.png"
+    },
+    "PrettyflixProvider": {
+        "name": "Prettyflix",
+        "url": "https://www.prettyflix.gq/",
+        "status": 3,
+        "icon": "https://www.prettyflix.gq/static/media/logo.9e32d3ea.svg"
+    },
+    "PrmoviesProvider": {
+        "name": "Prmovies",
+        "url": "https://prmovies.bz",
+        "status": 3,
+        "icon": "https://prmovies.bz/wp-content/uploads/2022/03/100595544-play-button-round-green-3d-icon-symbol-.jpg"
+    },
+    "OlgplyProvider": {
+        "name": "Olgply",
+        "url": "https://olgply.com",
+        "status": 3
+    },
+    "SqueezeboxProvider": {
+        "name": "Squeezebox",
+        "url": "https://movie.squeezebox.dev",
+        "status": 3
+    },
+    "VmoveeProvider": {
+        "name": "Vmovee",
+        "url": "https://www.vmovee.watch",
+        "status": 3,
+        "icon": "https://i.ibb.co/Qk5kBsh/apple-touch-icon-152x152-1.png"
+    },
+    "MoviesWatchProvider": {
+        "name": "MoviesWatch",
+        "url": "https://movies2watch.is",
+        "status": 3,
+        "icon": "https://img.movies2watch.is/xxrz/400x400/100/46/a5/46a552ee6b3480c54c33f3e7f0862a6b/46a552ee6b3480c54c33f3e7f0862a6b.png"
+    },
+    "M4UHDProvider": {
+        "name": "M4UHD",
+        "url": "https://m4uhd.cc",
+        "status": 3,
+        "icon": "https://m4uhd.cc/images/m4uhd.png"
+    },
+    "FilmyzillaProvider": {
+        "name": "Filmyzilla",
+        "url": "https://filmyzilla.makeup/",
+        "status": 3,
+        "icon": "https://filmyzilla.makeup/templates/images/favicon.ico"
+    },
+    "PrivatehdProvider": {
+        "name": "Privatehd",
+        "url": "https://www.privatehd.xyz/",
+        "status": 3,
+        "icon": "https://www.privatehd.xyz/wp-content/uploads/2020/11/PrivateHD-Icon-2.png"
+    },
+    "MovieseeProvider": {
+        "name": "Moviesee",
+        "url": "https://moviesee.live/",
+        "status": 3,
+        "icon": "https://moviesee.live/public/dist/images/logo.png"
+    },
+    "FmoviesProvider": {
+        "name": "Fmovies.to",
+        "url": "https://fmovies.to/",
+        "status": 3,
+        "icon": "https://s1.bunnycdn.ru/assets/sites/fmovies/logo2.png"
+    },
+    "SflixProvider": {
+        "name": "Sflix.pro",
+        "url": "https://sflix.pro",
+        "status": 3,
+        "icon": "https://s1.bunnycdn.ru/assets/sites/sflix/logo.png"
+    },
+    "FilmymeetProvider": {
+        "name": "Filmymeet",
+        "url": "https://www33.filmymeet.co",
+        "status": 3,
+        "icon": "https://i.ibb.co/FxNVdFq/filmymeet2.jpg"
+    },
+    "WatchasianProvider": {
+        "name": "Watchasian",
+        "url": "https://watchasian.ac",
+        "status": 3
+    },
+    "DownloadhubProvider": {
+        "name": "downloadhub",
+        "url": "https://downloadhub.bar",
+        "status": 3,
+        "icon": "https://downloadhub.bar/wp-content/uploads/2017/03/17141240_1012935782184847_1572990633_n.png"
+    },
+    "8xmoviesProvider": {
+        "name": "8xmovies",
+        "url": "https://8xmovies.bond",
+        "status": 3,
+        "icon": "https://8xmovies.bond/wp-content/uploads/2018/06/logo.png.png"
+    },
+    "IbommaProvider": {
+        "name": "Ibomma",
+        "url": "https://ww8.ibomma.bar",
+        "status": 3,
+        "icon": "https://ww9.ibomma.bar/wp-content/themes/ibomma-in/images/logo-ibomma.svg"
+    },
+    "DvdplayProvider": {
+        "name": "Dvdplay",
+        "url": "https://dvdplay.guru",
+        "status": 3,
+        "icon": "https://dvdplay.guru/dvdplay-icon.png"
+    },
+    "FoumoviesProvider": {
+        "name": "Foumovies",
+        "url": "https://www.foumovies.to",
+        "status": 3,
+        "icon": "https://i.ibb.co/b6VJrk4/16117254-260387894381351-1521042809-n.png"
+    },
+    "1tamilmvProvider": {
+        "name": "1tamilmv",
+        "url": "https://www.1tamilmv.cool",
+        "status": 3,
+        "icon": "https://www.1tamilmv.run/uploads/monthly_2021_09/logo.png.d973b0524938777bd7c59457e2196a30.png"
+    },
+    "MoviespapaProvider": {
+        "name": "Moviespapa",
+        "url": "https://moviespapa.green",
+        "status": 3,
+        "icon": "https://moviespapa.green/wp-content/uploads/2022/03/moviespapagreen.png"
+    },
+    "lookmovie2Provider": {
+        "name": "lookmovie2",
+        "url": "https://lookmovie2.to",
+        "status": 3,
+        "icon": "https://lookmovie2.to/images/logo1.png"
+    },
+    "CmoviesProvider": {
+        "name": "Cmovies",
+        "url": "https://cmovies.online",
+        "status": 3
+    },
+    "KissasiansProvider": {
+        "name": "Kissasians",
+        "url": "https://kissasians.org",
+        "status": 3,
+        "icon": "https://kissasians.org/images/favicon.ico"
+    },
+    "gimyProvider": {
+        "name": "gimy.app",
+        "url": "https://gimy.app",
+        "status": 3
+    },
+    "FixdramaProvider": {
+        "name": "Fixdrama",
+        "url": "https://fixdrama.com",
+        "status": 3,
+        "icon": "https://fixdrama.com/themes/fixdramaV2/images/logo.png"
+    },
+    "dramaProvider": {
+        "name": "drama.cx",
+        "url": "https://drama.cx",
+        "status": 3,
+        "icon": "https://drama.cx/wp-content/uploads/2021/10/Drama-3.png"
+    },
+    "MeloMovieProvider": {
+        "name": "MeloMovie",
+        "url": "https://melomovie.com",
+        "status": 3,
+        "icon": "https://melomovie.com/assets/images/logo.png"
+    },
+    "Serial4uProvider": {
+        "name": "Serial4u",
+        "url": "https://serial4u.tv",
+        "status": 3
+    },
+    "CinefunhdProvider": {
+        "name": "Cinefunhd",
+        "url": "https://cinefunhd.com",
+        "status": 3,
+        "icon": "https://cinefunhd.com/wp-content/uploads/2022/03/cinefun.png"
+    },
+    "flixgoProvider": {
+        "name": "flixgo.me",
+        "url": "https://flixgo.me",
+        "status": 3,
+        "icon": "https://flixgo.me/templates/FlixGo/img/logo.svg"
+    },
+    "7movierulzProvider": {
+        "name": "7movierulz",
+        "url": "https://ww3.7movierulz.es",
+        "status": 3,
+        "icon": "https://ww3.7movierulz.es/wp-content/uploads/2016/10/favicon.ico"
+    },
+    "GogoanimeProvider": {
+        "name": "Gogoanime",
+        "url": "https://gogoanime.fi",
+        "status": 5,
+        "icon": "https://gogoanime.fi/img/icon/logo.png"
+    },
+    "AnimixplayProvider": {
+        "name": "Animixplay",
+        "url": "https://animixplay.to/",
+        "status": 5,
+        "icon": "https://animixplay.to/assets/logo.png"
+    },
+    "AnimeflickProvider": {
+        "name": "Animeflick",
+        "url": "https://animeflick.net",
+        "status": 5,
+        "icon": "https://i.ibb.co/02XyNSR/logo.png"
+    },
+    "AnimeworldProvider": {
+        "name": "Animeworld",
+        "url": "https://www.animeworld.tv",
+        "status": 5,
+        "icon": "https://static.animeworld.tv/assets/images/favicon/android-icon-192x192.png?4"
+    },
+    "AnimefoxProvider": {
+        "name": "Animefox",
+        "url": "https://animefox.sbs",
+        "status": 5
+    },
+    "AllanimeProvider": {
+        "name": "Allanime",
+        "url": "https://allanime.site",
+        "status": 5,
+        "icon": "https://allanimemedias.b-cdn.net/media/allanime.png"
+    },
+    "123animesProvider": {
+        "name": "123animes",
+        "url": "https://123animes.ru",
+        "status": 5,
+        "icon": "https://123animes.ru/assets/favicons/apple-touch-icon.png"
+    },
+    "KayoanimeProvider": {
+        "name": "Kayoanime",
+        "url": "https://kayoanime.com",
+        "status": 5,
+        "icon": "https://kayoanime.com/wp-content/uploads/2020/07/Kayoanimelogo.png"
+    },
+    "AnimeWorldProvider": {
+        "name": "Anime World",
+        "url": "https://anime-world.in",
+        "status": 5
+    },
+    "AnimetProvider": {
+        "name": "Animet",
+        "url": "https://animet.tv",
+        "status": 5
+    },
+    "KimanimeProvider": {
+        "name": "Kimanime",
+        "url": "https://kimanime.com",
+        "status": 5
+    },
+    "TenshiProvider": {
+        "name": "Tenshi.moe",
+        "url": "https://tenshi.moe",
+        "status": 5
+    },
+    "GenoanimeProvider": {
+        "name": "Genoanime",
+        "url": "https://www.genoanime.com",
+        "status": 5,
+        "icon": "https://www.genoanime.com/img/gen.gif"
+    },
+    "TwistProvider": {
+        "name": "Twist",
+        "url": "https://twist.moe",
+        "status": 5
+    },
+    "AnimekisaProvider": {
+        "name": "Animekisa",
+        "url": "https://animekisa.in",
+        "status": 5,
+        "icon": "https://animekisa.in/public/theme_animekisa/images/logo.png"
+    },
+    "KissAnimeProvider": {
+        "name": "KissAnime",
+        "url": "https://kissanime.com.ru",
+        "status": 5,
+        "icon": "https://static.anmedm.com/images/icons/favicon_new.ico"
+    },
+    "9animeProvider": {
+        "name": "9anime",
+        "url": "https://9anime.vc",
+        "status": 5,
+        "icon": "https://9anime.vc/images/logo.png"
+    },
+    "AnimaniaProvider": {
+        "name": "Animania",
+        "url": "https://animania.co.uk",
+        "status": 5,
+        "icon": "https://animania.co.uk/images/logo-2.png"
+    },
+    "WcoProvider": {
+        "name": "WCO Stream",
+        "url": "https://wcostream.cc",
+        "status": 5,
+        "icon": "https://wcostream.cc/public/theme_wcostream/images/logo.png"
+    },
+    "ZoroProvider": {
+        "name": "Zoro",
+        "url": "https://zoro.to",
+        "status": 5
+    },
+    "PureTuberProvider": {
+        "name": "PureTuber",
+        "url": "https://www.puretuber.com",
+        "status": 4
+    },
+    "LibreTubeProvider": {
+        "name": "LibreTube",
+        "url": "https://github.com/libre-tube/LibreTube",
+        "status": 4,
+        "icon": "https://f-droid.org/repo/com.github.libretube/en-US/icon_CKCUMM-dppEdVCd-sVMhJF-rQMBkluF1UUJqge3wddg=.png"
+    },
+    "SongTubeProvider": {
+        "name": "SongTube",
+        "url": "https://github.com/SongTube/SongTube-App",
+        "status": 4,
+        "icon": "https://d4.alternativeto.net/odk20FS3okWK_RbUTsHXxMbohCC-OZ4VLabrZaW27NA/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9zb25ndHViZV8xOTcyODcucG5n.png"
+    },
+    "VueTubeProvider": {
+        "name": "VueTube",
+        "url": "https://github.com/Frontesque/VueTube",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Frontesque/VueTube/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "NewPipeProvider": {
+        "name": "NewPipe",
+        "url": "https://github.com/polymorphicshade/NewPipe",
+        "status": 4,
+        "icon": "https://d4.alternativeto.net/AxWXrd9h2amWF4PHAFXKxRuWpOMOAzC5Z0xjPjSB9uE/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9uZXdwaXBlXzk1MzAwLnBuZw.png"
+    },
+    "uYouPlusProvider": {
+        "name": "uYouPlus",
+        "url": "https://github.com/qnblackcat/uYouPlus",
+        "status": 4,
+        "icon": "https://img.icons8.com/doodle/480/000000/youtube-play--v2.png"
+    },
+    "CercubePlusProvider": {
+        "name": "CercubePlus",
+        "url": "https://github.com/qnblackcat/CercubePlus",
+        "status": 4,
+        "icon": "https://img.icons8.com/doodle/480/000000/youtube-play--v1.png"
+    },
+    "SkyTubeProvider": {
+        "name": "SkyTube",
+        "url": "https://github.com/SkyTubeTeam/SkyTube",
+        "status": 4,
+        "icon": "https://d4.alternativeto.net/E7MM7_FxRvNsLLkgLbIERFvjbAomduN41knWA7qlxWQ/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9za3l0dWJlXzE1OTA0Mi5wbmc.png"
+    },
+    "FreeTubeProvider": {
+        "name": "FreeTube",
+        "url": "https://github.com/FreeTubeApp/FreeTube",
+        "status": 4,
+        "icon": "https://d4.alternativeto.net/KkMBv9B_9P1FqX3bAQtctUokliW48xGKe1j_Y5aIGjY/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9mcmVldHViZV8xMjcyMDYucG5n.png"
+    },
+    "SftubeProvider": {
+        "name": "Sftube",
+        "url": "https://github.com/prateekmedia/sftube",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/prateekmedia/pstube/main/assets/pstube.png"
+    },
+    "SmartTubeProvider": {
+        "name": "SmartTube",
+        "url": "https://github.com/yuliskov/SmartTubeNext",
+        "status": 4,
+        "icon": "https://smarttubenext.com/wp-content/uploads/2021/09/cropped-smarttubenext-dark-logo.webp"
+    },
+    "BlackHoleProvider": {
+        "name": "BlackHole",
+        "url": "https://github.com/Sangwan5688/BlackHole",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Sangwan5688/BlackHole/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "SpotiFlyerProvider": {
+        "name": "SpotiFlyer",
+        "url": "https://github.com/Shabinder/SpotiFlyer",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Shabinder/SpotiFlyer/Compose/art/SpotiFlyer.svg"
+    },
+    "SpoTubeProvider": {
+        "name": "SpoTube",
+        "url": "https://github.com/KRTirtho/spotube",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/KRTirtho/spotube/master/assets/spotube_banner.png"
+    },
+    "ShosetsuProvider": {
+        "name": "Shosetsu",
+        "url": "https://shosetsu.app",
+        "status": 4
+    },
+    "LNReaderProvider": {
+        "name": "LNReader",
+        "url": "https://github.com/LNReader/lnreader",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/LNReader/lnreader/main/.github/readme-images/icon_alt.png"
+    },
+    "YukinoProvider": {
+        "name": "Yukino",
+        "url": "https://github.com/rhygg/yukino-app/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/rhygg/yukino-app/next/resources/icon.png"
+    },
+    "OtakuWorldProvider": {
+        "name": "OtakuWorld",
+        "url": "https://github.com/jakepurple13/OtakuWorld/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/jakepurple13/OtakuWorld/develop/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "KayuriProvider": {
+        "name": "Kayuri",
+        "url": "https://github.com/Killerpac/Kayuri",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Killerpac/Kayuri/main/meta/android/kayuri.jpg"
+    },
+    "AnimityProvider": {
+        "name": "Animity",
+        "url": "https://github.com/kl3jvi/animity",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/kl3jvi/animity/kotlin_app/app/src/main/ic_launcher-playstore.png"
+    },
+    "QuickNovelProvider": {
+        "name": "QuickNovel",
+        "url": "https://github.com/LagradOst/QuickNovel",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/LagradOst/QuickNovel/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "NekoProvider": {
+        "name": "Neko",
+        "url": "https://github.com/CarlosEsco/Neko",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/CarlosEsco/Neko/master/.github/readme-images/logo.png"
+    },
+    "TachiyomiSYProvider": {
+        "name": "TachiyomiSY",
+        "url": "https://github.com/jobobby04/TachiyomiSY/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/jobobby04/TachiyomiSY/master/app/src/main/ic_launcher-web.png"
+    },
+    "CloudStreamProvider": {
+        "name": "CloudStream",
+        "url": "https://github.com/LagradOst/CloudStream-3",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/LagradOst/CloudStream-3/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "SaikouProvider": {
+        "name": "Saikou",
+        "url": "https://github.com/saikou-app/saikou",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/saikou-app/saikou/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "KotatsuProvider": {
+        "name": "Kotatsu",
+        "url": "https://github.com/nv95/Kotatsu/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/nv95/Kotatsu/devel/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
+    },
+    "CineappProvider": {
+        "name": "Cineapp",
+        "url": "https://github.com/vendz/Cineapp/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/vendz/Cineapp/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    "AnimeXStreamProvider": {
+        "name": "AnimeXStream",
+        "url": "https://github.com/mukul500/AnimeXStream/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/mukul500/AnimeXStream/dev/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "AniyomiProvider": {
+        "name": "Aniyomi",
+        "url": "https://github.com/jmir1/aniyomi/",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/jmir1/aniyomi/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "ManganatoProvider": {
+        "name": "Manganato",
+        "url": "https://manganato.com",
+        "status": 1
+    },
+    "MangadexProvider": {
+        "name": "Mangadex",
+        "url": "https://mangadex.org",
+        "status": 1
+    },
+    "MangafreakProvider": {
+        "name": "Mangafreak",
+        "url": "https://w12.mangafreak.net",
+        "status": 1,
+        "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
+    },
+    "MangabatxProvider": {
+        "name": "Mangabat",
+        "url": "https://mangabat.com",
+        "status": 1
+    },
+    "MangaparkProvider": {
+        "name": "Mangapark",
+        "url": "https://mangapark.net",
+        "status": 1,
+        "icon": "https://styles.amarkcdn.com/img/mpark/favicon.ico?v1"
+    },
+    "KissmangaProvider": {
+        "name": "Kissmanga",
+        "url": "https://kissmanga.org",
+        "status": 1,
+        "icon": "https://kissmanga.org/static/images/favicon.ico"
+    },
+    "MangatxProvider": {
+        "name": "Mangatx",
+        "url": "https://mangatx.com",
+        "status": 1,
+        "icon": "https://i.ibb.co/rmQjw2y/MANGATX.png"
+    },
+    "MangabuddyProvider": {
+        "name": "Mangabuddy",
+        "url": "https://mangabuddy.com",
+        "status": 1,
+        "icon": "https://mangabuddy.com/static/sites/mangabuddy/icons/apple-touch-icon.png"
+    },
+    "MangapillProvider": {
+        "name": "Mangapill",
+        "url": "https://mangapill.com",
+        "status": 1,
+        "icon": "https://i.ibb.co/KqpH7HN/apple-touch-icon.png"
+    },
+    "MangareaderProvider": {
+        "name": "Mangareader",
+        "url": "https://mangareader.to",
+        "status": 1
+    },
+    "FanfoxProvider": {
+        "name": "Fanfox",
+        "url": "https://m.fanfox.net",
+        "status": 1,
+        "icon": "https://m.fanfox.net/mobile/images/touch-icon-ipad2.png"
+    },
+    "MangatownProvider": {
+        "name": "Mangatown",
+        "url": "https://m.mangatown.com/l",
+        "status": 1,
+        "icon": "https://m.mangatown.com/media/images/touch-icon-ipad2.png"
+    },
+    "ComicExtraProvider": {
+        "name": "ComicExtra",
+        "url": "https://www.comicextra.com",
+        "status": 1
+    },
+    "NinemangaProvider": {
+        "name": "Ninemanga",
+        "url": "https://ninemanga.com",
+        "status": 1
+    },
+    "ReadmProvider": {
+        "name": "Readm",
+        "url": "https://readm.org",
+        "status": 1
+    },
+    "BatoProvider": {
+        "name": "Bato",
+        "url": "https://bato.to",
+        "status": 1,
+        "icon": "https://styles.amarkcdn.com/img/btoto/logo-batoto.png"
+    },
+    "ManhuafastProvider": {
+        "name": "Manhuafast",
+        "url": "https://manhuafast.com",
+        "status": 1,
+        "icon": "https://manhuafast.com/wp-content/uploads/2017/10/logo-web-manhuafast-1.png"
+    },
+    "MangahubProvider": {
+        "name": "Mangahub",
+        "url": "https://mangahub.io",
+        "status": 1
+    },
+    "MangaowlsProvider": {
+        "name": "Mangaowls",
+        "url": "https://mangaowls.com",
+        "status": 1,
+        "icon": "https://mangaowls.com/uploads/images/logo.png"
+    },
+    "UncoderProvider": {
+        "name": "Uncoder",
+        "url": "https://uncoder.eu.org/",
+        "status": 2,
+        "icon": "https://readlightnovels.net/wp-content/uploads/2020/01/rln-logo-ret.png"
+    },
+    "MtlnationProvider": {
+        "name": "Mtlnation",
+        "url": "https://mtlnation.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/7nzMk2x/mtlnation-mobile-logo.png"
+    },
+    "ComrademaoProvider": {
+        "name": "Comrademao",
+        "url": "https://comrademao.com",
+        "status": 2
+    },
+    "MtlnovelProvider": {
+        "name": "Mtlnovel",
+        "url": "https://www.mtlnovel.com",
+        "status": 2
+    },
+    "NovelsrealmProvider": {
+        "name": "Novelsrealm",
+        "url": "https://novelsrealm.com",
+        "status": 2
+    },
+    "WnmtlProvider": {
+        "name": "Wnmtl",
+        "url": "https://www.wnmtl.org",
+        "status": 2,
+        "icon": "https://www.privacytools.io/img/apps/lesspass.svg"
+    },
+    "LnmtlProvider": {
+        "name": "Lnmtl",
+        "url": "https://lnmtl.com",
+        "status": 2
+    },
+    "DaonovelProvider": {
+        "name": "Daonovel",
+        "url": "https://daonovel.com",
+        "status": 2,
+        "icon": "https://daonovel.com/wp-content/uploads/2019/02/cropped-favicon.png"
+    },
+    "BoxnovelProvider": {
+        "name": "Boxnovel",
+        "url": "https://boxnovel.com",
+        "status": 2,
+        "icon": "https://boxnovel.com/wp-content/uploads/2018/04/BoxNovelNEW-Copy.png"
+    },
+    "ListnovelProvider": {
+        "name": "Listnovel",
+        "url": "https://listnovel.com",
+        "status": 2,
+        "icon": "https://listnovel.com/wp-content/uploads/2020/08/cropped-Untitledtg-180x180.png"
+    },
+    "ReadLNProvider": {
+        "name": "ReadLN",
+        "url": "https://www.readlightnovel.me",
+        "status": 2
+    },
+    "RoyalRoadProvider": {
+        "name": "RoyalRoad",
+        "url": "https://www.royalroad.com",
+        "status": 2,
+        "icon": "https://www.royalroad.com/dist/img/logo/rr-logo-gold-white-small-min.png"
+    },
+    "ReadwnProvider": {
+        "name": "Readwn",
+        "url": "https://www.readwn.com",
+        "status": 2
+    },
+    "SoxsccProvider": {
+        "name": "Soxscc",
+        "url": "https://soxscc.org",
+        "status": 2
+    },
+    "ImiaobigeProvider": {
+        "name": "Imiaobige",
+        "url": "https://imiaobige.com",
+        "status": 2
+    },
+    "WangshugeProvider": {
+        "name": "Wangshuge",
+        "url": "https://m.wangshuge.com",
+        "status": 2
+    },
+    "FeiludushuProvider": {
+        "name": "Feiludushu",
+        "url": "https://m.feiludushu.com",
+        "status": 2
+    },
+    "JiacuanProvider": {
+        "name": "Jiacuan",
+        "url": "https://m.jiacuan.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "JpmtlProvider": {
+        "name": "Jpmtl",
+        "url": "https://jpmtl.com",
+        "status": 2
+    },
+    "YushuboProvider": {
+        "name": "Yushubo",
+        "url": "https://yushubo.com",
+        "status": 2
+    },
+    "YipinxiaProvider": {
+        "name": "Yipinxia",
+        "url": "https://www.yipinxia.net",
+        "status": 2
+    },
+    "WushuzwProvider": {
+        "name": "Wushuzw",
+        "url": "http://wap.wushuzw.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "Ffxs8Provider": {
+        "name": "Ffxs8",
+        "url": "http://www.ffxs8.com",
+        "status": 2
+    },
+    "SfacgProvider": {
+        "name": "Sfacg",
+        "url": "https://m.sfacg.com",
+        "status": 2
+    },
+    "17kProvider": {
+        "name": "17k",
+        "url": "https://17k.com",
+        "status": 2
+    },
+    "77dushuProvider": {
+        "name": "77dushu",
+        "url": "http://m.77dushu.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "BiqusaProvider": {
+        "name": "Biqusa",
+        "url": "https://m.biqusa.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "IquxsProvider": {
+        "name": "Iquxs",
+        "url": "https://m.iquxs.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "QjzfcgwProvider": {
+        "name": "Qjzfcgw",
+        "url": "http://m.qjzfcgw.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "HahoProvider": {
+        "name": "Haho",
+        "url": "https://haho.moe",
+        "status": 0
+    },
+    "AhentaiProvider": {
+        "name": "A hentai",
+        "url": "https://a-hentai.tv",
+        "status": 0,
+        "icon": "https://a-hentai.tv/wp-content/uploads/2020/08/cropped-a-hentai-logo.png"
+    },
+    "DoujinProvider": {
+        "name": "Doujins",
+        "url": "https://doujins.me",
+        "status": 0
+    },
+    "ManytoonProvider": {
+        "name": "Manytoon",
+        "url": "https://manytoon.com",
+        "status": 0,
+        "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
+    },
+    "LiteroticaProvider": {
+        "name": "Literotica",
+        "url": "https://search.literotica.com",
+        "status": 0,
+        "icon": "https://speedy.literotica.com/favicon.ico"
+    },
+    "NhentaiProvider": {
+        "name": "Nhentai",
+        "url": "https://nhentai.net",
+        "status": 0
+    },
+    "ToonilyProvider": {
+        "name": "Toonily",
+        "url": "https://toonily.me",
+        "status": 0,
+        "icon": "https://toonily.me/static/sites/toonily/icons/apple-touch-icon.png"
+    },
+    "HanimeProvider": {
+        "name": "Hanime",
+        "url": "https://hanime.tv",
+        "status": 0,
+        "icon": "https://hanime.tv/apple-touch-icon.png"
+    },
+    "HentaihavenProvider": {
+        "name": "Hentaihaven",
+        "url": "https://hentaihaven.xxx",
+        "status": 0,
+        "icon": "https://hentaihaven.xxx/www/2019/04/cropped-hentaihavenico-192x192.png"
+    },
+    "IdhentaiProvider": {
+        "name": "Idhentai",
+        "url": "https://animeidhentai.com",
+        "status": 0,
+        "icon": "https://animeidhentai.com/wp-content/uploads/2021/12/cropped-App1-180x180.png"
+    },
+    "9hentaiProvider": {
+        "name": "9hentai",
+        "url": "https://9hentai.to",
+        "status": 0,
+        "icon": "https://9hentai.to/images/favicon/apple-touch-icon.png"
+    },
+    "DoujinsProvider": {
+        "name": "Doujins",
+        "url": "https://doujins.com",
+        "status": 0
+    },
+    "HentaihereProvider": {
+        "name": "Hentaihere",
+        "url": "https://hentaihere.com",
+        "status": 0
+    },
+    "Hentai2ReadProvider": {
+        "name": "Hentai2Read",
+        "url": "https://hentai2read.com",
+        "status": 0
+    },
+    "8musesProvider": {
+        "name": "8muses",
+        "url": "https://comics.8muses.com",
+        "status": 0,
+        "icon": "https://8muses.xxx/wp-content/uploads/2019/09/cropped-8MUSESfavicon-192x192.png"
+    },
+    "TsuminoProvider": {
+        "name": "Tsumino",
+        "url": "https://www.tsumino.com",
+        "status": 0,
+        "icon": "https://www.tsumino.com/Content/fav-icon.png"
+    },
+    "FakkuProvider": {
+        "name": "Fakku",
+        "url": "https://www.fakku.net",
+        "status": 0
+    },
+    "18comicProvider": {
+        "name": "18comic",
+        "url": "https://18comic.vip",
+        "status": 0
+    },
+    "EromangramProvider": {
+        "name": "Eromangram",
+        "url": "https://eromangram.com",
+        "status": 0,
+        "icon": "https://eromangram.com/wp-content/uploads/2019/12/apple-touch-icon-144x144-1.png"
+    },
+    "Cartoon18Provider": {
+        "name": "Cartoon18",
+        "url": "https://www.cartoon18.com",
+        "status": 0,
+        "icon": "https://www.cartoon18.com/logo.png"
+    },
+    "RawZipProvider": {
+        "name": "Raw Zip",
+        "url": "http://raw-zip.com",
+        "status": 0,
+        "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
+    },
+    "Hentai20Provider": {
+        "name": "Hentai20",
+        "url": "https://hentai20.com",
+        "status": 0,
+        "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
+    },
+    "HentaibarProvider": {
+        "name": "Hentaibar",
+        "url": "https://hentaibar.com",
+        "status": 0
+    },
+    "HentaifreakProvider": {
+        "name": "Hentaifreak",
+        "url": "https://hentaifreak.org",
+        "status": 0,
+        "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
+    },
+    "ManhwaclubProvider": {
+        "name": "Manhwaclub",
+        "url": "https://manhwaclub.net",
+        "status": 0,
+        "icon": "https://manhwaclub.net/wp-content/uploads/2021/08/Favicor-manhwaclub.jpg"
+    },
+    "Manga18fxProvider": {
+        "name": "Manga18fx",
+        "url": "https://manga18fx.com",
+        "status": 0
+    }
+ }
