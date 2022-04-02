@@ -2,6 +2,11 @@
 
 Get recommended site's to watch / read movie, series, Anime, Manga, light Novel, Etc. Also Some Application To browse these contents.
 
+## 🤝 Special Thanks
+
+- LagradOst
+- Jacekun
+
 ## 🚸 Warnings :
 
 - This is Just For Educational Purpose
