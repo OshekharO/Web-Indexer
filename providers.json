@@ -32,7 +32,7 @@
         "name": "Solarmovie",
         "url": "https://www2.solarmovie.to",
         "status": 3,
-        "icon": "https://www2.solarmovie.to/icon/apple-touch-icon.png"
+        "icon": "https://i.ibb.co/Bj3FK2H/apple-touch-icon.png"
     },
     "SqueezeboxProvider": {
         "name": "Squeezebox",
@@ -91,7 +91,7 @@
         "name": "Cinevez",
         "url": "https://cinevez.ws",
         "status": 3,
-        "icon": "https://cinevez.ws/wp-content/uploads/2020/11/logo.png"
+        "icon": "https://i.ibb.co/NZzqgF5/logo-1.png"
     },
     "FmoviesProvider": {
         "name": "Fmovies.to",
@@ -115,7 +115,7 @@
         "name": "Uwatchfree",
         "url": "https://www.uwatchfree.so",
         "status": 3,
-        "icon": "https://www.uwatchfree.so/logo.png"
+        "icon": "https://i.ibb.co/cD1x0kh/logo-2.png"
     },
     "FilmymeetProvider": {
         "name": "Filmymeet",
@@ -697,7 +697,7 @@
         "name": "Novel Ebook",
         "url": "https://novel-ebook.com",
         "status": 2,
-        "icon": "https://novel-ebook.com/favicon.png"
+        "icon": "https://i.ibb.co/kHFCYmT/favicon.png"
     },
     "LnmtlProvider": {
         "name": "Lnmtl",
