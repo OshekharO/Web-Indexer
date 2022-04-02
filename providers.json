@@ -411,6 +411,12 @@
         "status": 4,
         "icon": "https://img.icons8.com/doodle/480/000000/youtube-play--v2.png"
     },
+    "YatteeProvider": {
+        "name": "Yattee",
+        "url": "https://github.com/yattee/yattee",
+        "status": 4,
+        "icon": "https://i.ibb.co/zP0vXgw/68747470733a2f2f722e7961747465652e73747265616d2f69636f6e732f7961747465652d3135302e706e67.png"
+    },
     "CercubePlusProvider": {
         "name": "CercubePlus",
         "url": "https://github.com/qnblackcat/CercubePlus",
@@ -458,6 +464,30 @@
         "url": "https://github.com/KRTirtho/spotube",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/KRTirtho/spotube/master/assets/spotube_banner.png"
+    },
+    "YmusicProvider": {
+        "name": "Ymusic",
+        "url": "https://ymusic.io",
+        "status": 4,
+        "icon": "https://ymusic.io/favicons/apple-touch-icon.png"
+    },
+    "HoloPlayProvider": {
+        "name": "HoloPlay",
+        "url": "https://github.com/stephane-r/HoloPlay",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/stephane-r/HoloPlay/develop/docs/logo.png"
+    },
+    "MusicPipedProvider": {
+        "name": "MusicPiped",
+        "url": "https://github.com/deep-gaurav/MusicPiped",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/deep-gaurav/MusicPiped/master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    "AbleMusicProvider": {
+        "name": "AbleMusic",
+        "url": "https://github.com/uditkarode/AbleMusicPlayer",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/uditkarode/AbleMusicPlayer/master/app/src/main/ic_launcher-playstore.png"
     },
     "ShosetsuProvider": {
         "name": "Shosetsu",
