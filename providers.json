@@ -611,6 +611,12 @@
         "status": 1,
         "icon": "https://styles.amarkcdn.com/img/mpark/favicon.ico?v1"
     },
+    "Manga4LifeProvider": {
+        "name": "Manga4Life",
+        "url": "https://manga4life.com",
+        "status": 1,
+        "icon": "https://i.ibb.co/18bJ9D7/navbar-brand-small.png"
+    },
     "KissmangaProvider": {
         "name": "Kissmanga",
         "url": "https://kissmanga.org",
@@ -746,11 +752,29 @@
         "status": 2,
         "icon": "https://ranobes.net/templates/Dark/images/favicon.ico"
     },
+    "Mp4DirectsProvider": {
+        "name": "Mp4Directs",
+        "url": "https://mp4directs.com",
+        "status": 2,
+        "icon": "https://mp4directs.com/styles/intrepid/xenforo/logo.png"
+    },
     "BoxnovelProvider": {
         "name": "Boxnovel",
         "url": "https://boxnovel.com",
         "status": 2,
         "icon": "https://boxnovel.com/wp-content/uploads/2018/04/BoxNovelNEW-Copy.png"
+    },
+    "NovelCornerProvider": {
+        "name": "NovelCorner",
+        "url": "https://thatnovelcorner.com",
+        "status": 2,
+        "icon": "https://i2.wp.com/thatnovelcorner.com/wp2/wp-content/uploads/2017/04/cropped-konachan-com-74756-landscape-original-polychromatic-ruins-scenic-sky-sumashi-yellow-sumashi.jpg"
+    },
+    "JustLNProvider": {
+        "name": "JustLN",
+        "url": "https://www.justlightnovels.com",
+        "status": 2,
+        "icon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://justlightnovels.com&size=16-yellow-sumashi.jpg"
     },
     "ListnovelProvider": {
         "name": "Listnovel",
