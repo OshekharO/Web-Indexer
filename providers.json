@@ -13,9 +13,9 @@
     },
     "PrmoviesProvider": {
         "name": "Prmovies",
-        "url": "https://prmovies.bz",
+        "url": "https://prmovies.cam",
         "status": 3,
-        "icon": "https://prmovies.bz/wp-content/uploads/2022/03/100595544-play-button-round-green-3d-icon-symbol-.jpg"
+        "icon": "https://prmovies.cam/wp-content/uploads/2022/04/100595544-play-button-round-green-3d-icon-symbol-.jpg"
     },
     "FlixtorProvider": {
         "name": "Flixtor",
@@ -316,7 +316,8 @@
     "TenshiProvider": {
         "name": "Tenshi.moe",
         "url": "https://tenshi.moe",
-        "status": 5
+        "status": 5,
+        "icon": "https://i.ibb.co/4pVkztX/614549f8cfdb07005dc0fe04.png"
     },
     "RareToonsProvider": {
         "name": "RareToons",
