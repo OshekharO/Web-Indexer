@@ -1025,6 +1025,36 @@
         "status": 0,
         "icon": "https://manhwaclub.net/wp-content/uploads/2021/08/Favicor-manhwaclub.jpg"
     },
+    "ToongodProvider": {
+        "name": "Toongod",
+        "url": "https://www.toongod.com",
+        "status": 0,
+        "icon": "https://i.ibb.co/ByyJ0gy/toongod-logo.png"
+    },
+    "HentaipornProvider": {
+        "name": "Hentaiporn",
+        "url": "https://hentaiporn.mobi",
+        "status": 0,
+        "icon": "https://hentaiporn.mobi/wp-content/uploads/2017/10/HENTAIPORNMOBI.png"
+    },
+    "DragonTLProvider": {
+        "name": "DragonTL",
+        "url": "https://dragontranslation.com",
+        "status": 0,
+        "icon": "https://dragontranslation.com/wp-content/uploads/2022/01/cropped-portapaa-Opcion1-1.png"
+    },
+    "CuteGirlProvider": {
+        "name": "CuteGirl",
+        "url": "https://cutegirl.mobi",
+        "status": 0,
+        "icon": "https://cutegirl.mobi/wp-content/themes/madara/images/logo.png"
+    },
+    "HentaimagProvider": {
+        "name": "Hentaimag",
+        "url": "https://hentaimag.net",
+        "status": 0,
+        "icon": "https://hentaimag.net/wp-content/uploads/2021/08/LOGMAG.png"
+    },
     "Manga18fxProvider": {
         "name": "Manga18fx",
         "url": "https://manga18fx.com",
