@@ -447,6 +447,18 @@
         "status": 4,
         "icon": "https://smarttubenext.com/wp-content/uploads/2021/09/cropped-smarttubenext-dark-logo.webp"
     },
+    "VancedProvider": {
+        "name": "Vanced",
+        "url": "https://github.com/TeamVanced",
+        "status": 4,
+        "icon": "https://youtubevanced.com/assets/img/logo.svg"
+    },
+    "ReVancedProvider": {
+        "name": "ReVanced",
+        "url": "https://revanced.app",
+        "status": 4,
+        "icon": "https://avatars.githubusercontent.com/u/101597779?s=200&v=4"
+    },
     "BlackHoleProvider": {
         "name": "BlackHole",
         "url": "https://github.com/Sangwan5688/BlackHole",
@@ -517,6 +529,12 @@
         "url": "https://github.com/Killerpac/Kayuri",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/Killerpac/Kayuri/main/meta/android/kayuri.jpg"
+    },
+    "TakoPlayProvider": {
+        "name": "TakoPlay",
+        "url": "https://github.com/kaungsatthe1n/Tako-Play",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/kaungsatthe1n/Tako-Play/main/assets/images/logo.jpg"
     },
     "AnimityProvider": {
         "name": "Animity",
