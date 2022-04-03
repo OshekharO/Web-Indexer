@@ -123,16 +123,11 @@
         "status": 3,
         "icon": "https://i.ibb.co/FxNVdFq/filmymeet2.jpg"
     },
-    "WatchasianProvider": {
-        "name": "Watchasian",
-        "url": "https://watchasian.ac",
-        "status": 3
-    },
     "DownloadhubProvider": {
         "name": "downloadhub",
-        "url": "https://downloadhub.bar",
+        "url": "https://downloadhub.ltd",
         "status": 3,
-        "icon": "https://downloadhub.bar/wp-content/uploads/2017/03/17141240_1012935782184847_1572990633_n.png"
+        "icon": "https://downloadhub.ltd/wp-content/uploads/2017/03/17141240_1012935782184847_1572990633_n.png"
     },
     "8xmoviesProvider": {
         "name": "8xmovies",
@@ -176,9 +171,20 @@
         "status": 3,
         "icon": "https://lookmovie2.to/images/logo1.png"
     },
+    "WatchTodayProvider": {
+        "name": "WatchToday",
+        "url": "https://watchtoday.tv",
+        "status": 3,
+        "icon": "https://img.watchtoday.tv/xxrz/400x400/100/7a/96/7a9633ffc3f2a0b9afdd36586c6e27aa/7a9633ffc3f2a0b9afdd36586c6e27aa.png"
+    },
     "CmoviesProvider": {
         "name": "Cmovies",
         "url": "https://cmovies.online",
+        "status": 3
+    },
+    "gimyProvider": {
+        "name": "gimy.app",
+        "url": "https://gimy.app",
         "status": 3
     },
     "KissasiansProvider": {
@@ -187,10 +193,22 @@
         "status": 3,
         "icon": "https://kissasians.org/images/favicon.ico"
     },
-    "gimyProvider": {
-        "name": "gimy.app",
-        "url": "https://gimy.app",
+    "WatchasianProvider": {
+        "name": "Watchasian",
+        "url": "https://watchasian.ac",
         "status": 3
+    },
+    "OneTouchTvProvider": {
+        "name": "OneTouchTv",
+        "url": "https://onetouchtv.me",
+        "status": 3,
+        "icon": "https://cdn.animaapp.com/projects/6215178219a2fd7886bf5a52/releases/621519ce72dadb5503e24f9f/img/logo@1x.png"
+    },
+    "DramaniceProvider": {
+        "name": "Dramanice",
+        "url": "https://dramanice.video",
+        "status": 3,
+        "icon": "https://dramanice.video/wp-content/uploads/2019/06/favicon.png"
     },
     "FixdramaProvider": {
         "name": "Fixdrama",
@@ -198,11 +216,23 @@
         "status": 3,
         "icon": "https://fixdrama.com/themes/fixdramaV2/images/logo.png"
     },
+    "Soap2DaygoProvider": {
+        "name": "Soap2Daygo",
+        "url": "https://soap2daygo.co",
+        "status": 3,
+        "icon": "https://soap2daygo.co/templates/soap2day/images/logo.png"
+    },
     "dramaProvider": {
         "name": "drama.cx",
         "url": "https://drama.cx",
         "status": 3,
         "icon": "https://drama.cx/wp-content/uploads/2021/10/Drama-3.png"
+    },
+    "ViewaAsianProvider": {
+        "name": "ViewaAsian",
+        "url": "https://viewasian.co",
+        "status": 3,
+        "icon": "https://viewasian.co/images/favicon.png"
     },
     "MeloMovieProvider": {
         "name": "MeloMovie",
@@ -303,6 +333,12 @@
         "status": 5,
         "icon": "https://deadtoons.b-cdn.net/apple-touch-icon.png"
     },
+    "AnimeBeeProvider": {
+        "name": "AnimeBee",
+        "url": "https://animebee.to",
+        "status": 5,
+        "icon": "https://deadtoons.b-cdn.net/apple-touch-icon.png"
+    },
     "AnimetProvider": {
         "name": "Animet",
         "url": "https://animet.tv",
@@ -359,6 +395,12 @@
         "url": "https://9anime.vc",
         "status": 5,
         "icon": "https://9anime.vc/images/logo.png"
+    },
+    "AnimeSugeProvider": {
+        "name": "AnimeSuge",
+        "url": "https://animesuge.to",
+        "status": 5,
+        "icon": "https://animesuge.to/assets/sites/animesuge/favicons/favicon.png"
     },
     "AnimaniaProvider": {
         "name": "Animania",
