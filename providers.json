@@ -34,6 +34,12 @@
         "status": 3,
         "icon": "https://i.ibb.co/Bj3FK2H/apple-touch-icon.png"
     },
+    "KhatriMazaProvider": {
+        "name": "KhatriMaza",
+        "url": "https://khatrimazaful.net",
+        "status": 3,
+        "icon": "https://khatrimazaful.net/wp-content/uploads/2022/03/km.net_.png"
+    },
     "SqueezeboxProvider": {
         "name": "Squeezebox",
         "url": "https://movie.squeezebox.dev",
@@ -333,6 +339,18 @@
         "status": 5,
         "icon": "https://deadtoons.b-cdn.net/apple-touch-icon.png"
     },
+    "CoolsAnimeProvider": {
+        "name": "CoolsAnime",
+        "url": "https://coolsanime.me",
+        "status": 5,
+        "icon": "https://coolsanime.me/wp-content/uploads/2022/03/logo.jpg"
+    },
+    "OldToons4Liferovider": {
+        "name": "OldToons4Life",
+        "url": "https://www.oldtoons4life.in",
+        "status": 5,
+        "icon": "https://1.bp.blogspot.com/-w2BfANTMpJ8/YZ0BZzrWxnI/AAAAAAAABLo/UMRDL6WnFSYwIqQxP2NfcUmJloLgns7gACLcBGAsYHQ/w300/oldto.png"
+    },
     "AnimeBeeProvider": {
         "name": "AnimeBee",
         "url": "https://animebee.to",
@@ -372,6 +390,24 @@
         "url": "https://animego.se",
         "status": 5,
         "icon": "https://animego.se/assets/images/logo.png"
+    },
+    "PureToonsProvider": {
+        "name": "PureToons",
+        "url": "https://puretoons.org",
+        "status": 5,
+        "icon": "https://i.postimg.cc/6pJyQs5y/20180505-125542.png"
+    },
+    "DvAnimeProvider": {
+        "name": "DvAnime",
+        "url": "https://dvanime.com",
+        "status": 5,
+        "icon": "https://dvanime.com/wp-content/uploads/2021/07/cropped-dvteam-logo-192x192.jpg"
+    },
+    "9xanimeProvider": {
+        "name": "9xanime",
+        "url": "https://9xanime.in",
+        "status": 5,
+        "icon": "https://9xanime.in/wp-content/uploads/2020/11/9xanime.png"
     },
     "TwistProvider": {
         "name": "Twist",
