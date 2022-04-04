@@ -697,6 +697,18 @@
         "status": 1,
         "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
     },
+        "ComiGardoProvider": {
+        "name": "ComicGardo",
+        "url": "https://comic-gardo.com",
+        "status": 1,
+        "icon": "https://cdn.comic-gardo.com/images/android-icon-192.png"
+    },
+        "MagComiProvider": {
+        "name": "MagComi",
+        "url": "https://magcomi.com",
+        "status": 1,
+        "icon": "https://cdn.magcomi.com/images/android-icon-192.png"
+    },
     "MangabatxProvider": {
         "name": "Mangabat",
         "url": "https://mangabat.com",
@@ -925,6 +937,36 @@
         "name": "Jpmtl",
         "url": "https://jpmtl.com",
         "status": 2
+    },
+    "KakuyomuProvider": {
+        "name": "Kakuyomu",
+        "url": "https://kakuyomu.jp",
+        "status": 2,
+        "icon": "https://cdn-static.kakuyomu.jp/images/brand/kakuyomu-logo.png"
+    },
+    "YomouSyosetuProvider": {
+        "name": "YomouSyosetu",
+        "url": "https://yomou.syosetu.com",
+        "status": 2,
+        "icon": "https://static.syosetu.com/view/images/common/logo_yomou.png"
+    },
+    "SyosetuProvider": {
+        "name": "Syosetu",
+        "url": "https://syosetu.org",
+        "status": 2,
+        "icon": "https://img.syosetu.org/image/icon-192x192.png"
+    },
+    "MagnetNovelsProvider": {
+        "name": "MagnetNovels",
+        "url": "https://magnet-novels.com",
+        "status": 2,
+        "icon": "https://m.magnet-novels.com/static/download/icon.png"
+    },
+    "PKCRProvider": {
+        "name": "PKCR",
+        "url": "https://pkcr.jp",
+        "status": 2,
+        "icon": "https://pkcr.jp/wp-content/themes/pkcr/images/sp_h_logo.gif"
     },
     "YushuboProvider": {
         "name": "Yushubo",
