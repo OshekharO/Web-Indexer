@@ -621,6 +621,18 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/kl3jvi/animity/kotlin_app/app/src/main/ic_launcher-playstore.png"
     },
+    "EhPandaProvider": {
+        "name": "EhPanda",
+        "url": "https://github.com/tatsuz0u/EhPanda",
+        "status": 4,
+        "icon": "https://user-images.githubusercontent.com/31207151/105609404-0acbff00-5de4-11eb-9e88-f3c6e0ba9d44.png"
+    },
+    "NClientV2Provider": {
+        "name": "NClientV2",
+        "url": "https://github.com/Dar9586/NClientV2",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Dar9586/NClientV2/master/app/src/main/ic_launcher-web.png"
+    },
     "QuickNovelProvider": {
         "name": "QuickNovel",
         "url": "https://github.com/LagradOst/QuickNovel",
