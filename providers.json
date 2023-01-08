@@ -76,18 +76,6 @@
         "status": 3,
         "icon": "https://8xmovies.rest/wp-content/uploads/2018/06/logo.png.png"
     },
-    "1tamilmvProvider": {
-        "name": "1tamilmv",
-        "url": "https://www.1tamilmv.cool",
-        "status": 3,
-        "icon": "https://www.1tamilmv.run/uploads/monthly_2021_09/logo.png.d973b0524938777bd7c59457e2196a30.png"
-    },
-    "KissasiansProvider": {
-        "name": "Kissasians",
-        "url": "https://kissasians.org",
-        "status": 3,
-        "icon": "https://kissasians.org/images/favicon.ico"
-    },
     "WatchasianProvider": {
         "name": "Watchasian",
         "url": "https://watchasian.ac",
@@ -107,7 +95,8 @@
     "NineAnimeProvider": {
         "name": "9anime",
         "url": "https://9anime.me",
-        "status": 5
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://9anime.me&sz=128"
     },
     "zoroProvider": {
         "name": "Zoro",
@@ -117,7 +106,8 @@
     "AnimepaheProvider": {
         "name": "AnimePahe",
         "url": "https://animepahe.ru",
-        "status": 5
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.ru&sz=128"
     },
     "WCOStreamProvider": {
         "name": "WCOStream",
@@ -164,22 +154,17 @@
         "status": 5,
         "icon": "https://i.postimg.cc/6pJyQs5y/20180505-125542.png"
     },
-    "PureTuberProvider": {
-        "name": "PureTuber",
-        "url": "https://www.puretuber.com",
-        "status": 4
+    "ReVancedProvider": {
+        "name": "ReVanced",
+        "url": "https://revanced.app",
+        "status": 4,
+        "icon": "https://avatars.githubusercontent.com/u/101597779?s=200&v=4"
     },
     "LibreTubeProvider": {
         "name": "LibreTube",
         "url": "https://github.com/libre-tube/LibreTube",
         "status": 4,
-        "icon": "https://f-droid.org/repo/com.github.libretube/en-US/icon_CKCUMM-dppEdVCd-sVMhJF-rQMBkluF1UUJqge3wddg=.png"
-    },
-    "SongTubeProvider": {
-        "name": "SongTube",
-        "url": "https://github.com/SongTube/SongTube-App",
-        "status": 4,
-        "icon": "https://d4.alternativeto.net/odk20FS3okWK_RbUTsHXxMbohCC-OZ4VLabrZaW27NA/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9zb25ndHViZV8xOTcyODcucG5n.png"
+        "icon": "https://raw.githubusercontent.com/libre-tube/LibreTube/master/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
     },
     "VueTubeProvider": {
         "name": "VueTube",
@@ -202,12 +187,6 @@
     "YatteeProvider": {
         "name": "Yattee",
         "url": "https://github.com/yattee/yattee",
-        "status": 4,
-        "icon": "https://i.ibb.co/zP0vXgw/68747470733a2f2f722e7961747465652e73747265616d2f69636f6e732f7961747465652d3135302e706e67.png"
-    },
-    "CercubePlusProvider": {
-        "name": "CercubePlus",
-        "url": "https://github.com/qnblackcat/CercubePlus",
         "status": 4,
         "icon": "https://img.icons8.com/doodle/480/000000/youtube-play--v1.png"
     },
@@ -235,23 +214,17 @@
         "status": 4,
         "icon": "https://smarttubenext.com/wp-content/uploads/2021/09/cropped-smarttubenext-dark-logo.webp"
     },
-    "VancedProvider": {
-        "name": "Vanced",
-        "url": "https://github.com/TeamVanced",
-        "status": 4,
-        "icon": "https://youtubevanced.com/assets/img/logo.svg"
-    },
-    "ReVancedProvider": {
-        "name": "ReVanced",
-        "url": "https://revanced.app",
-        "status": 4,
-        "icon": "https://avatars.githubusercontent.com/u/101597779?s=200&v=4"
-    },
     "BlackHoleProvider": {
         "name": "BlackHole",
         "url": "https://github.com/Sangwan5688/BlackHole",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/Sangwan5688/BlackHole/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "MusifyProvider": {
+        "name": "Musify",
+        "url": "https://github.com/gokadzev/Musify",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/gokadzev/Musify/master/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
     "SpotiFlyerProvider": {
         "name": "SpotiFlyer",
@@ -271,23 +244,23 @@
         "status": 4,
         "icon": "https://ymusic.io/favicons/apple-touch-icon.png"
     },
-    "HoloPlayProvider": {
-        "name": "HoloPlay",
-        "url": "https://github.com/stephane-r/HoloPlay",
+    "CloudStreamProvider": {
+        "name": "CloudStream",
+        "url": "https://github.com/recloudstream/cloudstream",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/stephane-r/HoloPlay/develop/docs/logo.png"
+        "icon": "https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/main/ic_launcher-playstore.png"
     },
-    "MusicPipedProvider": {
-        "name": "MusicPiped",
-        "url": "https://github.com/deep-gaurav/MusicPiped",
+    "SaikouProvider": {
+        "name": "Saikou",
+        "url": "https://github.com/saikou-app/saikou",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/deep-gaurav/MusicPiped/master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "icon": "https://raw.githubusercontent.com/saikou-app/saikou/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
-    "AbleMusicProvider": {
-        "name": "AbleMusic",
-        "url": "https://github.com/uditkarode/AbleMusicPlayer",
+    "KotatsuProvider": {
+        "name": "Kotatsu",
+        "url": "https://github.com/nv95/Kotatsu/",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/uditkarode/AbleMusicPlayer/master/app/src/main/ic_launcher-playstore.png"
+        "icon": "https://raw.githubusercontent.com/nv95/Kotatsu/devel/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
     },
     "ShosetsuProvider": {
         "name": "Shosetsu",
@@ -312,35 +285,11 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/jakepurple13/OtakuWorld/develop/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
-    "KayuriProvider": {
-        "name": "Kayuri",
-        "url": "https://github.com/Killerpac/Kayuri",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/Killerpac/Kayuri/main/meta/android/kayuri.jpg"
-    },
-    "TakoPlayProvider": {
-        "name": "TakoPlay",
-        "url": "https://github.com/kaungsatthe1n/Tako-Play",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/kaungsatthe1n/Tako-Play/main/assets/images/logo.jpg"
-    },
     "AnimityProvider": {
         "name": "Animity",
         "url": "https://github.com/kl3jvi/animity",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/kl3jvi/animity/kotlin_app/app/src/main/ic_launcher-playstore.png"
-    },
-    "EhPandaProvider": {
-        "name": "EhPanda",
-        "url": "https://github.com/tatsuz0u/EhPanda",
-        "status": 4,
-        "icon": "https://user-images.githubusercontent.com/31207151/105609404-0acbff00-5de4-11eb-9e88-f3c6e0ba9d44.png"
-    },
-    "NClientV2Provider": {
-        "name": "NClientV2",
-        "url": "https://github.com/Dar9586/NClientV2",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/Dar9586/NClientV2/master/app/src/main/ic_launcher-web.png"
     },
     "QuickNovelProvider": {
         "name": "QuickNovel",
@@ -354,47 +303,17 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/CarlosEsco/Neko/master/.github/readme-images/logo.png"
     },
-    "TachiyomiSYProvider": {
-        "name": "TachiyomiSY",
-        "url": "https://github.com/jobobby04/TachiyomiSY/",
+    "TachiyomiProvider": {
+        "name": "Tachiyomi",
+        "url": "https://tachiyomi.org",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/jobobby04/TachiyomiSY/master/app/src/main/ic_launcher-web.png"
-    },
-    "CloudStreamProvider": {
-        "name": "CloudStream",
-        "url": "https://github.com/LagradOst/CloudStream-3",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/LagradOst/CloudStream-3/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "SaikouProvider": {
-        "name": "Saikou",
-        "url": "https://github.com/saikou-app/saikou",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/saikou-app/saikou/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "KotatsuProvider": {
-        "name": "Kotatsu",
-        "url": "https://github.com/nv95/Kotatsu/",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/nv95/Kotatsu/devel/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
-    },
-    "CineappProvider": {
-        "name": "Cineapp",
-        "url": "https://github.com/vendz/Cineapp/",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/vendz/Cineapp/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "icon": "https://tachiyomi.org/icons/logo.svg"
     },
     "StreamerProvider": {
         "name": "Streamer",
         "url": "https://github.com/StreamerApp/Streamer",
         "status": 4,
         "icon": "https://i.ibb.co/w48m3Z7/images.jpg"
-    },
-    "AnimeXStreamProvider": {
-        "name": "AnimeXStream",
-        "url": "https://github.com/mukul500/AnimeXStream/",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/mukul500/AnimeXStream/dev/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "AniyomiProvider": {
         "name": "Aniyomi",
