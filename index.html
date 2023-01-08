@@ -20,17 +20,274 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <title>Web Index 1.0</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <style>
+    li {
+    	display: inline;
+    }
+    
+    .icon {
+    	content: url("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/img/apple-touch-icon.png");
+    	display: inline;
+    	height: 92px;
+    	border-radius: 16px;
+    	width: 92px;
+    }
+    
+    .siteName {
+    	font-weight: bold;
+    	font-size: 1.4em;
+    	margin-top: 16px;
+    	word-wrap: break-word;
+    	line-height: 1em;
+    }
+    
+    .siteLabels {
+    	font-weight: bold;
+    	font-size: 1.2em;
+    }
+    
+    .siteValues {
+    	font-weight: normal;
+    }
+    
+    .divMainContainer {
+    	padding: 16px;
+    	margin: 8px;
+    	height: 80%;
+    	width: 135px;
+    	background: #000;
+    	border-radius: 24px;
+    	text-align: center;
+    	box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 33%);
+    }
+    
+    .divTitle {
+    	display: flex;
+    	justify-content: center;
+    	flex-wrap: wrap;
+    	margin: 8px;
+    	padding-bottom: 16px;
+    }
+    
+    .divLinks {
+    	text-decoration: none;
+    	text-align: center;
+    	font-size: 1.8em;
+    	display: block;
+    	margin: 8px;
+    	border-radius: 16px;
+    	padding: 32px;
+    	flex-grow: 0;
+    	color: white;
+    	align-self: center;
+    }
+    
+    .divcaption {
+    	margin-top: 16px;
+    }
+    
+    .divthumb {
+    	display: flex;
+    	flex-wrap: wrap;
+    	justify-content: center;
+    	align-items: center;
+    }
+    
+    .thumbnail {
+    	content: "";
+    	height: 135px;
+    	width: 135px;
+    	border-radius: 12px;
+    }
+    
+    <!-- .search__box {
+    	height: 50px;
+    	width: 80%;
+    	outline: none;
+    	border: none;
+    	border-radius: 5px;
+    	padding: 0 70px 0 10px;
+    	font-size: 16px;
+    	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    -->
+    
+    .topnavleft {
+      width: 70%;
+    }
+    
+    #classic {
+        display: inline-block;
+        margin: 0px 0px 0px 8px;
+        font-weight: 500;
+        font-family: inherit;
+        line-height: inherit;
+        text-align: center;
+        text-decoration: none;
+        border: 0px none;
+        border-radius: 6px;
+        appearance: none;
+        color: var(--theme-ui-colors-text,#fff);
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px var(--theme-ui-colors-border,#444d56);
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    
+  </style>
+      
 </head>
-<body>
-    <div>
-        <h1><a style="color: white" href="https://github.com/OshekharO/Website-Indexer">Website Indexer<span id="classic">v1.0</span></a></h1>
-        <table>
-		<tbody id="siteList"></tbody>
-        </table>
+
+<body style="font-family: monospace; background: #000; margin: 0px; color: #eee">
+
+  <div style="padding: 16px 0px">
+    <div class="divthumb"><img class="icon" style="display: block" />
+      <h1 style="display: inline-block; margin: 8px"><a style="color: white" href="https://github.com/OshekharO/Website-Indexer">Website Indexer<span id="classic">v1.0</span></a></h1>
     </div>
-    <script src="script.js" type="text/javascript"></script>
+  </div>
+  <!-- <input type="text" id="searchSiteInput" onkeyup="searchSite()" placeholder="Search anything..." class="search__box"> -->
+
+  <div style="background: #222; padding: 16px 0px">
+    <ul id="siteList" style="
+          display: flex;
+          padding: 8px;
+          flex-wrap: wrap;
+          justify-content: center;
+        "></ul>
+  </div>
+  <script>
+    //Load all providers from json file
+    var status = document.getElementById("status");
+    var mainContainer = document.getElementById("siteList");
+    status.innerHTML = "Fetching...";
+    $(document).ready(function () {
+      $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json",
+        function (data) {
+          status.innerHTML = "Parsing...";
+          for (var key in data) {
+            status.innerHTML = "Reading..." + key;
+            if (data.hasOwnProperty(key)) {
+              var value = data[key];
+              if (value.url == "NONE") {
+                continue;
+              }
+    
+              var _status = value.status;
+              var _thumbNail = value.url.trimRight("/") + "/favicon.ico";
+    
+              //Use defaut image if missing
+              if (value.hasOwnProperty("icon")) {
+                _thumbNail = value.icon;
+              }
+              //Create <li> node
+              var node = document.createElement("li");
+    
+              //Add <div> to <li> node for items
+              var _divMain = document.createElement("div"); //group below divs
+              var _divImg = document.createElement("div"); //for image Thumbnail
+              var _divText = document.createElement("div"); //for sitename + status
+              var _img = document.createElement("img"); //Image thumbnail
+    
+              //Add image
+              _img.className = "thumbnail";
+              _img.style.content = "";
+              _img.src = _thumbNail;
+              //_img.src = value.url.trimRight("/") + "/favicon.ico";
+              //_img.src = "https://via.placeholder.com/150";
+    
+              //Modify _divImg
+              _divImg.className = "divthumb";
+              _divImg.appendChild(_img);
+              _divMain.appendChild(_divImg);
+    
+              //Add siteName hyperlink text
+              var _a = document.createElement("a");
+              _a.setAttribute("href", value.url);
+              _a.innerHTML = value.name;
+              _a.title = key;
+              _a.style.color = "#fff";
+              _a.className = "siteName";
+              _divText.appendChild(_a);
+    
+              //Add status label
+              var _p = document.createElement("p");
+              _p.innerHTML = "Type: ";
+              _p.className = "siteLabels";
+    
+              //Add status from json
+              var _span = document.createElement("span");
+              _span.className = "siteValues";
+              var _statusText = "Unknown";
+              var _statusColor = "#eee";
+              switch (_status) {
+                case 0:
+                  _statusText = "NSFW";
+                  _statusColor = "#e57373";
+                  break;
+                case 1:
+                  _statusText = "MANGA";
+                  _statusColor = "#8bc34a";
+                  break;
+                case 2:
+                  _statusText = "LN";
+                  _statusColor = "#ffc107";
+                  break;
+                case 3:
+                  _statusText = "MOVIE";
+                  _statusColor = "#64b5f6";
+                  break;
+                case 4:
+                  _statusText = "APP";
+                  _statusColor = "#64b5f6";
+                  break;
+                case 5:
+                  _statusText = "ANIME";
+                  _statusColor = "#64b5f6";
+                  break;
+              }
+              _span.style.color = _statusColor;
+              _span.textContent = _statusText;
+              _p.appendChild(_span);
+    
+              //Add (status + status label) to _divText
+              _divText.appendChild(_p);
+    
+              //Add type, if it exists
+              if (value.hasOwnProperty("type")) {
+                var _pType = document.createElement("p");
+                _pType.innerHTML = "Type: ";
+                _pType.className = "siteLabels";
+    
+                var _spanType = document.createElement("span");
+                _spanType.className = "siteValues";
+                _spanType.textContent = value.type;
+                _pType.appendChild(_spanType);
+                _divText.appendChild(_pType);
+              }
+    
+              //Add all texts for entry
+              _divText.className = "divcaption";
+              _divMain.appendChild(_divText);
+    
+              //Add main container to node
+              _divMain.className = "divMainContainer";
+              node.appendChild(_divMain);
+    
+              //Add <li> to <ul> siteList
+              mainContainer.appendChild(node);
+            }
+          }
+        }
+      ).fail(function () {
+        console.log("An error has occurred.");
+        status.innerHTML = "Error occured!";
+      });
+    });
+    status.innerHTML = "Done loading!";
+   
+  </script>
 </body>
+
 </html>
