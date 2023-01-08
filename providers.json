@@ -529,16 +529,17 @@
         "status": 2,
         "icon": "https://img.uukanshu.com/static/m/images/logo.png"
     },
-    "FeiludushuProvider": {
-        "name": "Feiludushu",
-        "url": "https://m.feiludushu.com",
-        "status": 2
-    },
-    "JiacuanProvider": {
-        "name": "Jiacuan",
-        "url": "https://m.jiacuan.com",
+    "ZS5Provider": {
+        "name": "ZS5",
+        "url": "https://m.zs5.cc",
         "status": 2,
-        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+        "icon": "https://api.faviconkit.com/m.zs5.cc/144"
+    },
+    "TrxsProvider": {
+        "name": "Trxs",
+        "url": "https://trxs.cc",
+        "status": 2,
+        "icon": "https://api.faviconkit.com/trxs.cc/144"
     },
     "KakuyomuProvider": {
         "name": "Kakuyomu",
@@ -565,7 +566,7 @@
     },
     "WushuzwProvider": {
         "name": "Wushuzw",
-        "url": "http://wap.wushuzw.com",
+        "url": "http://m.b520.cc",
         "status": 2,
         "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
     },
