@@ -40,12 +40,6 @@
         "status": 3,
         "icon": "https://m4uhd.cc/images/m4uhd.png"
     },
-    "FilmyzillaProvider": {
-        "name": "Filmyzilla",
-        "url": "https://filmyzilla.makeup/",
-        "status": 3,
-        "icon": "https://filmyzilla.makeup/templates/images/favicon.ico"
-    },
     "CinevezProvider": {
         "name": "Cinevez",
         "url": "https://cinevez.ws",
@@ -245,7 +239,7 @@
         "icon": "https://ymusic.io/favicons/apple-touch-icon.png"
     },
     "CloudStreamProvider": {
-        "name": "CloudStream",
+        "name": "CS3",
         "url": "https://github.com/recloudstream/cloudstream",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/main/ic_launcher-playstore.png"
@@ -255,6 +249,12 @@
         "url": "https://github.com/saikou-app/saikou",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/saikou-app/saikou/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "LegadoProvider": {
+        "name": "Legado",
+        "url": "https://github.com/gedoor/legado",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/gedoor/legado/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     "KotatsuProvider": {
         "name": "Kotatsu",
@@ -445,12 +445,6 @@
         "status": 1,
         "icon": "https://mangaowls.com/uploads/images/logo.png"
     },
-    "UncoderProvider": {
-        "name": "Uncoder",
-        "url": "https://uncoder.eu.org/",
-        "status": 2,
-        "icon": "https://readlightnovels.net/wp-content/uploads/2020/01/rln-logo-ret.png"
-    },
     "MtlnationProvider": {
         "name": "Mtlnation",
         "url": "https://mtlnation.com",
@@ -467,22 +461,17 @@
         "url": "https://www.mtlnovel.com",
         "status": 2
     },
-    "NovelsrealmProvider": {
-        "name": "Novelsrealm",
-        "url": "https://novelsrealm.com",
-        "status": 2
+    "NovelsemperorProvider": {
+        "name": "NovelsEmp",
+        "url": "https://novelsemperor.com",
+        "status": 2,
+        "icon": "https://novelsemperor.com/wp-content/uploads/2022/07/01-1.png"
     },
     "WnmtlProvider": {
         "name": "Wnmtl",
         "url": "https://www.wnmtl.org",
         "status": 2,
         "icon": "https://www.privacytools.io/img/apps/lesspass.svg"
-    },
-    "NovelEbookProvider": {
-        "name": "Novel Ebook",
-        "url": "https://novel-ebook.com",
-        "status": 2,
-        "icon": "https://i.ibb.co/kHFCYmT/favicon.png"
     },
     "LnmtlProvider": {
         "name": "Lnmtl",
@@ -499,37 +488,13 @@
         "name": "Ranobes",
         "url": "https://ranobes.net",
         "status": 2,
-        "icon": "https://ranobes.net/templates/Dark/images/favicon.ico"
-    },
-    "Mp4DirectsProvider": {
-        "name": "Mp4Directs",
-        "url": "https://mp4directs.com",
-        "status": 2,
-        "icon": "https://mp4directs.com/styles/intrepid/xenforo/logo.png"
+        "icon": "https://ranobes.net/templates/Dark/images/favicon.ico?v=1"
     },
     "BoxnovelProvider": {
         "name": "Boxnovel",
         "url": "https://boxnovel.com",
         "status": 2,
         "icon": "https://boxnovel.com/wp-content/uploads/2018/04/BoxNovelNEW-Copy.png"
-    },
-    "NovelCornerProvider": {
-        "name": "NovelCorner",
-        "url": "https://thatnovelcorner.com",
-        "status": 2,
-        "icon": "https://i2.wp.com/thatnovelcorner.com/wp2/wp-content/uploads/2017/04/cropped-konachan-com-74756-landscape-original-polychromatic-ruins-scenic-sky-sumashi-yellow-sumashi.jpg"
-    },
-    "JustLNProvider": {
-        "name": "JustLN",
-        "url": "https://www.justlightnovels.com",
-        "status": 2,
-        "icon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://justlightnovels.com&size=16-yellow-sumashi.jpg"
-    },
-    "ListnovelProvider": {
-        "name": "Listnovel",
-        "url": "https://listnovel.com",
-        "status": 2,
-        "icon": "https://listnovel.com/wp-content/uploads/2020/08/cropped-Untitledtg-180x180.png"
     },
     "ReadLNProvider": {
         "name": "ReadLN",
@@ -547,20 +512,22 @@
         "url": "https://www.readwn.com",
         "status": 2
     },
-    "SoxsccProvider": {
-        "name": "Soxscc",
-        "url": "https://soxscc.org",
+    "FeiazwProvider": {
+        "name": "Feiazw",
+        "url": "https://m.feiazw.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
+    },
+    "Ffxs8Provider": {
+        "name": "Ffxs8",
+        "url": "http://www.ffxs8.com",
         "status": 2
     },
-    "ImiaobigeProvider": {
-        "name": "Imiaobige",
-        "url": "https://imiaobige.com",
-        "status": 2
-    },
-    "WangshugeProvider": {
-        "name": "Wangshuge",
-        "url": "https://m.wangshuge.com",
-        "status": 2
+    "UukanshuProvider": {
+        "name": "Uukanshu",
+        "url": "https://sj.uukanshu.com",
+        "status": 2,
+        "icon": "https://img.uukanshu.com/static/m/images/logo.png"
     },
     "FeiludushuProvider": {
         "name": "Feiludushu",
@@ -573,11 +540,6 @@
         "status": 2,
         "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
     },
-    "JpmtlProvider": {
-        "name": "Jpmtl",
-        "url": "https://jpmtl.com",
-        "status": 2
-    },
     "KakuyomuProvider": {
         "name": "Kakuyomu",
         "url": "https://kakuyomu.jp",
@@ -585,7 +547,7 @@
         "icon": "https://cdn-static.kakuyomu.jp/images/brand/kakuyomu-logo.png"
     },
     "YomouSyosetuProvider": {
-        "name": "YomouSyosetu",
+        "name": "YSyosetu",
         "url": "https://yomou.syosetu.com",
         "status": 2,
         "icon": "https://static.syosetu.com/view/images/common/logo_yomou.png"
@@ -596,26 +558,9 @@
         "status": 2,
         "icon": "https://img.syosetu.org/image/icon-192x192.png"
     },
-    "MagnetNovelsProvider": {
-        "name": "MagnetNovels",
-        "url": "https://magnet-novels.com",
-        "status": 2,
-        "icon": "https://m.magnet-novels.com/static/download/icon.png"
-    },
-    "PKCRProvider": {
-        "name": "PKCR",
-        "url": "https://pkcr.jp",
-        "status": 2,
-        "icon": "https://pkcr.jp/wp-content/themes/pkcr/images/sp_h_logo.gif"
-    },
     "YushuboProvider": {
         "name": "Yushubo",
-        "url": "https://yushubo.com",
-        "status": 2
-    },
-    "YipinxiaProvider": {
-        "name": "Yipinxia",
-        "url": "https://www.yipinxia.net",
+        "url": "https://yushugu.net",
         "status": 2
     },
     "WushuzwProvider": {
@@ -624,42 +569,9 @@
         "status": 2,
         "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
     },
-    "Ffxs8Provider": {
-        "name": "Ffxs8",
-        "url": "http://www.ffxs8.com",
-        "status": 2
-    },
-    "SfacgProvider": {
-        "name": "Sfacg",
-        "url": "https://m.sfacg.com",
-        "status": 2
-    },
-    "17kProvider": {
-        "name": "17k",
-        "url": "https://17k.com",
-        "status": 2
-    },
-    "77dushuProvider": {
-        "name": "77dushu",
-        "url": "http://m.77dushu.com",
-        "status": 2,
-        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
-    },
     "BiqusaProvider": {
         "name": "Biqusa",
-        "url": "https://m.biqusa.com",
-        "status": 2,
-        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
-    },
-    "IquxsProvider": {
-        "name": "Iquxs",
-        "url": "https://m.iquxs.com",
-        "status": 2,
-        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
-    },
-    "QjzfcgwProvider": {
-        "name": "Qjzfcgw",
-        "url": "http://m.qjzfcgw.com",
+        "url": "https://m.biqusa.org",
         "status": 2,
         "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
     },
