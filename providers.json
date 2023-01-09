@@ -5,6 +5,16 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.gay&sz=128"
     },
+    "DesiCinemaProvider": {
+        "name": "DesiCinema",
+        "url": "https://desicinemas.tv",
+        "status": 3
+    },
+    "ShowFlixProvider": {
+        "name": "ShowFlix",
+        "url": "https://showflix.click",
+        "status": 3
+    },
     "FlixtorProvider": {
         "name": "Flixtor",
         "url": "https://flixtor.video",
@@ -437,7 +447,7 @@
         "name": "Ranobes",
         "url": "https://ranobes.net",
         "status": 2,
-        "icon": "https://ranobes.net/templates/Dark/images/favicon.ico?v=1"
+        "icon": "https://api.faviconkit.com/ranobes.net/144"
     },
     "BoxnovelProvider": {
         "name": "Boxnovel",
