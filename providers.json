@@ -404,6 +404,12 @@
         "status": 1,
         "icon": "https://styles.amarkcdn.com/img/btoto/logo-batoto.png"
     },
+    "YipinXiaProvider": {
+        "name": "YipinXia",
+        "url": "https://i.yipinxia.net",
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://i.yipinxia.net&sz=128"
+    },
     "MtlnationProvider": {
         "name": "Mtlnation",
         "url": "https://mtlnation.com",
