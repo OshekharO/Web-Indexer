@@ -333,7 +333,7 @@
     },
     "MangafreakProvider": {
         "name": "Mangafreak",
-        "url": "https://w12.mangafreak.net",
+        "url": "https://w14.mangafreak.net",
         "status": 1,
         "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
     },
@@ -349,34 +349,11 @@
         "status": 1,
         "icon": "https://cdn.magcomi.com/images/android-icon-192.png"
     },
-    "MangabatxProvider": {
-        "name": "Mangabat",
-        "url": "https://mangabat.com",
-        "status": 1
-    },
     "MangaparkProvider": {
         "name": "Mangapark",
         "url": "https://mangapark.net",
         "status": 1,
         "icon": "https://styles.amarkcdn.com/img/mpark/favicon.ico?v1"
-    },
-    "Manga4LifeProvider": {
-        "name": "Manga4Life",
-        "url": "https://manga4life.com",
-        "status": 1,
-        "icon": "https://i.ibb.co/18bJ9D7/navbar-brand-small.png"
-    },
-    "KissmangaProvider": {
-        "name": "Kissmanga",
-        "url": "https://kissmanga.org",
-        "status": 1,
-        "icon": "https://kissmanga.org/static/images/favicon.ico"
-    },
-    "MangatxProvider": {
-        "name": "Mangatx",
-        "url": "https://mangatx.com",
-        "status": 1,
-        "icon": "https://i.ibb.co/rmQjw2y/MANGATX.png"
     },
     "MangabuddyProvider": {
         "name": "Mangabuddy",
@@ -391,26 +368,15 @@
         "icon": "https://i.ibb.co/KqpH7HN/apple-touch-icon.png"
     },
     "MangareaderProvider": {
-        "name": "Mangareader",
+        "name": "MangaRead",
         "url": "https://mangareader.to",
         "status": 1
     },
-    "FanfoxProvider": {
-        "name": "Fanfox",
-        "url": "https://m.fanfox.net",
-        "status": 1,
-        "icon": "https://m.fanfox.net/mobile/images/touch-icon-ipad2.png"
-    },
-    "MangatownProvider": {
-        "name": "Mangatown",
-        "url": "https://m.mangatown.com/l",
-        "status": 1,
-        "icon": "https://m.mangatown.com/media/images/touch-icon-ipad2.png"
-    },
     "ComicExtraProvider": {
         "name": "ComicExtra",
-        "url": "https://www.comicextra.com",
-        "status": 1
+        "url": "https://ww1.comicextra.com",
+        "status": 1,
+        "icon": "https://api.faviconkit.com/comicextra.com/144"
     },
     "NinemangaProvider": {
         "name": "Ninemanga",
@@ -427,23 +393,6 @@
         "url": "https://bato.to",
         "status": 1,
         "icon": "https://styles.amarkcdn.com/img/btoto/logo-batoto.png"
-    },
-    "ManhuafastProvider": {
-        "name": "Manhuafast",
-        "url": "https://manhuafast.com",
-        "status": 1,
-        "icon": "https://manhuafast.com/wp-content/uploads/2017/10/logo-web-manhuafast-1.png"
-    },
-    "MangahubProvider": {
-        "name": "Mangahub",
-        "url": "https://mangahub.io",
-        "status": 1
-    },
-    "MangaowlsProvider": {
-        "name": "Mangaowls",
-        "url": "https://mangaowls.com",
-        "status": 1,
-        "icon": "https://mangaowls.com/uploads/images/logo.png"
     },
     "MtlnationProvider": {
         "name": "Mtlnation",
@@ -564,12 +513,6 @@
         "url": "https://yushugu.net",
         "status": 2
     },
-    "WushuzwProvider": {
-        "name": "Wushuzw",
-        "url": "http://m.b520.cc",
-        "status": 2,
-        "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
-    },
     "BiqusaProvider": {
         "name": "Biqusa",
         "url": "https://m.biqusa.org",
@@ -586,11 +529,6 @@
         "url": "https://a-hentai.tv",
         "status": 0,
         "icon": "https://a-hentai.tv/wp-content/uploads/2020/08/cropped-a-hentai-logo.png"
-    },
-    "DoujinProvider": {
-        "name": "Doujins",
-        "url": "https://doujins.me",
-        "status": 0
     },
     "ManytoonProvider": {
         "name": "Manytoon",
@@ -621,44 +559,16 @@
         "status": 0,
         "icon": "https://hanime.tv/apple-touch-icon.png"
     },
-    "HentaihavenProvider": {
-        "name": "Hentaihaven",
-        "url": "https://hentaihaven.xxx",
-        "status": 0,
-        "icon": "https://hentaihaven.xxx/www/2019/04/cropped-hentaihavenico-192x192.png"
-    },
     "IdhentaiProvider": {
         "name": "Idhentai",
         "url": "https://animeidhentai.com",
         "status": 0,
         "icon": "https://animeidhentai.com/wp-content/uploads/2021/12/cropped-App1-180x180.png"
     },
-    "9hentaiProvider": {
-        "name": "9hentai",
-        "url": "https://9hentai.to",
-        "status": 0,
-        "icon": "https://9hentai.to/images/favicon/apple-touch-icon.png"
-    },
     "DoujinsProvider": {
         "name": "Doujins",
         "url": "https://doujins.com",
         "status": 0
-    },
-    "HentaihereProvider": {
-        "name": "Hentaihere",
-        "url": "https://hentaihere.com",
-        "status": 0
-    },
-    "Hentai2ReadProvider": {
-        "name": "Hentai2Read",
-        "url": "https://hentai2read.com",
-        "status": 0
-    },
-    "8musesProvider": {
-        "name": "8muses",
-        "url": "https://comics.8muses.com",
-        "status": 0,
-        "icon": "https://8muses.xxx/wp-content/uploads/2019/09/cropped-8MUSESfavicon-192x192.png"
     },
     "TsuminoProvider": {
         "name": "Tsumino",
@@ -676,12 +586,6 @@
         "url": "https://18comic.vip",
         "status": 0
     },
-    "EromangramProvider": {
-        "name": "Eromangram",
-        "url": "https://eromangram.com",
-        "status": 0,
-        "icon": "https://eromangram.com/wp-content/uploads/2019/12/apple-touch-icon-144x144-1.png"
-    },
     "Cartoon18Provider": {
         "name": "Cartoon18",
         "url": "https://www.cartoon18.com",
@@ -694,28 +598,16 @@
         "status": 0,
         "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
     },
-    "Hentai20Provider": {
-        "name": "Hentai20",
-        "url": "https://hentai20.com",
-        "status": 0,
-        "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
-    },
     "HentaibarProvider": {
         "name": "Hentaibar",
         "url": "https://hentaibar.com",
         "status": 0
     },
     "HentaifreakProvider": {
-        "name": "Hentaifreak",
+        "name": "Hentaifrk",
         "url": "https://hentaifreak.org",
         "status": 0,
         "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
-    },
-    "ManhwaclubProvider": {
-        "name": "Manhwaclub",
-        "url": "https://manhwaclub.net",
-        "status": 0,
-        "icon": "https://manhwaclub.net/wp-content/uploads/2021/08/Favicor-manhwaclub.jpg"
     },
     "ToongodProvider": {
         "name": "Toongod",
@@ -723,34 +615,10 @@
         "status": 0,
         "icon": "https://i.ibb.co/ByyJ0gy/toongod-logo.png"
     },
-    "HentaipornProvider": {
-        "name": "Hentaiporn",
-        "url": "https://hentaiporn.mobi",
-        "status": 0,
-        "icon": "https://hentaiporn.mobi/wp-content/uploads/2017/10/HENTAIPORNMOBI.png"
-    },
     "DragonTLProvider": {
         "name": "DragonTL",
         "url": "https://dragontranslation.com",
         "status": 0,
         "icon": "https://dragontranslation.com/wp-content/uploads/2022/01/cropped-portapaa-Opcion1-1.png"
-    },
-    "CuteGirlProvider": {
-        "name": "CuteGirl",
-        "url": "https://cutegirl.mobi",
-        "status": 0,
-        "icon": "https://cutegirl.mobi/wp-content/themes/madara/images/logo.png"
-    },
-    "HentaimagProvider": {
-        "name": "Hentaimag",
-        "url": "https://hentaimag.net",
-        "status": 0,
-        "icon": "https://hentaimag.net/wp-content/uploads/2021/08/LOGMAG.png"
-    },
-    "Manga18fxProvider": {
-        "name": "Manga18fx",
-        "url": "https://manga18fx.com",
-        "status": 0,
-        "icon": "https://www.google.com/s2/favicons?domain=dev.to&sz=128"
     }
  }
