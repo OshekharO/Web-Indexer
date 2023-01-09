@@ -432,6 +432,18 @@
         "status": 2,
         "icon": "https://www.google.com/s2/favicons?domain=https://novelsemperor.com&sz=128"
     },
+    "mcmsscProvider": {
+        "name": "mcmssc",
+        "url": "https://m.mcmssc.com",
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://m.mcmssc.com&sz=128"
+    },
+    "shu05Provider": {
+        "name": "shu05",
+        "url": "https://www.shu05.com",
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.shu05.com&sz=128"
+    },
     "WnmtlProvider": {
         "name": "Wnmtl",
         "url": "https://www.wnmtl.org",
@@ -511,6 +523,18 @@
         "url": "https://kakuyomu.jp",
         "status": 2,
         "icon": "https://cdn-static.kakuyomu.jp/images/brand/kakuyomu-logo.png"
+    },
+    "AlphapolisProvider": {
+        "name": "Alphapolis",
+        "url": "https://www.alphapolis.co.jp",
+        "status": 2,
+        "icon": "https://www.alphapolis.co.jp/apple-touch-icon-precomposed.png?1594857104"
+    },
+    "RawFreeProvider": {
+        "name": "RawFree",
+        "url": "https://rawfree.co",
+        "status": 2,
+        "icon": "https://rawfree.co/wp-content/uploads/2022/12/rawfree-logo.webp"
     },
     "YomouSyosetuProvider": {
         "name": "YSyosetu",
