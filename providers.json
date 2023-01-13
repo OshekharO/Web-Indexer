@@ -230,6 +230,12 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/gokadzev/Musify/master/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
+    "VibeProvider": {
+        "name": "Vibe",
+        "url": "https://github.com/sheikhhaziq/vibemusic",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/sheikhhaziq/vibemusic/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
     "SpotiFlyerProvider": {
         "name": "SpotiFlyer",
         "url": "https://github.com/Shabinder/SpotiFlyer",
