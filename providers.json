@@ -506,6 +506,18 @@
         "url": "http://www.ffxs8.com",
         "status": 2
     },
+    "60ksProvider": {
+        "name": "60ks",
+        "url": "http://www.60ks.cc",
+        "status": 2,
+        "icon": "https://api.faviconkit.com/m.60ks.cc/144"
+    },
+    "BixiangeProvider": {
+        "name": "Bixiange",
+        "url": "https://m.bixiange.me",
+        "status": 2,
+        "icon": "https://m.bixiange.me/images/logo.png"
+    },
     "UukanshuProvider": {
         "name": "Uukanshu",
         "url": "https://sj.uukanshu.com",
@@ -529,6 +541,18 @@
         "url": "https://kakuyomu.jp",
         "status": 2,
         "icon": "https://cdn-static.kakuyomu.jp/images/brand/kakuyomu-logo.png"
+    },
+    "CoronaProvider": {
+        "name": "Corona-Ex",
+        "url": "https://to-corona-ex.com",
+        "status": 2,
+        "icon": "https://to-corona-ex.com/assets/logo.svg"
+    },
+    "NovelupProvider": {
+        "name": "Novelup",
+        "url": "https://novelup.plus",
+        "status": 2,
+        "icon": "https://novelup.plus/img/logo_2023.png"
     },
     "AlphapolisProvider": {
         "name": "Alphapolis",
