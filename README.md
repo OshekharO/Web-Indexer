@@ -19,7 +19,7 @@ Get recommended site's to watch / read movie, series, Anime, Manga, light Novel,
 • For any Support About Script contact [@OshekherO](https://t.me/OshekherO) at Telegram <br>
 
 ---
-<h4 align='center'>© 2022 ツ ѕнєкнєя</h4>
+<h4 align='center'>© 2023 ツ ѕнєкнєя</h4>
 
 <!-- DO NOT REMOVE THIS CREDIT 🤬 🤬 -->
 
