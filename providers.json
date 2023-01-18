@@ -236,6 +236,18 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/sheikhhaziq/vibemusic/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
+     "ViMusicProvider": {
+        "name": "ViMusic",
+        "url": "https://github.com/vfsfitvnm/ViMusic",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/vfsfitvnm/ViMusic/master/app/src/main/ic_launcher-playstore.png"
+    },
+    "InnerTuneProvider": {
+        "name": "InnerTune",
+        "url": "https://github.com/z-huang/InnerTune",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/z-huang/InnerTune/dev/app/src/main/ic_launcher-playstore.png"
+    },
     "SpotiFlyerProvider": {
         "name": "SpotiFlyer",
         "url": "https://github.com/Shabinder/SpotiFlyer",
