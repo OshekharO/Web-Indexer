@@ -272,6 +272,12 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/main/ic_launcher-playstore.png"
     },
+     "NoFoselProvider": {
+        "name": "NoFosel",
+        "url": "https://github.com/N0-0NE-Dev/NoFasel",
+        "status": 4,
+        "icon": "https://camo.githubusercontent.com/2f3156215dc963bbe775d0c4daf16834c17dd91d3f02a063cce305a6120d40ef/68747470733a2f2f692e696d6775722e636f6d2f4e764c434f39552e706e67"
+    },
     "SaikouProvider": {
         "name": "Saikou",
         "url": "https://github.com/saikou-app/saikou",
