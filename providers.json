@@ -1,14 +1,20 @@
 {
     "PrmoviesProvider": {
         "name": "Prmovies",
-        "url": "https://prmovies.gay",
+        "url": "https://prmovies.rest",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.gay&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.rest&sz=128"
     },
     "DesiCinemaProvider": {
         "name": "DesiCinema",
         "url": "https://desicinemas.tv",
         "status": 3
+    },
+    "VegaMoviesProvider": {
+        "name": "VegaMovies",
+        "url": "https://vegamovies.rocks",
+        "status": 3,
+        "icon": "https://apkresult.com/Logos/vegamovies-apkresult.jpg"
     },
     "ShowFlixProvider": {
         "name": "ShowFlix",
@@ -23,13 +29,13 @@
     },
     "SolarmovieProvider": {
         "name": "Solarmovie",
-        "url": "https://www2.solarmovie.to",
+        "url": "https://ww3.solarmovie.to",
         "status": 3,
         "icon": "https://i.ibb.co/Bj3FK2H/apple-touch-icon.png"
     },
     "KhatriMazaProvider": {
         "name": "KhatriMaza",
-        "url": "https://khatrimazaful.net",
+        "url": "https://khatrimazaful.pro",
         "status": 3,
         "icon": "https://khatrimazaful.net/wp-content/uploads/2022/03/km.net_.png"
     },
@@ -40,7 +46,7 @@
     },
     "MoviesmodProvider": {
         "name": "MoviesMod",
-        "url": "https://moviesmod.in",
+        "url": "https://moviesmod.net",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://moviesmod.in&sz=128"
     },
@@ -76,18 +82,13 @@
     },
     "8xmoviesProvider": {
         "name": "8xmovies",
-        "url": "https://8xmovies.rest",
+        "url": "https://8xmovies.wtf",
         "status": 3,
         "icon": "https://8xmovies.rest/wp-content/uploads/2018/06/logo.png.png"
     },
     "WatchasianProvider": {
         "name": "Watchasian",
         "url": "https://watchasian.ac",
-        "status": 3
-    },
-    "Serial4uProvider": {
-        "name": "Serial4u",
-        "url": "https://serial4u.tv",
         "status": 3
     },
     "GogoanimeProvider": {
@@ -623,6 +624,12 @@
         "url": "https://manytoon.com",
         "status": 0,
         "icon": "https://xranks.com/static/assets2/img/screenshot_adult.svg"
+    },
+    "Manga18Provider": {
+        "name": "Manga18",
+        "url": "https://manga18.me",
+        "status": 0,
+        "icon": "https://manga18.me/images/manga18-logo.png"
     },
     "LiteroticaProvider": {
         "name": "Literotica",
