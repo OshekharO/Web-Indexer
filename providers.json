@@ -125,6 +125,12 @@
         "status": 5,
         "icon": "https://deadtoons.b-cdn.net/apple-touch-icon.png"
     },
+    "4animeProvider": {
+        "name": "4anime",
+        "url": "https://4anime.gg",
+        "status": 5,
+        "icon": "https://4anime.gg/images/logo.png"
+    },
     "CoolsAnimeProvider": {
         "name": "CoolsAnime",
         "url": "https://coolsanime.me",
