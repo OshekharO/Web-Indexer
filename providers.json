@@ -89,11 +89,12 @@
     "WatchasianProvider": {
         "name": "Watchasian",
         "url": "https://watchasian.la",
-        "status": 3
+        "status": 3,
+        "icon": "https://watchasian.la/favicon.png"
     },
     "GogoanimeProvider": {
         "name": "Gogoanime",
-        "url": "https://gogoanime.fi",
+        "url": "https://www1.gogoanime.bid",
         "status": 5,
         "icon": "https://gogoanime.fi/img/icon/logo.png"
     },
