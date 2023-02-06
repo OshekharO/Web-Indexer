@@ -243,6 +243,12 @@
         "status": 4,
         "icon": "https://tusky.app/img/tusky.svg"
     },
+    "HuskyProvider": {
+        "name": "Husky",
+        "url": "https://codeberg.org/husky/husky",
+        "status": 4,
+        "icon": "https://husky.adol.pw/img/logo.png"
+    },
     "MusifyProvider": {
         "name": "Musify",
         "url": "https://github.com/gokadzev/Musify",
