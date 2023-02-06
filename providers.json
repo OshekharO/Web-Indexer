@@ -16,6 +16,12 @@
         "status": 3,
         "icon": "https://apkresult.com/Logos/vegamovies-apkresult.jpg"
     },
+    "TamilTorrentsProvider": {
+        "name": "TTorrents",
+        "url": "https://tamiltorrents.fun",
+        "status": 3,
+        "icon": "https://apkresult.com/Logos/vegamovies-apkresult.jpg"
+    },
     "ShowFlixProvider": {
         "name": "ShowFlix",
         "url": "https://showflix.click",
