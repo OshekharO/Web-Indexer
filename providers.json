@@ -148,12 +148,6 @@
         "url": "https://kimanime.com",
         "status": 5
     },
-    "TenshiProvider": {
-        "name": "Tenshi.moe",
-        "url": "https://tenshi.moe",
-        "status": 5,
-        "icon": "https://i.ibb.co/4pVkztX/614549f8cfdb07005dc0fe04.png"
-    },
     "RareToonsProvider": {
         "name": "RareToons",
         "url": "https://raretoonshindi.in",
@@ -255,6 +249,12 @@
         "url": "https://github.com/MateriiApps/OpenCord",
         "status": 4,
         "icon": "https://rawcdn.githack.com/MateriiApps/OpenCord/032c7c46726e065f202f0d57258ceabd96cb7449/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "AliucordProvider": {
+        "name": "Aliucord",
+        "url": "https://github.com/Aliucord/Aliucord",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/Aliucord/Aliucord/6df69dbbe0cadceadabde9ed270492e683c39964/installer/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "MusifyProvider": {
         "name": "Musify",
