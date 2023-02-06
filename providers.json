@@ -22,6 +22,12 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://tamiltorrents.fun&sz=128"
     },
+    "TamilVaathiProvider": {
+        "name": "TamilVaathi",
+        "url": "https://tamilvaathi.in",
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://tamilvaathi.in&sz=128"
+    },
     "ShowFlixProvider": {
         "name": "ShowFlix",
         "url": "https://showflix.click",
