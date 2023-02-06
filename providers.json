@@ -621,10 +621,11 @@
         "status": 2,
         "icon": "https://img.syosetu.org/image/icon-192x192.png"
     },
-    "YushuboProvider": {
-        "name": "Yushubo",
-        "url": "https://yushugu.net",
-        "status": 2
+    "MangaPlusProvider": {
+        "name": "MangaPlus",
+        "url": "https://mangaplus.shueisha.co.jp",
+        "status": 2,
+        "icon": "https://mangaplus.shueisha.co.jp/icn/app_icon_192.png"
     },
     "BiqusaProvider": {
         "name": "Biqusa",
@@ -738,6 +739,6 @@
         "name": "DragonTL",
         "url": "https://dragontranslation.com",
         "status": 0,
-        "icon": "https://dragontranslation.com/wp-content/uploads/2022/01/cropped-portapaa-Opcion1-1.png"
+        "icon": "https://i.ibb.co/7JYdxJj/DRAGON-GENERAL.png"
     }
  }
