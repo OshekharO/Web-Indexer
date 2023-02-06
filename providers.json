@@ -237,6 +237,12 @@
         "status": 4,
         "icon": "https://gitlab.com/uploads/-/system/project/avatar/25469848/icon.png?width=64"
     },
+    "TuskyProvider": {
+        "name": "Tusky",
+        "url": "https://github.com/tuskyapp/Tusky",
+        "status": 4,
+        "icon": "https://tusky.app/img/tusky.svg"
+    },
     "MusifyProvider": {
         "name": "Musify",
         "url": "https://github.com/gokadzev/Musify",
