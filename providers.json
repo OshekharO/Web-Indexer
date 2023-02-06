@@ -231,6 +231,12 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/Sangwan5688/BlackHole/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
+    "StealthProvider": {
+        "name": "Stealth",
+        "url": "https://gitlab.com/cosmosapps/stealth",
+        "status": 4,
+        "icon": "https://gitlab.com/uploads/-/system/project/avatar/25469848/icon.png?width=64"
+    },
     "MusifyProvider": {
         "name": "Musify",
         "url": "https://github.com/gokadzev/Musify",
