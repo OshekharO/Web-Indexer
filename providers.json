@@ -176,13 +176,13 @@
         "name": "LibreTube",
         "url": "https://github.com/libre-tube/LibreTube",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/libre-tube/LibreTube/master/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
+        "icon": "https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
     },
     "VueTubeProvider": {
         "name": "VueTube",
         "url": "https://github.com/Frontesque/VueTube",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/Frontesque/VueTube/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://rawcdn.githack.com/Frontesque/VueTube/ea2ec25a01a023974ef29dd59687f0fb91d6c59f/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "NewPipeProvider": {
         "name": "NewPipe",
@@ -218,7 +218,7 @@
         "name": "Sftube",
         "url": "https://github.com/prateekmedia/sftube",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/prateekmedia/pstube/main/assets/pstube.png"
+        "icon": "https://rawcdn.githack.com/prateekmedia/pstube/811d026fa7a2a3b101ba98a86bd4f42b3b809c11/assets/pstube.png"
     },
     "SmartTubeProvider": {
         "name": "SmartTube",
@@ -230,7 +230,7 @@
         "name": "BlackHole",
         "url": "https://github.com/Sangwan5688/BlackHole",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/Sangwan5688/BlackHole/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://rawcdn.githack.com/Sangwan5688/BlackHole/9849c52bb423c3ba78b9ffae237c7c845335a54a/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "StealthProvider": {
         "name": "Stealth",
@@ -250,41 +250,47 @@
         "status": 4,
         "icon": "https://husky.adol.pw/img/logo.png"
     },
+    "OpenCordProvider": {
+        "name": "OpenCord",
+        "url": "https://github.com/MateriiApps/OpenCord",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/MateriiApps/OpenCord/032c7c46726e065f202f0d57258ceabd96cb7449/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
     "MusifyProvider": {
         "name": "Musify",
         "url": "https://github.com/gokadzev/Musify",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/gokadzev/Musify/master/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
+        "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
     "VibeProvider": {
         "name": "Vibe",
         "url": "https://github.com/sheikhhaziq/vibemusic",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/sheikhhaziq/vibemusic/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "icon": "https://rawcdn.githack.com/sheikhhaziq/vibemusic/cf4cfb468a17cbd22c45df3092c40e6f7da7ab32/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
      "ViMusicProvider": {
         "name": "ViMusic",
         "url": "https://github.com/vfsfitvnm/ViMusic",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/vfsfitvnm/ViMusic/master/app/src/main/ic_launcher-playstore.png"
+        "icon": "https://rawcdn.githack.com/vfsfitvnm/ViMusic/964fa42a0f50b0b9834e67076c4c41170bfaacda/app/src/main/ic_launcher-playstore.png"
     },
     "InnerTuneProvider": {
         "name": "InnerTune",
         "url": "https://github.com/z-huang/InnerTune",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/z-huang/InnerTune/dev/app/src/main/ic_launcher-playstore.png"
+        "icon": "https://rawcdn.githack.com/z-huang/InnerTune/645e36eb727273ea1712f44402a0516079dfc9d2/app/src/main/ic_launcher-playstore.png"
     },
     "SpotiFlyerProvider": {
         "name": "SpotiFlyer",
         "url": "https://github.com/Shabinder/SpotiFlyer",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/Shabinder/SpotiFlyer/Compose/art/SpotiFlyer.svg"
+        "icon": "https://rawcdn.githack.com/Shabinder/SpotiFlyer/40090126453feb92d3c727cb3ede2d68b7994c49/art/SpotiFlyer.svg"
     },
     "SpoTubeProvider": {
         "name": "SpoTube",
         "url": "https://github.com/KRTirtho/spotube",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/KRTirtho/spotube/master/assets/spotube_banner.png"
+        "icon": "https://rawcdn.githack.com/KRTirtho/spotube/0c54f2dcd4474b63db4c517b0e7332cbd3ab51e9/assets/spotube_banner.png"
     },
     "YmusicProvider": {
         "name": "Ymusic",
@@ -296,7 +302,7 @@
         "name": "CS3",
         "url": "https://github.com/recloudstream/cloudstream",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/main/ic_launcher-playstore.png"
+        "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
     },
      "NoFoselProvider": {
         "name": "NoFosel",
@@ -314,13 +320,13 @@
         "name": "Legado",
         "url": "https://github.com/gedoor/legado",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/gedoor/legado/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "icon": "https://rawcdn.githack.com/gedoor/legado/782bdbef5e5e928d3bada2a772f8e18daa7705a7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     "KotatsuProvider": {
         "name": "Kotatsu",
         "url": "https://github.com/nv95/Kotatsu/",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/nv95/Kotatsu/devel/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
+        "icon": "https://rawcdn.githack.com/nv95/Kotatsu/9da5bdaad49f0f6b9263a110b8b6189d2e8a2813/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
     },
     "ShosetsuProvider": {
         "name": "Shosetsu",
@@ -331,37 +337,37 @@
         "name": "LNReader",
         "url": "https://github.com/LNReader/lnreader",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/LNReader/lnreader/main/.github/readme-images/icon_alt.png"
+        "icon": "https://rawcdn.githack.com/LNReader/lnreader/518f73f6fdeba3b3a562ac382143cc910fe58fe1/.github/readme-images/icon_alt.png"
     },
     "YukinoProvider": {
         "name": "Yukino",
         "url": "https://github.com/rhygg/yukino-app/",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/rhygg/yukino-app/next/resources/icon.png"
+        "icon": "https://rawcdn.githack.com/rhygg/yukino-app/7c8543bdb19c248b51605d8699650118401c483d/resources/icon.png"
     },
     "OtakuWorldProvider": {
         "name": "OtakuWorld",
         "url": "https://github.com/jakepurple13/OtakuWorld/",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/jakepurple13/OtakuWorld/develop/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://rawcdn.githack.com/jakepurple13/OtakuWorld/d65269c3be5ba28564fbe4aa6cffa36d82e68e8c/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "AnimityProvider": {
         "name": "Animity",
         "url": "https://github.com/kl3jvi/animity",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/kl3jvi/animity/kotlin_app/app/src/main/ic_launcher-playstore.png"
+        "icon": "https://rawcdn.githack.com/kl3jvi/animity/kotlin_app/app/src/main/ic_launcher-playstore.png"
     },
     "QuickNovelProvider": {
         "name": "QuickNovel",
         "url": "https://github.com/LagradOst/QuickNovel",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/LagradOst/QuickNovel/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://rawcdn.githack.com/LagradOst/QuickNovel/61d83d97f412b0af84e4fc7b6a357437f3908ff4/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "NekoProvider": {
         "name": "Neko",
         "url": "https://github.com/CarlosEsco/Neko",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/CarlosEsco/Neko/master/.github/readme-images/logo.png"
+        "icon": "https://rawcdn.githack.com/CarlosEsco/Neko/master/.github/readme-images/logo.png"
     },
     "TachiyomiProvider": {
         "name": "Tachiyomi",
@@ -379,7 +385,7 @@
         "name": "Aniyomi",
         "url": "https://github.com/jmir1/aniyomi/",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/jmir1/aniyomi/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://rawcdn.githack.com/jmir1/aniyomi/45ceb2219d928cf863ca798688efb7e347ce5cec/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     "ManganatoProvider": {
         "name": "Manganato",
