@@ -1,7 +1,7 @@
 {
     "PrmoviesProvider": {
         "name": "Prmovies",
-        "url": "https://prmovies.rest",
+        "url": "https://prmovies.bio",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.rest&sz=128"
     },
@@ -88,7 +88,7 @@
     },
     "WatchasianProvider": {
         "name": "Watchasian",
-        "url": "https://watchasian.ac",
+        "url": "https://watchasian.la",
         "status": 3
     },
     "GogoanimeProvider": {
