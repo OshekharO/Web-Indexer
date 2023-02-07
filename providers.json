@@ -456,6 +456,12 @@
         "status": 1,
         "icon": "https://api.faviconkit.com/comicextra.com/144"
     },
+    "SukimaProvider": {
+        "name": "Sukima",
+        "url": "https://www.sukima.me",
+        "status": 1,
+        "icon": "https://www.sukima.me/cdn/favicon/favicon256.png"
+    },
     "NinemangaProvider": {
         "name": "Ninemanga",
         "url": "https://ninemanga.com",
