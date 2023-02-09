@@ -190,6 +190,12 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/Frontesque/VueTube/ea2ec25a01a023974ef29dd59687f0fb91d6c59f/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
+    "HyperionProvider": {
+        "name": "Hyperion",
+        "url": "https://github.com/zt64/Hyperion",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/zt64/Hyperion/226c3e11ee6eb6249c6cd43936539620206692ec/assets/logo.png"
+    },
     "NewPipeProvider": {
         "name": "NewPipe",
         "url": "https://github.com/polymorphicshade/NewPipe",
@@ -415,13 +421,13 @@
         "status": 1,
         "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
     },
-        "ComiGardoProvider": {
+    "ComiGardoProvider": {
         "name": "ComicGardo",
         "url": "https://comic-gardo.com",
         "status": 1,
         "icon": "https://cdn.comic-gardo.com/images/android-icon-192.png"
     },
-        "MagComiProvider": {
+    "MagComiProvider": {
         "name": "MagComi",
         "url": "https://magcomi.com",
         "status": 1,
