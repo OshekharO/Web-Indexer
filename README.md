@@ -15,11 +15,11 @@ Get recommended site's to watch / read movie, series, Anime, Manga, light Novel,
 - This is Just For Educational Purpose
 - DO NOT Sell this Script, This is 💯% Free
 
-## 🤗 Meet Me :
+## 🤗 Contact Me :
 
 • 😪 check you did all things perfectly before contacting [ Warning ] <br>
 
-• For any Support About Script contact [@OshekherO](https://t.me/OshekherO) at Telegram <br>
+• For any Support contact [@OshekherO](https://t.me/OshekherO) at Telegram <br>
 
 ---
 <h4 align='center'>© 2023 ツ ѕнєкнєя</h4>
