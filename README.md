@@ -1,4 +1,7 @@
-# Web Indexer
+<h1 align="center">
+  <img alt="cgapp logo" src="https://i.ibb.co/VjDjNhr/indexer-high-resolution-logo-black-on-transparent-background.png" width="300px"/><br/>
+  ⭐️ <a href="https://indexer.is-an.app">Web Indexer</a> ⭐️
+</h1>
 
 Get recommended site's to watch / read movie, series, Anime, Manga, light Novel, Etc. Also Some Application To browse these contents.
 
