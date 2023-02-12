@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="cgapp logo" src="https://i.ibb.co/VjDjNhr/indexer-high-resolution-logo-black-on-transparent-background.png" width="300px"/><br/>
+  <img alt="logo" src="https://i.ibb.co/VjDjNhr/indexer-high-resolution-logo-black-on-transparent-background.png" width="300px"/><br/>
   ⭐️ <a href="https://indexer.is-an.app">Web Indexer</a> ⭐️
 </h1>
 
