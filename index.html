@@ -151,100 +151,153 @@
    <ul id="siteList" style="display: flex; padding: 8px; flex-wrap: wrap; justify-content: center;"></ul>
   </div>
   <script>
-  const status = document.getElementById("status");
-  const mainContainer = document.getElementById("siteList");
-  const searchInput = document.getElementById("searchSiteInput");
-
-  // Load all providers from json file
-  status.innerHTML = "Fetching...";
-  $(document).ready(function () {
+   //Load all providers from json file
+   var status = document.getElementById("status");
+   var mainContainer = document.getElementById("siteList");
+   status.innerHTML = "Fetching...";
+   $(document).ready(function () {
     $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
-      status.innerHTML = "Parsing...";
-      for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-          const value = data[key];
+     status.innerHTML = "Parsing...";
+     for (var key in data) {
+      status.innerHTML = "Reading..." + key;
+      if (data.hasOwnProperty(key)) {
+       var value = data[key];
+       if (value.url == "NONE") {
+        continue;
+       }
 
-          if (value.url === "NONE") {
-            continue;
-          }
+       var _status = value.status;
+       var _thumbNail = value.url.trimRight("/") + "/favicon.ico";
 
-          const statusValue = value.status;
-          const thumbnailUrl = value.icon || `${value.url.trimRight("/")}/favicon.ico`;
+       //Use defaut image if missing
+       if (value.hasOwnProperty("icon")) {
+        _thumbNail = value.icon;
+       }
+       //Create <li> node
+       var node = document.createElement("li");
 
-          // Create <li> node
-          const node = document.createElement("li");
+       //Add <div> to <li> node for items
+       var _divMain = document.createElement("div"); //group below divs
+       var _divImg = document.createElement("div"); //for image Thumbnail
+       var _divText = document.createElement("div"); //for sitename + status
+       var _img = document.createElement("img"); //Image thumbnail
 
-          // Add <div> to <li> node for items
-          const _divMain = document.createElement("div"); //group below divs
-          const _divImg = document.createElement("div"); //for image Thumbnail
-          const _divText = document.createElement("div"); //for sitename + status
-          const _img = document.createElement("img"); //Image thumbnail
+       //Add image
+       _img.className = "thumbnail";
+       _img.style.content = "";
+       _img.src = _thumbNail;
+       //_img.src = value.url.trimRight("/") + "/favicon.ico";
+       //_img.src = "https://via.placeholder.com/150";
 
-          // Add image
-          _img.className = "thumbnail";
-          _img.src = thumbnailUrl;
+       //Modify _divImg
+       _divImg.className = "divthumb";
+       _divImg.appendChild(_img);
+       _divMain.appendChild(_divImg);
 
-          // Modify _divImg
-          _divImg.className = "divthumb";
-          _divImg.appendChild(_img);
-          _divMain.appendChild(_divImg);
+       //Add siteName hyperlink text
+       var _a = document.createElement("a");
+       _a.setAttribute("href", value.url);
+       _a.innerHTML = value.name;
+       _a.title = key;
+       _a.style.color = "#fff";
+       _a.className = "siteName";
+       _divText.appendChild(_a);
 
-          // Add siteName hyperlink text
-          const _a = document.createElement("a");
-          _a.href = value.url;
-          _a.innerHTML = value.name;
-          _a.title = key;
-          _a.style.color = "#fff";
-          _a.className = "siteName";
-          _divText.appendChild(_a);
+       //Add status label
+       var _p = document.createElement("p");
+       _p.innerHTML = "Type: ";
+       _p.className = "siteLabels";
 
-          // Add status label
-          const _p = document.createElement("p");
-          _p.innerHTML = "Type: ";
-          _p.className = "siteLabels";
+       //Add status from json
+       var _span = document.createElement("span");
+       _span.className = "siteValues";
+       var _statusText = "Unknown";
+       var _statusColor = "#eee";
+       switch (_status) {
+        case 0:
+         _statusText = "NSFW";
+         _statusColor = "#e57373";
+         break;
+        case 1:
+         _statusText = "MANGA";
+         _statusColor = "#8bc34a";
+         break;
+        case 2:
+         _statusText = "LN";
+         _statusColor = "#ffc107";
+         break;
+        case 3:
+         _statusText = "MOVIE";
+         _statusColor = "#64b5f6";
+         break;
+        case 4:
+         _statusText = "APP";
+         _statusColor = "#64b5f6";
+         break;
+        case 5:
+         _statusText = "ANIME";
+         _statusColor = "#64b5f6";
+         break;
+       }
+       _span.style.color = _statusColor;
+       _span.textContent = _statusText;
+       _p.appendChild(_span);
 
-          // Add status from json
-          const _span = document.createElement("span");
-          _span.className = "siteValues";
-          const statusMap = {
-            0: ["NSFW", "#e57373"],
-            1: ["MANGA", "#8bc34a"],
-            2: ["LN", "#ffc107"],
-            3: ["MOVIE", "#64b5f6"],
-            4: ["APP", "#64b5f6"],
-            5: ["ANIME", "#64b5f6"],
-          };
-          const [statusText, statusColor] = statusMap[statusValue] || ["Unknown", "#eee"];
-          _span.style.color = statusColor;
-          _span.textContent = statusText;
-          _p.appendChild(_span);
+       //Add (status + status label) to _divText
+       _divText.appendChild(_p);
 
-          // Add type, if it exists
-          if (value.type) {
-            const _pType = document.createElement("p");
-            _pType.innerHTML = "Type: ";
-            _pType.className = "siteLabels";
+       //Add type, if it exists
+       if (value.hasOwnProperty("type")) {
+        var _pType = document.createElement("p");
+        _pType.innerHTML = "Type: ";
+        _pType.className = "siteLabels";
 
-            const _spanType = document.createElement("span");
-            _spanType.className = "siteValues";
-            _spanType.textContent = value.type;
-            _pType.appendChild(_spanType);
-            _divText.appendChild(_pType);
-          }
+        var _spanType = document.createElement("span");
+        _spanType.className = "siteValues";
+        _spanType.textContent = value.type;
+        _pType.appendChild(_spanType);
+        _divText.appendChild(_pType);
+       }
 
-          // Add all texts for entry
-          _divText.className = "divcaption";
-          _divMain.appendChild(_divText);
+       //Add all texts for entry
+       _divText.className = "divcaption";
+       _divMain.appendChild(_divText);
 
-          // Add main container to node
-          _divMain.className = "divMainContainer";
-          node.appendChild(_divMain);
+       //Add main container to node
+       _divMain.className = "divMainContainer";
+       node.appendChild(_divMain);
 
-          // Add <li> to <ul> siteList
-          mainContainer.appendChild(node);
-        }
+       //Add <li> to <ul> siteList
+       mainContainer.appendChild(node);
       }
-      status.innerHTML = "Done loading!";
-</script>
+     }
+    }).fail(function () {
+     console.log("An error has occurred.");
+     status.innerHTML = "Error occured!";
+    });
+   });
+   status.innerHTML = "Done loading!";
+
+   //Filter sites
+   function searchSite() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchSiteInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("siteList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+     a = li[i].getElementsByTagName("a")[0];
+     txtValue = a.textContent || a.innerText;
+     displayStyle = "none";
+     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      displayStyle = "";
+     }
+     if (a.title.toUpperCase().indexOf(filter) > -1) {
+      displayStyle = "";
+     }
+     li[i].style.display = displayStyle;
+    }
+   }
+  </script>
  </body>
 </html>
