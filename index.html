@@ -277,27 +277,6 @@
     });
    });
    status.innerHTML = "Done loading!";
-
-   //Filter sites
-   function searchSite() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("searchSiteInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("siteList");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-     a = li[i].getElementsByTagName("a")[0];
-     txtValue = a.textContent || a.innerText;
-     displayStyle = "none";
-     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      displayStyle = "";
-     }
-     if (a.title.toUpperCase().indexOf(filter) > -1) {
-      displayStyle = "";
-     }
-     li[i].style.display = displayStyle;
-    }
-   }
   </script>
  </body>
 </html>
