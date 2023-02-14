@@ -244,11 +244,13 @@
           mainContainer.appendChild(node);
         }
       }
-    }).fail(function () {
+    }).fail(() => {
      console.log("An error has occurred.");
-     status.innerHTML = "Error occured!";
-    });
+     status.innerHTML = "Error occurred!";
+   }).always(() => {
+     // This code will execute after the request completes, regardless of success or failure
    });
+  });
    status.innerHTML = "Done loading!";
   </script>
  </body>
