@@ -101,35 +101,27 @@
     border-radius: 12px;
    }
 
-   .search__box {
-    height: 50px;
-    width: 80%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 0 70px 0 10px;
-    font-size: 16px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-   }
-
-.radio-buttons {
+.radio-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  overflow-x: scroll;
 }
 
-.radio-buttons label {
+.radio-container input[type="radio"] {
   display: inline-block;
-  margin: 5px;
+  margin-right: 10px;
+  white-space: nowrap;
+  background-color: #eee;
+  border: none;
   padding: 10px;
-  cursor: pointer;
-  background-color: #e6e6e6;
-  border-radius: 5px;
+  font-size: 16px;
 }
 
-.radio-buttons input[type="radio"]:checked + label {
-  background-color: #4CAF50;
+.radio-container input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+.radio-container input[type="radio"]:checked {
+  background-color: #007bff;
   color: #fff;
 }
 
@@ -167,27 +159,14 @@
    </div>
   </div>
 
-<div class="radio-buttons">
-  <input type="radio" name="filter" value="all" id="all-radio" checked>
-  <label for="all-radio">All</label>
-
-  <input type="radio" name="filter" value="nsfw" id="nsfw-radio">
-  <label for="nsfw-radio">NSFW</label>
-
-  <input type="radio" name="filter" value="manga" id="manga-radio">
-  <label for="manga-radio">Manga</label>
-
-  <input type="radio" name="filter" value="ln" id="ln-radio">
-  <label for="ln-radio">LN</label>
-
-  <input type="radio" name="filter" value="movie" id="movie-radio">
-  <label for="movie-radio">Movie</label>
-
-  <input type="radio" name="filter" value="app" id="app-radio">
-  <label for="app-radio">App</label>
-
-  <input type="radio" name="filter" value="anime" id="anime-radio">
-  <label for="anime-radio">Anime</label>
+<div class="radio-container">
+  <input type="radio" name="filter" value="all" checked>All</input>
+  <input type="radio" name="filter" value="nsfw">NSFW</input>
+  <input type="radio" name="filter" value="manga">Manga</input>
+  <input type="radio" name="filter" value="ln">LN</input>
+  <input type="radio" name="filter" value="movie">Movie</input>
+  <input type="radio" name="filter" value="app">App</input>
+  <input type="radio" name="filter" value="anime">Anime</input>
 </div>
 
   <div style="background: #222; padding: 16px 0px;">
