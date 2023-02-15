@@ -147,6 +147,16 @@
   </div>
   <!-- <input type="text" id="searchSiteInput" onkeyup="searchSite()" placeholder="Search anything..." class="search__box"> -->
 
+    <div>
+      <input type="radio" name="filter" value="all" checked>All</input>
+      <input type="radio" name="filter" value="nsfw">NSFW</input>
+      <input type="radio" name="filter" value="manga">Manga</input>
+      <input type="radio" name="filter" value="ln">LN</input>
+      <input type="radio" name="filter" value="movie">Movie</input>
+      <input type="radio" name="filter" value="app">App</input>
+      <input type="radio" name="filter" value="anime">Anime</input>
+    </div>
+
   <div style="background: #222; padding: 16px 0px;">
    <ul id="siteList" style="display: flex; padding: 8px; flex-wrap: wrap; justify-content: center;"></ul>
   </div>
@@ -154,7 +164,32 @@
    //Load all providers from json file
    var status = document.getElementById("status");
    var mainContainer = document.getElementById("siteList");
+   var filter = "all";
    status.innerHTML = "Fetching...";
+
+      function filterProviders() {
+        $("li").each(function () {
+          if (filter === "all") {
+            $(this).show();
+          } else if (
+            $(this)
+              .find(".siteValues")
+              .text()
+              .toLowerCase()
+              .indexOf(filter.toLowerCase()) === -1
+          ) {
+            $(this).hide();
+          } else {
+            $(this).show();
+          }
+        });
+      }
+
+      $("input[name='filter']").on("change", function () {
+        filter = this.value;
+        filterProviders();
+      });
+
    $(document).ready(function () {
     $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
      status.innerHTML = "Parsing...";
