@@ -192,7 +192,8 @@ $(document).ready(function () {
 
       _statusColor = "#64b5f6";
 
-     default:
+         break;
+  default:
     if (value.isWorking === false) {
       _statusText = "DOWN";
       _statusColor = "#f44336";
@@ -200,8 +201,8 @@ $(document).ready(function () {
       _statusText = "Unknown";
       _statusColor = "#eee";
     }
-      break;
-    }
+    break;
+}
 
     _span.style.color = _statusColor;
 
