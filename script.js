@@ -8,6 +8,19 @@ var filter = "all";
 
 status.innerHTML = "Fetching...";
 
+function checkSiteStatus(url, callback) {
+  $.ajax({
+    type: 'HEAD',
+    url: url,
+    success: function() {
+      callback(true);
+    },
+    error: function() {
+      callback(false);
+    }
+  });
+}
+
 function filterProviders() {
  $("li").each(function () {
   if (filter === "all") {
@@ -27,19 +40,6 @@ function filterProviders() {
    $(this).show();
   }
  });
-}
-
-function checkSiteStatus(url, callback) {
-  $.ajax({
-    type: 'HEAD',
-    url: url,
-    success: function() {
-      callback(true);
-    },
-    error: function() {
-      callback(false);
-    }
-  });
 }
 
 $("input[name='filter']").on("change", function () {
