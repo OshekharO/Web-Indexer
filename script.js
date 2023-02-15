@@ -8,19 +8,6 @@ var filter = "all";
 
 status.innerHTML = "Fetching...";
 
-function checkSiteStatus(url, callback) {
-  $.ajax({
-    type: 'HEAD',
-    url: url,
-    success: function() {
-      callback(true);
-    },
-    error: function() {
-      callback(false);
-    }
-  });
-}
-
 function filterProviders() {
  $("li").each(function () {
   if (filter === "all") {
@@ -53,10 +40,6 @@ $(document).ready(function () {
   status.innerHTML = "Parsing...";
 
   for (var key in data) {
-
-    checkSiteStatus(value.url, function(isWorking) {
-    value.isWorking = isWorking;
-    });
 
    status.innerHTML = "Reading..." + key;
 
@@ -192,17 +175,8 @@ $(document).ready(function () {
 
       _statusColor = "#64b5f6";
 
-         break;
-  default:
-    if (value.isWorking === false) {
-      _statusText = "DOWN";
-      _statusColor = "#f44336";
-    } else {
-      _statusText = "Unknown";
-      _statusColor = "#eee";
-    }
     break;
-}
+    }
 
     _span.style.color = _statusColor;
 
