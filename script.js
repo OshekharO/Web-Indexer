@@ -83,9 +83,10 @@ $(document).ready(function () {
 
         _img.loading = "lazy"; // Add this line to enable lazy loading
 
-        //_img.src = value.url.trimRight("/") + "/favicon.ico";
+        _img.onerror = function() {
+        _img.src = "https://www.google.com/s2/favicons?domain=" + value.url; // Use a default image if loading fails };
 
-        //_img.src = "https://via.placeholder.com/150";
+        //_img.src = value.url.trimRight("/") + "/favicon.ico";
 
         //Modify _divImg
 
