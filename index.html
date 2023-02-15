@@ -188,6 +188,25 @@
    var mainContainer = document.getElementById("siteList");
    status.innerHTML = "Fetching...";
 
+// Add event listener to radio buttons
+  $('#filter input[type="radio"]').on('change', filterProviders);
+});
+
+function filterProviders() {
+  var selectedStatus = $('input[name=status]:checked', '#filter').val();
+
+  // Loop through providers and filter based on selected status
+  $('#siteList li').each(function() {
+    var statusText = $('.siteValues', this).text();
+
+    if (selectedStatus === 'all' || statusText === selectedStatus) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
+
    $(document).ready(function () {
     $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
      status.innerHTML = "Parsing...";
@@ -299,25 +318,6 @@
        //Add main container to node
        _divMain.className = "divMainContainer";
        node.appendChild(_divMain);
-
-  // Add event listener to radio buttons
-  $('#filter input[type="radio"]').on('change', filterProviders);
-});
-
-function filterProviders() {
-  var selectedStatus = $('input[name=status]:checked', '#filter').val();
-
-  // Loop through providers and filter based on selected status
-  $('#siteList li').each(function() {
-    var statusText = $('.siteValues', this).text();
-
-    if (selectedStatus === 'all' || statusText === selectedStatus) {
-      $(this).show();
-    } else {
-      $(this).hide();
-    }
-  });
-}
 
        //Add <li> to <ul> siteList
        mainContainer.appendChild(node);
