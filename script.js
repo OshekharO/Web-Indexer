@@ -81,6 +81,8 @@ $(document).ready(function () {
 
         _img.src = _thumbNail;
 
+        _img.loading = "lazy"; // Add this line to enable lazy loading
+
         //_img.src = value.url.trimRight("/") + "/favicon.ico";
 
         //_img.src = "https://via.placeholder.com/150";
