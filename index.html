@@ -147,15 +147,37 @@
   </div>
   <!-- <input type="text" id="searchSiteInput" onkeyup="searchSite()" placeholder="Search anything..." class="search__box"> -->
 
-    <div>
-      <input type="radio" name="filter" value="all" checked>All</input>
-      <input type="radio" name="filter" value="nsfw">NSFW</input>
-      <input type="radio" name="filter" value="manga">Manga</input>
-      <input type="radio" name="filter" value="ln">LN</input>
-      <input type="radio" name="filter" value="movie">Movie</input>
-      <input type="radio" name="filter" value="app">App</input>
-      <input type="radio" name="filter" value="anime">Anime</input>
-    </div>
+    <div id="filter">
+  <label>
+    <input type="radio" name="status" value="all" checked>
+    All
+  </label>
+  <label>
+    <input type="radio" name="status" value="0">
+    NSFW
+  </label>
+  <label>
+    <input type="radio" name="status" value="1">
+    MANGA
+  </label>
+  <label>
+    <input type="radio" name="status" value="2">
+    LN
+  </label>
+  <label>
+    <input type="radio" name="status" value="3">
+    MOVIE
+  </label>
+  <label>
+    <input type="radio" name="status" value="4">
+    APP
+  </label>
+  <label>
+    <input type="radio" name="status" value="5">
+    ANIME
+  </label>
+</div>
+
 
   <div style="background: #222; padding: 16px 0px;">
    <ul id="siteList" style="display: flex; padding: 8px; flex-wrap: wrap; justify-content: center;"></ul>
@@ -164,31 +186,7 @@
    //Load all providers from json file
    var status = document.getElementById("status");
    var mainContainer = document.getElementById("siteList");
-   var filter = "all";
    status.innerHTML = "Fetching...";
-
-      function filterProviders() {
-        $("li").each(function () {
-          if (filter === "all") {
-            $(this).show();
-          } else if (
-            $(this)
-              .find(".siteValues")
-              .text()
-              .toLowerCase()
-              .indexOf(filter.toLowerCase()) === -1
-          ) {
-            $(this).hide();
-          } else {
-            $(this).show();
-          }
-        });
-      }
-
-      $("input[name='filter']").on("change", function () {
-        filter = this.value;
-        filterProviders();
-      });
 
    $(document).ready(function () {
     $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
@@ -301,6 +299,25 @@
        //Add main container to node
        _divMain.className = "divMainContainer";
        node.appendChild(_divMain);
+
+  // Add event listener to radio buttons
+  $('#filter input[type="radio"]').on('change', filterProviders);
+});
+
+function filterProviders() {
+  var selectedStatus = $('input[name=status]:checked', '#filter').val();
+
+  // Loop through providers and filter based on selected status
+  $('#siteList li').each(function() {
+    var statusText = $('.siteValues', this).text();
+
+    if (selectedStatus === 'all' || statusText === selectedStatus) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
 
        //Add <li> to <ul> siteList
        mainContainer.appendChild(node);
