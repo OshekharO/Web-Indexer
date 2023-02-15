@@ -8,68 +8,6 @@ var filter = "all";
 
 status.innerHTML = "Fetching...";
 
-function slideshow() {
-  // get the list of provider nodes
-  var providerNodes = $("#siteList li");
-
-  // get the length of the provider list
-  var providerCount = providerNodes.length;
-
-  // calculate the number of slides needed to display all providers
-  var slideCount = Math.ceil(providerCount / 10);
-
-  // create a list of slides
-  var slides = [];
-
-  // loop through each slide
-  for (var i = 0; i < slideCount; i++) {
-    // create a new slide node
-    var slideNode = $("<div></div>").addClass("slide");
-
-    // add 10 provider nodes to the slide
-    for (var j = i * 10; j < (i + 1) * 10 && j < providerCount; j++) {
-      var providerNode = providerNodes[j];
-      $(slideNode).append(providerNode);
-    }
-
-    // add the slide node to the list of slides
-    slides.push(slideNode);
-  }
-
-  // create a new slideshow container node
-  var slideshowNode = $("<div></div>").addClass("slideshow");
-
-  // add the slides to the slideshow container
-  for (var i = 0; i < slides.length; i++) {
-    $(slideshowNode).append(slides[i]);
-  }
-
-  // hide all of the provider nodes
-  $(providerNodes).hide();
-
-  // add the slideshow container to the page
-  $(mainContainer).append(slideshowNode);
-
-  // start the slideshow
-  var currentSlide = 0;
-  var slideInterval = setInterval(function() {
-    // hide the current slide
-    $(slides[currentSlide]).hide();
-
-    // increment the current slide index
-    currentSlide++;
-
-    // wrap around to the first slide if necessary
-    if (currentSlide >= slideCount) {
-      currentSlide = 0;
-    }
-
-    // show the next slide
-    $(slides[currentSlide]).show();
-  }, 5000);
-}
-
-
 function filterProviders() {
   $("li").each(function () {
     if (filter === "all") {
