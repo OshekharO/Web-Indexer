@@ -274,6 +274,12 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/Aliucord/Aliucord/6df69dbbe0cadceadabde9ed270492e683c39964/installer/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
+    "YTDLnisProvider": {
+        "name": "YTDLnis",
+        "url": "https://github.com/deniscerri/ytdlnis",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/deniscerri/ytdlnis/811f3b07ecaa346cf441012071bf0575ccb1d6f0/app/src/main/ic_launcher-playstore.png"
+    },
     "MusifyProvider": {
         "name": "Musify",
         "url": "https://github.com/gokadzev/Musify",
