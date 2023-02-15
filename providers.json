@@ -334,6 +334,12 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/N0-0NE-Dev/NoFasel/d8a34ee553a0e70caed35d2b9e0bdf2a4415aef6/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
+    "PancakeProvider": {
+        "name": "Pancake",
+        "url": "https://github.com/tejas-xd/Pancake",
+        "status": 4,
+        "icon": ""
+    },
     "SaikouProvider": {
         "name": "Saikou",
         "url": "https://github.com/saikou-app/saikou",
