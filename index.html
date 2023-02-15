@@ -112,6 +112,27 @@
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
    }
 
+.radio-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-buttons label {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
    .topnavleft {
     width: 70%;
    }
