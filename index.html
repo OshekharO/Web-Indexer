@@ -146,15 +146,28 @@
    </div>
   </div>
 
-    <div>
-      <input type="radio" name="filter" value="all" checked>All</input>
-      <input type="radio" name="filter" value="nsfw">NSFW</input>
-      <input type="radio" name="filter" value="manga">Manga</input>
-      <input type="radio" name="filter" value="ln">LN</input>
-      <input type="radio" name="filter" value="movie">Movie</input>
-      <input type="radio" name="filter" value="app">App</input>
-      <input type="radio" name="filter" value="anime">Anime</input>
-    </div>
+<div class="radio-buttons">
+  <input type="radio" name="filter" value="all" id="all-radio" checked>
+  <label for="all-radio">All</label>
+
+  <input type="radio" name="filter" value="nsfw" id="nsfw-radio">
+  <label for="nsfw-radio">NSFW</label>
+
+  <input type="radio" name="filter" value="manga" id="manga-radio">
+  <label for="manga-radio">Manga</label>
+
+  <input type="radio" name="filter" value="ln" id="ln-radio">
+  <label for="ln-radio">LN</label>
+
+  <input type="radio" name="filter" value="movie" id="movie-radio">
+  <label for="movie-radio">Movie</label>
+
+  <input type="radio" name="filter" value="app" id="app-radio">
+  <label for="app-radio">App</label>
+
+  <input type="radio" name="filter" value="anime" id="anime-radio">
+  <label for="anime-radio">Anime</label>
+</div>
 
   <div style="background: #222; padding: 16px 0px;">
    <ul id="siteList" style="display: flex; padding: 8px; flex-wrap: wrap; justify-content: center;"></ul>
