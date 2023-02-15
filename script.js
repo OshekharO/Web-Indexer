@@ -29,6 +29,19 @@ function filterProviders() {
  });
 }
 
+function checkSiteStatus(url, callback) {
+  $.ajax({
+    type: 'HEAD',
+    url: url,
+    success: function() {
+      callback(true);
+    },
+    error: function() {
+      callback(false);
+    }
+  });
+}
+
 $("input[name='filter']").on("change", function () {
  filter = this.value;
 
@@ -40,6 +53,11 @@ $(document).ready(function () {
   status.innerHTML = "Parsing...";
 
   for (var key in data) {
+
+    checkSiteStatus(value.url, function(isWorking) {
+    value.isWorking = isWorking;
+    });
+
    status.innerHTML = "Reading..." + key;
 
    if (data.hasOwnProperty(key)) {
@@ -174,6 +192,14 @@ $(document).ready(function () {
 
       _statusColor = "#64b5f6";
 
+     default:
+    if (value.isWorking === false) {
+      _statusText = "DOWN";
+      _statusColor = "#f44336";
+    } else {
+      _statusText = "Unknown";
+      _statusColor = "#eee";
+    }
       break;
     }
 
