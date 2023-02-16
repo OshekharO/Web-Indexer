@@ -82,6 +82,8 @@ $(document).ready(function () {
 
     _img.src = _thumbNail;
 
+    _img.alt = "Navigate";
+
     _img.loading = "lazy"; // Add this line to enable lazy loading
 
     _img.onerror = function () {
