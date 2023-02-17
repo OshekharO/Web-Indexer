@@ -474,6 +474,12 @@
         "status": 1,
         "icon": "https://cdn.comic-gardo.com/images/android-icon-192.png"
     },
+    "ComickProvider": {
+        "name": "Comick",
+        "url": "https://comick.app",
+        "status": 1,
+        "icon": "https://comick.app/static/unicorn-64.png"
+    },
     "MagComiProvider": {
         "name": "MagComi",
         "url": "https://magcomi.com",
