@@ -150,6 +150,29 @@
         "status": 5,
         "icon": "https://deadtoons.b-cdn.net/apple-touch-icon.png"
     },
+    "1xanimeProvider": {
+        "name": "1xanime",
+        "url": "https://www.1xanime.in",
+        "status": 5
+    },
+    "ToonWorldProvider": {
+        "name": "ToonWorld",
+        "url": "https://toonworld4all.me",
+        "status": 5,
+        "icon": "https://toonworld4all.me/wp-content/uploads/2020/04/cropped-l_DmyToF-192x192.png"
+    },
+    "ToonsWorldProvider": {
+        "name": "ToonsWorld",
+        "url": "https://toonsworldindia.com",
+        "status": 5,
+        "icon": "https://toonsworldindia.com/wp-content/uploads/2022/11/20220405_113656-1024x235-1.png"
+    },
+    "AniAcademyProvider": {
+        "name": "AniAcademy",
+        "url": "https://animeacademy.in",
+        "status": 5,
+        "icon": "https://animeacademy.in/wp-content/uploads/2019/12/ANIMEACADEMY.IN-1-250x83.png"
+    },
     "4animeProvider": {
         "name": "4anime",
         "url": "https://4anime.gg",
@@ -174,7 +197,7 @@
     },
     "RareToonsProvider": {
         "name": "RareToons",
-        "url": "https://raretoonshindi.in",
+        "url": "https://raretoonsindia.dev",
         "status": 5,
         "icon": "https://raretoonshindi.net/wp-content/uploads/2020/09/mini-logo.png"
     },
