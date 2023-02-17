@@ -474,6 +474,18 @@
         "status": 1,
         "icon": "https://cdn.comic-gardo.com/images/android-icon-192.png"
     },
+    "ComiCastleProvider": {
+        "name": "ComiCastle",
+        "url": "https://comicastle.org",
+        "status": 1,
+        "icon": "https://comicastle.org/upload/logo/cc__logo.png"
+    },
+    "ComicExtraProvider": {
+        "name": "ComicExtra",
+        "url": "https://ww1.comicextra.com",
+        "status": 1,
+        "icon": "https://api.faviconkit.com/comicextra.com/144"
+    },
     "ComickProvider": {
         "name": "Comick",
         "url": "https://comick.app",
@@ -508,12 +520,6 @@
         "name": "MangaRead",
         "url": "https://mangareader.to",
         "status": 1
-    },
-    "ComicExtraProvider": {
-        "name": "ComicExtra",
-        "url": "https://ww1.comicextra.com",
-        "status": 1,
-        "icon": "https://api.faviconkit.com/comicextra.com/144"
     },
     "SukimaProvider": {
         "name": "Sukima",
