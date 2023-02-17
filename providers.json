@@ -10,6 +10,11 @@
         "url": "https://desicinemas.tv",
         "status": 3
     },
+    "HiMoviesProvider": {
+        "name": "HiMovies",
+        "url": "https://himovies.top",
+        "status": 3
+    },
     "VegaMoviesProvider": {
         "name": "VegaMovies",
         "url": "https://vegamovies.rocks",
