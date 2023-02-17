@@ -34,6 +34,12 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://tamiltorrents.fun&sz=128"
     },
+    "MultiMovieProvider": {
+        "name": "MultiMovie",
+        "url": "https://multimovies.fun",
+        "status": 3,
+        "icon": "https://multimovies.fun/wp-content/uploads/2022/08/logo-1.png"
+    },
     "TamilVaathiProvider": {
         "name": "TamilVaath",
         "url": "https://tamilvaathi.in",
