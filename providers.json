@@ -13,7 +13,14 @@
     "HiMoviesProvider": {
         "name": "HiMovies",
         "url": "https://himovies.top",
-        "status": 3
+        "status": 3,
+        "icon": "https://img.himovies.top/xxrz/100x100/100/14/e4/14e40a8f6e805f4ecde5286918890165/14e40a8f6e805f4ecde5286918890165.png"
+    },
+    "HDMovieHubProvider": {
+        "name": "HDMovieHub",
+        "url": "https://hdmoviehub.website",
+        "status": 3,
+        "icon": "https://hdmoviehub.website/wp-content/uploads/2022/10/cropped-cropped-HUB-Flix_page-0001-removebg-preview.png"
     },
     "VegaMoviesProvider": {
         "name": "VegaMovies",
