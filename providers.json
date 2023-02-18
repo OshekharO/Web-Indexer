@@ -468,6 +468,12 @@
         "status": 1,
         "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
     },
+    "ManhwazProvider": {
+        "name": "Manhwaz",
+        "url": "https://manhwaz.com",
+        "status": 1,
+        "icon": "https://manhwaz.com/assets/images/logo.png"
+    },
     "ComiGardoProvider": {
         "name": "ComicGardo",
         "url": "https://comic-gardo.com",
