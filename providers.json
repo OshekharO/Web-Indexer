@@ -484,10 +484,10 @@
         "name": "Manhwaz",
         "url": "https://manhwaz.com",
         "status": 1,
-        "icon": "https://manhwaz.com/assets/images/logo.png"
+        "icon": "https://i.ibb.co/wL3d0mS/logo.webp"
     },
     "ComicOnlineProvider": {
-        "name": "ComicOnline",
+        "name": "ComicOnlin",
         "url": "https://readcomiconline.li",
         "status": 1,
         "icon": "https://readcomiconline.li/Content/images/favicon.ico"
