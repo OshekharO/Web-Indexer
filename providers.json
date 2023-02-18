@@ -468,17 +468,35 @@
         "status": 1,
         "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
     },
+    "FanFoxProvider": {
+        "name": "FanFox",
+        "url": "https://fanfox.net",
+        "status": 1,
+        "icon": "https://static.fanfox.net/v202020210123121/mangafox/images/logo.png"
+    },
     "ManhwazProvider": {
         "name": "Manhwaz",
         "url": "https://manhwaz.com",
         "status": 1,
         "icon": "https://manhwaz.com/assets/images/logo.png"
     },
+    "ComicOnlineProvider": {
+        "name": "ComicOnline",
+        "url": "https://readcomiconline.li",
+        "status": 1,
+        "icon": "https://readcomiconline.li/Content/images/favicon.ico"
+    },
     "ComiGardoProvider": {
         "name": "ComicGardo",
         "url": "https://comic-gardo.com",
         "status": 1,
         "icon": "https://cdn.comic-gardo.com/images/android-icon-192.png"
+    },
+    "GetComicsProvider": {
+        "name": "GetComics",
+        "url": "https://getcomics.info",
+        "status": 1,
+        "icon": "https://i0.wp.com/getcomics.info/share/uploads/2020/04/cropped-GetComics-Favicon.png?fit=192%2C192"
     },
     "ComiCastleProvider": {
         "name": "ComiCastle",
