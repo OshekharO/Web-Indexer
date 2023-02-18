@@ -428,6 +428,12 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/LagradOst/QuickNovel/61d83d97f412b0af84e4fc7b6a357437f3908ff4/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
+    "IReaderProvider": {
+        "name": "IReader",
+        "url": "https://github.com/IReaderorg/IReader",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/IReaderorg/IReader/a847214baf52c148add17beabccc49bf8afa5595/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
     "NekoProvider": {
         "name": "Neko",
         "url": "https://github.com/CarlosEsco/Neko",
