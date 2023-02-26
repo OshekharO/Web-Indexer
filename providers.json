@@ -315,6 +315,12 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/Aliucord/Aliucord/6df69dbbe0cadceadabde9ed270492e683c39964/installer/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
+    "SealProvider": {
+        "name": "Seal",
+        "url": "https://github.com/JunkFood02/Seal",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/JunkFood02/Seal/03ac92781e1dc1074297821ff589949cac54b54b/fastlane/metadata/android/en-US/images/icon.png"
+    },
     "YTDLnisProvider": {
         "name": "YTDLnis",
         "url": "https://github.com/deniscerri/ytdlnis",
@@ -381,11 +387,29 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/saikou-app/saikou/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
+    "AnimeScrapProvider": {
+        "name": "AnimeScrap",
+        "url": "https://github.com/fakeyatogod/AnimeScrap",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/fakeyatogod/AnimeScrap/8414a42ff53d502ed698ecc920807a6aef663e1f/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "AnimiteProvider": {
+        "name": "Animite",
+        "url": "https://github.com/imashnake0/Animite",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/imashnake0/Animite/78c856f7b39d3f501834c0dec4d3cfa2fbdfe2f3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
     "LegadoProvider": {
         "name": "Legado",
         "url": "https://github.com/gedoor/legado",
         "status": 4,
         "icon": "https://rawcdn.githack.com/gedoor/legado/782bdbef5e5e928d3bada2a772f8e18daa7705a7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    "ReadYouProvider": {
+        "name": "ReadYou",
+        "url": "https://github.com/Ashinch/ReadYou",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/Ashinch/ReadYou/87bd14d2be0d1424606c93e4f0f639386f12053e/fastlane/metadata/android/en-US/images/icon.png"
     },
     "KotatsuProvider": {
         "name": "Kotatsu",
@@ -457,6 +481,18 @@
         "url": "https://github.com/jmir1/aniyomi/",
         "status": 4,
         "icon": "https://rawcdn.githack.com/jmir1/aniyomi/45ceb2219d928cf863ca798688efb7e347ce5cec/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    "TetherFiProvider": {
+        "name": "TetherFi",
+        "url": "https://github.com/pyamsoft/tetherfi",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/pyamsoft/tetherfi/56c10cf60156c75a5f59da85b62e4968928af81e/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    "SuperImageProvider": {
+        "name": "SuperImage",
+        "url": "https://github.com/Lucchetto/SuperImage",
+        "status": 4,
+        "icon": "https://rawcdn.githack.com/Lucchetto/SuperImage/8c4fb84ecff07219d6c5ec3bdba2ebc39ab58e17/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     "ManganatoProvider": {
         "name": "Manganato",
