@@ -301,7 +301,7 @@
         "name": "Husky",
         "url": "https://codeberg.org/husky/husky",
         "status": 4,
-        "icon": "https://husky.adol.pw/img/logo.png"
+        "icon": "https://codeberg.org/husky/husky/raw/branch/master/husky/app/src/husky/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     "OpenCordProvider": {
         "name": "OpenCord",
