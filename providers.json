@@ -1,7 +1,7 @@
 {
     "PrmoviesProvider": {
         "name": "Prmovies",
-        "url": "https://prmovies.bio",
+        "url": "https://prmovies.help",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.rest&sz=128"
     },
@@ -24,7 +24,7 @@
     },
     "VegaMoviesProvider": {
         "name": "VegaMovies",
-        "url": "https://vegamovies.rocks",
+        "url": "https://vegamovies.love",
         "status": 3,
         "icon": "https://apkresult.com/Logos/vegamovies-apkresult.jpg"
     },
@@ -65,7 +65,7 @@
     },
     "KhatriMazaProvider": {
         "name": "KhatriMaza",
-        "url": "https://khatrimazaful.pro",
+        "url": "https://khatrimazaful.world",
         "status": 3,
         "icon": "https://khatrimazaful.net/wp-content/uploads/2022/03/km.net_.png"
     },
@@ -76,7 +76,7 @@
     },
     "MoviesmodProvider": {
         "name": "MoviesMod",
-        "url": "https://moviesmod.net",
+        "url": "https://moviesmod.co",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://moviesmod.in&sz=128"
     },
@@ -88,7 +88,7 @@
     },
     "CinevezProvider": {
         "name": "Cinevez",
-        "url": "https://cinevez.ws",
+        "url": "https://cinevez.cfd",
         "status": 3,
         "icon": "https://i.ibb.co/NZzqgF5/logo-1.png"
     },
@@ -106,25 +106,25 @@
     },
     "FilmymeetProvider": {
         "name": "Filmymeet",
-        "url": "https://www40.filmymeet.co",
+        "url": "https://www50.filmymeet.co",
         "status": 3,
         "icon": "https://i.ibb.co/FxNVdFq/filmymeet2.jpg"
     },
     "8xmoviesProvider": {
         "name": "8xmovies",
-        "url": "https://8xmovies.wtf",
+        "url": "https://8xmovies.lat",
         "status": 3,
         "icon": "https://8xmovies.wtf/wp-content/uploads/2018/06/logo.png.png"
     },
     "WatchasianProvider": {
         "name": "Watchasian",
-        "url": "https://watchasian.la",
+        "url": "https://watchasian.id",
         "status": 3,
         "icon": "https://watchasian.la/favicon.png"
     },
     "GogoanimeProvider": {
         "name": "Gogoanime",
-        "url": "https://www1.gogoanime.bid",
+        "url": "https://gogoanime.tel",
         "status": 5,
         "icon": "https://gogoanime.fi/img/icon/logo.png"
     },
@@ -485,6 +485,24 @@
         "url": "https://manhwaz.com",
         "status": 1,
         "icon": "https://i.ibb.co/wL3d0mS/logo.webp"
+    },
+    "AllComicsProvider": {
+        "name": "AllComics",
+        "url": "https://readallcomics.com",
+        "status": 1,
+        "icon": "https://readallcomics.com/wp-content/uploads/2020/09/logo-1.png"
+    },
+    "ReadComicsProvider": {
+        "name": "ReadComics",
+        "url": "https://readcomicsfree.net",
+        "status": 1,
+        "icon": "https://readcomicsfree.net/images/sites/logo.png"
+    },
+    "ViewComicsProvider": {
+        "name": "ViewComics",
+        "url": "https://viewcomics.me",
+        "status": 1,
+        "icon": "https://viewcomics.me/images/sites/logo.png"
     },
     "ComicOnlineProvider": {
         "name": "ComicOnlin",
