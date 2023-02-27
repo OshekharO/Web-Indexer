@@ -777,12 +777,6 @@
         "status": 2,
         "icon": "https://www.alphapolis.co.jp/apple-touch-icon-precomposed.png?1594857104"
     },
-    "RawFreeProvider": {
-        "name": "RawFree",
-        "url": "https://rawfree.co",
-        "status": 2,
-        "icon": "https://rawfree.co/wp-content/uploads/2022/12/rawfree-logo.webp"
-    },
     "YomouSyosetuProvider": {
         "name": "YSyosetu",
         "url": "https://yomou.syosetu.com",
