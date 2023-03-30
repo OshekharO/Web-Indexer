@@ -10,23 +10,17 @@
         "url": "https://desicinemas.tv",
         "status": 3
     },
-    "HiMoviesProvider": {
-        "name": "HiMovies",
-        "url": "https://himovies.top",
-        "status": 3,
-        "icon": "https://img.himovies.top/xxrz/100x100/100/14/e4/14e40a8f6e805f4ecde5286918890165/14e40a8f6e805f4ecde5286918890165.png"
-    },
     "HDMovieHubProvider": {
         "name": "HDMovieHub",
-        "url": "https://hdmoviehub.website",
+        "url": "https://hdmoviehub.click",
         "status": 3,
-        "icon": "https://hdmoviehub.website/wp-content/uploads/2022/10/cropped-cropped-HUB-Flix_page-0001-removebg-preview.png"
+        "icon": "https://hdmoviehub.click/wp-content/uploads/2022/10/cropped-cropped-HUB-Flix_page-0001-removebg-preview.png"
     },
     "VegaMoviesProvider": {
         "name": "VegaMovies",
-        "url": "https://vegamovies.love",
+        "url": "https://vegamovies.party",
         "status": 3,
-        "icon": "https://apkresult.com/Logos/vegamovies-apkresult.jpg"
+        "icon": "https://vegamovies.party/wp-content/uploads/2022/03/Logo.png"
     },
     "TamilTorrentsProvider": {
         "name": "TTorrents",
@@ -63,12 +57,6 @@
         "status": 3,
         "icon": "https://i.ibb.co/Bj3FK2H/apple-touch-icon.png"
     },
-    "KhatriMazaProvider": {
-        "name": "KhatriMaza",
-        "url": "https://khatrimazaful.world",
-        "status": 3,
-        "icon": "https://khatrimazaful.net/wp-content/uploads/2022/03/km.net_.png"
-    },
     "SqueezeboxProvider": {
         "name": "Squeezebox",
         "url": "https://movie.squeezebox.dev",
@@ -79,12 +67,6 @@
         "url": "https://moviesmod.co",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://moviesmod.in&sz=128"
-    },
-    "M4UHDProvider": {
-        "name": "M4UHD",
-        "url": "https://m4uhd.cc",
-        "status": 3,
-        "icon": "https://m4uhd.cc/images/m4uhd.png"
     },
     "CinevezProvider": {
         "name": "Cinevez",
@@ -109,12 +91,6 @@
         "url": "https://www50.filmymeet.co",
         "status": 3,
         "icon": "https://i.ibb.co/FxNVdFq/filmymeet2.jpg"
-    },
-    "8xmoviesProvider": {
-        "name": "8xmovies",
-        "url": "https://8xmovies.lat",
-        "status": 3,
-        "icon": "https://8xmovies.wtf/wp-content/uploads/2018/06/logo.png.png"
     },
     "WatchasianProvider": {
         "name": "Watchasian",
