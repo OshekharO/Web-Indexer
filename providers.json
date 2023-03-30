@@ -100,9 +100,15 @@
     },
     "GogoanimeProvider": {
         "name": "Gogoanime",
-        "url": "https://gogoanime.tel",
+        "url": "https://gogoanime.news",
         "status": 5,
-        "icon": "https://gogoanime.fi/img/icon/logo.png"
+        "icon": "https://gogoanime.news/img/icon/logo.png"
+    },
+    "AnimedaoProvider": {
+        "name": "Animedao",
+        "url": "https://animedao.to",
+        "status": 5,
+        "icon": "https://animedao.to/img/animedao-og.png"
     },
     "NineAnimeProvider": {
         "name": "9anime",
