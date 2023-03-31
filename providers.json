@@ -711,6 +711,12 @@
         "status": 2,
         "icon": "https://api.faviconkit.com/m.60ks.cc/144"
     },
+    "soxsccProvider": {
+        "name": "soxscc",
+        "url": "https://m.soxscc.net",
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://m.soxscc.net&sz=128"
+    },
     "BixiangeProvider": {
         "name": "Bixiange",
         "url": "https://m.bixiange.me",
