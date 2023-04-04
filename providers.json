@@ -1,7 +1,7 @@
 {
     "PrmoviesProvider": {
         "name": "Prmovies",
-        "url": "https://prmovies.help",
+        "url": "https://prmovies.cfd",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.rest&sz=128"
     },
@@ -9,6 +9,18 @@
         "name": "DesiCinema",
         "url": "https://desicinemas.tv",
         "status": 3
+    },
+    "123mkvProvider": {
+        "name": "123mkv",
+        "url": "https://123mkv.pk",
+        "status": 3,
+        "icon": "https://123mkv.pk/wp-content/uploads/2022/06/123mkv.pk-footer.png"
+    },
+    "JazzStreamProvider": {
+        "name": "JazzStream",
+        "url": "https://jazzstream.pk",
+        "status": 3,
+        "icon": "https://jazzstream.pk/static/theme/images/Logo.png"
     },
     "HDMovieHubProvider": {
         "name": "HDMovieHub",
@@ -32,13 +44,7 @@
         "name": "MultiMovie",
         "url": "https://multimovies.fun",
         "status": 3,
-        "icon": "https://multimovies.fun/wp-content/uploads/2022/08/logo-1.png"
-    },
-    "TamilVaathiProvider": {
-        "name": "TamilVaath",
-        "url": "https://tamilvaathi.in",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://tamilvaathi.in&sz=128"
+        "icon": "https://multimovies.fun/wp-content/uploads/2023/04/multimovies.jpg"
     },
     "ShowFlixProvider": {
         "name": "ShowFlix",
@@ -64,13 +70,13 @@
     },
     "MoviesmodProvider": {
         "name": "MoviesMod",
-        "url": "https://moviesmod.co",
+        "url": "https://moviesmod.net.in",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://moviesmod.in&sz=128"
     },
     "CinevezProvider": {
         "name": "Cinevez",
-        "url": "https://cinevez.cfd",
+        "url": "https://cinevez.ch",
         "status": 3,
         "icon": "https://i.ibb.co/NZzqgF5/logo-1.png"
     },
@@ -153,7 +159,7 @@
         "name": "ToonsWorld",
         "url": "https://toonsworldindia.com",
         "status": 5,
-        "icon": "https://toonsworldindia.com/wp-content/uploads/2022/11/20220405_113656-1024x235-1.png"
+        "icon": "https://anime.toonsworld.me/wp-content/uploads/2023/02/20230219_123220.png"
     },
     "AniAcademyProvider": {
         "name": "AniAcademy",
@@ -185,9 +191,9 @@
     },
     "RareToonsProvider": {
         "name": "RareToons",
-        "url": "https://raretoonsindia.dev",
+        "url": "https://raretoonsindia.tv",
         "status": 5,
-        "icon": "https://raretoonshindi.net/wp-content/uploads/2020/09/mini-logo.png"
+        "icon": "https://raretoonsindia.tv/wp-content/uploads/2023/02/2023-LOGO.png"
     },
     "PureToonsProvider": {
         "name": "PureToons",
@@ -556,7 +562,7 @@
         "name": "Comick",
         "url": "https://comick.app",
         "status": 1,
-        "icon": "https://comick.app/static/unicorn-64.png"
+        "icon": "https://comick.app/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"
     },
     "MagComiProvider": {
         "name": "MagComi",
