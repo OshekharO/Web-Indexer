@@ -5,6 +5,12 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.rest&sz=128"
     },
+    "MoviesWebProvider": {
+        "name": "MoviesWeb",
+        "url": "https://movie-web.app/search/movie",
+        "status": 3,
+        "icon": "https://avatars.githubusercontent.com/u/121455091?s=200&v=4"
+    },
     "DesiCinemaProvider": {
         "name": "DesiCinema",
         "url": "https://desicinemas.tv",
