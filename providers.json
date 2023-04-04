@@ -16,6 +16,18 @@
         "status": 3,
         "icon": "https://123mkv.pk/wp-content/uploads/2022/06/123mkv.pk-footer.png"
     },
+    "Bolly4uProvider": {
+        "name": "Bolly4u",
+        "url": "https://bolly4u.online",
+        "status": 3,
+        "icon": "https://bolly4u.online/wp-content/themes/bolly4u/assets/logo-2x.png"
+    },
+    "MoviProvider": {
+        "name": "Movi",
+        "url": "https://www.movi.pk",
+        "status": 3,
+        "icon": "https://www.movi.pk/wp-content/uploads/2019/05/movipk-footer.png"
+    },
     "JazzStreamProvider": {
         "name": "JazzStream",
         "url": "https://jazzstream.pk",
