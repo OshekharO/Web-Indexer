@@ -225,6 +225,12 @@
         "status": 4,
         "icon": "https://avatars.githubusercontent.com/u/101597779?s=200&v=4"
     },
+    "ClipiousProvider": {
+        "name": "Clipious",
+        "url": "https://github.com/lamarios/clipious",
+        "status": 4,
+        "icon": "https://apt.izzysoft.de/fdroid/repo/com.github.lamarios.clipious/en-US/icon.png"
+    },
     "LibreTubeProvider": {
         "name": "LibreTube",
         "url": "https://github.com/libre-tube/LibreTube",
