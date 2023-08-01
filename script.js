@@ -80,9 +80,9 @@ $(document).ready(function () {
 
     _img.style.content = "";
 
-    _img.src = _thumbNail;
+    _img.src = _thumbNail || "https://placewaifu.com/image/200";
 
-    _img.alt = "Navigate";
+    _img.alt = "icon";
 
     _img.loading = "lazy"; // Add this line to enable lazy loading
 
