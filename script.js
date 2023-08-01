@@ -87,7 +87,7 @@ $(document).ready(function () {
     _img.loading = "lazy"; // Add this line to enable lazy loading
 
     _img.onerror = function () {
-     _img.src = "https://via.placeholder.com/150"; // Use a default image if loading fails
+     _img.src = "https://placewaifu.com/image/200"; // Use a default image if loading fails
     };
 
     //_img.src = "https://via.placeholder.com/150";
