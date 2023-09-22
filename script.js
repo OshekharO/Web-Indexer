@@ -36,7 +36,7 @@ $("input[name='filter']").on("change", function () {
 });
 
 $(document).ready(function () {
- $.getJSON("https://raw.githubusercontent.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
+ $.getJSON("https://cdn.jsdelivr.net/gh/OshekharO/Web-Indexer@main/providers.json", function (data) {
   status.innerHTML = "Parsing...";
 
   for (var key in data) {
