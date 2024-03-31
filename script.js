@@ -80,14 +80,14 @@ $(document).ready(function () {
 
     _img.style.content = "";
 
-    _img.src = _thumbNail || "https://placewaifu.com/image/200";
+    _img.src = _thumbNail || "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
 
     _img.alt = "icon";
 
     _img.loading = "lazy"; // Add this line to enable lazy loading
 
     _img.onerror = function () {
-     _img.src = "https://placewaifu.com/image/200"; // Use a default image if loading fails
+     _img.src = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png"; // Use a default image if loading fails
     };
 
     //_img.src = "https://via.placeholder.com/150";
