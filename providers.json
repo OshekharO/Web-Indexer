@@ -815,6 +815,18 @@
         "status": 0,
         "icon": "https://a-hentai.tv/wp-content/uploads/2020/08/cropped-a-hentai-logo.png"
     },
+    "SexTBProvider": {
+        "name": "SexTB",
+        "url": "https://sextb.net",
+        "status": 0,
+        "icon": "https://sextb.net/images/logo.png?v=1"
+    },
+    "SpankBangProvider": {
+        "name": "SpankBang",
+        "url": "https://spankbang.com",
+        "status": 0,
+        "icon": "https://assets.sb-cd.com/static/mobile/Images/logo_v5@2x.png"
+    },
     "ManytoonProvider": {
         "name": "Manytoon",
         "url": "https://manytoon.com",
@@ -906,10 +918,10 @@
         "status": 0,
         "icon": "https://i.ibb.co/ByyJ0gy/toongod-logo.png"
     },
-    "DragonTLProvider": {
-        "name": "DragonTL",
-        "url": "https://dragontranslation.com",
+    "NukiStreamProvider": {
+        "name": "NukiStream",
+        "url": "https://www.nukistream.com",
         "status": 0,
-        "icon": "https://i.ibb.co/7JYdxJj/DRAGON-GENERAL.png"
+        "icon": "https://www.nukistream.com/images/logo.png"
     }
  }
