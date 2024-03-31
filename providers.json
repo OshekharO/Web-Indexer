@@ -213,7 +213,7 @@
         "name": "Clipious",
         "url": "https://github.com/lamarios/clipious",
         "status": 4,
-        "icon": "https://apt.izzysoft.de/fdroid/repo/com.github.lamarios.clipious/en-US/icon.png"
+        "icon": "https://raw.githubusercontent.com/lamarios/clipious/master/assets/banner.png"
     },
     "LibreTubeProvider": {
         "name": "LibreTube",
@@ -235,7 +235,7 @@
     },
     "NewPipeProvider": {
         "name": "NewPipe",
-        "url": "https://github.com/polymorphicshade/NewPipe",
+        "url": "https://github.com/TeamNewPipe/NewPipe",
         "status": 4,
         "icon": "https://d4.alternativeto.net/AxWXrd9h2amWF4PHAFXKxRuWpOMOAzC5Z0xjPjSB9uE/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9uZXdwaXBlXzk1MzAwLnBuZw.png"
     },
@@ -251,11 +251,11 @@
         "status": 4,
         "icon": "https://img.icons8.com/doodle/480/000000/youtube-play--v1.png"
     },
-    "SkyTubeProvider": {
-        "name": "SkyTube",
-        "url": "https://github.com/SkyTubeTeam/SkyTube",
+    "SongTubeProvider": {
+        "name": "SongTube",
+        "url": "https://github.com/SongTube/SongTube-App",
         "status": 4,
-        "icon": "https://d4.alternativeto.net/E7MM7_FxRvNsLLkgLbIERFvjbAomduN41knWA7qlxWQ/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9za3l0dWJlXzE1OTA0Mi5wbmc.png"
+        "icon": "https://raw.githubusercontent.com/SongTube/SongTube-App/development/assets/images/logo.png"
     },
     "FreeTubeProvider": {
         "name": "FreeTube",
@@ -263,23 +263,17 @@
         "status": 4,
         "icon": "https://d4.alternativeto.net/KkMBv9B_9P1FqX3bAQtctUokliW48xGKe1j_Y5aIGjY/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9mcmVldHViZV8xMjcyMDYucG5n.png"
     },
-    "SftubeProvider": {
-        "name": "Sftube",
+    "PsTubeProvider": {
+        "name": "PsTube",
         "url": "https://github.com/prateekmedia/sftube",
         "status": 4,
-        "icon": "https://rawcdn.githack.com/prateekmedia/pstube/811d026fa7a2a3b101ba98a86bd4f42b3b809c11/assets/pstube.png"
+        "icon": "https://raw.githubusercontent.com/prateekmedia/pstube/main/assets/pstube.png"
     },
     "SmartTubeProvider": {
         "name": "SmartTube",
         "url": "https://github.com/yuliskov/SmartTubeNext",
         "status": 4,
-        "icon": "https://smarttubenext.com/wp-content/uploads/2021/09/cropped-smarttubenext-dark-logo.webp"
-    },
-    "BlackHoleProvider": {
-        "name": "BlackHole",
-        "url": "https://github.com/Sangwan5688/BlackHole",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/Sangwan5688/BlackHole/9849c52bb423c3ba78b9ffae237c7c845335a54a/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
     },
     "StealthProvider": {
         "name": "Stealth",
@@ -299,11 +293,11 @@
         "status": 4,
         "icon": "https://codeberg.org/husky/husky/raw/branch/master/husky/app/src/husky/res/mipmap-xxxhdpi/ic_launcher.png"
     },
-    "OpenCordProvider": {
-        "name": "OpenCord",
-        "url": "https://github.com/MateriiApps/OpenCord",
+    "GloomProvider": {
+        "name": "Gloom",
+        "url": "https://github.com/MateriiApps/Gloom",
         "status": 4,
-        "icon": "https://rawcdn.githack.com/MateriiApps/OpenCord/032c7c46726e065f202f0d57258ceabd96cb7449/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "icon": "https://user-images.githubusercontent.com/44992537/197398356-81d33bbf-35bc-43a6-96c1-002f1b1923cf.png"
     },
     "AliucordProvider": {
         "name": "Aliucord",
@@ -329,17 +323,11 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
-    "VibeProvider": {
-        "name": "Vibe",
+    "GyawunProvider": {
+        "name": "Gyawun",
         "url": "https://github.com/sheikhhaziq/vibemusic",
         "status": 4,
-        "icon": "https://rawcdn.githack.com/sheikhhaziq/vibemusic/cf4cfb468a17cbd22c45df3092c40e6f7da7ab32/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-     "ViMusicProvider": {
-        "name": "ViMusic",
-        "url": "https://github.com/vfsfitvnm/ViMusic",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/vfsfitvnm/ViMusic/964fa42a0f50b0b9834e67076c4c41170bfaacda/app/src/main/ic_launcher-playstore.png"
+        "icon": "https://raw.githubusercontent.com/jhelumcorp/gyawun/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     "InnerTuneProvider": {
         "name": "InnerTune",
@@ -359,41 +347,17 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/KRTirtho/spotube/0c54f2dcd4474b63db4c517b0e7332cbd3ab51e9/assets/spotube_banner.png"
     },
-    "YmusicProvider": {
-        "name": "Ymusic",
-        "url": "https://ymusic.io",
-        "status": 4,
-        "icon": "https://ymusic.io/favicons/apple-touch-icon.png"
-    },
     "CloudStreamProvider": {
         "name": "CS3",
         "url": "https://github.com/recloudstream/cloudstream",
         "status": 4,
         "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
     },
-     "NoFaselProvider": {
-        "name": "NoFasel",
-        "url": "https://github.com/N0-0NE-Dev/NoFasel",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/N0-0NE-Dev/NoFasel/d8a34ee553a0e70caed35d2b9e0bdf2a4415aef6/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    "SaikouProvider": {
-        "name": "Saikou",
-        "url": "https://github.com/saikou-app/saikou",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/saikou-app/saikou/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
     "AnimeScrapProvider": {
         "name": "AnimeScrap",
         "url": "https://github.com/fakeyatogod/AnimeScrap",
         "status": 4,
         "icon": "https://rawcdn.githack.com/fakeyatogod/AnimeScrap/8414a42ff53d502ed698ecc920807a6aef663e1f/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "AnimiteProvider": {
-        "name": "Animite",
-        "url": "https://github.com/imashnake0/Animite",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/imashnake0/Animite/78c856f7b39d3f501834c0dec4d3cfa2fbdfe2f3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
     },
     "LegadoProvider": {
         "name": "Legado",
@@ -424,23 +388,11 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/LNReader/lnreader/518f73f6fdeba3b3a562ac382143cc910fe58fe1/.github/readme-images/icon_alt.png"
     },
-    "YukinoProvider": {
-        "name": "Yukino",
-        "url": "https://github.com/rhygg/yukino-app/",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/rhygg/yukino-app/7c8543bdb19c248b51605d8699650118401c483d/resources/icon.png"
-    },
     "OtakuWorldProvider": {
         "name": "OtakuWorld",
         "url": "https://github.com/jakepurple13/OtakuWorld/",
         "status": 4,
         "icon": "https://rawcdn.githack.com/jakepurple13/OtakuWorld/d65269c3be5ba28564fbe4aa6cffa36d82e68e8c/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "AnimityProvider": {
-        "name": "Animity",
-        "url": "https://github.com/kl3jvi/animity",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/kl3jvi/animity/kotlin_app/app/src/main/ic_launcher-playstore.png"
     },
     "QuickNovelProvider": {
         "name": "QuickNovel",
@@ -458,19 +410,13 @@
         "name": "Neko",
         "url": "https://github.com/CarlosEsco/Neko",
         "status": 4,
-        "icon": "https://rawcdn.githack.com/CarlosEsco/Neko/master/.github/readme-images/logo.png"
+        "icon": "https://raw.githubusercontent.com/nekomangaorg/Neko/main/.github/assets/logo.png"
     },
     "TachiyomiProvider": {
         "name": "Tachiyomi",
         "url": "https://tachiyomi.org",
         "status": 4,
-        "icon": "https://tachiyomi.org/icons/logo.svg"
-    },
-    "StreamerProvider": {
-        "name": "Streamer",
-        "url": "https://github.com/StreamerApp/Streamer",
-        "status": 4,
-        "icon": "https://i.ibb.co/w48m3Z7/images.jpg"
+        "icon": "https://tachiyomi.org/favicon.ico"
     },
     "AniyomiProvider": {
         "name": "Aniyomi",
