@@ -436,6 +436,66 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/Lucchetto/SuperImage/8c4fb84ecff07219d6c5ec3bdba2ebc39ab58e17/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
+    "LingShotProvider": {
+        "name": "LingShot",
+        "url": "https://github.com/CharlesMoreira1/lingshot",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/CharlesMoreira1/lingshot/master/app/src/main/ic_launcher-playstore.png"
+    },
+    "TokeiiProvider": {
+        "name": "Tokeii",
+        "url": "https://github.com/Sovan22/Tokeii",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Sovan22/Tokeii/master/app/tokei_logo.jpeg"
+    },
+    "RiMusicProvider": {
+        "name": "RiMusic",
+        "url": "https://github.com/fast4x/RiMusic",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/fast4x/RiMusic/master/assets/design/app_logo.svg"
+    },
+    "WallFlowProvider": {
+        "name": "WallFlow",
+        "url": "https://github.com/ammargitham/WallFlow",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/ammargitham/WallFlow/main/.github/assets/icon.svg"
+    },
+    "NamidaProvider": {
+        "name": "Namida",
+        "url": "https://github.com/namidaco/namida",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/namidaco/namida/main/some%20stuff/namida.png"
+    },
+    "SpMpProvider": {
+        "name": "SpMp",
+        "url": "https://github.com/toasterofbread/spmp",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/toasterofbread/spmp/main/metadata/en-US/images/icon_round.png"
+    },
+    "SimpMusicProvider": {
+        "name": "SimpMusic",
+        "url": "https://github.com/maxrave-dev/SimpMusic",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/maxrave-dev/SimpMusic/jetpack_compose/app/src/main/ic_launcher-playstore.png"
+    },
+    "MiruProvider": {
+        "name": "Miru",
+        "url": "https://github.com/miru-project/miru-app",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
+    },
+    "IMGBoxProvider": {
+        "name": "IMGBox",
+        "url": "https://github.com/T8RIN/ImageToolbox",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/T8RIN/ImageToolbox/master/fastlane/metadata/android/en-US/images/logo/logo.png"
+    },
+    "OSSDSProvider": {
+        "name": "OSSDS",
+        "url": "https://github.com/Akylas/OSS-DocumentScanner",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/Akylas/OSS-DocumentScanner/master/App_Resources/documentscanner/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
     "ManganatoProvider": {
         "name": "Manganato",
         "url": "https://manganato.com",
@@ -514,9 +574,9 @@
     },
     "ComickProvider": {
         "name": "Comick",
-        "url": "https://comick.app",
+        "url": "https://comick.io",
         "status": 1,
-        "icon": "https://comick.app/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"
+        "icon": "https://comick.io/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"
     },
     "MagComiProvider": {
         "name": "MagComi",
