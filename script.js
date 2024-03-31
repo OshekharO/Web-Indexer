@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     var _status = value.status;
 
-    var _thumbNail = value.url.trimRight("/") + "/favicon.ico";
+    var _thumbNail = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
 
     //Use defaut image if missing
 
