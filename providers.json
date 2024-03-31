@@ -20,19 +20,19 @@
         "name": "Vumoo",
         "url": "https://vumoo.mx",
         "status": 3,
-        "icon": "https://123mkv.pk/wp-content/uploads/2022/06/123mkv.pk-footer.png"
+        "icon": "https://vumoo.mx/themes/movies/images/logo.png"
     },
     "BingeProvider": {
         "name": "Binge",
         "url": "https://binge.lol",
         "status": 3,
-        "icon": "https://bolly4u.online/wp-content/themes/bolly4u/assets/logo-2x.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://binge.lol&sz=128"
     },
     "NetfilmProvider": {
         "name": "Netfilm",
         "url": "https://netfilm.app",
         "status": 3,
-        "icon": "https://www.movi.pk/wp-content/uploads/2019/05/movipk-footer.png"
+        "icon": "https://netfilm.app/favicon.ico"
     },
     "OlamoviesProvider": {
         "name": "Olamovies",
@@ -50,7 +50,7 @@
         "name": "Tvids",
         "url": "https://www.tvids.net/",
         "status": 3,
-        "icon": "https://vegamovies.party/wp-content/uploads/2022/03/Logo.png"
+        "icon": "https://www.tvids.net/favicon.png"
     },
     "DramacoolProvider": {
         "name": "Dramacool",
