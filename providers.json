@@ -195,13 +195,8 @@
     "AnimeRushProvider": {
         "name": "AnimeRush",
         "url": "https://animerush.in",
-        "status": 5
-    },
-    "PureToonsProvider": {
-        "name": "PureToons",
-        "url": "https://puretoons.cc",
         "status": 5,
-        "icon": "https://i.postimg.cc/6pJyQs5y/20180505-125542.png"
+        "icon": "https://animerush.in/media/logos/AnimeRush/white_logo_7uBcZ6B.png"
     },
     "ReVancedProvider": {
         "name": "ReVanced",
