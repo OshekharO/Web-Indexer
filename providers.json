@@ -494,16 +494,18 @@
     "ManganatoProvider": {
         "name": "Manganato",
         "url": "https://manganato.com",
-        "status": 1
+        "status": 1,
+        "icon": "https://manganato.com/themes/hm/images/logo.png"
     },
     "MangadexProvider": {
         "name": "Mangadex",
         "url": "https://mangadex.org",
-        "status": 1
+        "status": 1,
+        "icon": "https://api.faviconkit.com/mangadex.com/144"
     },
     "MangafreakProvider": {
         "name": "Mangafreak",
-        "url": "https://w14.mangafreak.net",
+        "url": "https://ww1.mangafreak.me",
         "status": 1,
         "icon": "https://i.ibb.co/6J8kcnn/MF-5.png"
     },
@@ -525,18 +527,6 @@
         "status": 1,
         "icon": "https://readallcomics.com/wp-content/uploads/2020/09/logo-1.png"
     },
-    "ReadComicsProvider": {
-        "name": "ReadComics",
-        "url": "https://readcomicsfree.net",
-        "status": 1,
-        "icon": "https://readcomicsfree.net/images/sites/logo.png"
-    },
-    "ViewComicsProvider": {
-        "name": "ViewComics",
-        "url": "https://viewcomics.me",
-        "status": 1,
-        "icon": "https://viewcomics.me/images/sites/logo.png"
-    },
     "ComicOnlineProvider": {
         "name": "ComicOnlin",
         "url": "https://readcomiconline.li",
@@ -547,7 +537,7 @@
         "name": "ComicGardo",
         "url": "https://comic-gardo.com",
         "status": 1,
-        "icon": "https://cdn.comic-gardo.com/images/android-icon-192.png"
+        "icon": "https://api.faviconkit.com/comic-gardo.com/144"
     },
     "GetComicsProvider": {
         "name": "GetComics",
@@ -555,17 +545,11 @@
         "status": 1,
         "icon": "https://i0.wp.com/getcomics.info/share/uploads/2020/04/cropped-GetComics-Favicon.png?fit=192%2C192"
     },
-    "ComiCastleProvider": {
-        "name": "ComiCastle",
-        "url": "https://comicastle.org",
-        "status": 1,
-        "icon": "https://comicastle.org/upload/logo/cc__logo.png"
-    },
     "ComicExtraProvider": {
         "name": "ComicExtra",
-        "url": "https://ww1.comicextra.com",
+        "url": "https://comicextra.org",
         "status": 1,
-        "icon": "https://api.faviconkit.com/comicextra.com/144"
+        "icon": "https://api.faviconkit.com/comicextra.org/144"
     },
     "ComickProvider": {
         "name": "Comick",
@@ -583,7 +567,7 @@
         "name": "Mangapark",
         "url": "https://mangapark.net",
         "status": 1,
-        "icon": "https://styles.amarkcdn.com/img/mpark/favicon.ico?v1"
+        "icon": "https://api.faviconkit.com/mangapark.net/144"
     },
     "MangabuddyProvider": {
         "name": "Mangabuddy",
@@ -600,7 +584,8 @@
     "MangareaderProvider": {
         "name": "MangaRead",
         "url": "https://mangareader.to",
-        "status": 1
+        "status": 1,
+        "icon": "https://mangareader.to/images/logo.png"
     },
     "SukimaProvider": {
         "name": "Sukima",
@@ -611,24 +596,26 @@
     "NinemangaProvider": {
         "name": "Ninemanga",
         "url": "https://ninemanga.com",
-        "status": 1
+        "status": 1,
+        "icon": "https://ninemanga.com/files/mobile/img/touch-icon-iphone.png"
     },
     "ReadmProvider": {
         "name": "Readm",
-        "url": "https://readm.org",
-        "status": 1
+        "url": "https://readm.today",
+        "status": 1,
+        "icon": "https://api.faviconkit.com/readm.today/144"
     },
     "BatoProvider": {
         "name": "Bato",
         "url": "https://bato.to",
         "status": 1,
-        "icon": "https://styles.amarkcdn.com/img/btoto/logo-batoto.png"
+        "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
     },
-    "YipinXiaProvider": {
-        "name": "YipinXia",
-        "url": "https://i.yipinxia.net",
+    "NovelismProvider": {
+        "name": "Novelism",
+        "url": "https://novelism.jp",
         "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://i.yipinxia.net&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://novelism.jp&sz=128"
     },
     "MtlnationProvider": {
         "name": "Mtlnation",
@@ -639,12 +626,14 @@
     "ComrademaoProvider": {
         "name": "Comrademao",
         "url": "https://comrademao.com",
-        "status": 2
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://comrademao.com&sz=128"
     },
     "MtlnovelProvider": {
         "name": "Mtlnovel",
         "url": "https://www.mtlnovel.com",
-        "status": 2
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.mtlnovel.com&sz=128"
     },
     "NovelsemperorProvider": {
         "name": "NovelsEmp",
@@ -652,40 +641,35 @@
         "status": 2,
         "icon": "https://www.google.com/s2/favicons?domain=https://novelsemperor.com&sz=128"
     },
-    "mcmsscProvider": {
-        "name": "mcmssc",
-        "url": "https://m.mcmssc.com",
+    "ShencouProvider": {
+        "name": "Shencou",
+        "url": "https://m.shencou.com",
         "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://m.mcmssc.com&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://m.shencou.com&sz=128"
     },
-    "shu05Provider": {
-        "name": "shu05",
-        "url": "https://www.shu05.com",
+    "4kswProvider": {
+        "name": "4ksw",
+        "url": "http://www.4ksw.com",
         "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.shu05.com&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=http://www.4ksw.com&sz=128"
     },
-    "WnmtlProvider": {
-        "name": "Wnmtl",
-        "url": "https://www.wnmtl.org",
+    "Txt520Provider": {
+        "name": "Txt520",
+        "url": "https://www.txt520.com",
         "status": 2,
         "icon": "https://www.privacytools.io/img/apps/lesspass.svg"
     },
     "LnmtlProvider": {
         "name": "Lnmtl",
         "url": "https://lnmtl.com",
-        "status": 2
-    },
-    "DaonovelProvider": {
-        "name": "Daonovel",
-        "url": "https://daonovel.com",
         "status": 2,
-        "icon": "https://daonovel.com/wp-content/uploads/2019/02/cropped-favicon.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://lnmtl.com&sz=128"
     },
     "RanobesProvider": {
         "name": "Ranobes",
-        "url": "https://ranobes.net",
+        "url": "https://ranobes.top",
         "status": 2,
-        "icon": "https://api.faviconkit.com/ranobes.net/144"
+        "icon": "https://api.faviconkit.com/ranobes.top/144"
     },
     "BoxnovelProvider": {
         "name": "Boxnovel",
@@ -695,7 +679,7 @@
     },
     "ReadLNProvider": {
         "name": "ReadLN",
-        "url": "https://www.readlightnovel.me",
+        "url": "https://www.readlightnovel.today",
         "status": 2
     },
     "RoyalRoadProvider": {
@@ -706,31 +690,33 @@
     },
     "ReadwnProvider": {
         "name": "Readwn",
-        "url": "https://www.readwn.com",
-        "status": 2
+        "url": "https://www.wuxiabox.com",
+        "status": 2,
+        "icon": "https://i.ibb.co/7nzMk2x/mtlnation-mobile-logo.png"
     },
     "FeiazwProvider": {
         "name": "Feiazw",
-        "url": "https://m.feiazw.com",
+        "url": "https://m.feisxs.com",
         "status": 2,
         "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
     },
     "Ffxs8Provider": {
         "name": "Ffxs8",
         "url": "http://www.ffxs8.com",
-        "status": 2
-    },
-    "60ksProvider": {
-        "name": "60ks",
-        "url": "http://www.60ks.cc",
         "status": 2,
-        "icon": "https://api.faviconkit.com/m.60ks.cc/144"
+        "icon": "https://i.ibb.co/7nzMk2x/mtlnation-mobile-logo.png"
     },
-    "soxsccProvider": {
-        "name": "soxscc",
-        "url": "https://m.soxscc.net",
+    "38xsProvider": {
+        "name": "38xs",
+        "url": "https://m.38xs.com",
         "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://m.soxscc.net&sz=128"
+        "icon": "https://api.faviconkit.com/m.38xs.com/144"
+    },
+    "Wtrlabrovider": {
+        "name": "WTR LAB",
+        "url": "https://wtr-lab.com",
+        "status": 2,
+        "icon": "https://www.google.com/s2/favicons?domain=https://wtr-lab.com&sz=128"
     },
     "BixiangeProvider": {
         "name": "Bixiange",
@@ -740,15 +726,15 @@
     },
     "UukanshuProvider": {
         "name": "Uukanshu",
-        "url": "https://sj.uukanshu.com",
+        "url": "https://sj.zhaoshuyuan.com",
         "status": 2,
-        "icon": "https://img.uukanshu.com/static/m/images/logo.png"
+        "icon": "https://img.zhaoshuyuan.com/static/m/images/logo.png"
     },
-    "ZS5Provider": {
-        "name": "ZS5",
-        "url": "https://m.zs5.cc",
+    "PiaotiaProvider": {
+        "name": "Piaotia",
+        "url": "https://www.piaotia.com",
         "status": 2,
-        "icon": "https://api.faviconkit.com/m.zs5.cc/144"
+        "icon": "https://api.faviconkit.com/www.piaotia.com/144"
     },
     "TrxsProvider": {
         "name": "Trxs",
@@ -798,9 +784,9 @@
         "status": 2,
         "icon": "https://mangaplus.shueisha.co.jp/icn/app_icon_192.png"
     },
-    "BiqusaProvider": {
-        "name": "Biqusa",
-        "url": "https://m.biqusa.org",
+    "Jpxs123Provider": {
+        "name": "Jpxs123",
+        "url": "https://jpxs123.com",
         "status": 2,
         "icon": "https://i.ibb.co/djJ6CpX/144-1.png"
     },
