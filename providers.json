@@ -14,7 +14,8 @@
     "KisskhProvider": {
         "name": "Kisskh",
         "url": "https://kisskh.co",
-        "status": 3
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128"
     },
     "VumooProvider": {
         "name": "Vumoo",
@@ -48,9 +49,9 @@
     },
     "TvidsProvider": {
         "name": "Tvids",
-        "url": "https://www.tvids.net/",
+        "url": "https://www.tvids.net",
         "status": 3,
-        "icon": "https://www.tvids.net/favicon.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.tvids.net&sz=128"
     },
     "DramacoolProvider": {
         "name": "Dramacool",
@@ -67,7 +68,8 @@
     "ShowFlixProvider": {
         "name": "ShowFlix",
         "url": "https://showflix.xyz",
-        "status": 3
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://showflix.xyz&sz=128"
     },
     "AdramasProvider": {
         "name": "Adramas",
@@ -84,7 +86,8 @@
     "DramaniceProvider": {
         "name": "Dramanice",
         "url": "https://ww3.dramanice.video",
-        "status": 3
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://ww3.dramanice.video&sz=128"
     },
     "GimyProvider": {
         "name": "Gimy",
@@ -106,9 +109,9 @@
     },
     "MkvcinemasProvider": {
         "name": "Mkvcinemas",
-        "url": "https://mkvcinemas.tokyo",
+        "url": "https://mkvcinemas.nexus",
         "status": 3,
-        "icon": "https://mkvcinemas.tokyo/media/2019/05/mkvfa.png"
+        "icon": "https://mkvcinemas.nexus/media/2019/05/mkvfa.png"
     },
     "HHDmoviesProvider": {
         "name": "HHDmovies",
@@ -126,7 +129,7 @@
         "name": "Gogoanime",
         "url": "https://gogotaku.info",
         "status": 5,
-        "icon": "https://gogotaku.info/img/icon/logo.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://gogotaku.info&sz=128"
     },
     "HianimeProvider": {
         "name": "Hianime",
@@ -155,7 +158,8 @@
     "WCOStreamProvider": {
         "name": "WCOStream",
         "url": "https://m.wcostream.tv",
-        "status": 5
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://m.wcostream.tv&sz=128"
     },
     "DeadtoonsProvider": {
         "name": "Deadtoons",
@@ -166,7 +170,8 @@
     "1xanimeProvider": {
         "name": "1xanime",
         "url": "https://www.1xanime.in",
-        "status": 5
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.1xanime.in&sz=128"
     },
     "ToonWorldProvider": {
         "name": "ToonWorld",
@@ -375,7 +380,8 @@
     "ShosetsuProvider": {
         "name": "Shosetsu",
         "url": "https://shosetsu.app",
-        "status": 4
+        "status": 4,
+        "icon": "https://www.google.com/s2/favicons?domain=https://shosetsu.app&sz=128"
     },
     "LNReaderProvider": {
         "name": "LNReader",
