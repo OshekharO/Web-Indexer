@@ -275,6 +275,36 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
     },
+    "NagramProvider": {
+        "name": "Nagram",
+        "url": "https://github.com/NextAlone/Nagram",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/NextAlone/Nagram/main/TMessagesProj/src/main/ic_launcher_nagram_darkgreen-playstore.png"
+    },
+    "NullgramProvider": {
+        "name": "Nullgram",
+        "url": "https://github.com/qwq233/Nullgram",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/qwq233/Nullgram/master/TMessagesProj/src/main/res/drawable-xxxhdpi/ic_launcher_dr.png"
+    },
+    "NekogramProvider": {
+        "name": "Nekogram",
+        "url": "https://github.com/Nekogram/Nekogram",
+        "status": 4,
+        "icon": "https://nekogram.app/logo.png"
+    },
+    "exteraGramProvider": {
+        "name": "exteraGram",
+        "url": "https://exteragram.app",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/exteraSquad/exteraGram/main/TMessagesProj/src/main/res/drawable-xxxhdpi/ic_launcher_dr.png"
+    },
+    "CherrygramProvider": {
+        "name": "Cherrygram",
+        "url": "https://github.com/arsLan4k1390/Cherrygram",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/arsLan4k1390/Cherrygram/main/TMessagesProj/src/main/res/mipmap-xxxhdpi/icon_launcher_cherry.png"
+    },
     "StealthProvider": {
         "name": "Stealth",
         "url": "https://gitlab.com/cosmosapps/stealth",
