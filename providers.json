@@ -159,7 +159,7 @@
         "name": "Deadtoons",
         "url": "https://deadtoons.online",
         "status": 5,
-        "icon": "https://deadtoons.online/wp-content/uploads/2023/11/Bnu6Tln.webp"
+        "icon": "https://image.winudf.com/v2/image1/Y29tLmR0aXguZGVhZHRvb25zZHRpX2ljb25fMTU4MDM0NTcyM18wOTI/icon.webp?w=212&fakeurl=1&type=.webp"
     },
     "1xanimeProvider": {
         "name": "1xanime",
@@ -189,7 +189,7 @@
         "name": "CoolsAnime",
         "url": "https://coolsanime.me",
         "status": 5,
-        "icon": "https://coolsanime.me/wp-content/uploads/2022/03/logo.jpg"
+        "icon": "https://coolsanime.me/img/logo.webp"
     },
     "AnimeRushProvider": {
         "name": "AnimeRush",
@@ -461,12 +461,6 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/Lucchetto/SuperImage/8c4fb84ecff07219d6c5ec3bdba2ebc39ab58e17/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
-    "LingShotProvider": {
-        "name": "LingShot",
-        "url": "https://github.com/CharlesMoreira1/lingshot",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/CharlesMoreira1/lingshot/master/app/src/main/ic_launcher-playstore.png"
-    },
     "TokeiiProvider": {
         "name": "Tokeii",
         "url": "https://github.com/Sovan22/Tokeii",
@@ -647,9 +641,9 @@
         "status": 2,
         "icon": "https://www.google.com/s2/favicons?domain=https://novelism.jp&sz=128"
     },
-    "MtlnationProvider": {
-        "name": "Mtlnation",
-        "url": "https://mtlnation.com",
+    "MtlarchiveProvider": {
+        "name": "Mtlarchive",
+        "url": "https://mtlarchive.com",
         "status": 2,
         "icon": "https://i.ibb.co/7nzMk2x/mtlnation-mobile-logo.png"
     },
