@@ -1,15 +1,21 @@
 {
     "PrmoviesProvider": {
         "name": "Prmovies",
-        "url": "https://prmovies.loan",
+        "url": "https://prmovies.date",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.loan&sz=128"
     },
+    "SudoFlixProvider": {
+        "name": "SudoFlix",
+        "url": "https://sudo-flix.lol",
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://sudo-flix.lol&sz=128"
+    },
     "VegaProvider": {
         "name": "VegaMovies",
-        "url": "https://vegamovies.vet",
+        "url": "https://vegamovies.vg",
         "status": 3,
-        "icon": "https://vegamovies.vet/templates/vegamovies/images/vegav2.png"
+        "icon": "https://vegamovies.vg/templates/vegamovies/images/vegav2.png"
     },
     "KisskhProvider": {
         "name": "Kisskh",
@@ -29,23 +35,17 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://binge.lol&sz=128"
     },
-    "NetfilmProvider": {
-        "name": "Netfilm",
-        "url": "https://netfilm.app",
-        "status": 3,
-        "icon": "https://netfilm.app/favicon.ico"
-    },
     "OlamoviesProvider": {
         "name": "Olamovies",
-        "url": "https://olamovies.icu",
+        "url": "https://olamovies.rent",
         "status": 3,
         "icon": "https://omzone.b-cdn.net/wp-content/uploads/2020/05/logo@2x.png"
     },
     "HDMovieHubProvider": {
         "name": "HDMovieHub",
-        "url": "https://hdmoviehub.cloud",
+        "url": "https://hdmoviehub.us",
         "status": 3,
-        "icon": "https://hdmoviehub.cloud/wp-content/uploads/2022/10/cropped-cropped-HUB-Flix_page-0001-removebg-preview.png"
+        "icon": "https://hdmoviehub.us/wp-content/uploads/2022/10/cropped-cropped-HUB-Flix_page-0001-removebg-preview.png"
     },
     "TvidsProvider": {
         "name": "Tvids",
@@ -91,9 +91,9 @@
     },
     "GimyProvider": {
         "name": "Gimy",
-        "url": "https://gimy.is",
+        "url": "https://gimy.news",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://gimy.is&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://gimy.news&sz=128"
     },
     "CinevezProvider": {
         "name": "Cinevez",
@@ -101,17 +101,11 @@
         "status": 3,
         "icon": "https://i.ibb.co/NZzqgF5/logo-1.png"
     },
-    "KisstvshowProvider": {
-        "name": "Kisstvshow",
-        "url": "https://kisstvshow.to",
-        "status": 3,
-        "icon": "https://kisstvshow.to/Content/images/favicon.ico?v=1.1"
-    },
     "MkvcinemasProvider": {
         "name": "Mkvcinemas",
-        "url": "https://mkvcinemas.nexus",
+        "url": "https://mkvcinemas.cymru",
         "status": 3,
-        "icon": "https://mkvcinemas.nexus/media/2019/05/mkvfa.png"
+        "icon": "https://mkvcinemas.cymru/media/2019/05/mkvfa.png"
     },
     "HHDmoviesProvider": {
         "name": "HHDmovies",
@@ -120,10 +114,10 @@
         "icon": "https://hhdmovies.baby/wp-content/uploads/2024/03/HHHHDDDDD-1.png"
     },
     "DesiremoviesProvider": {
-        "name": "Desiremovies",
-        "url": "https://desiremovies.dev",
+        "name": "DMovies",
+        "url": "https://desiremovies.nexus",
         "status": 3,
-        "icon": "https://desiremovies.dev/wp-content/uploads/2024/03/Desiremovies.zip-1-1-1-1024x108.png"
+        "icon": "https://desiremovies.nexus/wp-content/uploads/2024/03/Desiremovies.zip-1-1-1-1024x108.png"
     },
     "GogoanimeProvider": {
         "name": "Gogoanime",
@@ -137,11 +131,11 @@
         "status": 5,
         "icon": "https://hianime.to/images/logo.png?v=0.1"
     },
-    "NineAnimeProvider": {
-        "name": "9anime",
-        "url": "https://9anime.me",
+    "AniwaveProvider": {
+        "name": "Aniwave",
+        "url": "https://aniwave.live",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://9anime.me&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://aniwave.live&sz=128"
     },
     "KickassanimesProvider": {
         "name": "KAA",
