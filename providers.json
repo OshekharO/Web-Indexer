@@ -718,6 +718,30 @@
         "status": 2,
         "icon": "https://i.ibb.co/7nzMk2x/mtlnation-mobile-logo.png"
     },
+    "xs777Provider": {
+        "name": "xs777",
+        "url": "https://m.xs777.org",
+        "status": 2,
+        "icon": "https://www.3qdu.com/modules/article/images/nocover.jpg"
+    },
+    "3qduProvider": {
+        "name": "3qdu",
+        "url": "https://sk.3qdu.net",
+        "status": 2,
+        "icon": "https://www.3qdu.com/modules/article/images/nocover.jpg"
+    },
+    "BiquluoProvider": {
+        "name": "Biquluo",
+        "url": "https://wap.biquluo.info",
+        "status": 2,
+        "icon": "https://wap.biquluo.info/images/logo.png"
+    },
+    "FunsProvider": {
+        "name": "Funs",
+        "url": "https://funs.me",
+        "status": 2,
+        "icon": "https://funs.me/image/logom.png"
+    },
     "FeiazwProvider": {
         "name": "Feiazw",
         "url": "https://m.feisxs.com",
