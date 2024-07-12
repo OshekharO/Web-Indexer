@@ -78,7 +78,7 @@ li {
 }
 
 .radio-container {
- display: flex;
+ 
  overflow-x: auto;
  justify-content: space-between;
  align-items: center;
