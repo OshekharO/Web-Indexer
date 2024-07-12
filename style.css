@@ -83,6 +83,8 @@ li {
  justify-content: space-between;
  align-items: center;
  padding: 0 10px;
+ display: -webkit-box!important;
+ scrollbar-width: none;
 }
 
 .radio-container input[type="radio"] {
