@@ -78,12 +78,11 @@ li {
 }
 
 .radio-container {
- 
- overflow-x: auto;
+ display: flex;
+ overflow-x: scroll;
  justify-content: space-between;
  align-items: center;
  padding: 0 10px;
- display: -webkit-box!important;
  scrollbar-width: none;
 }
 
