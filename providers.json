@@ -1,21 +1,21 @@
 {
     "PrmoviesProvider": {
-        "name": "Prmovies",
-        "url": "https://prmovies.agency",
+        "name": "PRMovies",
+        "url": "https://prmovies.pw",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.agency&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.pw&sz=128"
     },
-    "SudoFlixProvider": {
-        "name": "SudoFlix",
-        "url": "https://sudo-flix.lol",
+    "VidBingeProvider": {
+        "name": "VidBinge",
+        "url": "https://www.vidbinge.com",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://sudo-flix.lol&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.vidbinge.com&sz=128"
     },
     "VegaProvider": {
         "name": "VegaMovies",
-        "url": "https://vegamovies.lt",
+        "url": "https://vegamovies.soy",
         "status": 3,
-        "icon": "https://vegamovies.lt/templates/vegamovies/images/vegav2.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://vegamovies.soy&sz=128"
     },
     "KisskhProvider": {
         "name": "Kisskh",
@@ -35,35 +35,17 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://binge.lol&sz=128"
     },
-    "OlamoviesProvider": {
-        "name": "Olamovies",
-        "url": "https://olamovies.rent",
-        "status": 3,
-        "icon": "https://omzone.b-cdn.net/wp-content/uploads/2020/05/logo@2x.png"
-    },
-    "HDMovieHubProvider": {
-        "name": "HDMovieHub",
-        "url": "https://hdmoviehubs.net",
-        "status": 3,
-        "icon": "https://hdmoviehubs.net/wp-content/uploads/2022/10/cropped-cropped-HUB-Flix_page-0001-removebg-preview.png"
-    },
     "TvidsProvider": {
         "name": "Tvids",
         "url": "https://www.tvids.net",
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://www.tvids.net&sz=128"
     },
-    "DramacoolProvider": {
-        "name": "Dramacool",
-        "url": "https://dramacool.sh",
+    "MyAsianTvProvider": {
+        "name": "MyAsianTv",
+        "url": "https://myasiantv.ac",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://dramacool.sh&sz=128"
-    },
-    "WatchasiaProvider": {
-        "name": "Watchasia",
-        "url": "https://watchasia.to",
-        "status": 3,
-        "icon": "https://watchasian.pl/assets/images/mobi/logo.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://myasiantv.ac&sz=128"
     },
     "ShowFlixProvider": {
         "name": "ShowFlix",
@@ -71,11 +53,11 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://showflix.xyz&sz=128"
     },
-    "AdramasProvider": {
-        "name": "Adramas",
-        "url": "https://www1.adramas.se",
+    "FreekProvider": {
+        "name": "Freek",
+        "url": "https://freek.to",
         "status": 3,
-        "icon": "https://www1.adramas.se/skin/gold/images/logo.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://freek.to&sz=128"
     },
     "AsianflixProvider": {
         "name": "Asianflix",
@@ -83,41 +65,23 @@
         "status": 3,
         "icon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyT55NwmNqgOqqs6y4HQS0zGl2HILpByHZGochf1npiuoDKxbeZvy2b8Ys6iu6xkpbTl0KaMVdOPT5W3k4Hi9CzHityuU99Iec6Xa2ley4wgZ7pdyx2aqyOXbaZUxGpi_PVvTdJHoMbue7oZ0H2gSXbeXe82MhE_jxZLvft-VexOx52oJr1lKBwCvKUQJ6/s1600/icon-log.png"
     },
-    "DramaniceProvider": {
-        "name": "Dramanice",
-        "url": "https://ww3.dramanice.video",
+    "456movieProvider": {
+        "name": "456movie",
+        "url": "https://456movie.com",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://ww3.dramanice.video&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://456movie.com&sz=128"
     },
-    "GimyProvider": {
-        "name": "Gimy",
-        "url": "https://gimy.news",
+    "IOSMirrorProvider": {
+        "name": "IOSMirror",
+        "url": "https://iosmirror.cc/home",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://gimy.news&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://iosmirror.cc&sz=128"
     },
-    "CinevezProvider": {
-        "name": "Cinevez",
-        "url": "https://www.cinevez.pm",
+    "M4ufreeProvider": {
+        "name": "M4ufree",
+        "url": "https://m4ufree.se",
         "status": 3,
-        "icon": "https://i.ibb.co/NZzqgF5/logo-1.png"
-    },
-    "MkvcinemasProvider": {
-        "name": "Mkvcinemas",
-        "url": "https://mkvcinemas.cymru",
-        "status": 3,
-        "icon": "https://mkvcinemas.cymru/media/2019/05/mkvfa.png"
-    },
-    "HHDmoviesProvider": {
-        "name": "HHDmovies",
-        "url": "https://hhdmovies.skin",
-        "status": 3,
-        "icon": "https://hhdmovies.skin/wp-content/uploads/2024/03/HHHHDDDDD-1.png"
-    },
-    "DesiremoviesProvider": {
-        "name": "DMovies",
-        "url": "https://desiremovies.fyi",
-        "status": 3,
-        "icon": "https://desiremovies.nexus/wp-content/uploads/2024/03/Desiremovies.zip-1-1-1-1024x108.png"
+        "icon": "https://www.google.com/s2/favicons?domain=https://m4ufree.se&sz=128"
     },
     "GogoanimeProvider": {
         "name": "Gogoanime",
@@ -131,17 +95,17 @@
         "status": 5,
         "icon": "https://hianime.to/images/logo.png?v=0.1"
     },
-    "AniwaveProvider": {
-        "name": "Aniwave",
-        "url": "https://aniwave.live",
+    "KaidoProvider": {
+        "name": "Kaido",
+        "url": "https://kaido.to",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://aniwave.live&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://kaido.to&sz=128"
     },
     "KickassanimesProvider": {
         "name": "KAA",
-        "url": "https://kickassanimes.info",
+        "url": "https://kaas.ro",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://kickassanimes.info&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://kaas.ro&sz=128"
     },
     "AnimepaheProvider": {
         "name": "AnimePahe",
@@ -149,35 +113,23 @@
         "status": 5,
         "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.ru&sz=128"
     },
-    "WCOStreamProvider": {
-        "name": "WCOStream",
-        "url": "https://m.wcostream.tv",
+    "MiruroProvider": {
+        "name": "Miruro",
+        "url": "https://www.miruro.tv",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://m.wcostream.tv&sz=128"
-    },
-    "DeadtoonsProvider": {
-        "name": "Deadtoons",
-        "url": "https://deadtoons.pro",
-        "status": 5,
-        "icon": "https://image.winudf.com/v2/image1/Y29tLmR0aXguZGVhZHRvb25zZHRpX2ljb25fMTU4MDM0NTcyM18wOTI/icon.webp?w=212&fakeurl=1&type=.webp"
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
     },
     "ToonWorldProvider": {
         "name": "ToonWorld",
         "url": "https://toonworld4all.me",
         "status": 5,
-        "icon": "https://toonworld4all.me/wp-content/uploads/2020/04/cropped-l_DmyToF-192x192.png"
+        "icon": "https://toonworld4all.me/wp-content/uploads/2020/02/Toonworld4all-logo.png"
     },
     "AniAcademyProvider": {
         "name": "AniAcademy",
         "url": "https://animeacademy.in",
         "status": 5,
         "icon": "https://animeacademy.in/wp-content/uploads/2019/12/ANIMEACADEMY.IN-1-250x83.png"
-    },
-    "4animeProvider": {
-        "name": "4anime",
-        "url": "https://4anime.gg",
-        "status": 5,
-        "icon": "https://4anime.gg/images/logo.png"
     },
     "CoolsAnimeProvider": {
         "name": "CoolsAnime",
@@ -225,7 +177,7 @@
         "name": "NewPipe",
         "url": "https://github.com/TeamNewPipe/NewPipe",
         "status": 4,
-        "icon": "https://d4.alternativeto.net/AxWXrd9h2amWF4PHAFXKxRuWpOMOAzC5Z0xjPjSB9uE/rs:fill:140:140:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9uZXdwaXBlXzk1MzAwLnBuZw.png"
+        "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/refs/heads/dev/assets/new_pipe_icon_5.png"
     },
     "uYouPlusProvider": {
         "name": "uYouPlus",
@@ -279,7 +231,7 @@
         "name": "Nekogram",
         "url": "https://github.com/Nekogram/Nekogram",
         "status": 4,
-        "icon": "https://nekogram.app/logo.png"
+        "icon": "https://nekogram.app/logo.webp"
     },
     "exteraGramProvider": {
         "name": "exteraGram",
@@ -291,13 +243,7 @@
         "name": "Cherrygram",
         "url": "https://github.com/arsLan4k1390/Cherrygram",
         "status": 4,
-        "icon": "https://raw.githubusercontent.com/arsLan4k1390/Cherrygram/main/TMessagesProj/src/main/res/mipmap-xxxhdpi/icon_launcher_cherry.png"
-    },
-    "StealthProvider": {
-        "name": "Stealth",
-        "url": "https://gitlab.com/cosmosapps/stealth",
-        "status": 4,
-        "icon": "https://gitlab.com/uploads/-/system/project/avatar/25469848/icon.png?width=64"
+        "icon": "https://raw.githubusercontent.com/arsLan4k1390/Cherrygram/refs/heads/main/TMessagesProj/src/main/res/mipmap-xxxhdpi/icon_launcher_cherry.webp"
     },
     "TuskyProvider": {
         "name": "Tusky",
