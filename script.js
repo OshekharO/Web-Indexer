@@ -135,13 +135,6 @@ $(document).ready(function () {
     var _statusColor = "#eee";
 
     switch (_status) {
-     case 0:
-      _statusText = "NSFW";
-
-      _statusColor = "#e57373";
-
-      break;
-
      case 1:
       _statusText = "MANGA";
 
