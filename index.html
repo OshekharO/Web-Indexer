@@ -34,14 +34,45 @@
    </div>
   </div>
 
-<div class="radio-container">
-  <input type="radio" name="filter" value="all" checked>All</input>
-  <input type="radio" name="filter" value="manga">Manga</input>
-  <input type="radio" name="filter" value="ln">LN</input>
-  <input type="radio" name="filter" value="movie">Movie</input>
-  <input type="radio" name="filter" value="app">App</input>
-  <input type="radio" name="filter" value="anime">Anime</input>
-</div>
+<ul id="filter3" class="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4 border border-gray-400">
+    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+        <input type="radio" name="filter3" id="filter3-0" class="sr-only" value="all" checked>
+        <label for="filter3-0" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+            All
+        </label>
+        <div aria-hidden="true" class="filter-active"></div>
+    </li>
+    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+        <input type="radio" name="filter3" id="filter3-1" class="sr-only" value="manga">
+        <label for="filter3-1" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+            Manga
+        </label>
+    </li>
+    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+        <input type="radio" name="filter3" id="filter3-2" class="sr-only" value="ln">
+        <label for="filter3-2" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+            LN
+        </label>
+    </li>
+    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+        <input type="radio" name="filter3" id="filter3-3" class="sr-only" value="movie">
+        <label for="filter3-3" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+            Movie
+        </label>
+    </li>
+    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+        <input type="radio" name="filter3" id="filter3-4" class="sr-only" value="app">
+        <label for="filter3-4" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+            App
+        </label>
+    </li>
+    <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+        <input type="radio" name="filter3" id="filter3-5" class="sr-only" value="anime">
+        <label for="filter3-5" class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
+            Anime
+        </label>
+    </li>
+</ul>
 
 <div style="background: #222; padding: 16px 0px;">
    <ul id="siteList" style="display: flex; padding: 8px; flex-wrap: wrap; justify-content: center;"></ul>
