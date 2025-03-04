@@ -1,228 +1,128 @@
-var status = document.getElementById("status");
+document.addEventListener("DOMContentLoaded", function () {
+    const status = document.getElementById("status");
+    const mainContainer = document.getElementById("siteList");
+    let filter = "all";
 
-var mainContainer = document.getElementById("siteList");
+    status.innerHTML = "Fetching...";
 
-var filter = "all";
+    function filterProviders() {
+        document.querySelectorAll("li").forEach(function (li) {
+            const siteValues = li.querySelector(".siteValues").textContent.toLowerCase();
+            if (filter === "all" || siteValues.includes(filter.toLowerCase())) {
+                li.style.display = "";
+            } else {
+                li.style.display = "none";
+            }
+        });
+    }
 
-status.innerHTML = "Fetching...";
+    document.querySelectorAll("input[name='filter']").forEach(function (radio) {
+        radio.addEventListener("change", function () {
+            filter = this.value;
+            filterProviders();
+        });
+    });
 
-function filterProviders() {
- $("li").each(function () {
-  if (filter === "all") {
-   $(this).show();
-  } else if (
-   $(this)
-    .find(".siteValues")
+    fetch("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json")
+        .then(response => response.json())
+        .then(data => {
+            status.innerHTML = "Parsing...";
 
-    .text()
+            Object.keys(data).forEach(key => {
+                status.innerHTML = "Reading..." + key;
+                const value = data[key];
 
-    .toLowerCase()
+                if (value.url === "NONE") continue;
 
-    .indexOf(filter.toLowerCase()) === -1
-  ) {
-   $(this).hide();
-  } else {
-   $(this).show();
-  }
- });
-}
+                const _status = value.status;
+                let _thumbNail = value.icon || "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
 
-$("input[name='filter']").on("change", function () {
- filter = this.value;
+                const node = document.createElement("li");
+                const _divMain = document.createElement("div");
+                const _divImg = document.createElement("div");
+                const _divText = document.createElement("div");
+                const _img = document.createElement("img");
 
- filterProviders();
+                _img.className = "thumbnail";
+                _img.src = _thumbNail;
+                _img.alt = "icon";
+                _img.loading = "lazy";
+                _img.onerror = function () {
+                    _img.src = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
+                };
+
+                _divImg.className = "divthumb";
+                _divImg.appendChild(_img);
+                _divMain.appendChild(_divImg);
+
+                const _a = document.createElement("a");
+                _a.href = value.url;
+                _a.textContent = value.name;
+                _a.title = key;
+                _a.style.color = "#fff";
+                _a.className = "siteName";
+                _divText.appendChild(_a);
+
+                const _p = document.createElement("p");
+                _p.textContent = "Type: ";
+                _p.className = "siteLabels";
+
+                const _span = document.createElement("span");
+                _span.className = "siteValues";
+                let _statusText = "Unknown";
+                let _statusColor = "#eee";
+
+                switch (_status) {
+                    case 1:
+                        _statusText = "MANGA";
+                        _statusColor = "#8bc34a";
+                        break;
+                    case 2:
+                        _statusText = "LN";
+                        _statusColor = "#ffc107";
+                        break;
+                    case 3:
+                        _statusText = "MOVIE";
+                        _statusColor = "#64b5f6";
+                        break;
+                    case 4:
+                        _statusText = "APP";
+                        _statusColor = "#64b5f6";
+                        break;
+                    case 5:
+                        _statusText = "ANIME";
+                        _statusColor = "#64b5f6";
+                        break;
+                }
+
+                _span.style.color = _statusColor;
+                _span.textContent = _statusText;
+                _p.appendChild(_span);
+                _divText.appendChild(_p);
+
+                if (value.type) {
+                    const _pType = document.createElement("p");
+                    _pType.textContent = "Type: ";
+                    _pType.className = "siteLabels";
+
+                    const _spanType = document.createElement("span");
+                    _spanType.className = "siteValues";
+                    _spanType.textContent = value.type;
+                    _pType.appendChild(_spanType);
+                    _divText.appendChild(_pType);
+                }
+
+                _divText.className = "divcaption";
+                _divMain.appendChild(_divText);
+                _divMain.className = "divMainContainer";
+                node.appendChild(_divMain);
+                mainContainer.appendChild(node);
+            });
+
+            status.innerHTML = "Done loading!";
+        })
+        .catch(error => {
+            console.error("An error has occurred:", error);
+            status.innerHTML = "Error occurred!";
+        });
 });
-
-$(document).ready(function () {
- $.getJSON("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
-  status.innerHTML = "Parsing...";
-
-  for (var key in data) {
-
-   status.innerHTML = "Reading..." + key;
-
-   if (data.hasOwnProperty(key)) {
-    var value = data[key];
-
-    if (value.url == "NONE") {
-     continue;
-    }
-
-    var _status = value.status;
-
-    var _thumbNail = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
-
-    //Use defaut image if missing
-
-    if (value.hasOwnProperty("icon")) {
-     _thumbNail = value.icon;
-    }
-
-    //Create <li> node
-
-    var node = document.createElement("li");
-
-    //Add <div> to <li> node for items
-
-    var _divMain = document.createElement("div"); //group below divs
-
-    var _divImg = document.createElement("div"); //for image Thumbnail
-
-    var _divText = document.createElement("div"); //for sitename + status
-
-    var _img = document.createElement("img"); //Image thumbnail
-
-    //Add image
-
-    _img.className = "thumbnail";
-
-    _img.style.content = "";
-
-    _img.src = _thumbNail || "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
-
-    _img.alt = "icon";
-
-    _img.loading = "lazy"; // Add this line to enable lazy loading
-
-    _img.onerror = function () {
-     _img.src = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png"; // Use a default image if loading fails
-    };
-
-    //_img.src = "https://via.placeholder.com/150";
-
-    //_img.src = value.url.trimRight("/") + "/favicon.ico";
-
-    //Modify _divImg
-
-    _divImg.className = "divthumb";
-
-    _divImg.appendChild(_img);
-
-    _divMain.appendChild(_divImg);
-
-    //Add siteName hyperlink text
-
-    var _a = document.createElement("a");
-
-    _a.setAttribute("href", value.url);
-
-    _a.innerHTML = value.name;
-
-    _a.title = key;
-
-    _a.style.color = "#fff";
-
-    _a.className = "siteName";
-
-    _divText.appendChild(_a);
-
-    //Add status label
-
-    var _p = document.createElement("p");
-
-    _p.innerHTML = "Type: ";
-
-    _p.className = "siteLabels";
-
-    //Add status from json
-
-    var _span = document.createElement("span");
-
-    _span.className = "siteValues";
-
-    var _statusText = "Unknown";
-
-    var _statusColor = "#eee";
-
-    switch (_status) {
-     case 1:
-      _statusText = "MANGA";
-
-      _statusColor = "#8bc34a";
-
-      break;
-
-     case 2:
-      _statusText = "LN";
-
-      _statusColor = "#ffc107";
-
-      break;
-
-     case 3:
-      _statusText = "MOVIE";
-
-      _statusColor = "#64b5f6";
-
-      break;
-
-     case 4:
-      _statusText = "APP";
-
-      _statusColor = "#64b5f6";
-
-      break;
-
-     case 5:
-      _statusText = "ANIME";
-
-      _statusColor = "#64b5f6";
-
-    break;
-    }
-
-    _span.style.color = _statusColor;
-
-    _span.textContent = _statusText;
-
-    _p.appendChild(_span);
-
-    //Add (status + status label) to _divText
-
-    _divText.appendChild(_p);
-
-    //Add type, if it exists
-
-    if (value.hasOwnProperty("type")) {
-     var _pType = document.createElement("p");
-
-     _pType.innerHTML = "Type: ";
-
-     _pType.className = "siteLabels";
-
-     var _spanType = document.createElement("span");
-
-     _spanType.className = "siteValues";
-
-     _spanType.textContent = value.type;
-
-     _pType.appendChild(_spanType);
-
-     _divText.appendChild(_pType);
-    }
-
-    //Add all texts for entry
-
-    _divText.className = "divcaption";
-
-    _divMain.appendChild(_divText);
-
-    //Add main container to node
-
-    _divMain.className = "divMainContainer";
-
-    node.appendChild(_divMain);
-
-    //Add <li> to <ul> siteList
-
-    mainContainer.appendChild(node);
-   }
-  }
- }).fail(function () {
-  console.log("An error has occurred.");
-
-  status.innerHTML = "Error occured!";
- });
-});
-
-status.innerHTML = "Done loading!";
