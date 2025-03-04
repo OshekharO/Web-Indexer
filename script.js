@@ -1,52 +1,65 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const status = document.getElementById("status");
-    const mainContainer = document.getElementById("siteList");
-    let filter = "all";
+var status = document.getElementById("status");
+var mainContainer = document.getElementById("siteList");
+var filter = "all";
 
-    status.innerHTML = "Fetching...";
+status.innerHTML = "Fetching...";
 
-    function filterProviders() {
-        document.querySelectorAll("li").forEach(function (li) {
-            const siteValues = li.querySelector(".siteValues").textContent.toLowerCase();
-            if (filter === "all" || siteValues.includes(filter.toLowerCase())) {
-                li.style.display = "";
-            } else {
-                li.style.display = "none";
-            }
-        });
-    }
-
-    document.querySelectorAll("input[name='filter']").forEach(function (radio) {
-        radio.addEventListener("change", function () {
-            filter = this.value;
-            filterProviders();
-        });
+function filterProviders() {
+    $("li").each(function () {
+        if (filter === "all") {
+            $(this).show();
+        } else if (
+            $(this)
+                .find(".siteValues")
+                .text()
+                .toLowerCase()
+                .indexOf(filter.toLowerCase()) === -1
+        ) {
+            $(this).hide();
+        } else {
+            $(this).show();
+        }
     });
+}
 
-    fetch("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json")
-        .then(response => response.json())
-        .then(data => {
-            status.innerHTML = "Parsing...";
+$("input[name='filter3']").on("change", function () {
+    filter = this.value;
+    filterProviders();
+});
 
-            Object.keys(data).forEach(key => {
-                status.innerHTML = "Reading..." + key;
-                const value = data[key];
+$(document).ready(function () {
+    $.getJSON("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
+        status.innerHTML = "Parsing...";
 
-                if (value.url === "NONE") continue;
+        for (var key in data) {
+            status.innerHTML = "Reading..." + key;
 
-                const _status = value.status;
-                let _thumbNail = value.icon || "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
+            if (data.hasOwnProperty(key)) {
+                var value = data[key];
 
-                const node = document.createElement("li");
-                const _divMain = document.createElement("div");
-                const _divImg = document.createElement("div");
-                const _divText = document.createElement("div");
-                const _img = document.createElement("img");
+                if (value.url == "NONE") {
+                    continue;
+                }
+
+                var _status = value.status;
+                var _thumbNail = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
+
+                if (value.hasOwnProperty("icon")) {
+                    _thumbNail = value.icon;
+                }
+
+                var node = document.createElement("li");
+                var _divMain = document.createElement("div");
+                var _divImg = document.createElement("div");
+                var _divText = document.createElement("div");
+                var _img = document.createElement("img");
 
                 _img.className = "thumbnail";
-                _img.src = _thumbNail;
+                _img.style.content = "";
+                _img.src = _thumbNail || "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
                 _img.alt = "icon";
                 _img.loading = "lazy";
+
                 _img.onerror = function () {
                     _img.src = "https://cdn-cmlep.nitrocdn.com/DLSjJVyzoVcUgUSBlgyEUoGMDKLbWXQr/assets/images/optimized/rev-ea26883/www.stellarinfo.com/images/v7/dmca.png";
                 };
@@ -55,22 +68,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 _divImg.appendChild(_img);
                 _divMain.appendChild(_divImg);
 
-                const _a = document.createElement("a");
-                _a.href = value.url;
-                _a.textContent = value.name;
+                var _a = document.createElement("a");
+                _a.setAttribute("href", value.url);
+                _a.innerHTML = value.name;
                 _a.title = key;
                 _a.style.color = "#fff";
                 _a.className = "siteName";
                 _divText.appendChild(_a);
 
-                const _p = document.createElement("p");
-                _p.textContent = "Type: ";
+                var _p = document.createElement("p");
+                _p.innerHTML = "Type: ";
                 _p.className = "siteLabels";
 
-                const _span = document.createElement("span");
+                var _span = document.createElement("span");
                 _span.className = "siteValues";
-                let _statusText = "Unknown";
-                let _statusColor = "#eee";
+                var _statusText = "Unknown";
+                var _statusColor = "#eee";
 
                 switch (_status) {
                     case 1:
@@ -100,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 _p.appendChild(_span);
                 _divText.appendChild(_p);
 
-                if (value.type) {
-                    const _pType = document.createElement("p");
-                    _pType.textContent = "Type: ";
+                if (value.hasOwnProperty("type")) {
+                    var _pType = document.createElement("p");
+                    _pType.innerHTML = "Type: ";
                     _pType.className = "siteLabels";
 
-                    const _spanType = document.createElement("span");
+                    var _spanType = document.createElement("span");
                     _spanType.className = "siteValues";
                     _spanType.textContent = value.type;
                     _pType.appendChild(_spanType);
@@ -117,12 +130,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 _divMain.className = "divMainContainer";
                 node.appendChild(_divMain);
                 mainContainer.appendChild(node);
-            });
-
-            status.innerHTML = "Done loading!";
-        })
-        .catch(error => {
-            console.error("An error has occurred:", error);
-            status.innerHTML = "Error occurred!";
-        });
+            }
+        }
+    }).fail(function () {
+        console.log("An error has occurred.");
+        status.innerHTML = "Error occurred!";
+    });
 });
+
+status.innerHTML = "Done loading!";
