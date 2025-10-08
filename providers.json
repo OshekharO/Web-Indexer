@@ -335,11 +335,23 @@
         "status": 2,
         "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
     },
-    "testProvider": {
-        "name": "test",
-        "url": "https://jpxs123.com",
+    "VLabProvider": {
+        "name": "Virtual Lab",
+        "url": "https://www.vlab.co.in",
         "status": 6,
-        "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.vlab.co.in&sz=128"
+    },
+    "LiaoxuefengProvider": {
+        "name": "Liao Xuefeng",
+        "url": "https://liaoxuefeng.com",
+        "status": 6,
+        "icon": "https://www.google.com/s2/favicons?domain=https://liaoxuefeng.com&sz=128"
+    },
+    "W3SchoolsProvider": {
+        "name": "W3Schools",
+        "url": "https://www.w3schools.com",
+        "status": 6,
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.w3schools.com&sz=128"
     },
     "PornHubProvider": {
         "name": "PornHub",
