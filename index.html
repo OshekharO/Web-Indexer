@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -20,33 +20,241 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
   <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="style.css" />
- </head>
+</head>
 
- <body style="font-family: monospace; background: #000; margin: 0px; color: #eee;">
-  <div style="padding: 16px 0px;">
-   <div class="divthumb">
-    <img class="icon" style="display: block;" />
-    <h1 style="display: inline-block; margin: 8px;">
-     <a style="color: white;" href="https://github.com/OshekharO/Web-Indexer">Website Indexer<span id="classic">v2.0</span></a>
-    </h1>
-   </div>
+<body data-bs-theme="dark">
+  <!-- Header Section -->
+  <header class="gradient-header py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-10 mx-auto text-center">
+          <div class="d-flex align-items-center justify-content-center mb-3">
+            <img class="app-logo me-3" src="img/apple-touch-icon.png" alt="Website Indexer Logo" />
+            <h1 class="display-5 fw-bold mb-0">
+              <a href="https://github.com/OshekharO/Web-Indexer" class="text-decoration-none text-white">Indexer <span class="version-badge">v2.0</span></a>
+            </h1>
+          </div>
+          <p class="lead mb-3">One destination for all your favorite websites and applications</p>
+          
+          <!-- Centered Theme Toggle -->
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-light theme-toggle-btn" id="themeToggle" title="Toggle theme">
+              <i class="bi bi-moon-stars me-2"></i>Toggle Theme
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search and Filter Section -->
+  <section class="filter-section py-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 mb-3">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" id="searchInput" class="form-control" placeholder="Search websites by name...">
+            <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+              <i class="bi bi-x-circle"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="d-flex flex-wrap justify-content-center gap-2" id="filterButtons">
+            <input type="radio" class="btn-check" name="filter" value="all" id="filter-all" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="filter-all">All</label>
+            
+            <input type="radio" class="btn-check" name="filter" value="manga" id="filter-manga" autocomplete="off">
+            <label class="btn btn-outline-primary" for="filter-manga">Manga</label>
+            
+            <input type="radio" class="btn-check" name="filter" value="ln" id="filter-ln" autocomplete="off">
+            <label class="btn btn-outline-primary" for="filter-ln">Light Novels</label>
+            
+            <input type="radio" class="btn-check" name="filter" value="movie" id="filter-movie" autocomplete="off">
+            <label class="btn btn-outline-primary" for="filter-movie">Movies</label>
+            
+            <input type="radio" class="btn-check" name="filter" value="app" id="filter-app" autocomplete="off">
+            <label class="btn btn-outline-primary" for="filter-app">Apps</label>
+            
+            <input type="radio" class="btn-check" name="filter" value="anime" id="filter-anime" autocomplete="off">
+            <label class="btn btn-outline-primary" for="filter-anime">Anime</label>
+
+            <input type="radio" class="btn-check" name="filter" value="bookmarked" id="filter-bookmarked" autocomplete="off">
+            <label class="btn btn-outline-warning" for="filter-bookmarked">
+              <i class="bi bi-bookmark-star-fill me-1"></i>Bookmarks
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-section py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <span class="badge bg-primary">Total: <span id="totalCount">0</span></span>
+            <span class="badge bg-success">Manga: <span id="mangaCount">0</span></span>
+            <span class="badge bg-warning">LN: <span id="lnCount">0</span></span>
+            <span class="badge bg-info">Movies: <span id="movieCount">0</span></span>
+            <span class="badge bg-purple">Apps: <span id="appCount">0</span></span>
+            <span class="badge bg-pink">Anime: <span id="animeCount">0</span></span>
+            <span class="badge bg-warning">Bookmarks: <span id="bookmarkCount">0</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div id="status" class="alert alert-info text-center mb-4">
+            <span class="loading-spinner me-2"></span> <span id="statusText">Fetching websites...</span>
+          </div>
+          <div id="siteList" class="row g-4"></div>
+          <div id="noResults" class="text-center mt-5 d-none">
+            <i class="bi bi-search display-1 text-muted"></i>
+            <h3 class="mt-3">No websites found</h3>
+            <p class="text-muted">Try adjusting your search or filter criteria</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="footer-links mb-3">
+            <button class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#aboutModal">About</button>
+            <button class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</button>
+            <button class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#dmcaModal">DMCA</button>
+          </div>
+          <p class="mb-0">Website Indexer &copy; 2025 OshekharO</p>
+          <p class="text-muted small mt-2">Found a broken site? <a href="https://github.com/OshekharO/Web-Indexer/issues" class="text-decoration-none">Report it here</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- About Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">About Website Indexer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Website Indexer is a comprehensive directory of websites and applications for manga, light novels, movies, anime, and useful apps.</p>
+          <p>Our mission is to provide a single destination where users can discover and access their favorite online resources easily.</p>
+          <p><strong>Features:</strong></p>
+          <ul>
+            <li>Curated collection of websites</li>
+            <li>Real-time site health monitoring</li>
+            <li>Bookmarking functionality</li>
+            <li>Dark/Light theme support</li>
+            <li>Advanced search and filtering</li>
+          </ul>
+          <p>Version: 2.0</p>
+          <p>Developed by OshekharO</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-<div class="radio-container">
-  <input type="radio" name="filter" value="all" checked>All</input>
-  <input type="radio" name="filter" value="manga">Manga</input>
-  <input type="radio" name="filter" value="ln">LN</input>
-  <input type="radio" name="filter" value="movie">Movie</input>
-  <input type="radio" name="filter" value="app">App</input>
-  <input type="radio" name="filter" value="anime">Anime</input>
-</div>
+  <!-- Privacy Policy Modal -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Website Indexer Privacy Policy</strong></p>
+          <p>We respect your privacy and are committed to protecting it through our compliance with this policy.</p>
+          
+          <p><strong>Information We Collect:</strong></p>
+          <ul>
+            <li>Theme preferences (stored locally)</li>
+            <li>Bookmarked sites (stored locally)</li>
+            <li>No personal information is collected or stored on our servers</li>
+          </ul>
+          
+          <p><strong>How We Use Your Information:</strong></p>
+          <ul>
+            <li>To provide and maintain the service</li>
+            <li>To remember your preferences</li>
+            <li>To improve user experience</li>
+          </ul>
+          
+          <p><strong>Data Storage:</strong></p>
+          <p>All data is stored locally in your browser using localStorage. We do not have access to this data.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div style="background: #222; padding: 16px 0px;">
-   <ul id="siteList" style="display: flex; padding: 8px; flex-wrap: wrap; justify-content: center;"></ul>
-</div>
+  <!-- DMCA Modal -->
+  <div class="modal fade" id="dmcaModal" tabindex="-1" aria-labelledby="dmcaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dmcaModalLabel">DMCA Copyright Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Digital Millennium Copyright Act (DMCA) Policy</strong></p>
+          <p>Website Indexer respects the intellectual property rights of others and expects its users to do the same.</p>
+          
+          <p><strong>Copyright Infringement Notification</strong></p>
+          <p>If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement and is accessible through our service, please notify us by providing the following information:</p>
+          
+          <ul>
+            <li>A physical or electronic signature of the copyright owner</li>
+            <li>Identification of the copyrighted work claimed to have been infringed</li>
+            <li>Identification of the material that is claimed to be infringing</li>
+            <li>Your contact information</li>
+            <li>A statement that you have a good faith belief that use of the material is not authorized</li>
+            <li>A statement that the information in the notification is accurate</li>
+          </ul>
+          
+          <p>Please send DMCA notices to: dmca@indexer.is-an.app</p>
+          
+          <p>We will respond to all such notices and take appropriate action as required by the DMCA.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="script.js"></script>
- </body>
+</body>
 </html>
