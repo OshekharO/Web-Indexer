@@ -59,7 +59,19 @@ document.getElementById('confirmNsfw').addEventListener('click', function() {
     nsfwConsent = true;
     localStorage.setItem('nsfwConsent', 'true');
     $('#nsfwWarningModal').modal('hide');
-    filterAndDisplaySites('nsfw', '');
+    // Refresh the display to show NSFW content
+    filterAndDisplaySites(filter, document.getElementById('searchInput').value.toLowerCase());
+  }
+});
+
+// Reset NSFW consent when modal is closed without consent
+$('#nsfwWarningModal').on('hidden.bs.modal', function () {
+  document.getElementById('nsfwConsent').checked = false;
+  // If user was trying to view NSFW but didn't consent, switch back to All
+  if (filter === 'nsfw') {
+    document.getElementById('filter-all').checked = true;
+    filter = 'all';
+    filterProviders();
   }
 });
 
@@ -87,7 +99,13 @@ function filterAndDisplaySites(typeFilter, searchFilter) {
                        site.type.toLowerCase().includes(typeFilter));
     const matchesSearch = site.name.toLowerCase().includes(searchFilter) || 
                          site.key.toLowerCase().includes(searchFilter);
-    return matchesType && matchesSearch;
+    
+    // Hide NSFW sites if no consent given (unless specifically filtering for NSFW with consent)
+    const isNsfwSite = site.status === 7;
+    const showNsfw = typeFilter === 'nsfw' && nsfwConsent;
+    const hideNsfw = isNsfwSite && !nsfwConsent && typeFilter !== 'nsfw';
+    
+    return matchesType && matchesSearch && !hideNsfw;
   });
   
   displaySites(filteredSites);
@@ -328,9 +346,9 @@ $(document).ready(function () {
       };
     });
     
-    // Initial display
+    // Initial display - NSFW sites will be automatically filtered out if no consent
     filteredSites = [...allSites];
-    displaySites(filteredSites);
+    filterAndDisplaySites(filter, '');
     updateStats();
     
     statusText.textContent = `All ${allSites.length} sites loaded successfully!`;
