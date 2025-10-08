@@ -1,0 +1,7 @@
+{
+  "name": "Indexer",
+  "short_name": "WebIndex",
+  "theme_color": "#4361ee",
+  "background_color": "#121212",
+  "display": "standalone"
+}
