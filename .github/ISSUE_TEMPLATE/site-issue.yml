@@ -1,0 +1,54 @@
+name: "🐛 Site Issue"
+description: "Report an issue with an existing site"
+title: "[Site Issue] "
+labels: ["bug", "site-issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue! Please provide as much detail as possible.
+        
+  - type: input
+    id: affected-site
+    attributes:
+      label: "Affected Site"
+      description: "Which site is having issues?"
+      placeholder: "Site name"
+      
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: "Issue Type"
+      options:
+        - "Site is broken/offline"
+        - "Wrong information"
+        - "Malware/security concern"
+        - "Duplicate site"
+        - "Other issue"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: "Issue Description"
+      description: "Please describe the issue in detail"
+      placeholder: "When I visit the site..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to Reproduce"
+      description: "How can we reproduce this issue?"
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. See error...
+        
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Behavior"
+      description: "What should happen instead?"
