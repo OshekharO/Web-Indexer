@@ -140,7 +140,7 @@
     </div>
   </section>
 
-  <!-- NSFW Warning Modal -->
+    <!-- NSFW Warning Modal -->
   <div class="modal fade" id="nsfwWarningModal" tabindex="-1" aria-labelledby="nsfwWarningModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -152,7 +152,11 @@
         </div>
         <div class="modal-body">
           <p>You are about to view content that may not be safe for work or suitable for all audiences.</p>
-          <p>This content is intended for mature audiences only.</p>
+          <p>This content is intended for mature audiences only (18+).</p>
+          <div class="alert alert-warning">
+            <i class="bi bi-info-circle me-2"></i>
+            <strong>Note:</strong> NSFW content is automatically hidden from all other views until you give consent.
+          </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="nsfwConsent">
             <label class="form-check-label" for="nsfwConsent">
