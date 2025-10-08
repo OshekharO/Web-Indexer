@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELQXSN1JH1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,7 +10,6 @@
 
   gtag('config', 'G-ELQXSN1JH1');
 </script>
-  
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -63,6 +62,30 @@
       </div>
     </div>
   </header>
+
+  <!-- Quick Actions Bar -->
+  <section class="quick-actions-bar py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center flex-wrap gap-2">
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#suggestSiteModal">
+              <i class="bi bi-plus-circle me-1"></i>Suggest Site
+            </button>
+            <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#reportIssueModal">
+              <i class="bi bi-bug me-1"></i>Report Issue
+            </button>
+            <a href="https://github.com/OshekharO/Web-Indexer/issues/new/choose" class="btn btn-sm btn-outline-info" target="_blank">
+              <i class="bi bi-github me-1"></i>GitHub Issues
+            </a>
+            <a href="https://github.com/OshekharO/Web-Indexer" class="btn btn-sm btn-outline-secondary" target="_blank">
+              <i class="bi bi-star me-1"></i>Contribute
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Search and Filter Section -->
   <section class="filter-section py-3">
@@ -150,7 +173,7 @@
     </div>
   </section>
 
-    <!-- NSFW Warning Modal -->
+  <!-- NSFW Warning Modal -->
   <div class="modal fade" id="nsfwWarningModal" tabindex="-1" aria-labelledby="nsfwWarningModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -177,6 +200,159 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-warning" id="confirmNsfw">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Suggest Site Modal -->
+  <div class="modal fade" id="suggestSiteModal" tabindex="-1" aria-labelledby="suggestSiteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="suggestSiteModalLabel">
+            <i class="bi bi-plus-circle me-2"></i>Suggest New Website
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-info">
+            <i class="bi bi-info-circle me-2"></i>
+            Your suggestion will be submitted as a GitHub issue for review.
+          </div>
+          <form id="suggestSiteForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="siteName" class="form-label">Site Name *</label>
+                <input type="text" class="form-control" id="siteName" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="siteUrl" class="form-label">Site URL *</label>
+                <input type="url" class="form-control" id="siteUrl" required placeholder="https://">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="siteCategory" class="form-label">Category *</label>
+                <select class="form-select" id="siteCategory" required>
+                  <option value="">Select category...</option>
+                  <option value="manga">Manga</option>
+                  <option value="ln">Light Novel</option>
+                  <option value="movie">Movie</option>
+                  <option value="app">App</option>
+                  <option value="anime">Anime</option>
+                  <option value="learning">Learning</option>
+                  <option value="nsfw">NSFW</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="siteIcon" class="form-label">Icon URL (Optional)</label>
+                <input type="url" class="form-control" id="siteIcon" placeholder="https://">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="siteDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="siteDescription" rows="3" placeholder="Brief description of the website..."></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Content Warnings (Optional)</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="warningAds">
+                <label class="form-check-label" for="warningAds">Contains Ads</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="warningPopups">
+                <label class="form-check-label" for="warningPopups">Has Pop-ups</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="warningRegistration">
+                <label class="form-check-label" for="warningRegistration">Requires Registration</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" id="submitSiteSuggestion">
+            <i class="bi bi-github me-1"></i>Submit via GitHub
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Report Issue Modal -->
+  <div class="modal fade" id="reportIssueModal" tabindex="-1" aria-labelledby="reportIssueModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reportIssueModalLabel">
+            <i class="bi bi-bug me-2"></i>Report Issue
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-warning">
+            <i class="bi bi-info-circle me-2"></i>
+            Select a site to report or describe the issue below.
+          </div>
+          <form id="reportIssueForm">
+            <div class="mb-3">
+              <label for="issueSite" class="form-label">Affected Site (Optional)</label>
+              <select class="form-select" id="issueSite">
+                <option value="">Select site...</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="issueType" class="form-label">Issue Type *</label>
+              <select class="form-select" id="issueType" required>
+                <option value="">Select issue type...</option>
+                <option value="broken">Site is Broken/Offline</option>
+                <option value="wrong-info">Wrong Information</option>
+                <option value="malware">Malware/Security Concern</option>
+                <option value="duplicate">Duplicate Site</option>
+                <option value="other">Other Issue</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="issueDescription" class="form-label">Description *</label>
+              <textarea class="form-control" id="issueDescription" rows="4" required placeholder="Please describe the issue in detail..."></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-warning" id="submitIssueReport">
+            <i class="bi bi-github me-1"></i>Report via GitHub
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions Modal -->
+  <div class="modal fade" id="quickActionsModal" tabindex="-1" aria-labelledby="quickActionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="quickActionsModalLabel">Quick Actions</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="list-group list-group-flush">
+            <button class="list-group-item list-group-item-action" id="actionCopyUrl">
+              <i class="bi bi-clipboard me-2"></i>Copy URL
+            </button>
+            <button class="list-group-item list-group-item-action" id="actionOpenNewTab">
+              <i class="bi bi-box-arrow-up-right me-2"></i>Open in New Tab
+            </button>
+            <button class="list-group-item list-group-item-action" id="actionToggleBookmark">
+              <i class="bi bi-bookmark me-2"></i>Toggle Bookmark
+            </button>
+            <button class="list-group-item list-group-item-action" id="actionReportSite">
+              <i class="bi bi-flag me-2"></i>Report Issue
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -211,8 +387,15 @@
             <button class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</button>
             <button class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#dmcaModal">DMCA</button>
           </div>
-          <p class="mb-0">Website Indexer &copy; 2024 OshekharO</p>
-          <p class="text-muted small mt-2">Found a broken site? <a href="https://github.com/OshekharO/Web-Indexer/issues" class="text-decoration-none">Report it here</a></p>
+          <p class="mb-0">Website Indexer &copy; 2025 OshekharO</p>
+          <p class="text-muted small mt-2">
+            <a href="https://github.com/OshekharO/Web-Indexer/issues" class="text-decoration-none me-3" target="_blank">
+              <i class="bi bi-github me-1"></i>Report Issues
+            </a>
+            <a href="https://github.com/OshekharO/Web-Indexer" class="text-decoration-none" target="_blank">
+              <i class="bi bi-star me-1"></i>Contribute
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -237,9 +420,10 @@
             <li>Dark/Light theme support</li>
             <li>Advanced search and filtering</li>
             <li>NSFW content warnings</li>
+            <li>GitHub integration for community contributions</li>
           </ul>
           <p>Version: 2.0</p>
-          <p>Developed by OshekharO</p>
+          <p>Developed by Saksham Shekher</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -310,7 +494,7 @@
             <li>A statement that the information in the notification is accurate</li>
           </ul>
           
-          <p>Please send DMCA notices to: dmca@indexer.is-an.app</p>
+          <p>Please send DMCA notices to: sakshamshekher@outlook.com</p>
           
           <p>We will respond to all such notices and take appropriate action as required by the DMCA.</p>
         </div>
