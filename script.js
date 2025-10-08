@@ -5,6 +5,7 @@ var filter = "all";
 var allSites = [];
 var filteredSites = [];
 var bookmarkedSites = JSON.parse(localStorage.getItem('bookmarkedSites')) || [];
+var nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
 
 // Default image URL
 const DEFAULT_IMAGE = "https://imgpx.com/en/QoMXS9MOaUQY.webp";
@@ -27,13 +28,10 @@ document.getElementById('themeToggle').addEventListener('click', function() {
   
   // Update icon and text
   const icon = this.querySelector('i');
-  const text = this.querySelector('span');
   if (newTheme === 'dark') {
     icon.className = 'bi bi-moon-stars me-2';
-    text.textContent = 'Toggle Theme';
   } else {
     icon.className = 'bi bi-sun me-2';
-    text.textContent = 'Toggle Theme';
   }
   
   // Save preference to localStorage
@@ -47,13 +45,21 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Update icon based on saved theme
   const icon = document.querySelector('#themeToggle i');
-  const text = document.querySelector('#themeToggle span');
   if (savedTheme === 'dark') {
     icon.className = 'bi bi-moon-stars me-2';
-    text.textContent = 'Toggle Theme';
   } else {
     icon.className = 'bi bi-sun me-2';
-    text.textContent = 'Toggle Theme';
+  }
+});
+
+// NSFW Consent functionality
+document.getElementById('confirmNsfw').addEventListener('click', function() {
+  const consentCheckbox = document.getElementById('nsfwConsent');
+  if (consentCheckbox.checked) {
+    nsfwConsent = true;
+    localStorage.setItem('nsfwConsent', 'true');
+    $('#nsfwWarningModal').modal('hide');
+    filterAndDisplaySites('nsfw', '');
   }
 });
 
@@ -69,6 +75,12 @@ document.getElementById('clearSearch').addEventListener('click', function() {
 });
 
 function filterAndDisplaySites(typeFilter, searchFilter) {
+  // Check for NSFW filter without consent
+  if (typeFilter === 'nsfw' && !nsfwConsent) {
+    $('#nsfwWarningModal').modal('show');
+    return;
+  }
+  
   filteredSites = allSites.filter(site => {
     const matchesType = typeFilter === 'all' || 
                        (typeFilter === 'bookmarked' ? bookmarkedSites.includes(site.key) : 
@@ -177,6 +189,14 @@ function displaySites(sites) {
     
     card.appendChild(bookmarkBtn);
     
+    // Add NSFW warning badge if applicable
+    if (site.status === 7) { // NSFW
+      var nsfwBadge = document.createElement("div");
+      nsfwBadge.className = "nsfw-warning";
+      nsfwBadge.innerHTML = '<i class="bi bi-exclamation-triangle me-1"></i>NSFW';
+      card.appendChild(nsfwBadge);
+    }
+    
     // Create card image container
     var cardImgContainer = document.createElement("div");
     cardImgContainer.className = "card-img-container";
@@ -239,6 +259,8 @@ function updateStats() {
   const movie = allSites.filter(site => site.status === 3).length;
   const app = allSites.filter(site => site.status === 4).length;
   const anime = allSites.filter(site => site.status === 5).length;
+  const learning = allSites.filter(site => site.status === 6).length;
+  const nsfw = allSites.filter(site => site.status === 7).length;
   const bookmarks = bookmarkedSites.length;
   
   document.getElementById('totalCount').textContent = total;
@@ -247,6 +269,8 @@ function updateStats() {
   document.getElementById('movieCount').textContent = movie;
   document.getElementById('appCount').textContent = app;
   document.getElementById('animeCount').textContent = anime;
+  document.getElementById('learningCount').textContent = learning;
+  document.getElementById('nsfwCount').textContent = nsfw;
   document.getElementById('bookmarkCount').textContent = bookmarks;
 }
 
@@ -282,6 +306,14 @@ $(document).ready(function () {
         case 5:
           type = "ANIME";
           typeClass = "type-anime";
+          break;
+        case 6:
+          type = "LEARNING";
+          typeClass = "type-learning";
+          break;
+        case 7:
+          type = "NSFW";
+          typeClass = "type-nsfw";
           break;
       }
       
