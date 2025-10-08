@@ -334,5 +334,17 @@
         "url": "https://jpxs123.com",
         "status": 2,
         "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
+    },
+    "testProvider": {
+        "name": "test",
+        "url": "https://jpxs123.com",
+        "status": 7,
+        "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
+    },
+    "testProvider": {
+        "name": "test",
+        "url": "https://jpxs123.com",
+        "status": 7,
+        "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
     }
 }
