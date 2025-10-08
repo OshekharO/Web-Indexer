@@ -10,6 +10,10 @@ var nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
 // Default image URL
 const DEFAULT_IMAGE = "https://imgpx.com/en/QoMXS9MOaUQY.webp";
 
+// GitHub Integration System
+const GITHUB_REPO = 'OshekharO/Web-Indexer';
+let currentSiteForActions = null;
+
 // Auto-hide status after timeout
 let statusTimeout;
 
@@ -17,7 +21,7 @@ function hideStatus() {
   clearTimeout(statusTimeout);
   statusTimeout = setTimeout(() => {
     status.style.display = 'none';
-  }, 5000); // Hide after 5 seconds if not already hidden
+  }, 5000);
 }
 
 // Theme toggle functionality
@@ -26,7 +30,6 @@ document.getElementById('themeToggle').addEventListener('click', function() {
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   document.body.setAttribute('data-bs-theme', newTheme);
   
-  // Update icon and text
   const icon = this.querySelector('i');
   if (newTheme === 'dark') {
     icon.className = 'bi bi-moon-stars me-2';
@@ -34,7 +37,6 @@ document.getElementById('themeToggle').addEventListener('click', function() {
     icon.className = 'bi bi-sun me-2';
   }
   
-  // Save preference to localStorage
   localStorage.setItem('theme', newTheme);
 });
 
@@ -43,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const savedTheme = localStorage.getItem('theme') || 'dark';
   document.body.setAttribute('data-bs-theme', savedTheme);
   
-  // Update icon based on saved theme
   const icon = document.querySelector('#themeToggle i');
   if (savedTheme === 'dark') {
     icon.className = 'bi bi-moon-stars me-2';
@@ -59,7 +60,6 @@ document.getElementById('confirmNsfw').addEventListener('click', function() {
     nsfwConsent = true;
     localStorage.setItem('nsfwConsent', 'true');
     $('#nsfwWarningModal').modal('hide');
-    // Refresh the display to show NSFW content
     filterAndDisplaySites(filter, document.getElementById('searchInput').value.toLowerCase());
   }
 });
@@ -67,7 +67,6 @@ document.getElementById('confirmNsfw').addEventListener('click', function() {
 // Reset NSFW consent when modal is closed without consent
 $('#nsfwWarningModal').on('hidden.bs.modal', function () {
   document.getElementById('nsfwConsent').checked = false;
-  // If user was trying to view NSFW but didn't consent, switch back to All
   if (filter === 'nsfw') {
     document.getElementById('filter-all').checked = true;
     filter = 'all';
@@ -87,7 +86,6 @@ document.getElementById('clearSearch').addEventListener('click', function() {
 });
 
 function filterAndDisplaySites(typeFilter, searchFilter) {
-  // Check for NSFW filter without consent
   if (typeFilter === 'nsfw' && !nsfwConsent) {
     $('#nsfwWarningModal').modal('show');
     return;
@@ -100,7 +98,6 @@ function filterAndDisplaySites(typeFilter, searchFilter) {
     const matchesSearch = site.name.toLowerCase().includes(searchFilter) || 
                          site.key.toLowerCase().includes(searchFilter);
     
-    // Hide NSFW sites if no consent given (unless specifically filtering for NSFW with consent)
     const isNsfwSite = site.status === 7;
     const showNsfw = typeFilter === 'nsfw' && nsfwConsent;
     const hideNsfw = isNsfwSite && !nsfwConsent && typeFilter !== 'nsfw';
@@ -133,7 +130,6 @@ function toggleBookmark(siteKey) {
   localStorage.setItem('bookmarkedSites', JSON.stringify(bookmarkedSites));
   updateStats();
   
-  // Update bookmark button state
   const bookmarkBtn = document.querySelector(`[data-site-key="${siteKey}"]`);
   if (bookmarkBtn) {
     bookmarkBtn.classList.toggle('bookmarked', index === -1);
@@ -142,7 +138,6 @@ function toggleBookmark(siteKey) {
       '<i class="bi bi-bookmark-star"></i>';
   }
   
-  // Refresh display if we're on bookmarks filter
   if (filter === 'bookmarked') {
     filterProviders();
   }
@@ -176,6 +171,203 @@ async function updateSiteHealth(site) {
   }
 }
 
+// Quick Actions System
+function setupQuickActions(site) {
+  const quickActionsBtn = document.createElement('button');
+  quickActionsBtn.className = 'quick-actions-btn';
+  quickActionsBtn.innerHTML = '<i class="bi bi-three-dots"></i>';
+  quickActionsBtn.title = 'Quick Actions';
+  quickActionsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    showQuickActions(site);
+  });
+  
+  return quickActionsBtn;
+}
+
+function showQuickActions(site) {
+  currentSiteForActions = site;
+  const modal = new bootstrap.Modal(document.getElementById('quickActionsModal'));
+  modal.show();
+}
+
+// GitHub Issue Creation
+function createGitHubIssueUrl(title, body, labels = []) {
+  const baseUrl = `https://github.com/${GITHUB_REPO}/issues/new`;
+  const params = new URLSearchParams({
+    title: title,
+    body: body,
+    labels: labels.join(',')
+  });
+  return `${baseUrl}?${params.toString()}`;
+}
+
+function suggestNewSite(siteData) {
+  const title = `[Site Suggestion] ${siteData.name}`;
+  const body = `
+## Site Suggestion
+
+**Site Name:** ${siteData.name}
+**URL:** ${siteData.url}
+**Category:** ${siteData.category}
+**Icon URL:** ${siteData.icon || 'Not provided'}
+**Description:** ${siteData.description || 'Not provided'}
+
+### Content Warnings:
+- Ads: ${siteData.warnings.ads ? 'Yes' : 'No'}
+- Pop-ups: ${siteData.warnings.popups ? 'Yes' : 'No'}
+- Registration Required: ${siteData.warnings.registration ? 'Yes' : 'No'}
+
+### Additional Notes:
+${siteData.additionalNotes || 'None'}
+
+---
+
+*Submitted via Website Indexer on ${new Date().toLocaleDateString()}*
+  `.trim();
+
+  const issueUrl = createGitHubIssueUrl(title, body, ['site-suggestion', 'pending-review']);
+  window.open(issueUrl, '_blank');
+}
+
+function reportSiteIssue(issueData) {
+  const title = `[Site Issue] ${issueData.siteName ? issueData.siteName + ' - ' : ''}${issueData.type}`;
+  const body = `
+## Site Issue Report
+
+**Affected Site:** ${issueData.siteName || 'Not specified'}
+**Issue Type:** ${issueData.type}
+**Reported URL:** ${issueData.siteUrl || 'Not specified'}
+
+### Description:
+${issueData.description}
+
+### Additional Context:
+${issueData.additionalContext || 'None'}
+
+---
+
+*Reported via Website Indexer on ${new Date().toLocaleDateString()}*
+  `.trim();
+
+  const labels = ['bug', 'site-issue'];
+  if (issueData.type === 'broken') labels.push('broken-site');
+  if (issueData.type === 'malware') labels.push('security');
+
+  const issueUrl = createGitHubIssueUrl(title, body, labels);
+  window.open(issueUrl, '_blank');
+}
+
+// Form Handlers
+document.getElementById('submitSiteSuggestion').addEventListener('click', function() {
+  const form = document.getElementById('suggestSiteForm');
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const siteData = {
+    name: document.getElementById('siteName').value,
+    url: document.getElementById('siteUrl').value,
+    category: document.getElementById('siteCategory').value,
+    icon: document.getElementById('siteIcon').value,
+    description: document.getElementById('siteDescription').value,
+    warnings: {
+      ads: document.getElementById('warningAds').checked,
+      popups: document.getElementById('warningPopups').checked,
+      registration: document.getElementById('warningRegistration').checked
+    }
+  };
+
+  suggestNewSite(siteData);
+  $('#suggestSiteModal').modal('hide');
+  form.reset();
+});
+
+document.getElementById('submitIssueReport').addEventListener('click', function() {
+  const form = document.getElementById('reportIssueForm');
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const selectedSite = document.getElementById('issueSite').value;
+  const siteData = allSites.find(site => site.key === selectedSite);
+
+  const issueData = {
+    siteName: siteData ? siteData.name : 'Not specified',
+    siteUrl: siteData ? siteData.url : 'Not specified',
+    type: document.getElementById('issueType').value,
+    description: document.getElementById('issueDescription').value
+  };
+
+  reportSiteIssue(issueData);
+  $('#reportIssueModal').modal('hide');
+  form.reset();
+});
+
+// Quick Actions Handlers
+document.getElementById('actionCopyUrl').addEventListener('click', function() {
+  if (currentSiteForActions) {
+    navigator.clipboard.writeText(currentSiteForActions.url).then(() => {
+      showTempAlert('URL copied to clipboard!', 'success');
+    });
+    $('#quickActionsModal').modal('hide');
+  }
+});
+
+document.getElementById('actionOpenNewTab').addEventListener('click', function() {
+  if (currentSiteForActions) {
+    window.open(currentSiteForActions.url, '_blank');
+    $('#quickActionsModal').modal('hide');
+  }
+});
+
+document.getElementById('actionToggleBookmark').addEventListener('click', function() {
+  if (currentSiteForActions) {
+    toggleBookmark(currentSiteForActions.key);
+    $('#quickActionsModal').modal('hide');
+  }
+});
+
+document.getElementById('actionReportSite').addEventListener('click', function() {
+  if (currentSiteForActions) {
+    $('#quickActionsModal').modal('hide');
+    document.getElementById('issueSite').value = currentSiteForActions.key;
+    $('#reportIssueModal').modal('show');
+  }
+});
+
+// Utility Functions
+function showTempAlert(message, type = 'info') {
+  const alert = document.createElement('div');
+  alert.className = `alert alert-${type} alert-dismissible fade show temp-alert`;
+  alert.innerHTML = `
+    ${message}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  `;
+  document.body.appendChild(alert);
+  
+  setTimeout(() => {
+    if (alert.parentNode) {
+      alert.remove();
+    }
+  }, 3000);
+}
+
+function populateIssueSiteDropdown() {
+  const select = document.getElementById('issueSite');
+  select.innerHTML = '<option value="">Select site...</option>';
+  
+  allSites.forEach(site => {
+    const option = document.createElement('option');
+    option.value = site.key;
+    option.textContent = site.name;
+    select.appendChild(option);
+  });
+}
+
 function displaySites(sites) {
   mainContainer.innerHTML = '';
   
@@ -187,13 +379,15 @@ function displaySites(sites) {
   document.getElementById('noResults').classList.add('d-none');
   
   sites.forEach(site => {
-    // Create column for card
     var col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 col-lg-3 fade-in";
     
-    // Create card
     var card = document.createElement("div");
     card.className = "site-card";
+    
+    // Create quick actions button
+    const quickActionsBtn = setupQuickActions(site);
+    card.appendChild(quickActionsBtn);
     
     // Create bookmark button
     var bookmarkBtn = document.createElement("button");
@@ -208,7 +402,7 @@ function displaySites(sites) {
     card.appendChild(bookmarkBtn);
     
     // Add NSFW warning badge if applicable
-    if (site.status === 7) { // NSFW
+    if (site.status === 7) {
       var nsfwBadge = document.createElement("div");
       nsfwBadge.className = "nsfw-warning";
       nsfwBadge.innerHTML = '<i class="bi bi-exclamation-triangle me-1"></i>NSFW';
@@ -293,12 +487,11 @@ function updateStats() {
 }
 
 $(document).ready(function () {
-  hideStatus(); // Start the auto-hide timer
+  hideStatus();
   
   $.getJSON("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
     statusText.textContent = "Parsing websites...";
     
-    // Convert object to array and add additional properties
     allSites = Object.keys(data).map(key => {
       const site = data[key];
       let type = "Unknown";
@@ -346,15 +539,14 @@ $(document).ready(function () {
       };
     });
     
-    // Initial display - NSFW sites will be automatically filtered out if no consent
     filteredSites = [...allSites];
     filterAndDisplaySites(filter, '');
     updateStats();
+    populateIssueSiteDropdown();
     
     statusText.textContent = `All ${allSites.length} sites loaded successfully!`;
     status.className = "alert alert-success text-center mb-4";
     
-    // Hide status after success
     setTimeout(() => {
       status.style.display = 'none';
     }, 3000);
