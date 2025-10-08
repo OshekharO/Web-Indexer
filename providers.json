@@ -105,7 +105,7 @@
         "name": "Kartoons",
         "url": "https://kartoons.fun/home",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://kartoons.fun&sz=128"
+        "icon": "https://kartoons.fun/logo.png"
     },
     "ReVancedProvider": {
         "name": "ReVanced",
@@ -124,12 +124,6 @@
         "url": "https://github.com/TeamNewPipe/NewPipe",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/refs/heads/dev/assets/new_pipe_icon_5.png"
-    },
-    "uYouPlusProvider": {
-        "name": "uYouPlus",
-        "url": "https://github.com/qnblackcat/uYouPlus",
-        "status": 4,
-        "icon": "https://img.icons8.com/doodle/480/000000/youtube-play--v2.png"
     },
     "SmartTubeProvider": {
         "name": "SmartTube",
@@ -233,18 +227,6 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/pyamsoft/tetherfi/56c10cf60156c75a5f59da85b62e4968928af81e/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
-    "SuperImageProvider": {
-        "name": "SuperImage",
-        "url": "https://github.com/Lucchetto/SuperImage",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/Lucchetto/SuperImage/8c4fb84ecff07219d6c5ec3bdba2ebc39ab58e17/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    "SpMpProvider": {
-        "name": "SpMp",
-        "url": "https://github.com/toasterofbread/spmp",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/toasterofbread/spmp/main/metadata/en-US/images/icon_round.png"
-    },
     "SimpMusicProvider": {
         "name": "SimpMusic",
         "url": "https://github.com/maxrave-dev/SimpMusic",
@@ -268,18 +250,6 @@
         "url": "https://github.com/Akylas/OSS-DocumentScanner",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/Akylas/OSS-DocumentScanner/master/App_Resources/documentscanner/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    "VancedProvider": {
-        "name": "Vanced",
-        "url": "https://vancedapp.com",
-        "status": 4,
-        "icon": "https://www.google.com/s2/favicons?domain=https://vancedapp.com&sz=128"
-    },
-    "SpotifyModProvider": {
-        "name": "Spotify Mod",
-        "url": "https://spotifymod.com",
-        "status": 4,
-        "icon": "https://www.google.com/s2/favicons?domain=https://spotifymod.com&sz=128"
     },
     "ManganatoProvider": {
         "name": "Manganato",
