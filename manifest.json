@@ -1,7 +1,13 @@
 {
-  "name": "Indexer",
+  "name": "Website Indexer",
   "short_name": "WebIndex",
+  "description": "A comprehensive directory of websites and applications for manga, light novels, movies, anime, and useful apps",
+  "start_url": "/",
+  "display": "standalone",
   "theme_color": "#4361ee",
   "background_color": "#121212",
-  "display": "standalone"
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["entertainment", "productivity", "education"]
 }
