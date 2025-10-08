@@ -1,0 +1,67 @@
+name: "🚀 Site Suggestion"
+description: "Suggest a new website to be added to the index"
+title: "[Site Suggestion] "
+labels: ["site-suggestion", "pending-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new site! Please fill out the form below.
+        
+  - type: input
+    id: site-name
+    attributes:
+      label: "Site Name"
+      description: "The name of the website"
+      placeholder: "Example Site"
+    validations:
+      required: true
+      
+  - type: input
+    id: site-url
+    attributes:
+      label: "Site URL"
+      description: "The full URL of the website"
+      placeholder: "https://example.com"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      description: "What type of content does this site provide?"
+      options:
+        - Manga
+        - Light Novel
+        - Movie
+        - App
+        - Anime
+        - Learning
+        - NSFW
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Brief description of what this site offers"
+      placeholder: "This site provides..."
+      
+  - type: checkboxes
+    id: content-warnings
+    attributes:
+      label: "Content Warnings"
+      description: "Select any applicable content warnings"
+      options:
+        - label: "Contains advertisements"
+        - label: "Has pop-up windows"
+        - label: "Requires registration"
+        - label: "Contains NSFW content"
+        
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: "Additional Notes"
+      description: "Any other information that might be helpful"
