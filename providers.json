@@ -1,21 +1,21 @@
 {
     "PrmoviesProvider": {
         "name": "PRMovies",
-        "url": "https://prmovies.email",
+        "url": "https://prmovies.fitness",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.pw&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.fitness&sz=128"
     },
-    "VidBingeProvider": {
-        "name": "VidBinge",
-        "url": "https://www.vidbinge.com",
+    "PStreamProvider": {
+        "name": "P-Stream",
+        "url": "https://pstream.mov",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.vidbinge.com&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://pstream.mov&sz=128"
     },
     "VegaProvider": {
         "name": "VegaMovies",
-        "url": "https://vegamovies.net.bz",
+        "url": "https://vegamovles.com",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://vegamovies.net.bz&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://vegamovles.com&sz=128"
     },
     "KisskhProvider": {
         "name": "Kisskh",
@@ -23,47 +23,29 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128"
     },
-    "BingeProvider": {
-        "name": "Binge",
-        "url": "https://binge.lol",
+    "FlixerProvider": {
+        "name": "Flixer",
+        "url": "https://flixer.su",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://binge.lol&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://flixer.su&sz=128"
     },
-    "MyAsianTvProvider": {
-        "name": "MyAsianTv",
-        "url": "https://myasiantv.ac",
+    "FlickyStreamProvider": {
+        "name": "FlickyStream",
+        "url": "https://flickystream.ru",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://myasiantv.ac&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://flickystream.ru&sz=128"
     },
     "ShowFlixProvider": {
         "name": "ShowFlix",
-        "url": "https://showflix.xyz",
+        "url": "https://showflix.store",
         "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://showflix.xyz&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://showflix.store&sz=128"
     },
-    "AsianflixProvider": {
-        "name": "Asianflix",
-        "url": "https://www.asianflix.one",
+    "NetMirrorProvider": {
+        "name": "NetMirror",
+        "url": "https://netmirror.app",
         "status": 3,
-        "icon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyT55NwmNqgOqqs6y4HQS0zGl2HILpByHZGochf1npiuoDKxbeZvy2b8Ys6iu6xkpbTl0KaMVdOPT5W3k4Hi9CzHityuU99Iec6Xa2ley4wgZ7pdyx2aqyOXbaZUxGpi_PVvTdJHoMbue7oZ0H2gSXbeXe82MhE_jxZLvft-VexOx52oJr1lKBwCvKUQJ6/s1600/icon-log.png"
-    },
-    "456movieProvider": {
-        "name": "456movie",
-        "url": "https://456movie.com",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://456movie.com&sz=128"
-    },
-    "IOSMirrorProvider": {
-        "name": "IOSMirror",
-        "url": "https://iosmirror.cc/home",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://iosmirror.cc&sz=128"
-    },
-    "M4ufreeProvider": {
-        "name": "M4ufree",
-        "url": "https://m4ufree.se",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://m4ufree.se&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://netmirror.app&sz=128"
     },
     "HianimeProvider": {
         "name": "Hianime",
@@ -77,23 +59,53 @@
         "status": 5,
         "icon": "https://www.google.com/s2/favicons?domain=https://kaido.to&sz=128"
     },
-    "KickassanimesProvider": {
-        "name": "KAA",
-        "url": "https://kaas.ro",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://kaas.ro&sz=128"
-    },
     "AnimepaheProvider": {
         "name": "AnimePahe",
-        "url": "https://animepahe.ru",
+        "url": "https://animepahe.si",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.ru&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.si&sz=128"
     },
     "MiruroProvider": {
         "name": "Miruro",
         "url": "https://www.miruro.tv",
         "status": 5,
         "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
+    },
+    "9animeProvider": {
+        "name": "9anime",
+        "url": "https://9anime.pl",
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://9anime.pl&sz=128"
+    },
+    "ZoroProvider": {
+        "name": "Zoro",
+        "url": "https://zoro.to",
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://zoro.to&sz=128"
+    },
+    "GogoanimeProvider": {
+        "name": "Gogoanime",
+        "url": "https://gogoanime.hu",
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://gogoanime.hu&sz=128"
+    },
+    "AniwatchProvider": {
+        "name": "Aniwatch",
+        "url": "https://aniwatch.to",
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://aniwatch.to&sz=128"
+    },
+    "CrunchyrollProvider": {
+        "name": "Crunchyroll",
+        "url": "https://crunchyroll.com",
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://crunchyroll.com&sz=128"
+    },
+    "AnimeHeavenProvider": {
+        "name": "AnimeHeaven",
+        "url": "https://animeheaven.ru",
+        "status": 5,
+        "icon": "https://www.google.com/s2/favicons?domain=https://animeheaven.ru&sz=128"
     },
     "ReVancedProvider": {
         "name": "ReVanced",
@@ -257,6 +269,18 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/Akylas/OSS-DocumentScanner/master/App_Resources/documentscanner/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
+    "VancedProvider": {
+        "name": "Vanced",
+        "url": "https://vancedapp.com",
+        "status": 4,
+        "icon": "https://www.google.com/s2/favicons?domain=https://vancedapp.com&sz=128"
+    },
+    "SpotifyModProvider": {
+        "name": "Spotify Mod",
+        "url": "https://spotifymod.com",
+        "status": 4,
+        "icon": "https://www.google.com/s2/favicons?domain=https://spotifymod.com&sz=128"
+    },
     "ManganatoProvider": {
         "name": "Manganato",
         "url": "https://manganato.com",
@@ -298,6 +322,24 @@
         "url": "https://bato.to",
         "status": 1,
         "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
+    },
+    "MangaFoxProvider": {
+        "name": "MangaFox",
+        "url": "https://fanfox.net",
+        "status": 1,
+        "icon": "https://www.google.com/s2/favicons?domain=https://fanfox.net&sz=128"
+    },
+    "MangaKakalotProvider": {
+        "name": "MangaKakalot",
+        "url": "https://mangakakalot.com",
+        "status": 1,
+        "icon": "https://www.google.com/s2/favicons?domain=https://mangakakalot.com&sz=128"
+    },
+    "MangaSeeProvider": {
+        "name": "MangaSee",
+        "url": "https://mangasee123.com",
+        "status": 1,
+        "icon": "https://www.google.com/s2/favicons?domain=https://mangasee123.com&sz=128"
     },
     "FictionzoneProvider": {
         "name": "Fictionzone",
@@ -431,4 +473,4 @@
         "status": 2,
         "icon": "https://mangaplus.shueisha.co.jp/icn/app_icon_192.png"
     }
- }
+}
