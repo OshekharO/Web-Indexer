@@ -341,10 +341,34 @@
         "status": 6,
         "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
     },
-    "testardoProvider": {
-        "name": "testardo",
-        "url": "https://jpxs123.com",
+    "PornHubProvider": {
+        "name": "PornHub",
+        "url": "https://proxyhub.pages.dev",
         "status": 7,
-        "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://proxyhub.pages.dev&sz=128"
+    },
+    "SpankBangProvider": {
+        "name": "SpankBang",
+        "url": "https://spankbang.com",
+        "status": 7,
+        "icon": "https://www.google.com/s2/favicons?domain=https://spankbang.com&sz=128"
+    },
+    "LiteroticaProvider": {
+        "name": "Literotica",
+        "url": "https://www.literotica.com",
+        "status": 7,
+        "icon": "https://www.google.com/s2/favicons?domain=https://www.literotica.com&sz=128"
+    },
+    "Manga18Provider": {
+        "name": "Manga18",
+        "url": "https://manga18.me",
+        "status": 7,
+        "icon": "https://www.google.com/s2/favicons?domain=https://manga18.me&sz=128"
+    },
+    "JavHDProvider": {
+        "name": "JavHD",
+        "url": "https://javhd.icu",
+        "status": 7,
+        "icon": "https://www.google.com/s2/favicons?domain=https://javhd.icu&sz=128"
     }
 }
