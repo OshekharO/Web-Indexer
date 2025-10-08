@@ -217,10 +217,10 @@
     },
     "MiruProvider": {
         "name": "Miru",
-        "url": "https://github.com/Mancrop/mancrop-miru",
+        "url": "https://github.com/miru-project/miru-alpha",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
-    }
+    },
     "NatomangaProvider": {
         "name": "Natomanga",
         "url": "https://www.natomanga.com",
