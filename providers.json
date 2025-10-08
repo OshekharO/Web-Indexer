@@ -353,6 +353,12 @@
         "status": 6,
         "icon": "https://www.google.com/s2/favicons?domain=https://www.w3schools.com&sz=128"
     },
+    "BeginnersBookProvider": {
+        "name": "BeginnersBook",
+        "url": "https://beginnersbook.com",
+        "status": 6,
+        "icon": "https://www.google.com/s2/favicons?domain=https://beginnersbook.com&sz=128"
+    },
     "PornHubProvider": {
         "name": "PornHub",
         "url": "https://proxyhub.pages.dev",
