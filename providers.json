@@ -49,9 +49,9 @@
     },
     "HianimeProvider": {
         "name": "Hianime",
-        "url": "https://hianime.to",
+        "url": "https://hianime.tv",
         "status": 5,
-        "icon": "https://hianime.to/images/logo.png?v=0.1"
+        "icon": "https://hianime.tv/proxy/logo.png"
     },
     "KaidoProvider": {
         "name": "Kaido",
@@ -71,41 +71,41 @@
         "status": 5,
         "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
     },
-    "9animeProvider": {
-        "name": "9anime",
-        "url": "https://9anime.pl",
+    "AnimeKaiProvider": {
+        "name": "AnimeKai",
+        "url": "https://animekai.me",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://9anime.pl&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://animekai.me&sz=128"
     },
-    "ZoroProvider": {
-        "name": "Zoro",
-        "url": "https://zoro.to",
+    "123AnimeProvider": {
+        "name": "123Anime",
+        "url": "https://123animes.ru",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://zoro.to&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://123animes.ru&sz=128"
     },
-    "GogoanimeProvider": {
-        "name": "Gogoanime",
-        "url": "https://gogoanime.hu",
+    "KuudereProvider": {
+        "name": "Kuudere",
+        "url": "https://kuudere.to",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://gogoanime.hu&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://kuudere.to&sz=128"
     },
-    "AniwatchProvider": {
-        "name": "Aniwatch",
-        "url": "https://aniwatch.to",
+    "HiCartoonProvider": {
+        "name": "HiCartoon",
+        "url": "https://hicartoon.to/home",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://aniwatch.to&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://hicartoon.to&sz=128"
     },
-    "CrunchyrollProvider": {
-        "name": "Crunchyroll",
-        "url": "https://crunchyroll.com",
+    "AnimixStreamProvider": {
+        "name": "AnimixStream",
+        "url": "https://animixstream.com",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://crunchyroll.com&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://animixstream.com&sz=128"
     },
-    "AnimeHeavenProvider": {
-        "name": "AnimeHeaven",
-        "url": "https://animeheaven.ru",
+    "KartoonsProvider": {
+        "name": "Kartoons",
+        "url": "https://kartoons.fun/home",
         "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://animeheaven.ru&sz=128"
+        "icon": "https://www.google.com/s2/favicons?domain=https://kartoons.fun&sz=128"
     },
     "ReVancedProvider": {
         "name": "ReVanced",
