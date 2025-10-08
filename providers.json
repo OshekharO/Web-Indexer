@@ -23,6 +23,24 @@
         "status": 3,
         "icon": "https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128"
     },
+    "DramahoodProvider": {
+        "name": "Dramahood",
+        "url": "https://dramahood.mom",
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://dramahood.mom&sz=128"
+    },
+    "Turkish123Provider": {
+        "name": "Turkish123",
+        "url": "https://c.turkish123.website/",
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://c.turkish123.website&sz=128"
+    },
+    "Turksub24Provider": {
+        "name": "Turksub24",
+        "url": "https://turksub24.top",
+        "status": 3,
+        "icon": "https://www.google.com/s2/favicons?domain=https://turksub24.top&sz=128"
+    },
     "FlixerProvider": {
         "name": "Flixer",
         "url": "https://flixer.su",
@@ -131,18 +149,6 @@
         "status": 4,
         "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
     },
-    "NagramProvider": {
-        "name": "Nagram",
-        "url": "https://github.com/NextAlone/Nagram",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/NextAlone/Nagram/main/TMessagesProj/src/main/ic_launcher_nagram_darkgreen-playstore.png"
-    },
-    "NekogramProvider": {
-        "name": "Nekogram",
-        "url": "https://github.com/Nekogram/Nekogram",
-        "status": 4,
-        "icon": "https://nekogram.app/logo.webp"
-    },
     "GloomProvider": {
         "name": "Gloom",
         "url": "https://github.com/MateriiApps/Gloom",
@@ -173,8 +179,20 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
+    "AuxioProvider": {
+        "name": "Auxio",
+        "url": "https://github.com/OxygenCobalt/Auxio",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/OxygenCobalt/Auxio/refs/heads/dev/fastlane/metadata/android/en-US/images/icon.png"
+    },
+    "SimpMusicProvider": {
+        "name": "SimpMusic",
+        "url": "https://github.com/maxrave-dev/SimpMusic",
+        "status": 4,
+        "icon": "https://raw.githubusercontent.com/maxrave-dev/SimpMusic/jetpack_compose/app/src/main/ic_launcher-playstore.png"
+    },
     "CloudStreamProvider": {
-        "name": "CS3",
+        "name": "CloudStream",
         "url": "https://github.com/recloudstream/cloudstream",
         "status": 4,
         "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
@@ -197,60 +215,12 @@
         "status": 4,
         "icon": "https://rawcdn.githack.com/LNReader/lnreader/518f73f6fdeba3b3a562ac382143cc910fe58fe1/.github/readme-images/icon_alt.png"
     },
-    "OtakuWorldProvider": {
-        "name": "OtakuWorld",
-        "url": "https://github.com/jakepurple13/OtakuWorld/",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/jakepurple13/OtakuWorld/d65269c3be5ba28564fbe4aa6cffa36d82e68e8c/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "QuickNovelProvider": {
-        "name": "QuickNovel",
-        "url": "https://github.com/LagradOst/QuickNovel",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/LagradOst/QuickNovel/61d83d97f412b0af84e4fc7b6a357437f3908ff4/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "IReaderProvider": {
-        "name": "IReader",
-        "url": "https://github.com/IReaderorg/IReader",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/IReaderorg/IReader/a847214baf52c148add17beabccc49bf8afa5595/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    "NekoProvider": {
-        "name": "Neko",
-        "url": "https://github.com/CarlosEsco/Neko",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/nekomangaorg/Neko/main/.github/assets/logo.png"
-    },
-    "TetherFiProvider": {
-        "name": "TetherFi",
-        "url": "https://github.com/pyamsoft/tetherfi",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/pyamsoft/tetherfi/56c10cf60156c75a5f59da85b62e4968928af81e/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    "SimpMusicProvider": {
-        "name": "SimpMusic",
-        "url": "https://github.com/maxrave-dev/SimpMusic",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/maxrave-dev/SimpMusic/jetpack_compose/app/src/main/ic_launcher-playstore.png"
-    },
     "MiruProvider": {
         "name": "Miru",
         "url": "https://github.com/Mancrop/mancrop-miru",
         "status": 4,
         "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
-    },
-    "IMGBoxProvider": {
-        "name": "IMGBox",
-        "url": "https://github.com/T8RIN/ImageToolbox",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/T8RIN/ImageToolbox/master/fastlane/metadata/android/en-US/images/logo/logo.png"
-    },
-    "OSSDSProvider": {
-        "name": "OSSDS",
-        "url": "https://github.com/Akylas/OSS-DocumentScanner",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/Akylas/OSS-DocumentScanner/master/App_Resources/documentscanner/Android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
+    }
     "NatomangaProvider": {
         "name": "Natomanga",
         "url": "https://www.natomanga.com",
