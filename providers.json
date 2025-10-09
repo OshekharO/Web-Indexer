@@ -400,5 +400,11 @@
     "url": "https://spankbang.com",
     "status": 7,
     "icon": "https://www.google.com/s2/favicons?domain=https://spankbang.com&sz=128"
+  },
+  "testProvider": {
+    "name": "Test",
+    "url": "https://test.com",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://test.com/&sz=128"
   }
 }
