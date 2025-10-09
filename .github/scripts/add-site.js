@@ -127,11 +127,23 @@ console.log('ℹ️  Description field is not supported in providers.json - skip
 providers[providerKey] = newProvider;
 console.log(`✅ Added ${providerKey} to providers`);
 
-// Sort providers alphabetically by key
-console.log('🔄 Sorting providers...');
+// Sort providers by status (0-7) and then alphabetically by name
+console.log('🔄 Sorting providers by status and name...');
 const sortedProviders = {};
-Object.keys(providers).sort().forEach(key => {
-  sortedProviders[key] = providers[key];
+
+// Convert to array, sort, then convert back to object
+const sortedEntries = Object.entries(providers).sort(([keyA, providerA], [keyB, providerB]) => {
+  // First sort by status (0-7)
+  if (providerA.status !== providerB.status) {
+    return providerA.status - providerB.status;
+  }
+  // If same status, sort alphabetically by name
+  return providerA.name.localeCompare(providerB.name);
+});
+
+// Convert back to object
+sortedEntries.forEach(([key, provider]) => {
+  sortedProviders[key] = provider;
 });
 
 // Write back to file
