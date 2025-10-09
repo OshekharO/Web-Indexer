@@ -1,0 +1,113 @@
+name: Process Site Suggestions
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+
+jobs:
+  process-suggestion:
+    if: contains(github.event.issue.labels.*.name, 'site-suggestion') && contains(github.event.issue.labels.*.name, 'approved')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Extract site information from issue
+        id: extract
+        run: |
+          ISSUE_BODY="${{ github.event.issue.body }}"
+          
+          # Extract site information using grep and sed
+          SITE_NAME=$(echo "$ISSUE_BODY" | grep -oP 'Site Name:\s*\*\*(.*?)\*\*' | sed -E 's/Site Name:\s*\*\*(.*)\*\*/\1/' | head -1)
+          SITE_URL=$(echo "$ISSUE_BODY" | grep -oP 'URL:\s*\*\*(.*?)\*\*' | sed -E 's/URL:\s*\*\*(.*)\*\*/\1/' | head -1)
+          SITE_CATEGORY=$(echo "$ISSUE_BODY" | grep -oP 'Category:\s*\*\*(.*?)\*\*' | sed -E 's/Category:\s*\*\*(.*)\*\*/\1/' | head -1)
+          SITE_ICON=$(echo "$ISSUE_BODY" | grep -oP 'Icon URL:\s*\*\*(.*?)\*\*' | sed -E 's/Icon URL:\s*\*\*(.*)\*\*/\1/' | head -1)
+          SITE_DESCRIPTION=$(echo "$ISSUE_BODY" | grep -oP 'Description:\s*\*\*(.*?)\*\*' | sed -E 's/Description:\s*\*\*(.*)\*\*/\1/' | head -1)
+          
+          # Map category to status code
+          case "$SITE_CATEGORY" in
+            "Manga") STATUS=1 ;;
+            "Light Novel") STATUS=2 ;;
+            "Movie") STATUS=3 ;;
+            "App") STATUS=4 ;;
+            "Anime") STATUS=5 ;;
+            "Learning") STATUS=6 ;;
+            "NSFW") STATUS=7 ;;
+            *) STATUS=0 ;;
+          esac
+          
+          # Generate provider key
+          PROVIDER_KEY=$(echo "$SITE_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]//g')Provider
+          
+          echo "provider_key=$PROVIDER_KEY" >> $GITHUB_OUTPUT
+          echo "site_name=$SITE_NAME" >> $GITHUB_OUTPUT
+          echo "site_url=$SITE_URL" >> $GITHUB_OUTPUT
+          echo "site_status=$STATUS" >> $GITHUB_OUTPUT
+          echo "site_icon=$SITE_ICON" >> $GITHUB_OUTPUT
+          echo "site_description=$SITE_DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "issue_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+
+      - name: Add site to providers.json
+        run: |
+          node .github/scripts/add-site.js \
+            --key "${{ steps.extract.outputs.provider_key }}" \
+            --name "${{ steps.extract.outputs.site_name }}" \
+            --url "${{ steps.extract.outputs.site_url }}" \
+            --status "${{ steps.extract.outputs.site_status }}" \
+            --icon "${{ steps.extract.outputs.site_icon }}" \
+            --issue "${{ steps.extract.outputs.issue_number }}"
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Add site: ${{ steps.extract.outputs.site_name }}"
+          title: "Add ${{ steps.extract.outputs.site_name }} to index"
+          body: |
+            This PR automatically adds **${{ steps.extract.outputs.site_name }}** to the website index.
+            
+            - **Site:** ${{ steps.extract.outputs.site_name }}
+            - **URL:** ${{ steps.extract.outputs.site_url }}
+            - **Category:** ${{ steps.extract.outputs.site_status }}
+            - **Issue:** #${{ steps.extract.outputs.issue_number }}
+            
+            Auto-generated from approved site suggestion.
+          branch: "add-site-${{ steps.extract.outputs.issue_number }}"
+          delete-branch: true
+
+      - name: Comment on issue
+        if: steps.create-pr.outputs.pull-request-number != ''
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ Site suggestion processed! A pull request has been automatically created: #${${{ steps.create-pr.outputs.pull-request-number }}}`
+            })
+            
+            // Remove approved label and add processed label
+            github.rest.issues.removeLabel({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'approved'
+            })
+            
+            github.rest.issues.addLabels({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['processed', 'auto-pr-created']
+            })
