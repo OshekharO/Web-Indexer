@@ -195,7 +195,21 @@ try {
   const providerKey = generateSafeKey(data.name);
   console.log('🔑 Generated provider key:', providerKey);
   
-  // Output for GitHub Actions - NEW SYNTAX
+  // Create data object
+  const extractedData = {
+    provider_key: providerKey,
+    site_name: data.name,
+    site_url: data.url,
+    site_status: status,
+    site_icon: data.icon || '',
+    site_description: data.description || ''
+  };
+  
+  // Write to JSON file for reliable data passing
+  fs.writeFileSync('extracted_data.json', JSON.stringify(extractedData, null, 2));
+  console.log('📁 Extracted data written to extracted_data.json');
+  
+  // Also output to GITHUB_OUTPUT for backward compatibility
   const outputFile = process.env.GITHUB_OUTPUT;
   if (outputFile) {
     const outputs = [
@@ -209,15 +223,9 @@ try {
     
     fs.appendFileSync(outputFile, outputs);
     console.log('✅ Outputs written to GITHUB_OUTPUT');
-  } else {
-    // Fallback for local testing
-    console.log(`::set-output name=provider_key::${providerKey}`);
-    console.log(`::set-output name=site_name::${data.name}`);
-    console.log(`::set-output name=site_url::${data.url}`);
-    console.log(`::set-output name=site_status::${status}`);
-    console.log(`::set-output name=site_icon::${data.icon}`);
-    console.log(`::set-output name=site_description::${data.description}`);
   }
+  
+  console.log('🎉 Extraction completed successfully!');
   
 } catch (error) {
   console.error('❌ Error during extraction:', error);
