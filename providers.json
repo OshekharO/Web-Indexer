@@ -1,392 +1,399 @@
 {
-    "PrmoviesProvider": {
-        "name": "PRMovies",
-        "url": "https://prmovies.fitness",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.fitness&sz=128"
-    },
-    "PStreamProvider": {
-        "name": "P-Stream",
-        "url": "https://pstream.mov",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://pstream.mov&sz=128"
-    },
-    "VegaProvider": {
-        "name": "VegaMovies",
-        "url": "https://vegamovles.com",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://vegamovles.com&sz=128"
-    },
-    "KisskhProvider": {
-        "name": "Kisskh",
-        "url": "https://kisskh.co",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128"
-    },
-    "DramahoodProvider": {
-        "name": "Dramahood",
-        "url": "https://dramahood.mom",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://dramahood.mom&sz=128"
-    },
-    "Turkish123Provider": {
-        "name": "Turkish123",
-        "url": "https://c.turkish123.website/",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://c.turkish123.website&sz=128"
-    },
-    "Turksub24Provider": {
-        "name": "Turksub24",
-        "url": "https://turksub24.top",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://turksub24.top&sz=128"
-    },
-    "FlixerProvider": {
-        "name": "Flixer",
-        "url": "https://flixer.su",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://flixer.su&sz=128"
-    },
-    "FlickyStreamProvider": {
-        "name": "FlickyStream",
-        "url": "https://flickystream.ru",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://flickystream.ru&sz=128"
-    },
-    "ShowFlixProvider": {
-        "name": "ShowFlix",
-        "url": "https://showflix.store",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://showflix.store&sz=128"
-    },
-    "NetMirrorProvider": {
-        "name": "NetMirror",
-        "url": "https://netmirror.app",
-        "status": 3,
-        "icon": "https://www.google.com/s2/favicons?domain=https://netmirror.app&sz=128"
-    },
-    "HianimeProvider": {
-        "name": "Hianime",
-        "url": "https://hianime.tv",
-        "status": 5,
-        "icon": "https://hianime.tv/proxy/logo.png"
-    },
-    "KaidoProvider": {
-        "name": "Kaido",
-        "url": "https://kaido.to",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://kaido.to&sz=128"
-    },
-    "AnimepaheProvider": {
-        "name": "AnimePahe",
-        "url": "https://animepahe.si",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.si&sz=128"
-    },
-    "MiruroProvider": {
-        "name": "Miruro",
-        "url": "https://www.miruro.tv",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
-    },
-    "AnimeKaiProvider": {
-        "name": "AnimeKai",
-        "url": "https://animekai.me",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://animekai.me&sz=128"
-    },
-    "123AnimeProvider": {
-        "name": "123Anime",
-        "url": "https://123animes.ru",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://123animes.ru&sz=128"
-    },
-    "KuudereProvider": {
-        "name": "Kuudere",
-        "url": "https://kuudere.to",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://kuudere.to&sz=128"
-    },
-    "HiCartoonProvider": {
-        "name": "HiCartoon",
-        "url": "https://hicartoon.to/home",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://hicartoon.to&sz=128"
-    },
-    "AnimixStreamProvider": {
-        "name": "AnimixStream",
-        "url": "https://animixstream.com",
-        "status": 5,
-        "icon": "https://www.google.com/s2/favicons?domain=https://animixstream.com&sz=128"
-    },
-    "KartoonsProvider": {
-        "name": "Kartoons",
-        "url": "https://kartoons.fun/home",
-        "status": 5,
-        "icon": "https://kartoons.fun/logo.png"
-    },
-    "ReVancedProvider": {
-        "name": "ReVanced",
-        "url": "https://revanced.app",
-        "status": 4,
-        "icon": "https://avatars.githubusercontent.com/u/101597779?s=200&v=4"
-    },
-    "LibreTubeProvider": {
-        "name": "LibreTube",
-        "url": "https://github.com/libre-tube/LibreTube",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
-    },
-    "NewPipeProvider": {
-        "name": "NewPipe",
-        "url": "https://github.com/TeamNewPipe/NewPipe",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/refs/heads/dev/assets/new_pipe_icon_5.png"
-    },
-    "SmartTubeProvider": {
-        "name": "SmartTube",
-        "url": "https://github.com/yuliskov/SmartTubeNext",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
-    },
-    "GloomProvider": {
-        "name": "Gloom",
-        "url": "https://github.com/MateriiApps/Gloom",
-        "status": 4,
-        "icon": "https://user-images.githubusercontent.com/44992537/197398356-81d33bbf-35bc-43a6-96c1-002f1b1923cf.png"
-    },
-    "AliucordProvider": {
-        "name": "Aliucord",
-        "url": "https://github.com/Aliucord/Aliucord",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/Aliucord/Aliucord/6df69dbbe0cadceadabde9ed270492e683c39964/installer/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    "SealProvider": {
-        "name": "Seal",
-        "url": "https://github.com/JunkFood02/Seal",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/JunkFood02/Seal/03ac92781e1dc1074297821ff589949cac54b54b/fastlane/metadata/android/en-US/images/icon.png"
-    },
-    "YTDLnisProvider": {
-        "name": "YTDLnis",
-        "url": "https://github.com/deniscerri/ytdlnis",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/deniscerri/ytdlnis/811f3b07ecaa346cf441012071bf0575ccb1d6f0/app/src/main/ic_launcher-playstore.png"
-    },
-    "MusifyProvider": {
-        "name": "Musify",
-        "url": "https://github.com/gokadzev/Musify",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
-    },
-    "AuxioProvider": {
-        "name": "Auxio",
-        "url": "https://github.com/OxygenCobalt/Auxio",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/OxygenCobalt/Auxio/refs/heads/dev/fastlane/metadata/android/en-US/images/icon.png"
-    },
-    "SimpMusicProvider": {
-        "name": "SimpMusic",
-        "url": "https://github.com/maxrave-dev/SimpMusic",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/maxrave-dev/SimpMusic/jetpack_compose/app/src/main/ic_launcher-playstore.png"
-    },
-    "CloudStreamProvider": {
-        "name": "CloudStream",
-        "url": "https://github.com/recloudstream/cloudstream",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
-    },
-    "LegadoProvider": {
-        "name": "Legado",
-        "url": "https://github.com/gedoor/legado",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/gedoor/legado/782bdbef5e5e928d3bada2a772f8e18daa7705a7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    "KotatsuProvider": {
-        "name": "Kotatsu",
-        "url": "https://github.com/nv95/Kotatsu/",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/nv95/Kotatsu/9da5bdaad49f0f6b9263a110b8b6189d2e8a2813/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
-    },
-    "LNReaderProvider": {
-        "name": "LNReader",
-        "url": "https://github.com/LNReader/lnreader",
-        "status": 4,
-        "icon": "https://rawcdn.githack.com/LNReader/lnreader/518f73f6fdeba3b3a562ac382143cc910fe58fe1/.github/readme-images/icon_alt.png"
-    },
-    "MiruProvider": {
-        "name": "Miru",
-        "url": "https://github.com/miru-project/miru-alpha",
-        "status": 4,
-        "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
-    },
-    "NatomangaProvider": {
-        "name": "Natomanga",
-        "url": "https://www.natomanga.com",
-        "status": 1,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.natomanga.com&sz=128"
-    },
-    "MangadexProvider": {
-        "name": "Mangadex",
-        "url": "https://mangadex.org",
-        "status": 1,
-        "icon": "https://www.google.com/s2/favicons?domain=https://mangadex.org&sz=128"
-    },
-    "ComickProvider": {
-        "name": "Comick",
-        "url": "https://comick.io",
-        "status": 1,
-        "icon": "https://comick.io/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"
-    },
-    "MangaparkProvider": {
-        "name": "Mangapark",
-        "url": "https://mangapark.net",
-        "status": 1,
-        "icon": "https://www.google.com/s2/favicons?domain=https://mangapark.net&sz=128"
-    },
-    "BatoProvider": {
-        "name": "Bato",
-        "url": "https://bato.to",
-        "status": 1,
-        "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
-    },
-    "MangaFoxProvider": {
-        "name": "MangaFox",
-        "url": "https://fanfox.net",
-        "status": 1,
-        "icon": "https://www.google.com/s2/favicons?domain=https://fanfox.net&sz=128"
-    },
-    "WeebCentralProvider": {
-        "name": "WeebCentral",
-        "url": "https://weebcentral.com",
-        "status": 1,
-        "icon": "https://www.google.com/s2/favicons?domain=https://weebcentral.com&sz=128"
-    },
-    "FictionzoneProvider": {
-        "name": "Fictionzone",
-        "url": "https://fictionzone.net",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://fictionzone.net&sz=128"
-    },
-    "NovelsemperorProvider": {
-        "name": "NovelsEmperor",
-        "url": "https://novelsemperor.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://novelsemperor.com&sz=128"
-    },
-    "4kswProvider": {
-        "name": "4ksw",
-        "url": "https://www.4kushuwu.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.4kushuwu.com&sz=128"
-    },
-    "LnmtlProvider": {
-        "name": "Lnmtl",
-        "url": "https://lnmtl.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://lnmtl.com&sz=128"
-    },
-    "FanMTLProvider": {
-        "name": "FanMTL",
-        "url": "https://www.fanmtl.com/",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.fanmtl.com&sz=128"
-    },
-    "WuxiaBoxProvider": {
-        "name": "WuxiaBox",
-        "url": "https://www.wuxiabox.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128"
-    },
-    "MTLBooksProvider": {
-        "name": "MTLBooks",
-        "url": "https://mtlbooks.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://mtlbooks.com&sz=128"
-    },
-    "38xsProvider": {
-        "name": "38xs",
-        "url": "https://m.38xs.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://m.38xs.com&sz=128"
-    },
-    "Wtrlabrovider": {
-        "name": "WTR LAB",
-        "url": "https://wtr-lab.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://wtr-lab.com&sz=128"
-    },
-    "BixiangeProvider": {
-        "name": "Bixiange",
-        "url": "https://m.bixiange.me",
-        "status": 2,
-        "icon": "https://m.bixiange.me/images/logo.png"
-    },
-    "UukanshuProvider": {
-        "name": "Uukanshu",
-        "url": "https://www.zhaoshuyuan.net",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.zhaoshuyuan.net&sz=128"
-    },
-    "Jpxs123Provider": {
-        "name": "Jpxs123",
-        "url": "https://jpxs123.com",
-        "status": 2,
-        "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
-    },
-    "VLabProvider": {
-        "name": "Virtual Lab",
-        "url": "https://www.vlab.co.in",
-        "status": 6,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.vlab.co.in&sz=128"
-    },
-    "LiaoxuefengProvider": {
-        "name": "Liao Xuefeng",
-        "url": "https://liaoxuefeng.com",
-        "status": 6,
-        "icon": "https://www.google.com/s2/favicons?domain=https://liaoxuefeng.com&sz=128"
-    },
-    "W3SchoolsProvider": {
-        "name": "W3Schools",
-        "url": "https://www.w3schools.com",
-        "status": 6,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.w3schools.com&sz=128"
-    },
-    "BeginnersBookProvider": {
-        "name": "BeginnersBook",
-        "url": "https://beginnersbook.com",
-        "status": 6,
-        "icon": "https://www.google.com/s2/favicons?domain=https://beginnersbook.com&sz=128"
-    },
-    "PornHubProvider": {
-        "name": "PornHub",
-        "url": "https://proxyhub.pages.dev",
-        "status": 7,
-        "icon": "https://www.google.com/s2/favicons?domain=https://proxyhub.pages.dev&sz=128"
-    },
-    "SpankBangProvider": {
-        "name": "SpankBang",
-        "url": "https://spankbang.com",
-        "status": 7,
-        "icon": "https://www.google.com/s2/favicons?domain=https://spankbang.com&sz=128"
-    },
-    "LiteroticaProvider": {
-        "name": "Literotica",
-        "url": "https://www.literotica.com",
-        "status": 7,
-        "icon": "https://www.google.com/s2/favicons?domain=https://www.literotica.com&sz=128"
-    },
-    "Manga18Provider": {
-        "name": "Manga18",
-        "url": "https://manga18.me",
-        "status": 7,
-        "icon": "https://www.google.com/s2/favicons?domain=https://manga18.me&sz=128"
-    },
-    "JavHDProvider": {
-        "name": "JavHD",
-        "url": "https://javhd.icu",
-        "status": 7,
-        "icon": "https://www.google.com/s2/favicons?domain=https://javhd.icu&sz=128"
-    }
+  "123AnimeProvider": {
+    "name": "123Anime",
+    "url": "https://123animes.ru",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://123animes.ru&sz=128"
+  },
+  "38xsProvider": {
+    "name": "38xs",
+    "url": "https://m.38xs.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://m.38xs.com&sz=128"
+  },
+  "4kswProvider": {
+    "name": "4ksw",
+    "url": "https://www.4kushuwu.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.4kushuwu.com&sz=128"
+  },
+  "AliucordProvider": {
+    "name": "Aliucord",
+    "url": "https://github.com/Aliucord/Aliucord",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/Aliucord/Aliucord/6df69dbbe0cadceadabde9ed270492e683c39964/installer/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+  },
+  "AnimeKaiProvider": {
+    "name": "AnimeKai",
+    "url": "https://animekai.me",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://animekai.me&sz=128"
+  },
+  "AnimepaheProvider": {
+    "name": "AnimePahe",
+    "url": "https://animepahe.si",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.si&sz=128"
+  },
+  "AnimixStreamProvider": {
+    "name": "AnimixStream",
+    "url": "https://animixstream.com",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://animixstream.com&sz=128"
+  },
+  "AuxioProvider": {
+    "name": "Auxio",
+    "url": "https://github.com/OxygenCobalt/Auxio",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/OxygenCobalt/Auxio/refs/heads/dev/fastlane/metadata/android/en-US/images/icon.png"
+  },
+  "BatoProvider": {
+    "name": "Bato",
+    "url": "https://bato.to",
+    "status": 1,
+    "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
+  },
+  "BeginnersBookProvider": {
+    "name": "BeginnersBook",
+    "url": "https://beginnersbook.com",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://beginnersbook.com&sz=128"
+  },
+  "BixiangeProvider": {
+    "name": "Bixiange",
+    "url": "https://m.bixiange.me",
+    "status": 2,
+    "icon": "https://m.bixiange.me/images/logo.png"
+  },
+  "CloudStreamProvider": {
+    "name": "CloudStream",
+    "url": "https://github.com/recloudstream/cloudstream",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
+  },
+  "ComickProvider": {
+    "name": "Comick",
+    "url": "https://comick.io",
+    "status": 1,
+    "icon": "https://comick.io/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"
+  },
+  "DramahoodProvider": {
+    "name": "Dramahood",
+    "url": "https://dramahood.mom",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://dramahood.mom&sz=128"
+  },
+  "FanMTLProvider": {
+    "name": "FanMTL",
+    "url": "https://www.fanmtl.com/",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.fanmtl.com&sz=128"
+  },
+  "FictionzoneProvider": {
+    "name": "Fictionzone",
+    "url": "https://fictionzone.net",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://fictionzone.net&sz=128"
+  },
+  "FlickyStreamProvider": {
+    "name": "FlickyStream",
+    "url": "https://flickystream.ru",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://flickystream.ru&sz=128"
+  },
+  "FlixerProvider": {
+    "name": "Flixer",
+    "url": "https://flixer.su",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://flixer.su&sz=128"
+  },
+  "GloomProvider": {
+    "name": "Gloom",
+    "url": "https://github.com/MateriiApps/Gloom",
+    "status": 4,
+    "icon": "https://user-images.githubusercontent.com/44992537/197398356-81d33bbf-35bc-43a6-96c1-002f1b1923cf.png"
+  },
+  "HiCartoonProvider": {
+    "name": "HiCartoon",
+    "url": "https://hicartoon.to/home",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://hicartoon.to&sz=128"
+  },
+  "HianimeProvider": {
+    "name": "Hianime",
+    "url": "https://hianime.tv",
+    "status": 5,
+    "icon": "https://hianime.tv/proxy/logo.png"
+  },
+  "JavHDProvider": {
+    "name": "JavHD",
+    "url": "https://javhd.icu",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://javhd.icu&sz=128"
+  },
+  "Jpxs123Provider": {
+    "name": "Jpxs123",
+    "url": "https://jpxs123.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128"
+  },
+  "KaidoProvider": {
+    "name": "Kaido",
+    "url": "https://kaido.to",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://kaido.to&sz=128"
+  },
+  "KartoonsProvider": {
+    "name": "Kartoons",
+    "url": "https://kartoons.fun/home",
+    "status": 5,
+    "icon": "https://kartoons.fun/logo.png"
+  },
+  "KisskhProvider": {
+    "name": "Kisskh",
+    "url": "https://kisskh.co",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128"
+  },
+  "KotatsuProvider": {
+    "name": "Kotatsu",
+    "url": "https://github.com/nv95/Kotatsu/",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/nv95/Kotatsu/9da5bdaad49f0f6b9263a110b8b6189d2e8a2813/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
+  },
+  "KuudereProvider": {
+    "name": "Kuudere",
+    "url": "https://kuudere.to",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://kuudere.to&sz=128"
+  },
+  "LNReaderProvider": {
+    "name": "LNReader",
+    "url": "https://github.com/LNReader/lnreader",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/LNReader/lnreader/518f73f6fdeba3b3a562ac382143cc910fe58fe1/.github/readme-images/icon_alt.png"
+  },
+  "LegadoProvider": {
+    "name": "Legado",
+    "url": "https://github.com/gedoor/legado",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/gedoor/legado/782bdbef5e5e928d3bada2a772f8e18daa7705a7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+  },
+  "LiaoxuefengProvider": {
+    "name": "Liao Xuefeng",
+    "url": "https://liaoxuefeng.com",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://liaoxuefeng.com&sz=128"
+  },
+  "LibreTubeProvider": {
+    "name": "LibreTube",
+    "url": "https://github.com/libre-tube/LibreTube",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
+  },
+  "LiteroticaProvider": {
+    "name": "Literotica",
+    "url": "https://www.literotica.com",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.literotica.com&sz=128"
+  },
+  "LnmtlProvider": {
+    "name": "Lnmtl",
+    "url": "https://lnmtl.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://lnmtl.com&sz=128"
+  },
+  "MTLBooksProvider": {
+    "name": "MTLBooks",
+    "url": "https://mtlbooks.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mtlbooks.com&sz=128"
+  },
+  "Manga18Provider": {
+    "name": "Manga18",
+    "url": "https://manga18.me",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://manga18.me&sz=128"
+  },
+  "MangaFoxProvider": {
+    "name": "MangaFox",
+    "url": "https://fanfox.net",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://fanfox.net&sz=128"
+  },
+  "MangadexProvider": {
+    "name": "Mangadex",
+    "url": "https://mangadex.org",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mangadex.org&sz=128"
+  },
+  "MangaparkProvider": {
+    "name": "Mangapark",
+    "url": "https://mangapark.net",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mangapark.net&sz=128"
+  },
+  "MiruProvider": {
+    "name": "Miru",
+    "url": "https://github.com/miru-project/miru-alpha",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
+  },
+  "MiruroProvider": {
+    "name": "Miruro",
+    "url": "https://www.miruro.tv",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
+  },
+  "MusifyProvider": {
+    "name": "Musify",
+    "url": "https://github.com/gokadzev/Musify",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
+  },
+  "NatomangaProvider": {
+    "name": "Natomanga",
+    "url": "https://www.natomanga.com",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.natomanga.com&sz=128"
+  },
+  "NetMirrorProvider": {
+    "name": "NetMirror",
+    "url": "https://netmirror.app",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://netmirror.app&sz=128"
+  },
+  "NewPipeProvider": {
+    "name": "NewPipe",
+    "url": "https://github.com/TeamNewPipe/NewPipe",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/refs/heads/dev/assets/new_pipe_icon_5.png"
+  },
+  "NovelsemperorProvider": {
+    "name": "NovelsEmperor",
+    "url": "https://novelsemperor.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://novelsemperor.com&sz=128"
+  },
+  "PStreamProvider": {
+    "name": "P-Stream",
+    "url": "https://pstream.mov",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://pstream.mov&sz=128"
+  },
+  "PornHubProvider": {
+    "name": "PornHub",
+    "url": "https://proxyhub.pages.dev",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://proxyhub.pages.dev&sz=128"
+  },
+  "PrmoviesProvider": {
+    "name": "PRMovies",
+    "url": "https://prmovies.fitness",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.fitness&sz=128"
+  },
+  "ReVancedProvider": {
+    "name": "ReVanced",
+    "url": "https://revanced.app",
+    "status": 4,
+    "icon": "https://avatars.githubusercontent.com/u/101597779?s=200&v=4"
+  },
+  "SealProvider": {
+    "name": "Seal",
+    "url": "https://github.com/JunkFood02/Seal",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/JunkFood02/Seal/03ac92781e1dc1074297821ff589949cac54b54b/fastlane/metadata/android/en-US/images/icon.png"
+  },
+  "ShowFlixProvider": {
+    "name": "ShowFlix",
+    "url": "https://showflix.store",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://showflix.store&sz=128"
+  },
+  "SimpMusicProvider": {
+    "name": "SimpMusic",
+    "url": "https://github.com/maxrave-dev/SimpMusic",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/maxrave-dev/SimpMusic/jetpack_compose/app/src/main/ic_launcher-playstore.png"
+  },
+  "SmartTubeProvider": {
+    "name": "SmartTube",
+    "url": "https://github.com/yuliskov/SmartTubeNext",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
+  },
+  "SpankBangProvider": {
+    "name": "SpankBang",
+    "url": "https://spankbang.com",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://spankbang.com&sz=128"
+  },
+  "Turkish123Provider": {
+    "name": "Turkish123",
+    "url": "https://c.turkish123.website/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://c.turkish123.website&sz=128"
+  },
+  "Turksub24Provider": {
+    "name": "Turksub24",
+    "url": "https://turksub24.top",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://turksub24.top&sz=128"
+  },
+  "UukanshuProvider": {
+    "name": "Uukanshu",
+    "url": "https://www.zhaoshuyuan.net",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.zhaoshuyuan.net&sz=128"
+  },
+  "VLabProvider": {
+    "name": "Virtual Lab",
+    "url": "https://www.vlab.co.in",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.vlab.co.in&sz=128"
+  },
+  "VegaProvider": {
+    "name": "VegaMovies",
+    "url": "https://vegamovles.com",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://vegamovles.com&sz=128"
+  },
+  "W3SchoolsProvider": {
+    "name": "W3Schools",
+    "url": "https://www.w3schools.com",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.w3schools.com&sz=128"
+  },
+  "WeebCentralProvider": {
+    "name": "WeebCentral",
+    "url": "https://weebcentral.com",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://weebcentral.com&sz=128"
+  },
+  "Wtrlabrovider": {
+    "name": "WTR LAB",
+    "url": "https://wtr-lab.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://wtr-lab.com&sz=128"
+  },
+  "WuxiaBoxProvider": {
+    "name": "WuxiaBox",
+    "url": "https://www.wuxiabox.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128"
+  },
+  "YTDLnisProvider": {
+    "name": "YTDLnis",
+    "url": "https://github.com/deniscerri/ytdlnis",
+    "status": 4,
+    "icon": "https://rawcdn.githack.com/deniscerri/ytdlnis/811f3b07ecaa346cf441012071bf0575ccb1d6f0/app/src/main/ic_launcher-playstore.png"
+  },
+  "multimoviesProvider": {
+    "name": "MultiMovies",
+    "url": "https://multimovies.sale",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://multimovies.sale&sz=128",
+    "description": "Premier Hub for Streaming Movies, TV Shows, and Cartoons."
+  }
 }
