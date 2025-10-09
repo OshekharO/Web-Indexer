@@ -88,7 +88,7 @@ if (!params.url || params.url.trim() === '') {
   process.exit(1);
 }
 
-// Create new provider object
+// Create new provider object (without description as it's not supported)
 const newProvider = {
   name: params.name.trim(),
   url: params.url.trim(),
@@ -120,11 +120,8 @@ if (!newProvider.icon) {
   }
 }
 
-// Add description if provided
-if (params.description && params.description.trim() !== '' && params.description !== 'Not provided' && params.description !== '_No response') {
-  newProvider.description = params.description.trim();
-  console.log(`📝 Added description: ${newProvider.description}`);
-}
+// Description is not supported in providers.json, so we skip it
+console.log('ℹ️  Description field is not supported in providers.json - skipping');
 
 // Add to providers
 providers[providerKey] = newProvider;
@@ -146,9 +143,6 @@ try {
   console.log(`🌐 URL: ${newProvider.url}`);
   console.log(`📁 Status: ${newProvider.status}`);
   console.log(`🖼️ Icon: ${newProvider.icon}`);
-  if (newProvider.description) {
-    console.log(`📝 Description: ${newProvider.description}`);
-  }
 } catch (error) {
   console.error('❌ Error writing providers.json:', error);
   process.exit(1);
