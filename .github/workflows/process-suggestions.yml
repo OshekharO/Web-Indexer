@@ -1,42 +1,60 @@
 name: Process Site Suggestions
 on:
   issues:
-    types: [labeled, opened]
+    types: [labeled]
   workflow_dispatch:
 
 jobs:
-  validate-suggestion:
-    if: contains(github.event.issue.labels.*.name, 'site-suggestion') || github.event.action == 'opened'
+  debug-labels:
+    if: github.event_name == 'issues'
     runs-on: ubuntu-latest
     outputs:
-      is_valid: ${{ steps.validate.outputs.result }}
-      validation_feedback: ${{ steps.validate.outputs.feedback }}
+      has_site_suggestion: ${{ steps.check-labels.outputs.has_site_suggestion }}
+      has_approved: ${{ steps.check-labels.outputs.has_approved }}
+      all_labels: ${{ steps.check-labels.outputs.all_labels }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Validate site submission
-        id: validate
+      - name: Check labels
+        id: check-labels
         run: |
-          node .github/scripts/validate-issue.js "${{ toJson(github.event.issue.body) }}" "${{ github.event.issue.number }}"
-
-      - name: Add initial labels
-        if: github.event.action == 'opened'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            await github.rest.issues.addLabels({
-              issue_number: ${{ github.event.issue.number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['site-suggestion', 'pending-review']
-            });
+          echo "Event action: ${{ github.event.action }}"
+          echo "All labels: ${{ toJson(github.event.issue.labels) }}"
+          
+          # Get all label names
+          LABEL_NAMES=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | tr '\n' ',' | sed 's/,$//')
+          echo "Label names: $LABEL_NAMES"
+          
+          # Check for site-suggestion label (case insensitive)
+          if echo "$LABEL_NAMES" | grep -qi "site-suggestion"; then
+            echo "✅ Found site-suggestion label"
+            echo "has_site_suggestion=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ No site-suggestion label found"
+            echo "has_site_suggestion=false" >> $GITHUB_OUTPUT
+          fi
+          
+          # Check for approved label (case insensitive)
+          if echo "$LABEL_NAMES" | grep -qi "approved"; then
+            echo "✅ Found approved label"
+            echo "has_approved=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ No approved label found"
+            echo "has_approved=false" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "all_labels=$LABEL_NAMES" >> $GITHUB_OUTPUT
 
   process-suggestion:
-    if: contains(github.event.issue.labels.*.name, 'site-suggestion') && contains(github.event.issue.labels.*.name, 'approved')
-    needs: validate-suggestion
+    needs: debug-labels
+    if: needs.debug-labels.outputs.has_site_suggestion == 'true' && needs.debug-labels.outputs.has_approved == 'true'
     runs-on: ubuntu-latest
     steps:
+      - name: Debug why job is running
+        run: |
+          echo "🎉 Job is running because:"
+          echo "has_site_suggestion: ${{ needs.debug-labels.outputs.has_site_suggestion }}"
+          echo "has_approved: ${{ needs.debug-labels.outputs.has_approved }}"
+          echo "all_labels: ${{ needs.debug-labels.outputs.all_labels }}"
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -56,7 +74,8 @@ jobs:
           EOF
           )
           
-          echo "Extracting site information from issue..."
+          echo "📝 Extracting site information from issue #${{ github.event.issue.number }}..."
+          echo "Issue Title: ${{ github.event.issue.title }}"
           
           # Extract using the exact format from your site suggestions
           SITE_NAME=$(echo "$ISSUE_BODY" | grep "**Site Name:**" | head -1 | sed 's/**Site Name:**//' | xargs)
@@ -65,7 +84,7 @@ jobs:
           SITE_ICON=$(echo "$ISSUE_BODY" | grep "**Icon URL:**" | head -1 | sed 's/**Icon URL:**//' | xargs)
           SITE_DESCRIPTION=$(echo "$ISSUE_BODY" | grep "**Description:**" | head -1 | sed 's/**Description:**//' | xargs)
           
-          echo "Extracted values:"
+          echo "🔍 Extracted values:"
           echo "Name: '$SITE_NAME'"
           echo "URL: '$SITE_URL'"
           echo "Category: '$SITE_CATEGORY'"
@@ -98,7 +117,7 @@ jobs:
 
       - name: Validate extracted data
         run: |
-          echo "Validating extracted data..."
+          echo "✅ Validating extracted data..."
           echo "Site Name: '${{ steps.extract.outputs.site_name }}'"
           echo "Site URL: '${{ steps.extract.outputs.site_url }}'"
           echo "Site Status: '${{ steps.extract.outputs.site_status }}'"
@@ -112,12 +131,13 @@ jobs:
             exit 1
           fi
           if [ "${{ steps.extract.outputs.site_status }}" = "0" ]; then
-            echo "⚠️ Warning: Unknown category, using status 0"
+            echo "⚠️ Warning: Unknown category '${{ steps.extract.outputs.site_category }}', using status 0"
           fi
-          echo "✅ Data validation passed"
+          echo "🎉 Data validation passed"
 
       - name: Add site to providers.json
         run: |
+          echo "📝 Adding site to providers.json..."
           node .github/scripts/add-site.js \
             --key "${{ steps.extract.outputs.provider_key }}" \
             --name "${{ steps.extract.outputs.site_name }}" \
@@ -151,36 +171,53 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.createComment({
+            const prNumber = ${{ steps.create-pr.outputs.pull-request-number }};
+            console.log(`Creating comment for PR #${prNumber}`);
+            
+            await github.rest.issues.createComment({
               issue_number: ${{ steps.extract.outputs.issue_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ Site suggestion processed! A pull request has been automatically created: #${${{ steps.create-pr.outputs.pull-request-number }}}`
-            })
+              body: `✅ Site suggestion processed! A pull request has been automatically created: #${prNumber}`
+            });
             
             // Remove approved label and add processed label
-            github.rest.issues.removeLabel({
+            await github.rest.issues.removeLabel({
               issue_number: ${{ steps.extract.outputs.issue_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: 'approved'
-            })
+            });
             
-            github.rest.issues.addLabels({
+            await github.rest.issues.addLabels({
               issue_number: ${{ steps.extract.outputs.issue_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['processed', 'auto-pr-created']
-            })
+            });
 
       - name: Handle failures
         if: failure()
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.createComment({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+            await github.rest.issues.createComment({
+              issue_number: ${{ github.event.issue.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `❌ Automated processing failed. Please check the workflow run for details and process manually.`
-            })
+            });
+
+  debug-skipped:
+    if: always() && needs.debug-labels.outputs.has_site_suggestion == 'false' || needs.debug-labels.outputs.has_approved == 'false'
+    needs: debug-labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug why job was skipped
+        run: |
+          echo "🔍 Job was skipped because:"
+          echo "has_site_suggestion: ${{ needs.debug-labels.outputs.has_site_suggestion }}"
+          echo "has_approved: ${{ needs.debug-labels.outputs.has_approved }}"
+          echo "all_labels: ${{ needs.debug-labels.outputs.all_labels }}"
+          echo "event_action: ${{ github.event.action }}"
+          echo "To trigger this job, ensure the issue has both 'site-suggestion' and 'approved' labels"
