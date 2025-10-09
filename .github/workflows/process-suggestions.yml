@@ -54,26 +54,26 @@ jobs:
           echo "📝 Processing issue #${{ github.event.issue.number }}"
           echo "Issue Title: ${{ github.event.issue.title }}"
           
-          # Create the issue body as a properly escaped string
-          ISSUE_BODY=$(cat << 'EOF'
-          ${{ github.event.issue.body }}
-          EOF
-          )
+          # Write issue body to a file to avoid escaping issues
+          echo '${{ toJson(github.event.issue.body) }}' > issue_body.json
           
           # Use Node.js script for reliable parsing
           echo "🔄 Using Node.js extraction script..."
-          node .github/scripts/extract-issue-data.js "$ISSUE_BODY"
+          node .github/scripts/extract-issue-data.js
 
-      - name: Add site to providers.json
+      - name: Show extracted data
         run: |
-          echo "📝 Adding site to providers.json..."
+          echo "🎯 Extracted Data:"
           echo "Provider Key: ${{ steps.extract.outputs.provider_key }}"
           echo "Site Name: ${{ steps.extract.outputs.site_name }}"
           echo "Site URL: ${{ steps.extract.outputs.site_url }}"
           echo "Site Status: ${{ steps.extract.outputs.site_status }}"
           echo "Site Icon: ${{ steps.extract.outputs.site_icon }}"
           echo "Site Description: ${{ steps.extract.outputs.site_description }}"
-          
+
+      - name: Add site to providers.json
+        run: |
+          echo "📝 Adding site to providers.json..."
           node .github/scripts/add-site.js \
             --key "${{ steps.extract.outputs.provider_key }}" \
             --name "${{ steps.extract.outputs.site_name }}" \
