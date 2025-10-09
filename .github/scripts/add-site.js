@@ -112,8 +112,8 @@ if (params.icon && params.icon.trim() !== '' && params.icon !== 'Not provided') 
 if (!newProvider.icon) {
   try {
     const siteUrl = new URL(newProvider.url);
-    newProvider.icon = `https://www.google.com/s2/favicons?domain=${siteUrl.hostname}&sz=128`;
-    console.log(`🖼️  Generated default icon for: ${siteUrl.hostname}`);
+    newProvider.icon = `https://www.google.com/s2/favicons?domain=${siteUrl.href}&sz=128`;
+    console.log(`🖼️  Generated default icon for: ${siteUrl.href}`);
   } catch (e) {
     console.error('❌ Error: Invalid site URL');
     process.exit(1);
