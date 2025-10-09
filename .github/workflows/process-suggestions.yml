@@ -1,12 +1,40 @@
 name: Process Site Suggestions
 on:
   issues:
-    types: [labeled]
+    types: [labeled, opened]
   workflow_dispatch:
 
 jobs:
+  validate-suggestion:
+    if: contains(github.event.issue.labels.*.name, 'site-suggestion') || github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    outputs:
+      is_valid: ${{ steps.validate.outputs.result }}
+      validation_feedback: ${{ steps.validate.outputs.feedback }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate site submission
+        id: validate
+        run: |
+          node .github/scripts/validate-issue.js "${{ toJson(github.event.issue.body) }}" "${{ github.event.issue.number }}"
+
+      - name: Add initial labels
+        if: github.event.action == 'opened'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              issue_number: ${{ github.event.issue.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['site-suggestion', 'pending-review']
+            });
+
   process-suggestion:
     if: contains(github.event.issue.labels.*.name, 'site-suggestion') && contains(github.event.issue.labels.*.name, 'approved')
+    needs: validate-suggestion
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,9 +56,7 @@ jobs:
           EOF
           )
           
-          echo "Raw issue body:"
-          echo "$ISSUE_BODY"
-          echo "---"
+          echo "Extracting site information from issue..."
           
           # Extract using the exact format from your site suggestions
           SITE_NAME=$(echo "$ISSUE_BODY" | grep "**Site Name:**" | head -1 | sed 's/**Site Name:**//' | xargs)
@@ -39,20 +65,12 @@ jobs:
           SITE_ICON=$(echo "$ISSUE_BODY" | grep "**Icon URL:**" | head -1 | sed 's/**Icon URL:**//' | xargs)
           SITE_DESCRIPTION=$(echo "$ISSUE_BODY" | grep "**Description:**" | head -1 | sed 's/**Description:**//' | xargs)
           
-          # Extract content warnings
-          ADS_WARNING=$(echo "$ISSUE_BODY" | grep "- Ads:" | head -1 | sed 's/- Ads://' | xargs)
-          POPUPS_WARNING=$(echo "$ISSUE_BODY" | grep "- Pop-ups:" | head -1 | sed 's/- Pop-ups://' | xargs)
-          REGISTRATION_WARNING=$(echo "$ISSUE_BODY" | grep "- Registration Required:" | head -1 | sed 's/- Registration Required://' | xargs)
-          
           echo "Extracted values:"
           echo "Name: '$SITE_NAME'"
           echo "URL: '$SITE_URL'"
           echo "Category: '$SITE_CATEGORY'"
           echo "Icon: '$SITE_ICON'"
           echo "Description: '$SITE_DESCRIPTION'"
-          echo "Ads: '$ADS_WARNING'"
-          echo "Popups: '$POPUPS_WARNING'"
-          echo "Registration: '$REGISTRATION_WARNING'"
           
           # Map category to status code (handle lowercase)
           CATEGORY_UPPER=$(echo "$SITE_CATEGORY" | tr '[:lower:]' '[:upper:]')
@@ -94,7 +112,7 @@ jobs:
             exit 1
           fi
           if [ "${{ steps.extract.outputs.site_status }}" = "0" ]; then
-            echo "⚠️ Warning: Unknown category '${{ steps.extract.outputs.site_category }}', using status 0"
+            echo "⚠️ Warning: Unknown category, using status 0"
           fi
           echo "✅ Data validation passed"
 
