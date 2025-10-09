@@ -1,0 +1,168 @@
+name: Process Site Suggestions
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+
+jobs:
+  process-suggestion:
+    if: contains(github.event.issue.labels.*.name, 'site-suggestion') && contains(github.event.issue.labels.*.name, 'approved')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Extract site information from issue
+        id: extract
+        run: |
+          ISSUE_BODY=$(cat << 'EOF'
+          ${{ github.event.issue.body }}
+          EOF
+          )
+          
+          echo "Raw issue body:"
+          echo "$ISSUE_BODY"
+          echo "---"
+          
+          # Extract using the exact format from your site suggestions
+          SITE_NAME=$(echo "$ISSUE_BODY" | grep "**Site Name:**" | head -1 | sed 's/**Site Name:**//' | xargs)
+          SITE_URL=$(echo "$ISSUE_BODY" | grep "**URL:**" | head -1 | sed 's/**URL:**//' | xargs)
+          SITE_CATEGORY=$(echo "$ISSUE_BODY" | grep "**Category:**" | head -1 | sed 's/**Category:**//' | xargs)
+          SITE_ICON=$(echo "$ISSUE_BODY" | grep "**Icon URL:**" | head -1 | sed 's/**Icon URL:**//' | xargs)
+          SITE_DESCRIPTION=$(echo "$ISSUE_BODY" | grep "**Description:**" | head -1 | sed 's/**Description:**//' | xargs)
+          
+          # Extract content warnings
+          ADS_WARNING=$(echo "$ISSUE_BODY" | grep "- Ads:" | head -1 | sed 's/- Ads://' | xargs)
+          POPUPS_WARNING=$(echo "$ISSUE_BODY" | grep "- Pop-ups:" | head -1 | sed 's/- Pop-ups://' | xargs)
+          REGISTRATION_WARNING=$(echo "$ISSUE_BODY" | grep "- Registration Required:" | head -1 | sed 's/- Registration Required://' | xargs)
+          
+          echo "Extracted values:"
+          echo "Name: '$SITE_NAME'"
+          echo "URL: '$SITE_URL'"
+          echo "Category: '$SITE_CATEGORY'"
+          echo "Icon: '$SITE_ICON'"
+          echo "Description: '$SITE_DESCRIPTION'"
+          echo "Ads: '$ADS_WARNING'"
+          echo "Popups: '$POPUPS_WARNING'"
+          echo "Registration: '$REGISTRATION_WARNING'"
+          
+          # Map category to status code (handle lowercase)
+          CATEGORY_UPPER=$(echo "$SITE_CATEGORY" | tr '[:lower:]' '[:upper:]')
+          case "$CATEGORY_UPPER" in
+            "MANGA") STATUS=1 ;;
+            "LIGHT NOVEL"|"LN") STATUS=2 ;;
+            "MOVIE") STATUS=3 ;;
+            "APP") STATUS=4 ;;
+            "ANIME") STATUS=5 ;;
+            "LEARNING") STATUS=6 ;;
+            "NSFW") STATUS=7 ;;
+            *) STATUS=0 ;;
+          esac
+          
+          # Generate provider key (safe version)
+          PROVIDER_KEY=$(echo "$SITE_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | sed 's/[^a-z0-9_]//g')Provider
+          
+          echo "provider_key=$PROVIDER_KEY" >> $GITHUB_OUTPUT
+          echo "site_name=$SITE_NAME" >> $GITHUB_OUTPUT
+          echo "site_url=$SITE_URL" >> $GITHUB_OUTPUT
+          echo "site_status=$STATUS" >> $GITHUB_OUTPUT
+          echo "site_icon=$SITE_ICON" >> $GITHUB_OUTPUT
+          echo "site_description=$SITE_DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "issue_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+
+      - name: Validate extracted data
+        run: |
+          echo "Validating extracted data..."
+          echo "Site Name: '${{ steps.extract.outputs.site_name }}'"
+          echo "Site URL: '${{ steps.extract.outputs.site_url }}'"
+          echo "Site Status: '${{ steps.extract.outputs.site_status }}'"
+          
+          if [ -z "${{ steps.extract.outputs.site_name }}" ]; then
+            echo "❌ Error: Site name is empty"
+            exit 1
+          fi
+          if [ -z "${{ steps.extract.outputs.site_url }}" ]; then
+            echo "❌ Error: Site URL is empty"
+            exit 1
+          fi
+          if [ "${{ steps.extract.outputs.site_status }}" = "0" ]; then
+            echo "⚠️ Warning: Unknown category '${{ steps.extract.outputs.site_category }}', using status 0"
+          fi
+          echo "✅ Data validation passed"
+
+      - name: Add site to providers.json
+        run: |
+          node .github/scripts/add-site.js \
+            --key "${{ steps.extract.outputs.provider_key }}" \
+            --name "${{ steps.extract.outputs.site_name }}" \
+            --url "${{ steps.extract.outputs.site_url }}" \
+            --status "${{ steps.extract.outputs.site_status }}" \
+            --icon "${{ steps.extract.outputs.site_icon }}" \
+            --description "${{ steps.extract.outputs.site_description }}" \
+            --issue "${{ steps.extract.outputs.issue_number }}"
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          commit-message: "Add site: ${{ steps.extract.outputs.site_name }}"
+          title: "Add ${{ steps.extract.outputs.site_name }} to index"
+          body: |
+            This PR automatically adds **${{ steps.extract.outputs.site_name }}** to the website index.
+            
+            - **Site:** ${{ steps.extract.outputs.site_name }}
+            - **URL:** ${{ steps.extract.outputs.site_url }}
+            - **Category:** ${{ steps.extract.outputs.site_status }}
+            - **Issue:** #${{ steps.extract.outputs.issue_number }}
+            
+            Auto-generated from approved site suggestion.
+          branch: "add-site-${{ steps.extract.outputs.issue_number }}"
+          delete-branch: true
+
+      - name: Comment on issue
+        if: steps.create-pr.outputs.pull-request-number != ''
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ Site suggestion processed! A pull request has been automatically created: #${${{ steps.create-pr.outputs.pull-request-number }}}`
+            })
+            
+            // Remove approved label and add processed label
+            github.rest.issues.removeLabel({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'approved'
+            })
+            
+            github.rest.issues.addLabels({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['processed', 'auto-pr-created']
+            })
+
+      - name: Handle failures
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `❌ Automated processing failed. Please check the workflow run for details and process manually.`
+            })
