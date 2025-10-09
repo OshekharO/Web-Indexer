@@ -3,31 +3,84 @@
 const fs = require('fs');
 const path = require('path');
 
-// Parse command line arguments
-const args = process.argv.slice(2);
-const params = {};
-args.forEach(arg => {
-  const [key, value] = arg.replace('--', '').split('=');
-  params[key] = value || '';
-});
+function extractSiteData(body) {
+  console.log('🔍 Extracting data from issue body...');
+  console.log('Issue body length:', body.length);
+  
+  const lines = body.split('\n');
+  const data = {
+    name: '',
+    url: '',
+    category: '',
+    icon: '',
+    description: ''
+  };
 
-console.log('📝 Adding site with params:', params);
+  console.log('Total lines:', lines.length);
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Debug: Show lines that might contain our data
+    if (line.includes('Site Name') || line.includes('URL') || line.includes('Category') || line.includes('Description')) {
+      console.log(`Line ${i}: ${line}`);
+    }
+    
+    // Format 1: **Field:** value (from website form)
+    if (line.includes('Site Name:**')) {
+      data.name = line.split('Site Name:**')[1]?.replace(/\*\*/g, '').trim() || '';
+      console.log('✅ Found Site Name (Format 1):', data.name);
+    }
+    else if (line.includes('URL:**') && !line.includes('Icon URL')) {
+      data.url = line.split('URL:**')[1]?.replace(/\*\*/g, '').trim() || '';
+      console.log('✅ Found URL (Format 1):', data.url);
+    }
+    else if (line.includes('Category:**')) {
+      data.category = line.split('Category:**')[1]?.replace(/\*\*/g, '').trim() || '';
+      console.log('✅ Found Category (Format 1):', data.category);
+    }
+    else if (line.includes('Icon URL:**')) {
+      data.icon = line.split('Icon URL:**')[1]?.replace(/\*\*/g, '').trim() || '';
+      console.log('✅ Found Icon URL (Format 1):', data.icon);
+    }
+    else if (line.includes('Description:**')) {
+      data.description = line.split('Description:**')[1]?.replace(/\*\*/g, '').trim() || '';
+      console.log('✅ Found Description (Format 1):', data.description);
+    }
+    
+    // Format 2: ### Field + next line (from GitHub form)
+    else if (line === '### Site Name' && i + 1 < lines.length) {
+      data.name = lines[i + 1].trim();
+      console.log('✅ Found Site Name (Format 2):', data.name);
+    }
+    else if (line === '### Site URL' && i + 1 < lines.length) {
+      data.url = lines[i + 1].trim();
+      console.log('✅ Found URL (Format 2):', data.url);
+    }
+    else if (line === '### Category' && i + 1 < lines.length) {
+      data.category = lines[i + 1].trim();
+      console.log('✅ Found Category (Format 2):', data.category);
+    }
+    else if (line === '### Description' && i + 1 < lines.length) {
+      // Skip the "_No response" line if present
+      const nextLine = lines[i + 1].trim();
+      if (nextLine !== '_No response') {
+        data.description = nextLine;
+        console.log('✅ Found Description (Format 2):', data.description);
+      }
+    }
+  }
 
-const providersPath = path.join(process.cwd(), 'providers.json');
-
-// Read existing providers
-let providers = {};
-try {
-  const data = fs.readFileSync(providersPath, 'utf8');
-  providers = JSON.parse(data);
-  console.log(`📖 Read existing providers.json with ${Object.keys(providers).length} entries`);
-} catch (error) {
-  console.error('❌ Error reading providers.json:', error);
-  process.exit(1);
+  console.log('🎯 Final extracted data:', JSON.stringify(data, null, 2));
+  return data;
 }
 
 // Generate safe provider key
 function generateSafeKey(name) {
+  if (!name || name.trim() === '') {
+    throw new Error('Site name is required for key generation');
+  }
+  
   let baseKey = name
     .toLowerCase()
     .replace(/[^a-z0-9]/g, '_')
@@ -42,95 +95,82 @@ function generateSafeKey(name) {
   return baseKey;
 }
 
-let providerKey = params.key || generateSafeKey(params.name);
-console.log(`🔑 Generated key: ${providerKey}`);
-
-// Ensure key is unique
-let counter = 1;
-const originalKey = providerKey;
-while (providers[providerKey]) {
-  providerKey = `${originalKey}${counter}`;
-  counter++;
-  console.log(`⚠️  Key conflict, trying: ${providerKey}`);
-  if (counter > 10) {
-    console.error('❌ Could not generate unique key after 10 attempts');
-    process.exit(1);
-  }
-}
-
-// Validate required fields
-if (!params.name || params.name.trim() === '') {
-  console.error('❌ Error: Site name is required');
-  process.exit(1);
-}
-
-if (!params.url || params.url.trim() === '') {
-  console.error('❌ Error: Site URL is required');
-  process.exit(1);
-}
-
-// Create new provider object
-const newProvider = {
-  name: params.name.trim(),
-  url: params.url.trim(),
-  status: parseInt(params.status) || 0
-};
-
-console.log(`✅ Created provider object for: ${newProvider.name}`);
-
-// Handle icon
-if (params.icon && params.icon.trim() !== '' && params.icon !== 'Not provided') {
-  try {
-    new URL(params.icon);
-    newProvider.icon = params.icon.trim();
-    console.log(`🖼️  Using provided icon: ${newProvider.icon}`);
-  } catch (e) {
-    console.log('⚠️  Invalid icon URL, will generate default');
-  }
-}
-
-// Generate default icon if none provided
-if (!newProvider.icon) {
-  try {
-    const siteUrl = new URL(newProvider.url);
-    newProvider.icon = `https://www.google.com/s2/favicons?domain=${siteUrl.hostname}&sz=128`;
-    console.log(`🖼️  Generated default icon for: ${siteUrl.hostname}`);
-  } catch (e) {
-    console.error('❌ Error: Invalid site URL');
-    process.exit(1);
-  }
-}
-
-// Add description if provided
-if (params.description && params.description.trim() !== '' && params.description !== 'Not provided' && params.description !== '_No response') {
-  newProvider.description = params.description.trim();
-  console.log(`📝 Added description: ${newProvider.description}`);
-}
-
-// Add to providers
-providers[providerKey] = newProvider;
-console.log(`✅ Added ${providerKey} to providers`);
-
-// Sort providers alphabetically by key
-console.log('🔄 Sorting providers...');
-const sortedProviders = {};
-Object.keys(providers).sort().forEach(key => {
-  sortedProviders[key] = providers[key];
-});
-
-// Write back to file
+// Main execution
 try {
-  fs.writeFileSync(providersPath, JSON.stringify(sortedProviders, null, 2));
-  console.log(`🎉 Successfully sorted and saved providers.json`);
-  console.log(`✅ Successfully added ${params.name} to providers.json`);
-  console.log(`🔑 Provider Key: ${providerKey}`);
-  console.log(`🌐 URL: ${newProvider.url}`);
-  console.log(`📁 Status: ${newProvider.status}`);
-  console.log(`🖼️ Icon: ${newProvider.icon}`);
-  if (newProvider.description) {
-    console.log(`📝 Description: ${newProvider.description}`);
+  // Read issue body from file
+  const issueBodyPath = path.join(process.cwd(), 'issue_body.json');
+  if (!fs.existsSync(issueBodyPath)) {
+    console.error('❌ Issue body file not found');
+    process.exit(1);
   }
+
+  const issueBodyContent = fs.readFileSync(issueBodyPath, 'utf8');
+  const issueBody = JSON.parse(issueBodyContent);
+  
+  console.log('📝 Issue body parsed successfully');
+
+  const data = extractSiteData(issueBody);
+  
+  // Validate required fields
+  if (!data.name || data.name.trim() === '') {
+    console.error('❌ Missing required field: Site Name');
+    process.exit(1);
+  }
+  if (!data.url || data.url.trim() === '') {
+    console.error('❌ Missing required field: URL');
+    process.exit(1);
+  }
+  if (!data.category || data.category.trim() === '') {
+    console.error('❌ Missing required field: Category');
+    process.exit(1);
+  }
+  
+  // Map category to status
+  const categoryLower = data.category.toLowerCase();
+  let status = 0;
+  switch (categoryLower) {
+    case 'manga': 
+      status = 1; 
+      break;
+    case 'light novel':
+    case 'ln': 
+      status = 2; 
+      break;
+    case 'movie': 
+      status = 3; 
+      break;
+    case 'app': 
+      status = 4; 
+      break;
+    case 'anime': 
+      status = 5; 
+      break;
+    case 'learning': 
+      status = 6; 
+      break;
+    case 'nsfw': 
+      status = 7; 
+      break;
+    default:
+      console.error('❌ Unknown category:', data.category);
+      process.exit(1);
+  }
+  
+  console.log('📊 Category mapping:', data.category, '->', status);
+  
+  // Generate provider key
+  const providerKey = generateSafeKey(data.name);
+  console.log('🔑 Generated provider key:', providerKey);
+  
+  // Output for GitHub Actions
+  console.log(`::set-output name=provider_key::${providerKey}`);
+  console.log(`::set-output name=site_name::${data.name}`);
+  console.log(`::set-output name=site_url::${data.url}`);
+  console.log(`::set-output name=site_status::${status}`);
+  console.log(`::set-output name=site_icon::${data.icon}`);
+  console.log(`::set-output name=site_description::${data.description}`);
+  
 } catch (error) {
-  console.error('❌ Error writing providers.json:', error);
+  console.error('❌ Error during extraction:', error);
   process.exit(1);
 }
