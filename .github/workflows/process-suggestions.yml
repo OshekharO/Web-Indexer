@@ -61,26 +61,55 @@ jobs:
           echo "🔄 Using Node.js extraction script..."
           node .github/scripts/extract-issue-data.js
 
+      - name: Read extracted data from file
+        id: data
+        run: |
+          echo "📖 Reading extracted data from file..."
+          if [ -f "extracted_data.json" ]; then
+            PROVIDER_KEY=$(jq -r '.provider_key' extracted_data.json)
+            SITE_NAME=$(jq -r '.site_name' extracted_data.json)
+            SITE_URL=$(jq -r '.site_url' extracted_data.json)
+            SITE_STATUS=$(jq -r '.site_status' extracted_data.json)
+            SITE_ICON=$(jq -r '.site_icon' extracted_data.json)
+            SITE_DESCRIPTION=$(jq -r '.site_description' extracted_data.json)
+            
+            echo "provider_key=$PROVIDER_KEY" >> $GITHUB_OUTPUT
+            echo "site_name=$SITE_NAME" >> $GITHUB_OUTPUT
+            echo "site_url=$SITE_URL" >> $GITHUB_OUTPUT
+            echo "site_status=$SITE_STATUS" >> $GITHUB_OUTPUT
+            echo "site_icon=$SITE_ICON" >> $GITHUB_OUTPUT
+            echo "site_description=$SITE_DESCRIPTION" >> $GITHUB_OUTPUT
+            
+            echo "✅ Data loaded from file:"
+            echo "Provider Key: $PROVIDER_KEY"
+            echo "Site Name: $SITE_NAME"
+            echo "Site URL: $SITE_URL"
+            echo "Site Status: $SITE_STATUS"
+          else
+            echo "❌ extracted_data.json not found"
+            exit 1
+          fi
+
       - name: Show extracted data
         run: |
           echo "🎯 Extracted Data:"
-          echo "Provider Key: ${{ steps.extract.outputs.provider_key }}"
-          echo "Site Name: ${{ steps.extract.outputs.site_name }}"
-          echo "Site URL: ${{ steps.extract.outputs.site_url }}"
-          echo "Site Status: ${{ steps.extract.outputs.site_status }}"
-          echo "Site Icon: ${{ steps.extract.outputs.site_icon }}"
-          echo "Site Description: ${{ steps.extract.outputs.site_description }}"
+          echo "Provider Key: ${{ steps.data.outputs.provider_key }}"
+          echo "Site Name: ${{ steps.data.outputs.site_name }}"
+          echo "Site URL: ${{ steps.data.outputs.site_url }}"
+          echo "Site Status: ${{ steps.data.outputs.site_status }}"
+          echo "Site Icon: ${{ steps.data.outputs.site_icon }}"
+          echo "Site Description: ${{ steps.data.outputs.site_description }}"
 
       - name: Add site to providers.json
         run: |
           echo "📝 Adding site to providers.json..."
           node .github/scripts/add-site.js \
-            --key "${{ steps.extract.outputs.provider_key }}" \
-            --name "${{ steps.extract.outputs.site_name }}" \
-            --url "${{ steps.extract.outputs.site_url }}" \
-            --status "${{ steps.extract.outputs.site_status }}" \
-            --icon "${{ steps.extract.outputs.site_icon }}" \
-            --description "${{ steps.extract.outputs.site_description }}" \
+            --key "${{ steps.data.outputs.provider_key }}" \
+            --name "${{ steps.data.outputs.site_name }}" \
+            --url "${{ steps.data.outputs.site_url }}" \
+            --status "${{ steps.data.outputs.site_status }}" \
+            --icon "${{ steps.data.outputs.site_icon }}" \
+            --description "${{ steps.data.outputs.site_description }}" \
             --issue "${{ github.event.issue.number }}"
 
       - name: Create Pull Request
@@ -88,14 +117,14 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GIT_TOKEN }}
-          commit-message: "Add site: ${{ steps.extract.outputs.site_name }}"
-          title: "Add ${{ steps.extract.outputs.site_name }} to index"
+          commit-message: "Add site: ${{ steps.data.outputs.site_name }}"
+          title: "Add ${{ steps.data.outputs.site_name }} to index"
           body: |
             Auto-generated from approved site suggestion #${{ github.event.issue.number }}
             
-            - **Site:** ${{ steps.extract.outputs.site_name }}
-            - **URL:** ${{ steps.extract.outputs.site_url }}
-            - **Category:** ${{ steps.extract.outputs.site_status }}
+            - **Site:** ${{ steps.data.outputs.site_name }}
+            - **URL:** ${{ steps.data.outputs.site_url }}
+            - **Category:** ${{ steps.data.outputs.site_status }}
           branch: "add-site-${{ github.event.issue.number }}"
           delete-branch: true
 
