@@ -48,117 +48,32 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Extract site information
+      - name: Extract site information using Node.js
         id: extract
         run: |
           echo "📝 Processing issue #${{ github.event.issue.number }}"
           echo "Issue Title: ${{ github.event.issue.title }}"
           
-          # Save issue body to file for debugging
-          echo '${{ github.event.issue.body }}' > issue_body.txt
-          echo "=== ISSUE BODY ==="
-          cat issue_body.txt
-          echo "=== END ISSUE BODY ==="
+          # Create the issue body as a properly escaped string
+          ISSUE_BODY=$(cat << 'EOF'
+          ${{ github.event.issue.body }}
+          EOF
+          )
           
-          # Try Format 1: **Field:** value (from website form)
-          echo "🔄 Trying Format 1 (Website form)..."
-          SITE_NAME1=$(grep -oP '(?<=Site Name: \*\*).*?(?=\*\*)' issue_body.txt | head -1 | xargs)
-          SITE_URL1=$(grep -oP '(?<=URL: \*\*).*?(?=\*\*)' issue_body.txt | head -1 | xargs)
-          SITE_CATEGORY1=$(grep -oP '(?<=Category: \*\*).*?(?=\*\*)' issue_body.txt | head -1 | xargs)
-          SITE_ICON1=$(grep -oP '(?<=Icon URL: \*\*).*?(?=\*\*)' issue_body.txt | head -1 | xargs)
-          SITE_DESCRIPTION1=$(grep -oP '(?<=Description: \*\*).*?(?=\*\*)' issue_body.txt | head -1 | xargs)
-          
-          # Try Format 2: ### Field + value (from GitHub form)
-          echo "🔄 Trying Format 2 (GitHub form)..."
-          SITE_NAME2=$(awk '/### Site Name/{getline; print}' issue_body.txt | head -1 | xargs)
-          SITE_URL2=$(awk '/### Site URL/{getline; print}' issue_body.txt | head -1 | xargs)
-          SITE_CATEGORY2=$(awk '/### Category/{getline; print}' issue_body.txt | head -1 | xargs)
-          SITE_DESCRIPTION2=$(awk '/### Description/{getline; getline; print}' issue_body.txt | head -1 | xargs)
-          
-          echo "Format 1 results:"
-          echo "Name: '$SITE_NAME1'"
-          echo "URL: '$SITE_URL1'"
-          echo "Category: '$SITE_CATEGORY1'"
-          echo "Icon: '$SITE_ICON1'"
-          echo "Description: '$SITE_DESCRIPTION1'"
-          
-          echo "Format 2 results:"
-          echo "Name: '$SITE_NAME2'"
-          echo "URL: '$SITE_URL2'"
-          echo "Category: '$SITE_CATEGORY2'"
-          echo "Description: '$SITE_DESCRIPTION2'"
-          
-          # Use whichever format has data
-          if [ -n "$SITE_NAME1" ] && [ -n "$SITE_URL1" ]; then
-            echo "✅ Using Format 1 (Website form)"
-            SITE_NAME="$SITE_NAME1"
-            SITE_URL="$SITE_URL1"
-            SITE_CATEGORY="$SITE_CATEGORY1"
-            SITE_ICON="$SITE_ICON1"
-            SITE_DESCRIPTION="$SITE_DESCRIPTION1"
-          elif [ -n "$SITE_NAME2" ] && [ -n "$SITE_URL2" ]; then
-            echo "✅ Using Format 2 (GitHub form)"
-            SITE_NAME="$SITE_NAME2"
-            SITE_URL="$SITE_URL2"
-            SITE_CATEGORY="$SITE_CATEGORY2"
-            SITE_DESCRIPTION="$SITE_DESCRIPTION2"
-            SITE_ICON=""
-          else
-            echo "❌ Could not extract site information from either format"
-            exit 1
-          fi
-          
-          echo "🎯 Final extracted values:"
-          echo "Name: '$SITE_NAME'"
-          echo "URL: '$SITE_URL'"
-          echo "Category: '$SITE_CATEGORY'"
-          echo "Icon: '$SITE_ICON'"
-          echo "Description: '$SITE_DESCRIPTION'"
-          
-          # Validate required fields
-          if [ -z "$SITE_NAME" ]; then
-            echo "❌ Error: Site name is empty"
-            exit 1
-          fi
-          if [ -z "$SITE_URL" ]; then
-            echo "❌ Error: Site URL is empty"
-            exit 1
-          fi
-          if [ -z "$SITE_CATEGORY" ]; then
-            echo "❌ Error: Site category is empty"
-            exit 1
-          fi
-          
-          # Map category to status code
-          CATEGORY_LOWER=$(echo "$SITE_CATEGORY" | tr '[:upper:]' '[:lower:]')
-          case "$CATEGORY_LOWER" in
-            "manga") STATUS=1 ;;
-            "light novel"|"ln") STATUS=2 ;;
-            "movie") STATUS=3 ;;
-            "app") STATUS=4 ;;
-            "anime") STATUS=5 ;;
-            "learning") STATUS=6 ;;
-            "nsfw") STATUS=7 ;;
-            *) 
-              echo "❌ Error: Unknown category '$SITE_CATEGORY'"
-              exit 1
-              ;;
-          esac
-          
-          # Generate provider key
-          PROVIDER_KEY=$(echo "$SITE_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | sed 's/[^a-z0-9_]//g')Provider
-          
-          echo "provider_key=$PROVIDER_KEY" >> $GITHUB_OUTPUT
-          echo "site_name=$SITE_NAME" >> $GITHUB_OUTPUT
-          echo "site_url=$SITE_URL" >> $GITHUB_OUTPUT
-          echo "site_status=$STATUS" >> $GITHUB_OUTPUT
-          echo "site_icon=$SITE_ICON" >> $GITHUB_OUTPUT
-          echo "site_description=$SITE_DESCRIPTION" >> $GITHUB_OUTPUT
-          echo "issue_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          # Use Node.js script for reliable parsing
+          echo "🔄 Using Node.js extraction script..."
+          node .github/scripts/extract-issue-data.js "$ISSUE_BODY"
 
       - name: Add site to providers.json
         run: |
           echo "📝 Adding site to providers.json..."
+          echo "Provider Key: ${{ steps.extract.outputs.provider_key }}"
+          echo "Site Name: ${{ steps.extract.outputs.site_name }}"
+          echo "Site URL: ${{ steps.extract.outputs.site_url }}"
+          echo "Site Status: ${{ steps.extract.outputs.site_status }}"
+          echo "Site Icon: ${{ steps.extract.outputs.site_icon }}"
+          echo "Site Description: ${{ steps.extract.outputs.site_description }}"
+          
           node .github/scripts/add-site.js \
             --key "${{ steps.extract.outputs.provider_key }}" \
             --name "${{ steps.extract.outputs.site_name }}" \
@@ -166,46 +81,76 @@ jobs:
             --status "${{ steps.extract.outputs.site_status }}" \
             --icon "${{ steps.extract.outputs.site_icon }}" \
             --description "${{ steps.extract.outputs.site_description }}" \
-            --issue "${{ steps.extract.outputs.issue_number }}"
+            --issue "${{ github.event.issue.number }}"
 
       - name: Create Pull Request
+        id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GIT_TOKEN }}
           commit-message: "Add site: ${{ steps.extract.outputs.site_name }}"
           title: "Add ${{ steps.extract.outputs.site_name }} to index"
           body: |
-            Auto-generated from approved site suggestion #${{ steps.extract.outputs.issue_number }}
+            Auto-generated from approved site suggestion #${{ github.event.issue.number }}
             
             - **Site:** ${{ steps.extract.outputs.site_name }}
             - **URL:** ${{ steps.extract.outputs.site_url }}
             - **Category:** ${{ steps.extract.outputs.site_status }}
-          branch: "add-site-${{ steps.extract.outputs.issue_number }}"
+          branch: "add-site-${{ github.event.issue.number }}"
           delete-branch: true
 
       - name: Comment on issue
-        if: success()
+        if: steps.create-pr.outputs.pull-request-number != ''
         uses: actions/github-script@v6
         with:
           script: |
+            const prNumber = ${{ steps.create-pr.outputs.pull-request-number }};
+            console.log(`Creating comment for PR #${prNumber}`);
+            
             await github.rest.issues.createComment({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+              issue_number: ${{ github.event.issue.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ Site suggestion processed! A pull request has been automatically created.`
+              body: `✅ Site suggestion processed! A pull request has been automatically created: #${prNumber}`
             });
             
-            // Update labels
+            // Remove approved label and add processed label
             await github.rest.issues.removeLabel({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+              issue_number: ${{ github.event.issue.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: 'approved'
             });
             
             await github.rest.issues.addLabels({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+              issue_number: ${{ github.event.issue.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['processed', 'auto-pr-created']
             });
+
+      - name: Handle failures
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              issue_number: ${{ github.event.issue.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `❌ Automated processing failed. Please check the workflow run for details and process manually.`
+            });
+
+  debug-skip:
+    if: always() && needs.check-trigger.outputs.should_process == 'false'
+    needs: check-trigger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug skip reason
+        run: |
+          echo "❌ Workflow skipped because:"
+          echo "Event: ${{ github.event_name }}"
+          echo "Action: ${{ github.event.action }}"
+          echo "Issue has 'site-suggestion' label: ${{ contains(github.event.issue.labels.*.name, 'site-suggestion') }}"
+          echo "Issue has 'approved' label: ${{ contains(github.event.issue.labels.*.name, 'approved') }}"
+          echo "All labels: ${{ toJson(github.event.issue.labels) }}"
