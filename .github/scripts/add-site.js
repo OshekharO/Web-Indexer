@@ -8,8 +8,10 @@ const args = process.argv.slice(2);
 const params = {};
 args.forEach(arg => {
   const [key, value] = arg.replace('--', '').split('=');
-  params[key] = value;
+  params[key] = value || '';
 });
+
+console.log('Adding site with params:', params);
 
 const providersPath = path.join(process.cwd(), 'providers.json');
 
@@ -23,24 +25,64 @@ try {
   process.exit(1);
 }
 
-// Generate unique key if there's a conflict
-let providerKey = params.key;
+// Generate safe provider key
+function generateSafeKey(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_|_$/g, '') + 'Provider';
+}
+
+let providerKey = params.key || generateSafeKey(params.name);
+
+// Ensure key is unique
 let counter = 1;
+const originalKey = providerKey;
 while (providers[providerKey]) {
-  providerKey = `${params.key}${counter}`;
+  providerKey = `${originalKey}${counter}`;
   counter++;
+  if (counter > 10) {
+    console.error('❌ Could not generate unique key after 10 attempts');
+    process.exit(1);
+  }
 }
 
 // Create new provider object
 const newProvider = {
   name: params.name,
   url: params.url,
-  status: parseInt(params.status) || 0,
-  icon: params.icon || `https://www.google.com/s2/favicons?domain=${new URL(params.url).hostname}&sz=128`
+  status: parseInt(params.status) || 0
 };
 
+// Add icon if provided and valid
+if (params.icon && params.icon !== 'Not provided' && params.icon.trim() !== '') {
+  try {
+    new URL(params.icon);
+    newProvider.icon = params.icon;
+  } catch (e) {
+    // Use default favicon service
+    try {
+      const siteUrl = new URL(params.url);
+      newProvider.icon = `https://www.google.com/s2/favicons?domain=${siteUrl.hostname}&sz=128`;
+    } catch (e) {
+      // Fallback to default
+      newProvider.icon = `https://www.google.com/s2/favicons?domain=example.com&sz=128`;
+    }
+  }
+} else {
+  // Use default favicon service
+  try {
+    const siteUrl = new URL(params.url);
+    newProvider.icon = `https://www.google.com/s2/favicons?domain=${siteUrl.hostname}&sz=128`;
+  } catch (e) {
+    // Fallback to default
+    newProvider.icon = `https://www.google.com/s2/favicons?domain=example.com&sz=128`;
+  }
+}
+
 // Add description if provided
-if (params.description && params.description !== 'Not provided') {
+if (params.description && params.description !== 'Not provided' && params.description.trim() !== '') {
   newProvider.description = params.description;
 }
 
@@ -59,8 +101,9 @@ try {
   console.log(`✅ Successfully added ${params.name} to providers.json`);
   console.log(`🔑 Provider Key: ${providerKey}`);
   console.log(`🌐 URL: ${params.url}`);
-  console.log(`📁 Category: ${params.status}`);
+  console.log(`📁 Status: ${params.status}`);
+  console.log(`🖼️ Icon: ${newProvider.icon}`);
 } catch (error) {
-  console.error('Error writing to providers.json:', error);
+  console.error('❌ Error writing to providers.json:', error);
   process.exit(1);
 }
