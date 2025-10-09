@@ -5,12 +5,19 @@ const path = require('path');
 
 // Parse command line arguments properly
 const params = {};
-for (let i = 2; i < process.argv.length; i++) {
-  const arg = process.argv[i];
+const args = process.argv.slice(2);
+
+for (let i = 0; i < args.length; i++) {
+  const arg = args[i];
   if (arg.startsWith('--')) {
-    const [key, ...valueParts] = arg.slice(2).split('=');
-    const value = valueParts.join('='); // Handle values with = signs
-    params[key] = value || '';
+    const key = arg.slice(2);
+    // Check if next argument exists and doesn't start with --
+    if (i + 1 < args.length && !args[i + 1].startsWith('--')) {
+      params[key] = args[i + 1];
+      i++; // Skip the next argument since we used it as value
+    } else {
+      params[key] = ''; // No value provided
+    }
   }
 }
 
@@ -50,7 +57,7 @@ function generateSafeKey(name) {
 }
 
 let providerKey = params.key;
-if (!providerKey) {
+if (!providerKey || providerKey.trim() === '') {
   console.error('❌ Provider key is required');
   process.exit(1);
 }
