@@ -192,31 +192,33 @@ try {
   console.log('📊 Category mapping:', data.category, '->', status);
   
   // Generate provider key
-const providerKey = generateSafeKey(data.name);
-console.log('🔑 Generated provider key:', providerKey);
-
-// Output for GitHub Actions - NEW SYNTAX
-const outputFile = process.env.GITHUB_OUTPUT;
-if (outputFile) {
-  const outputs = [
-    `provider_key=${providerKey}`,
-    `site_name=${data.name.replace(/\n/g, ' ')}`,
-    `site_url=${data.url.replace(/\n/g, ' ')}`,
-    `site_status=${status}`,
-    `site_icon=${(data.icon || '').replace(/\n/g, ' ')}`,
-    `site_description=${(data.description || '').replace(/\n/g, ' ')}`
-  ].join('\n');
+  const providerKey = generateSafeKey(data.name);
+  console.log('🔑 Generated provider key:', providerKey);
   
-  fs.appendFileSync(outputFile, outputs);
-  console.log('✅ Outputs written to GITHUB_OUTPUT');
-} else {
-  // Fallback for local testing
-  console.log(`::set-output name=provider_key::${providerKey}`);
-  console.log(`::set-output name=site_name::${data.name}`);
-  console.log(`::set-output name=site_url::${data.url}`);
-  console.log(`::set-output name=site_status::${status}`);
-  console.log(`::set-output name=site_icon::${data.icon}`);
-  console.log(`::set-output name=site_description::${data.description}`);  
+  // Output for GitHub Actions - NEW SYNTAX
+  const outputFile = process.env.GITHUB_OUTPUT;
+  if (outputFile) {
+    const outputs = [
+      `provider_key=${providerKey}`,
+      `site_name=${data.name.replace(/\n/g, ' ')}`,
+      `site_url=${data.url.replace(/\n/g, ' ')}`,
+      `site_status=${status}`,
+      `site_icon=${(data.icon || '').replace(/\n/g, ' ')}`,
+      `site_description=${(data.description || '').replace(/\n/g, ' ')}`
+    ].join('\n');
+    
+    fs.appendFileSync(outputFile, outputs);
+    console.log('✅ Outputs written to GITHUB_OUTPUT');
+  } else {
+    // Fallback for local testing
+    console.log(`::set-output name=provider_key::${providerKey}`);
+    console.log(`::set-output name=site_name::${data.name}`);
+    console.log(`::set-output name=site_url::${data.url}`);
+    console.log(`::set-output name=site_status::${status}`);
+    console.log(`::set-output name=site_icon::${data.icon}`);
+    console.log(`::set-output name=site_description::${data.description}`);
+  }
+  
 } catch (error) {
   console.error('❌ Error during extraction:', error);
   process.exit(1);
