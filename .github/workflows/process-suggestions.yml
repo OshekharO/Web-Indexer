@@ -5,56 +5,38 @@ on:
   workflow_dispatch:
 
 jobs:
-  debug-labels:
-    if: github.event_name == 'issues'
+  check-trigger:
     runs-on: ubuntu-latest
     outputs:
-      has_site_suggestion: ${{ steps.check-labels.outputs.has_site_suggestion }}
-      has_approved: ${{ steps.check-labels.outputs.has_approved }}
-      all_labels: ${{ steps.check-labels.outputs.all_labels }}
+      should_process: ${{ steps.check.outputs.should_process }}
     steps:
-      - name: Check labels
-        id: check-labels
+      - name: Check if we should process
+        id: check
         run: |
-          echo "Event action: ${{ github.event.action }}"
-          echo "All labels: ${{ toJson(github.event.issue.labels) }}"
+          echo "🔍 Checking trigger conditions..."
+          echo "Event: ${{ github.event_name }}"
+          echo "Action: ${{ github.event.action }}"
+          echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Issue Labels: ${{ toJson(github.event.issue.labels) }}"
           
-          # Get all label names
-          LABEL_NAMES=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | tr '\n' ',' | sed 's/,$//')
-          echo "Label names: $LABEL_NAMES"
+          # Get label names
+          LABEL_NAMES=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | tr '[:upper:]' '[:lower:]' | tr '\n' ' ')
+          echo "Label names (lowercase): $LABEL_NAMES"
           
-          # Check for site-suggestion label (case insensitive)
-          if echo "$LABEL_NAMES" | grep -qi "site-suggestion"; then
-            echo "✅ Found site-suggestion label"
-            echo "has_site_suggestion=true" >> $GITHUB_OUTPUT
+          # Check for required labels (case insensitive)
+          if [[ "$LABEL_NAMES" == *"site-suggestion"* ]] && [[ "$LABEL_NAMES" == *"approved"* ]]; then
+            echo "✅ Found both 'site-suggestion' and 'approved' labels"
+            echo "should_process=true" >> $GITHUB_OUTPUT
           else
-            echo "❌ No site-suggestion label found"
-            echo "has_site_suggestion=false" >> $GITHUB_OUTPUT
+            echo "❌ Missing required labels"
+            echo "should_process=false" >> $GITHUB_OUTPUT
           fi
-          
-          # Check for approved label (case insensitive)
-          if echo "$LABEL_NAMES" | grep -qi "approved"; then
-            echo "✅ Found approved label"
-            echo "has_approved=true" >> $GITHUB_OUTPUT
-          else
-            echo "❌ No approved label found"
-            echo "has_approved=false" >> $GITHUB_OUTPUT
-          fi
-          
-          echo "all_labels=$LABEL_NAMES" >> $GITHUB_OUTPUT
 
   process-suggestion:
-    needs: debug-labels
-    if: needs.debug-labels.outputs.has_site_suggestion == 'true' && needs.debug-labels.outputs.has_approved == 'true'
+    needs: check-trigger
+    if: needs.check-trigger.outputs.should_process == 'true'
     runs-on: ubuntu-latest
     steps:
-      - name: Debug why job is running
-        run: |
-          echo "🎉 Job is running because:"
-          echo "has_site_suggestion: ${{ needs.debug-labels.outputs.has_site_suggestion }}"
-          echo "has_approved: ${{ needs.debug-labels.outputs.has_approved }}"
-          echo "all_labels: ${{ needs.debug-labels.outputs.all_labels }}"
-
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -66,158 +48,74 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Extract site information from issue
+      - name: Extract site information
         id: extract
         run: |
-          ISSUE_BODY=$(cat << 'EOF'
-          ${{ github.event.issue.body }}
-          EOF
-          )
-          
-          echo "📝 Extracting site information from issue #${{ github.event.issue.number }}..."
+          echo "📝 Processing issue #${{ github.event.issue.number }}"
           echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body:"
+          echo "${{ github.event.issue.body }}"
           
-          # Extract using the exact format from your site suggestions
-          SITE_NAME=$(echo "$ISSUE_BODY" | grep "**Site Name:**" | head -1 | sed 's/**Site Name:**//' | xargs)
-          SITE_URL=$(echo "$ISSUE_BODY" | grep "**URL:**" | head -1 | sed 's/**URL:**//' | xargs)
-          SITE_CATEGORY=$(echo "$ISSUE_BODY" | grep "**Category:**" | head -1 | sed 's/**Category:**//' | xargs)
-          SITE_ICON=$(echo "$ISSUE_BODY" | grep "**Icon URL:**" | head -1 | sed 's/**Icon URL:**//' | xargs)
-          SITE_DESCRIPTION=$(echo "$ISSUE_BODY" | grep "**Description:**" | head -1 | sed 's/**Description:**//' | xargs)
+          # Simple extraction
+          SITE_NAME=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=Site Name: \*\*).*?(?=\*\*)' | head -1)
+          SITE_URL=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=URL: \*\*).*?(?=\*\*)' | head -1)
+          SITE_CATEGORY=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=Category: \*\*).*?(?=\*\*)' | head -1)
           
-          echo "🔍 Extracted values:"
+          echo "Extracted:"
           echo "Name: '$SITE_NAME'"
-          echo "URL: '$SITE_URL'"
+          echo "URL: '$SITE_URL'" 
           echo "Category: '$SITE_CATEGORY'"
-          echo "Icon: '$SITE_ICON'"
-          echo "Description: '$SITE_DESCRIPTION'"
           
-          # Map category to status code (handle lowercase)
-          CATEGORY_UPPER=$(echo "$SITE_CATEGORY" | tr '[:lower:]' '[:upper:]')
-          case "$CATEGORY_UPPER" in
-            "MANGA") STATUS=1 ;;
-            "LIGHT NOVEL"|"LN") STATUS=2 ;;
-            "MOVIE") STATUS=3 ;;
-            "APP") STATUS=4 ;;
-            "ANIME") STATUS=5 ;;
-            "LEARNING") STATUS=6 ;;
-            "NSFW") STATUS=7 ;;
+          # Map category
+          case "$(echo "$SITE_CATEGORY" | tr '[:upper:]' '[:lower:]')" in
+            "manga") STATUS=1 ;;
+            "light novel"|"ln") STATUS=2 ;;
+            "movie") STATUS=3 ;;
+            "app") STATUS=4 ;;
+            "anime") STATUS=5 ;;
+            "learning") STATUS=6 ;;
+            "nsfw") STATUS=7 ;;
             *) STATUS=0 ;;
           esac
           
-          # Generate provider key (safe version)
           PROVIDER_KEY=$(echo "$SITE_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | sed 's/[^a-z0-9_]//g')Provider
           
           echo "provider_key=$PROVIDER_KEY" >> $GITHUB_OUTPUT
           echo "site_name=$SITE_NAME" >> $GITHUB_OUTPUT
           echo "site_url=$SITE_URL" >> $GITHUB_OUTPUT
           echo "site_status=$STATUS" >> $GITHUB_OUTPUT
-          echo "site_icon=$SITE_ICON" >> $GITHUB_OUTPUT
-          echo "site_description=$SITE_DESCRIPTION" >> $GITHUB_OUTPUT
           echo "issue_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
-
-      - name: Validate extracted data
-        run: |
-          echo "✅ Validating extracted data..."
-          echo "Site Name: '${{ steps.extract.outputs.site_name }}'"
-          echo "Site URL: '${{ steps.extract.outputs.site_url }}'"
-          echo "Site Status: '${{ steps.extract.outputs.site_status }}'"
-          
-          if [ -z "${{ steps.extract.outputs.site_name }}" ]; then
-            echo "❌ Error: Site name is empty"
-            exit 1
-          fi
-          if [ -z "${{ steps.extract.outputs.site_url }}" ]; then
-            echo "❌ Error: Site URL is empty"
-            exit 1
-          fi
-          if [ "${{ steps.extract.outputs.site_status }}" = "0" ]; then
-            echo "⚠️ Warning: Unknown category '${{ steps.extract.outputs.site_category }}', using status 0"
-          fi
-          echo "🎉 Data validation passed"
 
       - name: Add site to providers.json
         run: |
-          echo "📝 Adding site to providers.json..."
           node .github/scripts/add-site.js \
             --key "${{ steps.extract.outputs.provider_key }}" \
             --name "${{ steps.extract.outputs.site_name }}" \
             --url "${{ steps.extract.outputs.site_url }}" \
             --status "${{ steps.extract.outputs.site_status }}" \
-            --icon "${{ steps.extract.outputs.site_icon }}" \
-            --description "${{ steps.extract.outputs.site_description }}" \
             --issue "${{ steps.extract.outputs.issue_number }}"
 
       - name: Create Pull Request
-        id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GIT_TOKEN }}
           commit-message: "Add site: ${{ steps.extract.outputs.site_name }}"
           title: "Add ${{ steps.extract.outputs.site_name }} to index"
           body: |
-            This PR automatically adds **${{ steps.extract.outputs.site_name }}** to the website index.
-            
-            - **Site:** ${{ steps.extract.outputs.site_name }}
-            - **URL:** ${{ steps.extract.outputs.site_url }}
-            - **Category:** ${{ steps.extract.outputs.site_status }}
-            - **Issue:** #${{ steps.extract.outputs.issue_number }}
-            
-            Auto-generated from approved site suggestion.
+            Auto-generated from approved site suggestion #${{ steps.extract.outputs.issue_number }}
           branch: "add-site-${{ steps.extract.outputs.issue_number }}"
           delete-branch: true
 
-      - name: Comment on issue
-        if: steps.create-pr.outputs.pull-request-number != ''
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const prNumber = ${{ steps.create-pr.outputs.pull-request-number }};
-            console.log(`Creating comment for PR #${prNumber}`);
-            
-            await github.rest.issues.createComment({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `✅ Site suggestion processed! A pull request has been automatically created: #${prNumber}`
-            });
-            
-            // Remove approved label and add processed label
-            await github.rest.issues.removeLabel({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: 'approved'
-            });
-            
-            await github.rest.issues.addLabels({
-              issue_number: ${{ steps.extract.outputs.issue_number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['processed', 'auto-pr-created']
-            });
-
-      - name: Handle failures
-        if: failure()
-        uses: actions/github-script@v6
-        with:
-          script: |
-            await github.rest.issues.createComment({
-              issue_number: ${{ github.event.issue.number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `❌ Automated processing failed. Please check the workflow run for details and process manually.`
-            });
-
-  debug-skipped:
-    if: always() && needs.debug-labels.outputs.has_site_suggestion == 'false' || needs.debug-labels.outputs.has_approved == 'false'
-    needs: debug-labels
+  debug-skip:
+    if: always() && needs.check-trigger.outputs.should_process == 'false'
+    needs: check-trigger
     runs-on: ubuntu-latest
     steps:
-      - name: Debug why job was skipped
+      - name: Debug skip reason
         run: |
-          echo "🔍 Job was skipped because:"
-          echo "has_site_suggestion: ${{ needs.debug-labels.outputs.has_site_suggestion }}"
-          echo "has_approved: ${{ needs.debug-labels.outputs.has_approved }}"
-          echo "all_labels: ${{ needs.debug-labels.outputs.all_labels }}"
-          echo "event_action: ${{ github.event.action }}"
-          echo "To trigger this job, ensure the issue has both 'site-suggestion' and 'approved' labels"
+          echo "❌ Workflow skipped because:"
+          echo "Event: ${{ github.event_name }}"
+          echo "Action: ${{ github.event.action }}"
+          echo "Issue has 'site-suggestion' label: ${{ contains(github.event.issue.labels.*.name, 'site-suggestion') }}"
+          echo "Issue has 'approved' label: ${{ contains(github.event.issue.labels.*.name, 'approved') }}"
+          echo "All labels: ${{ toJson(github.event.issue.labels) }}"
