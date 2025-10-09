@@ -21,10 +21,8 @@ function extractSiteData(body) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     
-    // Debug: Show lines that might contain our data
-    if (line.includes('Site Name') || line.includes('URL') || line.includes('Category') || line.includes('Description')) {
-      console.log(`Line ${i}: ${line}`);
-    }
+    // Debug: Show all lines for analysis
+    console.log(`Line ${i}: "${line}"`);
     
     // Format 1: **Field:** value (from website form)
     if (line.includes('Site Name:**')) {
@@ -48,25 +46,54 @@ function extractSiteData(body) {
       console.log('✅ Found Description (Format 1):', data.description);
     }
     
-    // Format 2: ### Field + next line (from GitHub form)
-    else if (line === '### Site Name' && i + 1 < lines.length) {
-      data.name = lines[i + 1].trim();
-      console.log('✅ Found Site Name (Format 2):', data.name);
+    // Format 2: ### Field\n\nValue (GitHub form with empty line)
+    else if (line.startsWith('### Site Name') && i + 2 < lines.length) {
+      // Skip empty line and get the value
+      if (lines[i + 1].trim() === '' && lines[i + 2].trim() !== '') {
+        data.name = lines[i + 2].trim();
+        console.log('✅ Found Site Name (Format 2):', data.name);
+      }
     }
-    else if (line === '### Site URL' && i + 1 < lines.length) {
-      data.url = lines[i + 1].trim();
-      console.log('✅ Found URL (Format 2):', data.url);
+    else if (line.startsWith('### Site URL') && i + 2 < lines.length) {
+      if (lines[i + 1].trim() === '' && lines[i + 2].trim() !== '') {
+        data.url = lines[i + 2].trim();
+        console.log('✅ Found URL (Format 2):', data.url);
+      }
     }
-    else if (line === '### Category' && i + 1 < lines.length) {
-      data.category = lines[i + 1].trim();
-      console.log('✅ Found Category (Format 2):', data.category);
+    else if (line.startsWith('### Category') && i + 2 < lines.length) {
+      if (lines[i + 1].trim() === '' && lines[i + 2].trim() !== '') {
+        data.category = lines[i + 2].trim();
+        console.log('✅ Found Category (Format 2):', data.category);
+      }
     }
-    else if (line === '### Description' && i + 1 < lines.length) {
-      // Skip the "_No response" line if present
-      const nextLine = lines[i + 1].trim();
-      if (nextLine !== '_No response') {
-        data.description = nextLine;
+    else if (line.startsWith('### Description') && i + 2 < lines.length) {
+      if (lines[i + 1].trim() === '' && lines[i + 2].trim() !== '' && lines[i + 2].trim() !== '_No response') {
+        data.description = lines[i + 2].trim();
         console.log('✅ Found Description (Format 2):', data.description);
+      }
+    }
+    
+    // Format 3: Direct field extraction for GitHub forms
+    else if (line.startsWith('### Site Name')) {
+      // Try to extract from the same line first
+      const match = line.match(/### Site Name\s+(.*)/);
+      if (match && match[1].trim()) {
+        data.name = match[1].trim();
+        console.log('✅ Found Site Name (Format 3):', data.name);
+      }
+    }
+    else if (line.startsWith('### Site URL')) {
+      const match = line.match(/### Site URL\s+(.*)/);
+      if (match && match[1].trim()) {
+        data.url = match[1].trim();
+        console.log('✅ Found URL (Format 3):', data.url);
+      }
+    }
+    else if (line.startsWith('### Category')) {
+      const match = line.match(/### Category\s+(.*)/);
+      if (match && match[1].trim()) {
+        data.category = match[1].trim();
+        console.log('✅ Found Category (Format 3):', data.category);
       }
     }
   }
@@ -108,20 +135,26 @@ try {
   const issueBody = JSON.parse(issueBodyContent);
   
   console.log('📝 Issue body parsed successfully');
+  console.log('=== RAW ISSUE BODY ===');
+  console.log(issueBody);
+  console.log('=== END RAW ISSUE BODY ===');
 
   const data = extractSiteData(issueBody);
   
   // Validate required fields
   if (!data.name || data.name.trim() === '') {
     console.error('❌ Missing required field: Site Name');
+    console.error('Available data:', JSON.stringify(data, null, 2));
     process.exit(1);
   }
   if (!data.url || data.url.trim() === '') {
     console.error('❌ Missing required field: URL');
+    console.error('Available data:', JSON.stringify(data, null, 2));
     process.exit(1);
   }
   if (!data.category || data.category.trim() === '') {
     console.error('❌ Missing required field: Category');
+    console.error('Available data:', JSON.stringify(data, null, 2));
     process.exit(1);
   }
   
