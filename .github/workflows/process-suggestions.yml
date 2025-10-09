@@ -60,6 +60,10 @@ jobs:
           # Use Node.js script for reliable parsing
           echo "🔄 Using Node.js extraction script..."
           node .github/scripts/extract-issue-data.js
+          
+          # Clean up issue body file immediately after extraction
+          rm -f issue_body.json
+          echo "✅ Cleaned up issue_body.json"
 
       - name: Read extracted data from file
         id: data
@@ -109,8 +113,14 @@ jobs:
             --url "${{ steps.data.outputs.site_url }}" \
             --status "${{ steps.data.outputs.site_status }}" \
             --icon "${{ steps.data.outputs.site_icon }}" \
-            --description "${{ steps.data.outputs.site_description }}" \
             --issue "${{ github.event.issue.number }}"
+
+      - name: Clean up temporary files
+        run: |
+          echo "🧹 Cleaning up temporary files..."
+          # Remove temporary files used for data extraction
+          rm -f extracted_data.json extracted_data.txt
+          echo "✅ Temporary files cleaned up"
 
       - name: Create Pull Request
         id: create-pr
@@ -125,6 +135,7 @@ jobs:
             - **Site:** ${{ steps.data.outputs.site_name }}
             - **URL:** ${{ steps.data.outputs.site_url }}
             - **Category:** ${{ steps.data.outputs.site_status }}
+            - **Provider Key:** ${{ steps.data.outputs.provider_key }}
           branch: "add-site-${{ github.event.issue.number }}"
           delete-branch: true
 
