@@ -17,16 +17,30 @@ jobs:
           echo "Event: ${{ github.event_name }}"
           echo "Action: ${{ github.event.action }}"
           echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Label Added: ${{ github.event.label.name }}"
           echo "Issue Labels: ${{ toJson(github.event.issue.labels) }}"
+          
+          # Only process if the approved label was added (not removed)
+          if [ "${{ github.event.label.name }}" != "approved" ]; then
+            echo "❌ Triggered by label '${{ github.event.label.name }}', not 'approved'"
+            echo "should_process=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
           
           # Get label names
           LABEL_NAMES=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | tr '[:upper:]' '[:lower:]' | tr '\n' ' ')
           echo "Label names (lowercase): $LABEL_NAMES"
           
-          # Check for required labels (case insensitive)
+          # Check for required labels and ensure not already processed
           if [[ "$LABEL_NAMES" == *"site-suggestion"* ]] && [[ "$LABEL_NAMES" == *"approved"* ]]; then
-            echo "✅ Found both 'site-suggestion' and 'approved' labels"
-            echo "should_process=true" >> $GITHUB_OUTPUT
+            # Check if already processed
+            if [[ "$LABEL_NAMES" == *"processed"* ]] || [[ "$LABEL_NAMES" == *"auto-pr-created"* ]]; then
+              echo "❌ Issue already processed (has processed/auto-pr-created label)"
+              echo "should_process=false" >> $GITHUB_OUTPUT
+            else
+              echo "✅ Found both 'site-suggestion' and 'approved' labels, and not processed yet"
+              echo "should_process=true" >> $GITHUB_OUTPUT
+            fi
           else
             echo "❌ Missing required labels"
             echo "should_process=false" >> $GITHUB_OUTPUT
@@ -154,14 +168,20 @@ jobs:
               body: `✅ Site suggestion processed! A pull request has been automatically created: #${prNumber}`
             });
             
-            // Remove approved label and add processed label
-            await github.rest.issues.removeLabel({
-              issue_number: ${{ github.event.issue.number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: 'approved'
-            });
+            // Only remove approved label if it exists
+            try {
+              await github.rest.issues.removeLabel({
+                issue_number: ${{ github.event.issue.number }},
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'approved'
+              });
+              console.log('✅ Removed approved label');
+            } catch (error) {
+              console.log('ℹ️  Approved label already removed or does not exist');
+            }
             
+            // Add processed labels
             await github.rest.issues.addLabels({
               issue_number: ${{ github.event.issue.number }},
               owner: context.repo.owner,
@@ -191,6 +211,8 @@ jobs:
           echo "❌ Workflow skipped because:"
           echo "Event: ${{ github.event_name }}"
           echo "Action: ${{ github.event.action }}"
+          echo "Label Added: ${{ github.event.label.name }}"
           echo "Issue has 'site-suggestion' label: ${{ contains(github.event.issue.labels.*.name, 'site-suggestion') }}"
           echo "Issue has 'approved' label: ${{ contains(github.event.issue.labels.*.name, 'approved') }}"
+          echo "Issue has 'processed' label: ${{ contains(github.event.issue.labels.*.name, 'processed') }}"
           echo "All labels: ${{ toJson(github.event.issue.labels) }}"
