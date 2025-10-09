@@ -3,15 +3,18 @@
 const fs = require('fs');
 const path = require('path');
 
-// Parse command line arguments
-const args = process.argv.slice(2);
+// Parse command line arguments properly
 const params = {};
-args.forEach(arg => {
-  const [key, value] = arg.replace('--', '').split('=');
-  params[key] = value || '';
-});
+for (let i = 2; i < process.argv.length; i++) {
+  const arg = process.argv[i];
+  if (arg.startsWith('--')) {
+    const [key, ...valueParts] = arg.slice(2).split('=');
+    const value = valueParts.join('='); // Handle values with = signs
+    params[key] = value || '';
+  }
+}
 
-console.log('📝 Adding site with params:', params);
+console.log('📝 Adding site with params:', JSON.stringify(params, null, 2));
 
 const providersPath = path.join(process.cwd(), 'providers.json');
 
@@ -28,6 +31,10 @@ try {
 
 // Generate safe provider key
 function generateSafeKey(name) {
+  if (!name || name.trim() === '') {
+    throw new Error('Site name is required for key generation');
+  }
+  
   let baseKey = name
     .toLowerCase()
     .replace(/[^a-z0-9]/g, '_')
@@ -42,8 +49,13 @@ function generateSafeKey(name) {
   return baseKey;
 }
 
-let providerKey = params.key || generateSafeKey(params.name);
-console.log(`🔑 Generated key: ${providerKey}`);
+let providerKey = params.key;
+if (!providerKey) {
+  console.error('❌ Provider key is required');
+  process.exit(1);
+}
+
+console.log(`🔑 Using provider key: ${providerKey}`);
 
 // Ensure key is unique
 let counter = 1;
@@ -107,26 +119,18 @@ if (params.description && params.description.trim() !== '' && params.description
   console.log(`📝 Added description: ${newProvider.description}`);
 }
 
-// Add to providers (don't sort yet - we'll sort at the end)
+// Add to providers
 providers[providerKey] = newProvider;
 console.log(`✅ Added ${providerKey} to providers`);
 
-// Write back to file (unsorted for now to maintain existing order)
-try {
-  fs.writeFileSync(providersPath, JSON.stringify(providers, null, 2));
-  console.log(`💾 Successfully wrote to providers.json`);
-} catch (error) {
-  console.error('❌ Error writing to providers.json:', error);
-  process.exit(1);
-}
-
-// Now create a sorted version for the PR
-console.log('🔄 Creating sorted version...');
+// Sort providers alphabetically by key
+console.log('🔄 Sorting providers...');
 const sortedProviders = {};
 Object.keys(providers).sort().forEach(key => {
   sortedProviders[key] = providers[key];
 });
 
+// Write back to file
 try {
   fs.writeFileSync(providersPath, JSON.stringify(sortedProviders, null, 2));
   console.log(`🎉 Successfully sorted and saved providers.json`);
@@ -139,6 +143,6 @@ try {
     console.log(`📝 Description: ${newProvider.description}`);
   }
 } catch (error) {
-  console.error('❌ Error writing sorted providers.json:', error);
+  console.error('❌ Error writing providers.json:', error);
   process.exit(1);
 }
