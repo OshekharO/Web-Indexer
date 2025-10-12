@@ -173,6 +173,12 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.fitness&sz=128"
   },
+  "scloudProvider": {
+    "name": "SCLOUD",
+    "url": "https://scloudx.lol",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://scloudx.lol/&sz=128"
+  },
   "ShowFlixProvider": {
     "name": "ShowFlix",
     "url": "https://showflix.store",
