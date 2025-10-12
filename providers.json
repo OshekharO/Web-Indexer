@@ -365,6 +365,12 @@
     "status": 6,
     "icon": "https://www.google.com/s2/favicons?domain=https://beginnersbook.com&sz=128"
   },
+  "learnxinyminutesProvider": {
+    "name": "LearnxinyMinutes",
+    "url": "https://learnxinyminutes.com/",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://learnxinyminutes.com/&sz=128"
+  },
   "LiaoxuefengProvider": {
     "name": "Liao Xuefeng",
     "url": "https://liaoxuefeng.com",
