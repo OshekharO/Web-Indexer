@@ -2,6 +2,7 @@ name: "🚀 Site Suggestion"
 description: "Suggest a new website to be added to the index"
 title: "[Site Suggestion] "
 labels: ["site-suggestion", "pending-review"]
+assignees: OshekharO
 body:
   - type: markdown
     attributes:
