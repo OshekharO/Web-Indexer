@@ -89,6 +89,12 @@
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://mtlbooks.com&sz=128"
   },
+  "mvlempyrProvider": {
+    "name": "MVLEMPYR",
+    "url": "https://www.mvlempyr.com",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.mvlempyr.com/&sz=128"
+  },
   "NovelsemperorProvider": {
     "name": "NovelsEmperor",
     "url": "https://novelsemperor.com",
