@@ -10,6 +10,17 @@ var nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
 // Default image URL
 const DEFAULT_IMAGE = "https://imgpx.com/en/QoMXS9MOaUQY.webp";
 
+// Status codes and their corresponding types
+const STATUS_TYPES = {
+  1: { type: "MANGA", typeClass: "type-manga" },
+  2: { type: "LN", typeClass: "type-ln" },
+  3: { type: "MOVIE", typeClass: "type-movie" },
+  4: { type: "APP", typeClass: "type-app" },
+  5: { type: "ANIME", typeClass: "type-anime" },
+  6: { type: "LEARNING", typeClass: "type-learning" },
+  7: { type: "NSFW", typeClass: "type-nsfw" }
+};
+
 // GitHub Integration System
 const GITHUB_REPO = 'OshekharO/Web-Indexer';
 let currentSiteForActions = null;
@@ -494,39 +505,7 @@ $(document).ready(function () {
     
     allSites = Object.keys(data).map(key => {
       const site = data[key];
-      let type = "Unknown";
-      let typeClass = "type-unknown";
-      
-      switch (site.status) {
-        case 1:
-          type = "MANGA";
-          typeClass = "type-manga";
-          break;
-        case 2:
-          type = "LN";
-          typeClass = "type-ln";
-          break;
-        case 3:
-          type = "MOVIE";
-          typeClass = "type-movie";
-          break;
-        case 4:
-          type = "APP";
-          typeClass = "type-app";
-          break;
-        case 5:
-          type = "ANIME";
-          typeClass = "type-anime";
-          break;
-        case 6:
-          type = "LEARNING";
-          typeClass = "type-learning";
-          break;
-        case 7:
-          type = "NSFW";
-          typeClass = "type-nsfw";
-          break;
-      }
+      const statusInfo = STATUS_TYPES[site.status] || { type: "Unknown", typeClass: "type-unknown" };
       
       return {
         key: key,
@@ -534,8 +513,8 @@ $(document).ready(function () {
         url: site.url,
         status: site.status,
         icon: site.icon,
-        type: type,
-        typeClass: typeClass
+        type: statusInfo.type,
+        typeClass: statusInfo.typeClass
       };
     });
     
