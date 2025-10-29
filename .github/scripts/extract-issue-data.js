@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { generateSafeKey, mapCategoryToStatus } = require('./shared-utils');
 
 function extractSiteData(body) {
   console.log('🔍 Extracting data from issue body...');
@@ -102,26 +103,6 @@ function extractSiteData(body) {
   return data;
 }
 
-// Generate safe provider key
-function generateSafeKey(name) {
-  if (!name || name.trim() === '') {
-    throw new Error('Site name is required for key generation');
-  }
-  
-  let baseKey = name
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, '_')
-    .replace(/_+/g, '_')
-    .replace(/^_|_$/g, '');
-  
-  // Ensure it ends with Provider
-  if (!baseKey.endsWith('provider')) {
-    baseKey += 'Provider';
-  }
-  
-  return baseKey;
-}
-
 // Main execution
 try {
   // Read issue body from file
@@ -158,35 +139,12 @@ try {
     process.exit(1);
   }
   
-  // Map category to status
-  const categoryLower = data.category.toLowerCase();
-  let status = 0;
-  switch (categoryLower) {
-    case 'manga': 
-      status = 1; 
-      break;
-    case 'light novel':
-    case 'ln': 
-      status = 2; 
-      break;
-    case 'movie': 
-      status = 3; 
-      break;
-    case 'app': 
-      status = 4; 
-      break;
-    case 'anime': 
-      status = 5; 
-      break;
-    case 'learning': 
-      status = 6; 
-      break;
-    case 'nsfw': 
-      status = 7; 
-      break;
-    default:
-      console.error('❌ Unknown category:', data.category);
-      process.exit(1);
+  // Map category to status using shared utility
+  const status = mapCategoryToStatus(data.category);
+  
+  if (status === 0) {
+    console.error('❌ Unknown category:', data.category);
+    process.exit(1);
   }
   
   console.log('📊 Category mapping:', data.category, '->', status);
