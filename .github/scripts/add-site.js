@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { generateSafeKey } = require('./shared-utils');
 
 // Parse command line arguments properly
 const params = {};
@@ -35,6 +34,26 @@ try {
 } catch (error) {
   console.error('❌ Error reading providers.json:', error);
   process.exit(1);
+}
+
+// Generate safe provider key
+function generateSafeKey(name) {
+  if (!name || name.trim() === '') {
+    throw new Error('Site name is required for key generation');
+  }
+  
+  let baseKey = name
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_|_$/g, '');
+  
+  // Ensure it ends with Provider
+  if (!baseKey.endsWith('provider')) {
+    baseKey += 'Provider';
+  }
+  
+  return baseKey;
 }
 
 let providerKey = params.key;
