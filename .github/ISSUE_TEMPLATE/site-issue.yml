@@ -2,6 +2,7 @@ name: "🐛 Site Issue"
 description: "Report an issue with an existing site"
 title: "[Site Issue] "
 labels: ["bug", "site-issue"]
+assignees: OshekharO
 body:
   - type: markdown
     attributes:
