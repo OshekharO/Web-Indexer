@@ -407,6 +407,12 @@
     "status": 6,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.vlab.co.in&sz=128"
   },
+  "BashWebProvider": {
+    "name": "Bash Lab",
+    "url": "https://bashweb.pages.dev",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://bashweb.pages.dev&sz=128"
+  },
   "W3SchoolsProvider": {
     "name": "W3Schools",
     "url": "https://www.w3schools.com",
@@ -430,6 +436,12 @@
     "url": "https://manga18.me",
     "status": 7,
     "icon": "https://www.google.com/s2/favicons?domain=https://manga18.me&sz=128"
+  },
+  "NhentaiProvider": {
+    "name": "Nhentai",
+    "url": "https://nhentai.net",
+    "status": 7,
+    "icon": "https://www.google.com/s2/favicons?domain=https://nhentai.net&sz=128"
   },
   "PornHubProvider": {
     "name": "PornHub",
