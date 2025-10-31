@@ -5,12 +5,6 @@
     "status": 1,
     "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
   },
-  "ComickProvider": {
-    "name": "Comick",
-    "url": "https://comick.io",
-    "status": 1,
-    "icon": "https://comick.io/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"
-  },
   "MangadexProvider": {
     "name": "Mangadex",
     "url": "https://mangadex.org",
