@@ -137,6 +137,12 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://flixer.su&sz=128"
   },
+  "YFlixProvider": {
+    "name": "YFlix",
+    "url": "https://yflix.to",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://yflix.to&sz=128"
+  },
   "hdhub4uProvider": {
     "name": "HDHub4u",
     "url": "https://hdhub4u.gd",
