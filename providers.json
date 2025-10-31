@@ -143,6 +143,12 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://yflix.to&sz=128"
   },
+  "DesiCinemasProvider": {
+    "name": "DesiCinemas",
+    "url": "https://desicinemas.to",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://desicinemas.to&sz=128"
+  },
   "hdhub4uProvider": {
     "name": "HDHub4u",
     "url": "https://hdhub4u.gd",
