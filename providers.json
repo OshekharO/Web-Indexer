@@ -11,6 +11,12 @@
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://mangadex.org&sz=128"
   },
+  "AtsumaruProvider": {
+    "name": "Atsumaru",
+    "url": "https://atsu.moe",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://atsu.moe&sz=128"
+  },
   "MangaFoxProvider": {
     "name": "MangaFox",
     "url": "https://fanfox.net",
