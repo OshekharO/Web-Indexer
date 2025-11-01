@@ -187,7 +187,7 @@ Web-Indexer/
 
 #### providers.json Structure
 
-Each site entry follows this format:
+The `providers.json` file contains all indexed sites as a JSON object. Each site entry follows this format:
 
 ```json
 {
@@ -196,6 +196,12 @@ Each site entry follows this format:
     "url": "https://example.com",
     "status": 1,
     "icon": "https://example.com/icon.png"
+  },
+  "AnotherProviderKey": {
+    "name": "Another Site",
+    "url": "https://another-example.com",
+    "status": 2,
+    "icon": "https://another-example.com/icon.png"
   }
 }
 ```
@@ -380,7 +386,7 @@ When suggesting sites, please ensure:
 - We do not host any content; we only provide links
 - All links are user-submitted and community-curated
 - We respect DMCA and intellectual property rights
-- Report copyright concerns via our DMCA policy
+- Report copyright concerns via the DMCA policy available in the footer of the [live site](https://indexer.is-an.app) or contact sakshamshekher@outlook.com
 
 ### Questions?
 
