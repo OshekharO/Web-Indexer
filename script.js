@@ -10,6 +10,18 @@ var nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
 // Default image URL
 const DEFAULT_IMAGE = "https://imgpx.com/en/QoMXS9MOaUQY.webp";
 
+// Type mapping lookup - O(1) lookup instead of switch statement
+const TYPE_MAPPING = {
+  1: { type: "MANGA", typeClass: "type-manga" },
+  2: { type: "LN", typeClass: "type-ln" },
+  3: { type: "MOVIE", typeClass: "type-movie" },
+  4: { type: "APP", typeClass: "type-app" },
+  5: { type: "ANIME", typeClass: "type-anime" },
+  6: { type: "LEARNING", typeClass: "type-learning" },
+  7: { type: "NSFW", typeClass: "type-nsfw" }
+};
+const DEFAULT_TYPE = { type: "Unknown", typeClass: "type-unknown" };
+
 // GitHub Integration System
 const GITHUB_REPO = 'OshekharO/Web-Indexer';
 let currentSiteForActions = null;
@@ -378,6 +390,13 @@ function displaySites(sites) {
   
   document.getElementById('noResults').classList.add('d-none');
   
+  // Use DocumentFragment for batch DOM insertion (reduces reflow/repaint)
+  const fragment = document.createDocumentFragment();
+  // Cache bookmarks as Set for O(1) lookup instead of O(n) includes()
+  const bookmarkSet = new Set(bookmarkedSites);
+  // Collect sites for health checks
+  const sitesForHealthCheck = [];
+  
   sites.forEach(site => {
     var col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 col-lg-3 fade-in";
@@ -389,14 +408,15 @@ function displaySites(sites) {
     const quickActionsBtn = setupQuickActions(site);
     card.appendChild(quickActionsBtn);
     
-    // Create bookmark button
+    // Create bookmark button - use cached Set for O(1) lookup
+    const isBookmarked = bookmarkSet.has(site.key);
     var bookmarkBtn = document.createElement("button");
-    bookmarkBtn.className = `bookmark-btn ${bookmarkedSites.includes(site.key) ? 'bookmarked' : ''}`;
+    bookmarkBtn.className = `bookmark-btn ${isBookmarked ? 'bookmarked' : ''}`;
     bookmarkBtn.setAttribute('data-site-key', site.key);
-    bookmarkBtn.innerHTML = bookmarkedSites.includes(site.key) ? 
+    bookmarkBtn.innerHTML = isBookmarked ? 
       '<i class="bi bi-bookmark-star-fill"></i>' : 
       '<i class="bi bi-bookmark-star"></i>';
-    bookmarkBtn.title = bookmarkedSites.includes(site.key) ? 'Remove bookmark' : 'Add to bookmarks';
+    bookmarkBtn.title = isBookmarked ? 'Remove bookmark' : 'Add to bookmarks';
     bookmarkBtn.addEventListener('click', () => toggleBookmark(site.key));
     
     card.appendChild(bookmarkBtn);
@@ -457,32 +477,42 @@ function displaySites(sites) {
     cardBody.appendChild(typeBadge);
     card.appendChild(cardBody);
     col.appendChild(card);
-    mainContainer.appendChild(col);
+    fragment.appendChild(col);
     
-    // Check site health after a short delay
-    setTimeout(() => updateSiteHealth(site), Math.random() * 2000);
+    // Collect for batch health check scheduling
+    sitesForHealthCheck.push(site);
+  });
+  
+  // Single DOM append for all elements
+  mainContainer.appendChild(fragment);
+  
+  // Schedule health checks with staggered delays
+  sitesForHealthCheck.forEach((site, index) => {
+    setTimeout(() => updateSiteHealth(site), index * 50 + Math.random() * 500);
   });
 }
 
 function updateStats() {
   const total = allSites.length;
-  const manga = allSites.filter(site => site.status === 1).length;
-  const ln = allSites.filter(site => site.status === 2).length;
-  const movie = allSites.filter(site => site.status === 3).length;
-  const app = allSites.filter(site => site.status === 4).length;
-  const anime = allSites.filter(site => site.status === 5).length;
-  const learning = allSites.filter(site => site.status === 6).length;
-  const nsfw = allSites.filter(site => site.status === 7).length;
   const bookmarks = bookmarkedSites.length;
   
+  // Single pass counting - O(n) instead of O(7n)
+  const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
+  for (let i = 0; i < allSites.length; i++) {
+    const status = allSites[i].status;
+    if (counts.hasOwnProperty(status)) {
+      counts[status]++;
+    }
+  }
+  
   document.getElementById('totalCount').textContent = total;
-  document.getElementById('mangaCount').textContent = manga;
-  document.getElementById('lnCount').textContent = ln;
-  document.getElementById('movieCount').textContent = movie;
-  document.getElementById('appCount').textContent = app;
-  document.getElementById('animeCount').textContent = anime;
-  document.getElementById('learningCount').textContent = learning;
-  document.getElementById('nsfwCount').textContent = nsfw;
+  document.getElementById('mangaCount').textContent = counts[1];
+  document.getElementById('lnCount').textContent = counts[2];
+  document.getElementById('movieCount').textContent = counts[3];
+  document.getElementById('appCount').textContent = counts[4];
+  document.getElementById('animeCount').textContent = counts[5];
+  document.getElementById('learningCount').textContent = counts[6];
+  document.getElementById('nsfwCount').textContent = counts[7];
   document.getElementById('bookmarkCount').textContent = bookmarks;
 }
 
@@ -494,39 +524,7 @@ $(document).ready(function () {
     
     allSites = Object.keys(data).map(key => {
       const site = data[key];
-      let type = "Unknown";
-      let typeClass = "type-unknown";
-      
-      switch (site.status) {
-        case 1:
-          type = "MANGA";
-          typeClass = "type-manga";
-          break;
-        case 2:
-          type = "LN";
-          typeClass = "type-ln";
-          break;
-        case 3:
-          type = "MOVIE";
-          typeClass = "type-movie";
-          break;
-        case 4:
-          type = "APP";
-          typeClass = "type-app";
-          break;
-        case 5:
-          type = "ANIME";
-          typeClass = "type-anime";
-          break;
-        case 6:
-          type = "LEARNING";
-          typeClass = "type-learning";
-          break;
-        case 7:
-          type = "NSFW";
-          typeClass = "type-nsfw";
-          break;
-      }
+      const typeInfo = TYPE_MAPPING[site.status] || DEFAULT_TYPE;
       
       return {
         key: key,
@@ -534,8 +532,8 @@ $(document).ready(function () {
         url: site.url,
         status: site.status,
         icon: site.icon,
-        type: type,
-        typeClass: typeClass
+        type: typeInfo.type,
+        typeClass: typeInfo.typeClass
       };
     });
     
