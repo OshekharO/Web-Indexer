@@ -86,11 +86,20 @@ $('#nsfwWarningModal').on('hidden.bs.modal', function () {
   }
 });
 
-// Search functionality
-document.getElementById('searchInput').addEventListener('input', function() {
+// Debounce utility for search optimization
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+// Search functionality with debounce to avoid excessive filtering
+document.getElementById('searchInput').addEventListener('input', debounce(function() {
   const searchTerm = this.value.toLowerCase();
   filterAndDisplaySites(filter, searchTerm);
-});
+}, 150));
 
 document.getElementById('clearSearch').addEventListener('click', function() {
   document.getElementById('searchInput').value = '';
@@ -103,12 +112,16 @@ function filterAndDisplaySites(typeFilter, searchFilter) {
     return;
   }
   
+  // Cache bookmark set and search filter for O(1) lookups
+  const bookmarkSet = new Set(bookmarkedSites);
+  const searchLower = searchFilter.toLowerCase();
+  
   filteredSites = allSites.filter(site => {
     const matchesType = typeFilter === 'all' || 
-                       (typeFilter === 'bookmarked' ? bookmarkedSites.includes(site.key) : 
+                       (typeFilter === 'bookmarked' ? bookmarkSet.has(site.key) : 
                        site.type.toLowerCase().includes(typeFilter));
-    const matchesSearch = site.name.toLowerCase().includes(searchFilter) || 
-                         site.key.toLowerCase().includes(searchFilter);
+    const matchesSearch = site.nameLower.includes(searchLower) || 
+                         site.keyLower.includes(searchLower);
     
     const isNsfwSite = site.status === 7;
     const showNsfw = typeFilter === 'nsfw' && nsfwConsent;
@@ -370,14 +383,23 @@ function showTempAlert(message, type = 'info') {
 
 function populateIssueSiteDropdown() {
   const select = document.getElementById('issueSite');
-  select.innerHTML = '<option value="">Select site...</option>';
+  // Use DocumentFragment for batch DOM insertion
+  const fragment = document.createDocumentFragment();
+  
+  const defaultOption = document.createElement('option');
+  defaultOption.value = '';
+  defaultOption.textContent = 'Select site...';
+  fragment.appendChild(defaultOption);
   
   allSites.forEach(site => {
     const option = document.createElement('option');
     option.value = site.key;
     option.textContent = site.name;
-    select.appendChild(option);
+    fragment.appendChild(option);
   });
+  
+  select.innerHTML = '';
+  select.appendChild(fragment);
 }
 
 function displaySites(sites) {
@@ -528,7 +550,9 @@ $(document).ready(function () {
       
       return {
         key: key,
+        keyLower: key.toLowerCase(), // Pre-computed for search optimization
         name: site.name,
+        nameLower: site.name.toLowerCase(), // Pre-computed for search optimization
         url: site.url,
         status: site.status,
         icon: site.icon,
