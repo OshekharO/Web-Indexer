@@ -32,7 +32,7 @@ let statusTimeout;
 function hideStatus() {
   clearTimeout(statusTimeout);
   statusTimeout = setTimeout(() => {
-    status.style.display = 'none';
+    status.classList.add('d-none');
   }, 5000);
 }
 
@@ -63,6 +63,59 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     icon.className = 'bi bi-sun me-2';
   }
+
+  // Generate skeleton loading cards using DOM methods to avoid innerHTML
+  const skeletonList = document.getElementById('skeletonList');
+  const skeletonFragment = document.createDocumentFragment();
+  for (let i = 0; i < 8; i++) {
+    const col = document.createElement('div');
+    col.className = 'col-sm-6 col-md-4 col-lg-3';
+
+    const card = document.createElement('div');
+    card.className = 'skeleton-card';
+
+    const img = document.createElement('div');
+    img.className = 'skeleton-img';
+
+    const body = document.createElement('div');
+    body.className = 'skeleton-body';
+
+    const lineTitle = document.createElement('div');
+    lineTitle.className = 'skeleton-line skeleton-title';
+    const lineSub = document.createElement('div');
+    lineSub.className = 'skeleton-line skeleton-subtitle';
+    const lineBadge = document.createElement('div');
+    lineBadge.className = 'skeleton-line skeleton-badge';
+
+    body.appendChild(lineTitle);
+    body.appendChild(lineSub);
+    body.appendChild(lineBadge);
+    card.appendChild(img);
+    card.appendChild(body);
+    col.appendChild(card);
+    skeletonFragment.appendChild(col);
+  }
+  skeletonList.appendChild(skeletonFragment);
+
+  // Mobile bottom nav — click triggers the matching hidden radio button
+  document.querySelectorAll('.mobile-nav-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      const radio = document.getElementById('filter-' + filterValue);
+      if (radio) {
+        radio.click();
+      }
+    });
+  });
+
+  // Clear Filters button — delegates to shared reset helper
+  const clearFiltersBtn = document.getElementById('clearFilters');
+  if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', function() {
+      document.getElementById('searchInput').value = '';
+      resetToAllFilter();
+    });
+  }
 });
 
 // NSFW Consent functionality
@@ -80,9 +133,7 @@ document.getElementById('confirmNsfw').addEventListener('click', function() {
 $('#nsfwWarningModal').on('hidden.bs.modal', function () {
   document.getElementById('nsfwConsent').checked = false;
   if (filter === 'nsfw') {
-    document.getElementById('filter-all').checked = true;
-    filter = 'all';
-    filterProviders();
+    resetToAllFilter();
   }
 });
 
@@ -126,9 +177,23 @@ function filterProviders() {
   filterAndDisplaySites(filter, searchTerm);
 }
 
+function updateMobileNavActive(filterValue) {
+  document.querySelectorAll('.mobile-nav-item').forEach(function(item) {
+    item.classList.toggle('active', item.getAttribute('data-filter') === filterValue);
+  });
+}
+
+function resetToAllFilter() {
+  document.getElementById('filter-all').checked = true;
+  filter = 'all';
+  updateMobileNavActive('all');
+  filterProviders();
+}
+
 $("input[name='filter']").on("change", function () {
   filter = this.value;
   filterProviders();
+  updateMobileNavActive(filter);
 });
 
 // Bookmark functionality
@@ -517,11 +582,7 @@ function updateStats() {
 }
 
 $(document).ready(function () {
-  hideStatus();
-  
   $.getJSON("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
-    statusText.textContent = "Parsing websites...";
-    
     allSites = Object.keys(data).map(key => {
       const site = data[key];
       const typeInfo = TYPE_MAPPING[site.status] || DEFAULT_TYPE;
@@ -542,16 +603,13 @@ $(document).ready(function () {
     updateStats();
     populateIssueSiteDropdown();
     
-    statusText.textContent = `All ${allSites.length} sites loaded successfully!`;
-    status.className = "alert alert-success text-center mb-4";
-    
-    setTimeout(() => {
-      status.style.display = 'none';
-    }, 3000);
+    // Hide skeleton once real cards are rendered
+    document.getElementById('skeletonList').classList.add('d-none');
   }).fail(function () {
     console.log("An error has occurred.");
-    statusText.textContent = "Error occurred while loading sites!";
-    status.className = "alert alert-danger text-center mb-4";
+    document.getElementById('skeletonList').classList.add('d-none');
+    statusText.textContent = "Error occurred while loading sites. Please refresh the page.";
+    status.classList.remove('d-none');
     hideStatus();
   });
 });
