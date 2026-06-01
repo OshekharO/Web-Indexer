@@ -407,7 +407,7 @@
     "status": 6,
     "icon": "https://www.google.com/s2/favicons?domain=https://liaoxuefeng.com&sz=128"
   },
-  "piratewallahProvider": {
+  "PirateWallahProvider": {
     "name": "PirateWallah",
     "url": "https://piratewallah.pw/",
     "status": 6,
