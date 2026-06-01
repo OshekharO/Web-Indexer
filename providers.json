@@ -1,27 +1,27 @@
 {
-  "BatoProvider": {
-    "name": "Bato",
-    "url": "https://bato.to",
-    "status": 1,
-    "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
-  },
-  "MangadexProvider": {
-    "name": "Mangadex",
-    "url": "https://mangadex.org",
-    "status": 1,
-    "icon": "https://www.google.com/s2/favicons?domain=https://mangadex.org&sz=128"
-  },
   "AtsumaruProvider": {
     "name": "Atsumaru",
     "url": "https://atsu.moe",
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://atsu.moe&sz=128"
   },
+  "BatoProvider": {
+    "name": "Bato",
+    "url": "https://bato.to",
+    "status": 1,
+    "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
+  },
   "KaganeProvider": {
     "name": "Kagane",
     "url": "https://kagane.org",
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://kagane.org&sz=128"
+  },
+  "MangadexProvider": {
+    "name": "Mangadex",
+    "url": "https://mangadex.org",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mangadex.org&sz=128"
   },
   "MangaFoxProvider": {
     "name": "MangaFox",
@@ -131,6 +131,12 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://a.111477.xyz/&sz=128"
   },
+  "DesiCinemasProvider": {
+    "name": "DesiCinemas",
+    "url": "https://desicinemas.to",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://desicinemas.to&sz=128"
+  },
   "DramahoodProvider": {
     "name": "Dramahood",
     "url": "https://dramahood.mom",
@@ -148,18 +154,6 @@
     "url": "https://flixer.su",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://flixer.su&sz=128"
-  },
-  "YFlixProvider": {
-    "name": "YFlix",
-    "url": "https://yflix.to",
-    "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://yflix.to&sz=128"
-  },
-  "DesiCinemasProvider": {
-    "name": "DesiCinemas",
-    "url": "https://desicinemas.to",
-    "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://desicinemas.to&sz=128"
   },
   "hdhub4uProvider": {
     "name": "HDHub4u",
@@ -226,6 +220,12 @@
     "url": "https://vegamovles.com",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://vegamovles.com&sz=128"
+  },
+  "YFlixProvider": {
+    "name": "YFlix",
+    "url": "https://yflix.to",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://yflix.to&sz=128"
   },
   "AliucordProvider": {
     "name": "Aliucord",
@@ -383,6 +383,12 @@
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
   },
+  "BashWebProvider": {
+    "name": "Bash Lab",
+    "url": "https://bashweb.pages.dev",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://bashweb.pages.dev&sz=128"
+  },
   "BeginnersBookProvider": {
     "name": "BeginnersBook",
     "url": "https://beginnersbook.com",
@@ -401,17 +407,17 @@
     "status": 6,
     "icon": "https://www.google.com/s2/favicons?domain=https://liaoxuefeng.com&sz=128"
   },
+  "piratewallahProvider": {
+    "name": "PirateWallah",
+    "url": "https://piratewallah.pw/",
+    "status": 6,
+    "icon": "https://www.google.com/s2/favicons?domain=https://piratewallah.pw/&sz=128"
+  },
   "VLabProvider": {
     "name": "Virtual Lab",
     "url": "https://www.vlab.co.in",
     "status": 6,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.vlab.co.in&sz=128"
-  },
-  "BashWebProvider": {
-    "name": "Bash Lab",
-    "url": "https://bashweb.pages.dev",
-    "status": 6,
-    "icon": "https://www.google.com/s2/favicons?domain=https://bashweb.pages.dev&sz=128"
   },
   "W3SchoolsProvider": {
     "name": "W3Schools",
