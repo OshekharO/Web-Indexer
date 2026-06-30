@@ -269,11 +269,11 @@
     "status": 4,
     "icon": "https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
   },
-  "LNReaderProvider": {
-    "name": "LNReader",
-    "url": "https://github.com/LNReader/lnreader",
+  "IReaderProvider": {
+    "name": "IReader",
+    "url": "https://github.com/IReaderorg/IReader",
     "status": 4,
-    "icon": "https://rawcdn.githack.com/LNReader/lnreader/518f73f6fdeba3b3a562ac382143cc910fe58fe1/.github/readme-images/icon_alt.png"
+    "icon": "https://raw.githubusercontent.com/IReaderorg/IReader/heads/master/android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
   },
   "MiruProvider": {
     "name": "Miru",
