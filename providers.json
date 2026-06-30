@@ -113,6 +113,12 @@
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128"
   },
+  "MKVBaseProvider": {
+    "name": "MKVBase",
+    "url": "https://mkvbase.site",
+    "status": 3,
+    "icon": "https://mkvbase.site/logo.png"
+  },
   "DahmerProvider": {
     "name": "Dahmer",
     "url": "https://a.111477.xyz",
