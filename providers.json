@@ -251,9 +251,9 @@
     "status": 4,
     "icon": "https://user-images.githubusercontent.com/44992537/197398356-81d33bbf-35bc-43a6-96c1-002f1b1923cf.png"
   },
-  "KotatsuProvider": {
-    "name": "Kotatsu",
-    "url": "https://github.com/nv95/Kotatsu/",
+  "FutonProvider": {
+    "name": "Futon",
+    "url": "https://github.com/AppFuton/Futon/",
     "status": 4,
     "icon": "https://rawcdn.githack.com/nv95/Kotatsu/9da5bdaad49f0f6b9263a110b8b6189d2e8a2813/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
   },
