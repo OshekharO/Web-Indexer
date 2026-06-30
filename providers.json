@@ -5,35 +5,29 @@
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://atsu.moe&sz=128"
   },
-  "BatoProvider": {
-    "name": "Bato",
-    "url": "https://bato.to",
+  "ComixProvider": {
+    "name": "Comix",
+    "url": "https://comix.to/",
     "status": 1,
-    "icon": "https://bato.to/amsta/img/btoto/logo-batoto.png?v0"
+    "icon": "https://www.google.com/s2/favicons?domain=https://comix.to&sz=128"
+  },
+  "MangaDotNetProvider": {
+    "name": "MangaDotNet",
+    "url": "https://mangadot.net/",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mangadot.net&sz=128"
   },
   "KaganeProvider": {
     "name": "Kagane",
-    "url": "https://kagane.org",
+    "url": "https://kagane.to",
     "status": 1,
-    "icon": "https://www.google.com/s2/favicons?domain=https://kagane.org&sz=128"
-  },
-  "MangadexProvider": {
-    "name": "Mangadex",
-    "url": "https://mangadex.org",
-    "status": 1,
-    "icon": "https://www.google.com/s2/favicons?domain=https://mangadex.org&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://kagane.to&sz=128"
   },
   "MangaFoxProvider": {
     "name": "MangaFox",
     "url": "https://fanfox.net",
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://fanfox.net&sz=128"
-  },
-  "MangaparkProvider": {
-    "name": "Mangapark",
-    "url": "https://mangapark.net",
-    "status": 1,
-    "icon": "https://www.google.com/s2/favicons?domain=https://mangapark.net&sz=128"
   },
   "NatomangaProvider": {
     "name": "Natomanga",
