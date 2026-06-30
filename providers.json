@@ -331,15 +331,15 @@
   },
   "AnimeKaiProvider": {
     "name": "AnimeKai",
-    "url": "https://animekai.me",
+    "url": "https://animekai.at",
     "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://animekai.me&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://animekai.at&sz=128"
   },
   "AnimepaheProvider": {
     "name": "AnimePahe",
-    "url": "https://animepahe.si",
+    "url": "https://animepahe.pw/",
     "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.si&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://animepahe.pw&sz=128"
   },
   "AnimixStreamProvider": {
     "name": "AnimixStream",
@@ -347,41 +347,35 @@
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://animixstream.com&sz=128"
   },
-  "HianimeProvider": {
-    "name": "Hianime",
-    "url": "https://hianime.tv",
-    "status": 5,
-    "icon": "https://hianime.tv/proxy/logo.png"
-  },
   "HiCartoonProvider": {
     "name": "HiCartoon",
     "url": "https://hicartoon.to/home",
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://hicartoon.to&sz=128"
   },
-  "KaidoProvider": {
-    "name": "Kaido",
-    "url": "https://kaido.to",
+  "AniDapProvider": {
+    "name": "AniDap",
+    "url": "https://anidap.se/",
     "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://kaido.to&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://anidap.se&sz=128"
   },
   "KartoonsProvider": {
     "name": "Kartoons",
-    "url": "https://kartoons.fun/home",
+    "url": "https://kartoons.me/home",
     "status": 5,
-    "icon": "https://kartoons.fun/logo.png"
+    "icon": "https://kartoons.me/logo.png"
   },
-  "KuudereProvider": {
-    "name": "Kuudere",
-    "url": "https://kuudere.to",
+  "ReAnimeProvider": {
+    "name": "ReAnime",
+    "url": "https://reanime.to/home",
     "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://kuudere.to&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://reanime.to&sz=128"
   },
   "MiruroProvider": {
     "name": "Miruro",
-    "url": "https://www.miruro.tv",
+    "url": "https://www.miruro.com",
     "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.tv&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.com&sz=128"
   },
   "BashWebProvider": {
     "name": "Bash Lab",
