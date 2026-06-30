@@ -287,11 +287,35 @@
     "status": 4,
     "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
   },
+  "ZangetsuProvider": {
+    "name": "Zangetsu",
+    "url": "https://github.com/Spyou/Zangetsu",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/Spyou/Zangetsu/heads/main/assets/icon/app_icon.png"
+  },
+  "mpvRxProvider": {
+    "name": "mpvRx",
+    "url": "https://github.com/Riteshp2001/mpvRx",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/Riteshp2001/mpvRx/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
+  },
+  "FlowProvider": {
+    "name": "Flow",
+    "url": "https://github.com/a-edev/Flow",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/A-EDev/Flow/heads/main/Assets/logo.png"
+  },
   "NewPipeProvider": {
     "name": "NewPipe",
     "url": "https://github.com/TeamNewPipe/NewPipe",
     "status": 4,
-    "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/refs/heads/dev/assets/new_pipe_icon_5.png"
+    "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/heads/dev/assets/new_pipe_icon_5.png"
+  },
+  "TizenTubeCobaltProvider": {
+    "name": "TizenTubeCobalt",
+    "url": "https://github.com/reisxd/TizenTubeCobalt",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/ycngmn/NoTubeTV/heads/main/app/src/main/res/mipmap-xxxhdpi-v4/ic_launcher.png"
   },
   "ReVancedProvider": {
     "name": "ReVanced",
