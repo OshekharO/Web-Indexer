@@ -119,6 +119,12 @@
     "status": 3,
     "icon": "https://mkvbase.site/logo.png"
   },
+  "OverLookProvider": {
+    "name": "OverLook",
+    "url": "https://overlook.cx",
+    "status": 3,
+    "icon": "https://overlook.cx/logo.png"
+  },
   "DahmerProvider": {
     "name": "Dahmer",
     "url": "https://a.111477.xyz",
