@@ -55,7 +55,7 @@
   },
   "BixiangeProvider": {
     "name": "Bixiange",
-    "url": "https://m.bixiange.me",
+    "url": "https://bixiange.xyz/",
     "status": 2,
     "icon": "https://m.bixiange.me/images/logo.png"
   },
@@ -91,15 +91,9 @@
   },
   "mvlempyrProvider": {
     "name": "MVLEMPYR",
-    "url": "https://www.mvlempyr.com",
+    "url": "https://www.mvlempyr.io",
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.mvlempyr.com/&sz=128"
-  },
-  "NovelsemperorProvider": {
-    "name": "NovelsEmperor",
-    "url": "https://novelsemperor.com",
-    "status": 2,
-    "icon": "https://www.google.com/s2/favicons?domain=https://novelsemperor.com&sz=128"
   },
   "UukanshuProvider": {
     "name": "Uukanshu",
@@ -151,7 +145,7 @@
   },
   "hdhub4uProvider": {
     "name": "HDHub4u",
-    "url": "https://hdhub4u.gd",
+    "url": "https://hdhub4u.med",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://hdhub4u.gd/&sz=128"
   },
@@ -163,27 +157,27 @@
   },
   "multimoviesProvider": {
     "name": "MultiMovies",
-    "url": "https://multimovies.sale",
+    "url": "https://multimovies.wtf",
     "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://multimovies.sale&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://multimovies.wtf&sz=128"
   },
   "NetMirrorProvider": {
     "name": "NetMirror",
-    "url": "https://netmirror.app",
+    "url": "https://netmirror.gg",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://netmirror.app&sz=128"
   },
   "PStreamProvider": {
     "name": "P-Stream",
-    "url": "https://pstream.mov",
+    "url": "https://zstream.mov",
     "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://pstream.mov&sz=128"
+    "icon": "https://raw.githubusercontent.com/xp-technologies-dev/p-stream/heads/production/public/apple-touch-icon.png"
   },
   "PrmoviesProvider": {
     "name": "PRMovies",
-    "url": "https://prmovies.fitness",
+    "url": "https://prmovies.recipes",
     "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.fitness&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://prmovies.recipes&sz=128"
   },
   "scloudProvider": {
     "name": "SCLOUD",
@@ -191,15 +185,9 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://scloudx.lol/&sz=128"
   },
-  "ShowFlixProvider": {
-    "name": "ShowFlix",
-    "url": "https://showflix.store",
-    "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://showflix.store&sz=128"
-  },
   "Turkish123Provider": {
     "name": "Turkish123",
-    "url": "https://c.turkish123.website/",
+    "url": "https://d.turkish123.website/",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://c.turkish123.website&sz=128"
   },
@@ -211,15 +199,9 @@
   },
   "VegaProvider": {
     "name": "VegaMovies",
-    "url": "https://vegamovles.com",
+    "url": "https://vegamovie.sn",
     "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://vegamovles.com&sz=128"
-  },
-  "YFlixProvider": {
-    "name": "YFlix",
-    "url": "https://yflix.to",
-    "status": 3,
-    "icon": "https://www.google.com/s2/favicons?domain=https://yflix.to&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://vegamovie.sn&sz=128"
   },
   "AliucordProvider": {
     "name": "Aliucord",
