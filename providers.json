@@ -245,11 +245,11 @@
     "status": 4,
     "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
   },
-  "GloomProvider": {
-    "name": "Gloom",
-    "url": "https://github.com/MateriiApps/Gloom",
+  "GitSyncProvider": {
+    "name": "GitSync",
+    "url": "https://github.com/ViscousPot/GitSync",
     "status": 4,
-    "icon": "https://user-images.githubusercontent.com/44992537/197398356-81d33bbf-35bc-43a6-96c1-002f1b1923cf.png"
+    "icon": "https://raw.githubusercontent.com/ViscousPot/GitSync/heads/main/assets/app_icon.png"
   },
   "FutonProvider": {
     "name": "Futon",
