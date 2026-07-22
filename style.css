@@ -294,8 +294,16 @@ body {
   opacity: 0;
 }
 
-.site-card:hover .quick-actions-btn {
-  opacity: 1;
+@media (hover: hover) {
+  .site-card:hover .quick-actions-btn {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .quick-actions-btn {
+    opacity: 0.55;
+  }
 }
 
 .quick-actions-btn:hover {

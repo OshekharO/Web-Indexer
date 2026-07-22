@@ -12,6 +12,7 @@
   <a href="https://github.com/OshekharO/Web-Indexer/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Unlicense-blue?style=for-the-badge" alt="License"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/issues"><img src="https://img.shields.io/github/issues/OshekharO/Web-Indexer?style=for-the-badge" alt="Issues"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/stargazers"><img src="https://img.shields.io/github/stars/OshekharO/Web-Indexer?style=for-the-badge" alt="Stars"></a>
+  <a href="https://pagespeed.web.dev/url?url=https%3A%2F%2Findexer.is-an.app"><img src="https://img.shields.io/badge/Performance-A-brightgreen?style=for-the-badge" alt="Performance"></a>
 </p>
 
 ---
@@ -25,15 +26,19 @@ Get recommended sites to watch/read movies, series, anime, manga, light novels, 
 ## ✨ Features
 
 - **📚 Curated Collection**: Handpicked websites across multiple categories
-- **🔍 Advanced Search**: Quick search functionality to find what you need
+- **🔍 Advanced Search**: Quick search functionality with keyboard shortcut (`/`)
 - **🏷️ Smart Filtering**: Filter by category (Manga, Light Novels, Movies, Apps, Anime, Learning, NSFW)
-- **🔖 Bookmarking**: Save your favorite sites for quick access
-- **🎨 Theme Support**: Dark and Light theme toggle
+- **🔖 Bookmarking**: Save your favorite sites for quick access with import/export support
+- **🎨 Theme Support**: Dark and Light theme toggle with persistent preference
 - **⚠️ NSFW Warnings**: Age-restricted content with consent modal
-- **💓 Health Monitoring**: Real-time site availability checking
+- **💓 Health Monitoring**: Throttled real-time site availability checking (lazy-loaded via IntersectionObserver)
 - **🤝 Community Driven**: GitHub integration for suggestions and issue reporting
 - **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
-- **⚡ Fast & Lightweight**: Built with vanilla JavaScript for optimal performance
+- **⚡ Fast & Lightweight**: Built with vanilla JavaScript (no jQuery) for optimal performance
+- **🖼️ Social Sharing**: Share on Twitter, Reddit, Telegram, or copy link
+- **🖥️ Server-Rendered Snapshot**: Full static HTML snapshot available for crawlers and no-JS users (`snapshot.html`)
+- **🔊 Accessibility**: Skip-to-content links, ARIA labels, and reduced-motion support
+- **🚀 SEO Optimized**: Open Graph, Twitter Cards, JSON-LD structured data, canonical URLs, sitemap, and robots.txt
 
 ## 🚀 Live Demo
 

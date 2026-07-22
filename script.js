@@ -55,6 +55,7 @@ document.getElementById('themeToggle').addEventListener('click', function() {
   } else {
     icon.className = 'bi bi-sun me-2';
   }
+  this.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
   localStorage.setItem('theme', newTheme);
 });
 
@@ -293,19 +294,19 @@ function showQuickActions(site) {
 function shareOnTwitter() {
   const text = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
   const url = encodeURIComponent('https://indexer.is-an.app');
-  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=550,height=420');
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=550,height=420,noopener');
 }
 
 function shareOnReddit() {
   const title = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
   const url = encodeURIComponent('https://indexer.is-an.app');
-  window.open(`https://www.reddit.com/submit?title=${title}&url=${url}`, '_blank', 'width=550,height=600');
+  window.open(`https://www.reddit.com/submit?title=${title}&url=${url}`, '_blank', 'width=550,height=600,noopener');
 }
 
 function shareOnTelegram() {
   const text = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
   const url = encodeURIComponent('https://indexer.is-an.app');
-  window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=550,height=420');
+  window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=550,height=420,noopener');
 }
 
 function copyShareLink() {
@@ -353,7 +354,7 @@ ${siteData.additionalNotes || 'None'}
 *Submitted via Website Indexer on ${new Date().toLocaleDateString()}*`;
 
   const issueUrl = createGitHubIssueUrl(title, body, ['site-suggestion', 'pending-review']);
-  window.open(issueUrl, '_blank');
+  window.open(issueUrl, '_blank', 'noopener');
 }
 
 function reportSiteIssue(issueData) {
@@ -379,7 +380,7 @@ ${issueData.additionalContext || 'None'}
   if (issueData.type === 'malware') labels.push('security');
 
   const issueUrl = createGitHubIssueUrl(title, body, labels);
-  window.open(issueUrl, '_blank');
+  window.open(issueUrl, '_blank', 'noopener');
 }
 
 // Form handlers
@@ -445,7 +446,7 @@ document.getElementById('actionCopyUrl').addEventListener('click', function() {
 
 document.getElementById('actionOpenNewTab').addEventListener('click', function() {
   if (currentSiteForActions) {
-    window.open(currentSiteForActions.url, '_blank');
+    window.open(currentSiteForActions.url, '_blank', 'noopener');
     const qaModal = bootstrap.Modal.getInstance(document.getElementById('quickActionsModal'));
     qaModal.hide();
   }
@@ -647,10 +648,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.setAttribute('data-bs-theme', savedTheme);
   
   const icon = document.querySelector('#themeToggle i');
+  const themeToggle = document.getElementById('themeToggle');
   if (savedTheme === 'dark') {
     icon.className = 'bi bi-moon-stars me-2';
+    themeToggle.setAttribute('aria-pressed', 'true');
   } else {
     icon.className = 'bi bi-sun me-2';
+    themeToggle.setAttribute('aria-pressed', 'false');
   }
 
   // Scroll to top button
