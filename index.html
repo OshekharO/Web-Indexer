@@ -13,32 +13,68 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="title" content="Website Navigator" />
-  <title>Website Indexer</title>
-  <meta name="description" content="A simple website indexer with some awesome site's listed. Now finding your favourite websites and application's made easy. One destination for everything." />
-  <meta name="keywords" content="manga, read manga online, free manga online, English manga, manga scans, watch anime, watch movies, application, read free manga and light novel, Chinese novel, mtl, library, manhua, App, hosting, index, awesome, oshekher, puritywashere, course, downloader, YouTube, vanced alternative, music player, website, OshekharO, Saksham Shekher" />
+  <title>Web Indexer — Manga, Anime, Movies & Apps Directory</title>
+  <meta name="description" content="A simple website indexer with awesome sites listed. Find your favourite websites and applications in one destination. Supports manga, light novels, movies, anime, learning resources, and apps." />
+  <meta name="keywords" content="manga, light novel, anime, movies, apps, website directory, web indexer, manga reader, anime streaming, free manga" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="author" content="Saksham" />
-  <meta property="og:url" content="https://indexer.is-an.app" />
-  <meta property="og:image" content="https://indexer.is-an.app/img/apple-touch-icon.png" />
+  <link rel="canonical" href="https://indexer.is-an.app/" />
+  <link rel="alternate" type="text/html" href="https://indexer.is-an.app/snapshot.html" title="Web Indexer - Full Site Listing" />
+  <meta property="og:url" content="https://indexer.is-an.app/" />
+  <meta property="og:title" content="Web Indexer — One Destination for All Your Favorite Websites" />
+  <meta property="og:description" content="A comprehensive directory for manga, light novels, movies, anime, learning resources, and apps. One destination for everything." />
+  <meta property="og:image" content="https://indexer.is-an.app/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta name="copyright" content="Copyright © 2024 OshekharO" />
+  <meta property="og:site_name" content="Web Indexer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Web Indexer — One Destination for All Your Favorite Websites" />
+  <meta name="twitter:description" content="A comprehensive directory for manga, light novels, movies, anime, learning resources, and apps." />
+  <meta name="twitter:image" content="https://indexer.is-an.app/img/og-image.png" />
+  <meta name="copyright" content="Copyright © 2025 OshekharO" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
   <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
   
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   
-  <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Web Indexer",
+    "url": "https://indexer.is-an.app",
+    "description": "A comprehensive directory of websites for manga, light novels, movies, anime, learning resources, and apps.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript enabled",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "1"
+    }
+  }
+  </script>
 </head>
 
 <body data-bs-theme="dark">
+  <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+  
   <!-- Header Section -->
   <header class="gradient-header py-4">
     <div class="container">
@@ -68,7 +104,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="d-flex justify-content-center flex-wrap gap-2">
+          <div class="d-flex justify-content-center flex-wrap gap-2 mb-2">
             <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#suggestSiteModal">
               <i class="bi bi-plus-circle me-1"></i>Suggest Site
             </button>
@@ -77,10 +113,25 @@
             </button>
             <a href="https://github.com/OshekharO/Web-Indexer/issues" class="btn btn-sm btn-outline-info" target="_blank">
               <i class="bi bi-github me-1"></i>GitHub Issues
-            </a>
+            </button>
             <a href="https://github.com/OshekharO/Web-Indexer" class="btn btn-sm btn-outline-secondary" target="_blank">
               <i class="bi bi-star me-1"></i>Contribute
             </a>
+          </div>
+          <div class="d-flex justify-content-center flex-wrap gap-2">
+            <span class="text-muted small me-2">Share:</span>
+            <button class="btn btn-sm btn-outline-primary" id="shareTwitter" title="Share on Twitter">
+              <i class="bi bi-twitter-x me-1"></i>Twitter
+            </button>
+            <button class="btn btn-sm btn-outline-info" id="shareReddit" title="Share on Reddit">
+              <i class="bi bi-reddit me-1"></i>Reddit
+            </button>
+            <button class="btn btn-sm btn-outline-success" id="shareTelegram" title="Share on Telegram">
+              <i class="bi bi-telegram me-1"></i>Telegram
+            </button>
+            <button class="btn btn-sm btn-outline-secondary" id="shareCopyLink" title="Copy link to clipboard">
+              <i class="bi bi-link-45deg me-1"></i>Copy Link
+            </button>
           </div>
         </div>
       </div>
@@ -95,7 +146,7 @@
           <div class="input-group">
             <span class="input-group-text"><i class="bi bi-search"></i></span>
             <input type="text" id="searchInput" class="form-control" placeholder="Search websites by name...">
-            <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+            <button class="btn btn-outline-secondary" type="button" id="clearSearch" aria-label="Clear search">
               <i class="bi bi-x-circle"></i>
             </button>
           </div>
@@ -359,7 +410,16 @@
   </div>
 
   <!-- Main Content -->
-  <main class="py-4">
+  <main class="py-4" id="mainContent">
+    <noscript>
+      <div class="container">
+        <div class="alert alert-warning">
+          <i class="bi bi-exclamation-triangle me-2"></i>
+          <strong>JavaScript is required.</strong> Please enable JavaScript to use Web Indexer. 
+          You can also view the <a href="snapshot.html">full site listing</a> (no JavaScript required).
+        </div>
+      </div>
+    </noscript>
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -552,9 +612,13 @@
     </button>
   </nav>
 
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top" title="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
