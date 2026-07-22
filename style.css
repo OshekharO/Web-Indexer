@@ -65,7 +65,27 @@ body {
   font-weight: 500;
 }
 
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
 /* Quick Actions Bar */
+.quick-actions-bar .btn i {
+  font-size: 0.9em;
+}
 .quick-actions-bar {
   background-color: var(--card-bg);
   border-bottom: 1px solid var(--border-color);
@@ -575,5 +595,45 @@ footer {
 
   .card-img-container {
     height: 120px;
+  }
+}
+
+/* Scroll to top */
+.scroll-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+  background: var(--secondary-color);
+}
+
+@media (max-width: 575.98px) {
+  .scroll-to-top {
+    bottom: 80px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
   }
 }

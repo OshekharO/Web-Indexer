@@ -1,0 +1,32 @@
+name: Generate Server-Rendered Snapshot
+
+on:
+  push:
+    paths:
+      - 'providers.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Generate snapshot
+        run: node scripts/generate-snapshot.js
+        
+      - name: Commit snapshot
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add snapshot.html
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: regenerate server-rendered snapshot"
+          git push

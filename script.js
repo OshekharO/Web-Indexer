@@ -1,16 +1,22 @@
-var status = document.getElementById("status");
-var statusText = document.getElementById("statusText");
-var mainContainer = document.getElementById("siteList");
-var filter = "all";
-var allSites = [];
-var filteredSites = [];
-var bookmarkedSites = JSON.parse(localStorage.getItem('bookmarkedSites')) || [];
-var nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
+const statusEl = document.getElementById("status");
+const statusTextEl = document.getElementById("statusText");
+const mainContainer = document.getElementById("siteList");
+const searchInput = document.getElementById("searchInput");
+let currentFilter = "all";
+let allSites = [];
+let filteredSites = [];
+let bookmarkedSites = JSON.parse(localStorage.getItem('bookmarkedSites')) || [];
+let nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
+let currentSiteForActions = null;
+let statusTimeout;
+let healthCheckQueue = [];
+let activeHealthChecks = 0;
+const MAX_CONCURRENT_HEALTH_CHECKS = 5;
+let healthCheckObserver = null;
+let processedHealthKeys = new Set();
 
-// Default image URL
 const DEFAULT_IMAGE = "https://imgpx.com/en/QoMXS9MOaUQY.webp";
 
-// Type mapping lookup - O(1) lookup instead of switch statement
 const TYPE_MAPPING = {
   1: { type: "MANGA", typeClass: "type-manga" },
   2: { type: "LN", typeClass: "type-ln" },
@@ -22,138 +28,96 @@ const TYPE_MAPPING = {
 };
 const DEFAULT_TYPE = { type: "Unknown", typeClass: "type-unknown" };
 
-// GitHub Integration System
 const GITHUB_REPO = 'OshekharO/Web-Indexer';
-let currentSiteForActions = null;
-
-// Auto-hide status after timeout
-let statusTimeout;
 
 function hideStatus() {
   clearTimeout(statusTimeout);
   statusTimeout = setTimeout(() => {
-    status.classList.add('d-none');
+    statusEl.classList.add('d-none');
   }, 5000);
 }
 
-// Theme toggle functionality
+function showStatus(message, type = 'danger') {
+  statusTextEl.textContent = message;
+  statusEl.className = `alert alert-${type} text-center mb-4`;
+  statusEl.classList.remove('d-none');
+  hideStatus();
+}
+
+// Theme toggle
 document.getElementById('themeToggle').addEventListener('click', function() {
   const currentTheme = document.body.getAttribute('data-bs-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   document.body.setAttribute('data-bs-theme', newTheme);
-  
   const icon = this.querySelector('i');
   if (newTheme === 'dark') {
     icon.className = 'bi bi-moon-stars me-2';
   } else {
     icon.className = 'bi bi-sun me-2';
   }
-  
   localStorage.setItem('theme', newTheme);
 });
 
-// Load saved theme preference
-document.addEventListener('DOMContentLoaded', function() {
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.body.setAttribute('data-bs-theme', savedTheme);
-  
-  const icon = document.querySelector('#themeToggle i');
-  if (savedTheme === 'dark') {
-    icon.className = 'bi bi-moon-stars me-2';
-  } else {
-    icon.className = 'bi bi-sun me-2';
-  }
+// NSFW modal
+const nsfwModalEl = document.getElementById('nsfwWarningModal');
+const nsfwModal = new bootstrap.Modal(nsfwModalEl);
 
-  // Generate skeleton loading cards using DOM methods to avoid innerHTML
-  const skeletonList = document.getElementById('skeletonList');
-  const skeletonFragment = document.createDocumentFragment();
-  for (let i = 0; i < 8; i++) {
-    const col = document.createElement('div');
-    col.className = 'col-sm-6 col-md-4 col-lg-3';
-
-    const card = document.createElement('div');
-    card.className = 'skeleton-card';
-
-    const img = document.createElement('div');
-    img.className = 'skeleton-img';
-
-    const body = document.createElement('div');
-    body.className = 'skeleton-body';
-
-    const lineTitle = document.createElement('div');
-    lineTitle.className = 'skeleton-line skeleton-title';
-    const lineSub = document.createElement('div');
-    lineSub.className = 'skeleton-line skeleton-subtitle';
-    const lineBadge = document.createElement('div');
-    lineBadge.className = 'skeleton-line skeleton-badge';
-
-    body.appendChild(lineTitle);
-    body.appendChild(lineSub);
-    body.appendChild(lineBadge);
-    card.appendChild(img);
-    card.appendChild(body);
-    col.appendChild(card);
-    skeletonFragment.appendChild(col);
-  }
-  skeletonList.appendChild(skeletonFragment);
-
-  // Mobile bottom nav — click triggers the matching hidden radio button
-  document.querySelectorAll('.mobile-nav-item').forEach(function(item) {
-    item.addEventListener('click', function() {
-      const filterValue = this.getAttribute('data-filter');
-      const radio = document.getElementById('filter-' + filterValue);
-      if (radio) {
-        radio.click();
-      }
-    });
-  });
-
-  // Clear Filters button — delegates to shared reset helper
-  const clearFiltersBtn = document.getElementById('clearFilters');
-  if (clearFiltersBtn) {
-    clearFiltersBtn.addEventListener('click', function() {
-      document.getElementById('searchInput').value = '';
-      resetToAllFilter();
-    });
-  }
-});
-
-// NSFW Consent functionality
 document.getElementById('confirmNsfw').addEventListener('click', function() {
   const consentCheckbox = document.getElementById('nsfwConsent');
   if (consentCheckbox.checked) {
     nsfwConsent = true;
     localStorage.setItem('nsfwConsent', 'true');
-    $('#nsfwWarningModal').modal('hide');
-    filterAndDisplaySites(filter, document.getElementById('searchInput').value.toLowerCase());
+    nsfwModal.hide();
+    filterAndDisplaySites(currentFilter, searchInput.value.toLowerCase());
   }
 });
 
-// Reset NSFW consent when modal is closed without consent
-$('#nsfwWarningModal').on('hidden.bs.modal', function () {
+nsfwModalEl.addEventListener('hidden.bs.modal', function () {
   document.getElementById('nsfwConsent').checked = false;
-  if (filter === 'nsfw') {
+  if (currentFilter === 'nsfw') {
     resetToAllFilter();
   }
 });
 
-// Search functionality
-document.getElementById('searchInput').addEventListener('input', function() {
-  const searchTerm = this.value.toLowerCase();
-  filterAndDisplaySites(filter, searchTerm);
+// Search
+searchInput.addEventListener('input', function() {
+  filterAndDisplaySites(currentFilter, this.value.toLowerCase());
 });
 
 document.getElementById('clearSearch').addEventListener('click', function() {
-  document.getElementById('searchInput').value = '';
-  filterAndDisplaySites(filter, '');
+  searchInput.value = '';
+  filterAndDisplaySites(currentFilter, '');
+});
+
+// Keyboard shortcut for search
+document.addEventListener('keydown', function(e) {
+  if (e.key === '/' && document.activeElement !== searchInput && 
+      document.activeElement.tagName !== 'INPUT' && 
+      document.activeElement.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    searchInput.focus();
+  }
+});
+
+// Filter radio buttons
+document.querySelectorAll('input[name="filter"]').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+    currentFilter = this.value;
+    if (currentFilter === 'nsfw' && !nsfwConsent) {
+      nsfwModal.show();
+      return;
+    }
+    filterAndDisplaySites(currentFilter, searchInput.value.toLowerCase());
+    updateMobileNavActive(currentFilter);
+  });
 });
 
 function filterAndDisplaySites(typeFilter, searchFilter) {
   if (typeFilter === 'nsfw' && !nsfwConsent) {
-    $('#nsfwWarningModal').modal('show');
+    nsfwModal.show();
     return;
   }
-  
+
   filteredSites = allSites.filter(site => {
     const matchesType = typeFilter === 'all' || 
                        (typeFilter === 'bookmarked' ? bookmarkedSites.includes(site.key) : 
@@ -162,7 +126,6 @@ function filterAndDisplaySites(typeFilter, searchFilter) {
                          site.key.toLowerCase().includes(searchFilter);
     
     const isNsfwSite = site.status === 7;
-    const showNsfw = typeFilter === 'nsfw' && nsfwConsent;
     const hideNsfw = isNsfwSite && !nsfwConsent && typeFilter !== 'nsfw';
     
     return matchesType && matchesSearch && !hideNsfw;
@@ -173,8 +136,8 @@ function filterAndDisplaySites(typeFilter, searchFilter) {
 }
 
 function filterProviders() {
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  filterAndDisplaySites(filter, searchTerm);
+  const searchTerm = searchInput.value.toLowerCase();
+  filterAndDisplaySites(currentFilter, searchTerm);
 }
 
 function updateMobileNavActive(filterValue) {
@@ -185,18 +148,32 @@ function updateMobileNavActive(filterValue) {
 
 function resetToAllFilter() {
   document.getElementById('filter-all').checked = true;
-  filter = 'all';
+  currentFilter = 'all';
   updateMobileNavActive('all');
   filterProviders();
 }
 
-$("input[name='filter']").on("change", function () {
-  filter = this.value;
-  filterProviders();
-  updateMobileNavActive(filter);
+// Mobile bottom nav
+document.querySelectorAll('.mobile-nav-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    const filterValue = this.getAttribute('data-filter');
+    const radio = document.getElementById('filter-' + filterValue);
+    if (radio) {
+      radio.click();
+    }
+  });
 });
 
-// Bookmark functionality
+// Clear filters
+const clearFiltersBtn = document.getElementById('clearFilters');
+if (clearFiltersBtn) {
+  clearFiltersBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    resetToAllFilter();
+  });
+}
+
+// Bookmarks
 function toggleBookmark(siteKey) {
   const index = bookmarkedSites.indexOf(siteKey);
   if (index === -1) {
@@ -215,12 +192,12 @@ function toggleBookmark(siteKey) {
       '<i class="bi bi-bookmark-star"></i>';
   }
   
-  if (filter === 'bookmarked') {
+  if (currentFilter === 'bookmarked') {
     filterProviders();
   }
 }
 
-// Site health check
+// Health checks with concurrency limit and IntersectionObserver
 async function checkSiteHealth(url) {
   try {
     const response = await fetch(url, { 
@@ -234,32 +211,75 @@ async function checkSiteHealth(url) {
   }
 }
 
-async function updateSiteHealth(site) {
-  const healthElement = document.querySelector(`[data-health-key="${site.key}"]`);
-  if (healthElement) {
+function scheduleHealthCheck(site) {
+  if (processedHealthKeys.has(site.key)) return;
+  processedHealthKeys.add(site.key);
+  healthCheckQueue.push(site);
+  processHealthCheckQueue();
+}
+
+function processHealthCheckQueue() {
+  while (activeHealthChecks < MAX_CONCURRENT_HEALTH_CHECKS && healthCheckQueue.length > 0) {
+    const site = healthCheckQueue.shift();
+    activeHealthChecks++;
+    
+    const healthElement = document.querySelector(`[data-health-key="${site.key}"]`);
+    if (!healthElement) {
+      activeHealthChecks--;
+      processHealthCheckQueue();
+      return;
+    }
+    
     healthElement.innerHTML = '<i class="bi bi-circle-fill"></i> Checking...';
     healthElement.className = 'health-status health-checking';
     
-    const health = await checkSiteHealth(site.url);
-    healthElement.innerHTML = health === 'online' ? 
-      '<i class="bi bi-check-circle-fill"></i> Online' : 
-      '<i class="bi bi-x-circle-fill"></i> Offline';
-    healthElement.className = `health-status ${health === 'online' ? 'health-online' : 'health-offline'}`;
+    checkSiteHealth(site.url).then(health => {
+      healthElement.innerHTML = health === 'online' ? 
+        '<i class="bi bi-check-circle-fill"></i> Online' : 
+        '<i class="bi bi-x-circle-fill"></i> Offline';
+      healthElement.className = `health-status ${health === 'online' ? 'health-online' : 'health-offline'}`;
+    }).catch(() => {
+      healthElement.innerHTML = '<i class="bi bi-x-circle-fill"></i> Offline';
+      healthElement.className = 'health-status health-offline';
+    }).finally(() => {
+      activeHealthChecks--;
+      processHealthCheckQueue();
+    });
   }
 }
 
-// Quick Actions System
+function setupHealthCheckObserver() {
+  if (healthCheckObserver) {
+    healthCheckObserver.disconnect();
+  }
+  
+  healthCheckObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const healthKey = entry.target.getAttribute('data-health-key');
+        if (healthKey && allSites.find(s => s.key === healthKey)) {
+          const site = allSites.find(s => s.key === healthKey);
+          scheduleHealthCheck(site);
+        }
+      }
+    });
+  }, {
+    rootMargin: '100px'
+  });
+}
+
+// Quick actions
 function setupQuickActions(site) {
   const quickActionsBtn = document.createElement('button');
   quickActionsBtn.className = 'quick-actions-btn';
   quickActionsBtn.innerHTML = '<i class="bi bi-three-dots"></i>';
   quickActionsBtn.title = 'Quick Actions';
+  quickActionsBtn.setAttribute('aria-label', 'Quick actions for ' + site.name);
   quickActionsBtn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
     showQuickActions(site);
   });
-  
   return quickActionsBtn;
 }
 
@@ -269,7 +289,37 @@ function showQuickActions(site) {
   modal.show();
 }
 
-// GitHub Issue Creation
+// Social sharing
+function shareOnTwitter() {
+  const text = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
+  const url = encodeURIComponent('https://indexer.is-an.app');
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=550,height=420');
+}
+
+function shareOnReddit() {
+  const title = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
+  const url = encodeURIComponent('https://indexer.is-an.app');
+  window.open(`https://www.reddit.com/submit?title=${title}&url=${url}`, '_blank', 'width=550,height=600');
+}
+
+function shareOnTelegram() {
+  const text = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
+  const url = encodeURIComponent('https://indexer.is-an.app');
+  window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=550,height=420');
+}
+
+function copyShareLink() {
+  navigator.clipboard.writeText('https://indexer.is-an.app').then(() => {
+    showTempAlert('Link copied to clipboard!', 'success');
+  });
+}
+
+document.getElementById('shareTwitter').addEventListener('click', shareOnTwitter);
+document.getElementById('shareReddit').addEventListener('click', shareOnReddit);
+document.getElementById('shareTelegram').addEventListener('click', shareOnTelegram);
+document.getElementById('shareCopyLink').addEventListener('click', copyShareLink);
+
+// GitHub integration
 function createGitHubIssueUrl(title, body, labels = []) {
   const baseUrl = `https://github.com/${GITHUB_REPO}/issues/new`;
   const params = new URLSearchParams({
@@ -282,8 +332,7 @@ function createGitHubIssueUrl(title, body, labels = []) {
 
 function suggestNewSite(siteData) {
   const title = `[Site Suggestion] ${siteData.name}`;
-  const body = `
-## Site Suggestion
+  const body = `## Site Suggestion
 
 **Site Name:** ${siteData.name}
 **URL:** ${siteData.url}
@@ -301,8 +350,7 @@ ${siteData.additionalNotes || 'None'}
 
 ---
 
-*Submitted via Website Indexer on ${new Date().toLocaleDateString()}*
-  `.trim();
+*Submitted via Website Indexer on ${new Date().toLocaleDateString()}*`;
 
   const issueUrl = createGitHubIssueUrl(title, body, ['site-suggestion', 'pending-review']);
   window.open(issueUrl, '_blank');
@@ -310,8 +358,7 @@ ${siteData.additionalNotes || 'None'}
 
 function reportSiteIssue(issueData) {
   const title = `[Site Issue] ${issueData.siteName ? issueData.siteName + ' - ' : ''}${issueData.type}`;
-  const body = `
-## Site Issue Report
+  const body = `## Site Issue Report
 
 **Affected Site:** ${issueData.siteName || 'Not specified'}
 **Issue Type:** ${issueData.type}
@@ -325,8 +372,7 @@ ${issueData.additionalContext || 'None'}
 
 ---
 
-*Reported via Website Indexer on ${new Date().toLocaleDateString()}*
-  `.trim();
+*Reported via Website Indexer on ${new Date().toLocaleDateString()}*`;
 
   const labels = ['bug', 'site-issue'];
   if (issueData.type === 'broken') labels.push('broken-site');
@@ -336,7 +382,7 @@ ${issueData.additionalContext || 'None'}
   window.open(issueUrl, '_blank');
 }
 
-// Form Handlers
+// Form handlers
 document.getElementById('submitSiteSuggestion').addEventListener('click', function() {
   const form = document.getElementById('suggestSiteForm');
   if (!form.checkValidity()) {
@@ -358,7 +404,8 @@ document.getElementById('submitSiteSuggestion').addEventListener('click', functi
   };
 
   suggestNewSite(siteData);
-  $('#suggestSiteModal').modal('hide');
+  const suggestModal = bootstrap.Modal.getInstance(document.getElementById('suggestSiteModal'));
+  suggestModal.hide();
   form.reset();
 });
 
@@ -380,50 +427,54 @@ document.getElementById('submitIssueReport').addEventListener('click', function(
   };
 
   reportSiteIssue(issueData);
-  $('#reportIssueModal').modal('hide');
+  const reportModal = bootstrap.Modal.getInstance(document.getElementById('reportIssueModal'));
+  reportModal.hide();
   form.reset();
 });
 
-// Quick Actions Handlers
+// Quick actions handlers
 document.getElementById('actionCopyUrl').addEventListener('click', function() {
   if (currentSiteForActions) {
     navigator.clipboard.writeText(currentSiteForActions.url).then(() => {
       showTempAlert('URL copied to clipboard!', 'success');
     });
-    $('#quickActionsModal').modal('hide');
+    const qaModal = bootstrap.Modal.getInstance(document.getElementById('quickActionsModal'));
+    qaModal.hide();
   }
 });
 
 document.getElementById('actionOpenNewTab').addEventListener('click', function() {
   if (currentSiteForActions) {
     window.open(currentSiteForActions.url, '_blank');
-    $('#quickActionsModal').modal('hide');
+    const qaModal = bootstrap.Modal.getInstance(document.getElementById('quickActionsModal'));
+    qaModal.hide();
   }
 });
 
 document.getElementById('actionToggleBookmark').addEventListener('click', function() {
   if (currentSiteForActions) {
     toggleBookmark(currentSiteForActions.key);
-    $('#quickActionsModal').modal('hide');
+    const qaModal = bootstrap.Modal.getInstance(document.getElementById('quickActionsModal'));
+    qaModal.hide();
   }
 });
 
 document.getElementById('actionReportSite').addEventListener('click', function() {
   if (currentSiteForActions) {
-    $('#quickActionsModal').modal('hide');
+    const qaModal = bootstrap.Modal.getInstance(document.getElementById('quickActionsModal'));
+    qaModal.hide();
     document.getElementById('issueSite').value = currentSiteForActions.key;
-    $('#reportIssueModal').modal('show');
+    const reportModal = new bootstrap.Modal(document.getElementById('reportIssueModal'));
+    reportModal.show();
   }
 });
 
-// Utility Functions
+// Utilities
 function showTempAlert(message, type = 'info') {
   const alert = document.createElement('div');
   alert.className = `alert alert-${type} alert-dismissible fade show temp-alert`;
-  alert.innerHTML = `
-    ${message}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  `;
+  alert.setAttribute('role', 'alert');
+  alert.innerHTML = `${message} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
   document.body.appendChild(alert);
   
   setTimeout(() => {
@@ -447,59 +498,70 @@ function populateIssueSiteDropdown() {
 
 function displaySites(sites) {
   mainContainer.innerHTML = '';
+  processedHealthKeys.clear();
+  healthCheckQueue = [];
+  activeHealthChecks = 0;
   
   if (sites.length === 0) {
     document.getElementById('noResults').classList.remove('d-none');
+    const noResultsTitle = document.querySelector('#noResults h3');
+    const noResultsDesc = document.querySelector('#noResults p');
+    if (currentFilter === 'bookmarked') {
+      noResultsTitle.textContent = 'No bookmarked websites';
+      noResultsDesc.textContent = 'Click the bookmark icon on any site to save it here';
+    } else if (currentFilter !== 'all') {
+      noResultsTitle.textContent = 'No websites found';
+      noResultsDesc.textContent = `No results found for "${currentFilter}" category. Try a different filter.`;
+    } else {
+      noResultsTitle.textContent = 'No websites found';
+      noResultsDesc.textContent = 'Try adjusting your search or filter criteria';
+    }
     return;
   }
   
   document.getElementById('noResults').classList.add('d-none');
   
-  // Use DocumentFragment for batch DOM insertion (reduces reflow/repaint)
   const fragment = document.createDocumentFragment();
-  // Cache bookmarks as Set for O(1) lookup instead of O(n) includes()
   const bookmarkSet = new Set(bookmarkedSites);
-  // Collect sites for health checks
-  const sitesForHealthCheck = [];
   
   sites.forEach(site => {
-    var col = document.createElement("div");
+    const col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 col-lg-3 fade-in";
     
-    var card = document.createElement("div");
+    const card = document.createElement("div");
     card.className = "site-card";
     
-    // Create quick actions button
     const quickActionsBtn = setupQuickActions(site);
     card.appendChild(quickActionsBtn);
     
-    // Create bookmark button - use cached Set for O(1) lookup
     const isBookmarked = bookmarkSet.has(site.key);
-    var bookmarkBtn = document.createElement("button");
-    bookmarkBtn.className = `bookmark-btn ${isBookmarked ? 'bookmarked' : ''}`;
+    const bookmarkBtn = document.createElement("button");
+    bookmarkBtn.className = `bookmark-btn${isBookmarked ? ' bookmarked' : ''}`;
     bookmarkBtn.setAttribute('data-site-key', site.key);
     bookmarkBtn.innerHTML = isBookmarked ? 
       '<i class="bi bi-bookmark-star-fill"></i>' : 
       '<i class="bi bi-bookmark-star"></i>';
     bookmarkBtn.title = isBookmarked ? 'Remove bookmark' : 'Add to bookmarks';
-    bookmarkBtn.addEventListener('click', () => toggleBookmark(site.key));
+    bookmarkBtn.setAttribute('aria-label', isBookmarked ? 'Remove bookmark' : 'Add to bookmarks');
+    bookmarkBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleBookmark(site.key);
+    });
     
     card.appendChild(bookmarkBtn);
     
-    // Add NSFW warning badge if applicable
     if (site.status === 7) {
-      var nsfwBadge = document.createElement("div");
+      const nsfwBadge = document.createElement("div");
       nsfwBadge.className = "nsfw-warning";
       nsfwBadge.innerHTML = '<i class="bi bi-exclamation-triangle me-1"></i>NSFW';
       card.appendChild(nsfwBadge);
     }
     
-    // Create card image container
-    var cardImgContainer = document.createElement("div");
+    const cardImgContainer = document.createElement("div");
     cardImgContainer.className = "card-img-container";
     
-    // Create image
-    var img = document.createElement("img");
+    const img = document.createElement("img");
     img.className = "card-thumbnail";
     img.src = site.icon || DEFAULT_IMAGE;
     img.alt = site.name + " icon";
@@ -512,30 +574,27 @@ function displaySites(sites) {
     cardImgContainer.appendChild(img);
     card.appendChild(cardImgContainer);
     
-    // Create card body
-    var cardBody = document.createElement("div");
+    const cardBody = document.createElement("div");
     cardBody.className = "card-body";
     
-    // Create site name link
-    var siteName = document.createElement("a");
+    const siteName = document.createElement("a");
     siteName.className = "site-name";
     siteName.href = site.url;
     siteName.target = "_blank";
     siteName.title = site.key;
     siteName.textContent = site.name;
+    siteName.setAttribute('rel', 'noopener noreferrer');
     
     cardBody.appendChild(siteName);
     
-    // Create health status
-    var healthStatus = document.createElement("div");
+    const healthStatus = document.createElement("div");
     healthStatus.className = "health-status health-checking";
     healthStatus.setAttribute('data-health-key', site.key);
     healthStatus.innerHTML = '<i class="bi bi-circle-fill"></i> Checking...';
     
     cardBody.appendChild(healthStatus);
     
-    // Create site type badge
-    var typeBadge = document.createElement("span");
+    const typeBadge = document.createElement("span");
     typeBadge.className = "site-type " + site.typeClass;
     typeBadge.textContent = site.type;
     
@@ -544,29 +603,30 @@ function displaySites(sites) {
     col.appendChild(card);
     fragment.appendChild(col);
     
-    // Collect for batch health check scheduling
-    sitesForHealthCheck.push(site);
+    // Observe health status elements for lazy health checks
+    const healthEl = cardBody.querySelector('[data-health-key]');
+    if (healthEl && healthCheckObserver) {
+      healthCheckObserver.observe(healthEl);
+    }
   });
   
-  // Single DOM append for all elements
   mainContainer.appendChild(fragment);
   
-  // Schedule health checks with staggered delays
-  sitesForHealthCheck.forEach((site, index) => {
-    setTimeout(() => updateSiteHealth(site), index * 50 + Math.random() * 500);
-  });
+  // Initial check for any elements already in view
+  setTimeout(() => {
+    processHealthCheckQueue();
+  }, 100);
 }
 
 function updateStats() {
   const total = allSites.length;
   const bookmarks = bookmarkedSites.length;
   
-  // Single pass counting - O(n) instead of O(7n)
   const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
   for (let i = 0; i < allSites.length; i++) {
-    const status = allSites[i].status;
-    if (counts.hasOwnProperty(status)) {
-      counts[status]++;
+    const statusCode = allSites[i].status;
+    if (counts.hasOwnProperty(statusCode)) {
+      counts[statusCode]++;
     }
   }
   
@@ -581,35 +641,97 @@ function updateStats() {
   document.getElementById('bookmarkCount').textContent = bookmarks;
 }
 
-$(document).ready(function () {
-  $.getJSON("https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json", function (data) {
-    allSites = Object.keys(data).map(key => {
-      const site = data[key];
-      const typeInfo = TYPE_MAPPING[site.status] || DEFAULT_TYPE;
-      
-      return {
-        key: key,
-        name: site.name,
-        url: site.url,
-        status: site.status,
-        icon: site.icon,
-        type: typeInfo.type,
-        typeClass: typeInfo.typeClass
-      };
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.body.setAttribute('data-bs-theme', savedTheme);
+  
+  const icon = document.querySelector('#themeToggle i');
+  if (savedTheme === 'dark') {
+    icon.className = 'bi bi-moon-stars me-2';
+  } else {
+    icon.className = 'bi bi-sun me-2';
+  }
+
+  // Scroll to top button
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
     });
     
-    filteredSites = [...allSites];
-    filterAndDisplaySites(filter, '');
-    updateStats();
-    populateIssueSiteDropdown();
-    
-    // Hide skeleton once real cards are rendered
-    document.getElementById('skeletonList').classList.add('d-none');
-  }).fail(function () {
-    console.log("An error has occurred.");
-    document.getElementById('skeletonList').classList.add('d-none');
-    statusText.textContent = "Error occurred while loading sites. Please refresh the page.";
-    status.classList.remove('d-none');
-    hideStatus();
-  });
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const skeletonList = document.getElementById('skeletonList');
+  const skeletonFragment = document.createDocumentFragment();
+  for (let i = 0; i < 8; i++) {
+    const col = document.createElement('div');
+    col.className = 'col-sm-6 col-md-4 col-lg-3';
+    const card = document.createElement('div');
+    card.className = 'skeleton-card';
+    const img = document.createElement('div');
+    img.className = 'skeleton-img';
+    const body = document.createElement('div');
+    body.className = 'skeleton-body';
+    const lineTitle = document.createElement('div');
+    lineTitle.className = 'skeleton-line skeleton-title';
+    const lineSub = document.createElement('div');
+    lineSub.className = 'skeleton-line skeleton-subtitle';
+    const lineBadge = document.createElement('div');
+    lineBadge.className = 'skeleton-line skeleton-badge';
+    body.appendChild(lineTitle);
+    body.appendChild(lineSub);
+    body.appendChild(lineBadge);
+    card.appendChild(img);
+    card.appendChild(body);
+    col.appendChild(card);
+    skeletonFragment.appendChild(col);
+  }
+  skeletonList.appendChild(skeletonFragment);
+
+  setupHealthCheckObserver();
+
+  // Load sites
+  fetch('https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      allSites = Object.keys(data).map(key => {
+        const site = data[key];
+        const typeInfo = TYPE_MAPPING[site.status] || DEFAULT_TYPE;
+        
+        return {
+          key: key,
+          name: site.name,
+          url: site.url,
+          status: site.status,
+          icon: site.icon,
+          type: typeInfo.type,
+          typeClass: typeInfo.typeClass
+        };
+      });
+      
+      filteredSites = [...allSites];
+      filterAndDisplaySites(currentFilter, '');
+      updateStats();
+      populateIssueSiteDropdown();
+      
+      document.getElementById('skeletonList').classList.add('d-none');
+    })
+    .catch(error => {
+      console.error("Failed to load sites:", error);
+      document.getElementById('skeletonList').classList.add('d-none');
+      showStatus('Failed to load the site directory. Please check your internet connection and try again.', 'danger');
+    });
 });

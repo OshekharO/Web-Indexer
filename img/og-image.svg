@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#3a0ca3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="rgba(0,0,0,0.25)"/>
+  <text x="600" y="240" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">Web Indexer</text>
+  <text x="600" y="310" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="28" fill="rgba(255,255,255,0.9)" text-anchor="middle">One destination for all your favorite websites and applications</text>
+  <text x="600" y="380" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="20" fill="rgba(255,255,255,0.7)" text-anchor="middle">Manga · Light Novels · Movies · Anime · Apps · Learning</text>
+</svg>

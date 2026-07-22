@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Indexer — Manga, Anime, Movies & Apps Directory</title>
+  <meta name="description" content="A comprehensive directory of websites for manga, light novels, movies, anime, learning resources, and apps." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://indexer.is-an.app/" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: #e9ecef; }
+    .gradient-header { background: linear-gradient(135deg, #4361ee, #3a0ca3); color: white; padding: 2rem 0; }
+    .site-card { background-color: #1e1e1e; border: 1px solid #444d56; border-radius: 12px; height: 100%; overflow: hidden; position: relative; }
+    .card-img-container { height: 140px; display: flex; align-items: center; justify-content: center; padding: 1rem; background-color: rgba(0,0,0,0.05); border-bottom: 1px solid #444d56; }
+    .card-thumbnail { max-height: 100%; max-width: 100%; border-radius: 8px; object-fit: contain; }
+    .card-body { padding: 1.25rem; text-align: center; }
+    .site-name { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; color: #e9ecef; text-decoration: none; display: block; text-align: center; }
+    .site-name:hover { color: #4361ee; }
+    .site-type { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; text-align: center; margin-bottom: 0.5rem; }
+    .type-manga { background-color: rgba(76,201,240,0.2); color: #4cc9f0; }
+    .type-ln { background-color: rgba(248,150,30,0.2); color: #f8961e; }
+    .type-movie { background-color: rgba(67,97,238,0.2); color: #4361ee; }
+    .type-app { background-color: rgba(114,9,183,0.2); color: #7209b7; }
+    .type-anime { background-color: rgba(247,37,133,0.2); color: #f72585; }
+    .type-learning { background-color: rgba(32,201,151,0.2); color: #20c997; }
+    .type-nsfw { background-color: rgba(220,53,69,0.2); color: #dc3545; }
+    .type-unknown { background-color: rgba(108,117,125,0.2); color: #6c757d; }
+    .health-status { font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 0.5rem; color: #28a745; }
+    .bookmark-btn { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: white; z-index: 10; }
+    .nsfw-warning { position: absolute; top: 10px; left: 50px; background: rgba(220,53,69,0.9); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; z-index: 10; }
+    footer { background-color: #1e1e1e; border-top: 1px solid #444d56; padding: 2rem 0; margin-top: 3rem; }
+    .container { max-width: 1200px; }
+  </style>
+</head>
+<body>
+  <header class="gradient-header">
+    <div class="container text-center">
+      <h1>Web Indexer</h1>
+      <p class="lead">One destination for all your favorite websites and applications</p>
+    </div>
+  </header>
+
+  <main class="py-4">
+    <div class="container">
+      <div class="row g-4">
+        
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://atsu.moe&sz=128" alt="Atsumaru icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://atsu.moe" target="_blank" rel="noopener noreferrer" title="AtsumaruProvider">Atsumaru</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://comix.to&sz=128" alt="Comix icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://comix.to/" target="_blank" rel="noopener noreferrer" title="ComixProvider">Comix</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://mangadot.net&sz=128" alt="MangaDotNet icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://mangadot.net/" target="_blank" rel="noopener noreferrer" title="MangaDotNetProvider">MangaDotNet</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://kagane.to&sz=128" alt="Kagane icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://kagane.to" target="_blank" rel="noopener noreferrer" title="KaganeProvider">Kagane</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://fanfox.net&sz=128" alt="MangaFox icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://fanfox.net" target="_blank" rel="noopener noreferrer" title="MangaFoxProvider">MangaFox</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.natomanga.com&sz=128" alt="Natomanga icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.natomanga.com" target="_blank" rel="noopener noreferrer" title="NatomangaProvider">Natomanga</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://weebcentral.com&sz=128" alt="WeebCentral icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://weebcentral.com" target="_blank" rel="noopener noreferrer" title="WeebCentralProvider">WeebCentral</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-manga">MANGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://m.38xs.com&sz=128" alt="38xs icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://m.38xs.com" target="_blank" rel="noopener noreferrer" title="38xsProvider">38xs</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.4kushuwu.com&sz=128" alt="4ksw icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.4kushuwu.com" target="_blank" rel="noopener noreferrer" title="4kswProvider">4ksw</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://m.bixiange.me/images/logo.png" alt="Bixiange icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://bixiange.xyz/" target="_blank" rel="noopener noreferrer" title="BixiangeProvider">Bixiange</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.fanmtl.com&sz=128" alt="FanMTL icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.fanmtl.com/" target="_blank" rel="noopener noreferrer" title="FanMTLProvider">FanMTL</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://fictionzone.net&sz=128" alt="Fictionzone icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://fictionzone.net" target="_blank" rel="noopener noreferrer" title="FictionzoneProvider">Fictionzone</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://jpxs123.com&sz=128" alt="Jpxs123 icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://jpxs123.com" target="_blank" rel="noopener noreferrer" title="Jpxs123Provider">Jpxs123</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://lnmtl.com&sz=128" alt="Lnmtl icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://lnmtl.com" target="_blank" rel="noopener noreferrer" title="LnmtlProvider">Lnmtl</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://mtlbooks.com&sz=128" alt="MTLBooks icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://mtlbooks.com" target="_blank" rel="noopener noreferrer" title="MTLBooksProvider">MTLBooks</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.mvlempyr.com/&sz=128" alt="MVLEMPYR icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.mvlempyr.io" target="_blank" rel="noopener noreferrer" title="mvlempyrProvider">MVLEMPYR</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.zhaoshuyuan.net&sz=128" alt="Uukanshu icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.zhaoshuyuan.net" target="_blank" rel="noopener noreferrer" title="UukanshuProvider">Uukanshu</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://wtr-lab.com&sz=128" alt="WTR LAB icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://wtr-lab.com" target="_blank" rel="noopener noreferrer" title="Wtrlabrovider">WTR LAB</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128" alt="WuxiaBox icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.wuxiabox.com" target="_blank" rel="noopener noreferrer" title="WuxiaBoxProvider">WuxiaBox</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-ln">LN</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://mkvbase.site/logo.png" alt="MKVBase icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://mkvbase.site" target="_blank" rel="noopener noreferrer" title="MKVBaseProvider">MKVBase</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://overlook.cx/logo.png" alt="OverLook icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://overlook.cx" target="_blank" rel="noopener noreferrer" title="OverLookProvider">OverLook</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://a.111477.xyz/&sz=128" alt="Dahmer icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://a.111477.xyz" target="_blank" rel="noopener noreferrer" title="DahmerProvider">Dahmer</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://desicinemas.to&sz=128" alt="DesiCinemas icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://desicinemas.to" target="_blank" rel="noopener noreferrer" title="DesiCinemasProvider">DesiCinemas</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://dramahood.mom&sz=128" alt="Dramahood icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://dramahood.mom" target="_blank" rel="noopener noreferrer" title="DramahoodProvider">Dramahood</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://flickystream.ru&sz=128" alt="FlickyStream icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://flickystream.ru" target="_blank" rel="noopener noreferrer" title="FlickyStreamProvider">FlickyStream</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://flixer.su&sz=128" alt="Flixer icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://flixer.su" target="_blank" rel="noopener noreferrer" title="FlixerProvider">Flixer</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://hdhub4u.gd/&sz=128" alt="HDHub4u icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://hdhub4u.med" target="_blank" rel="noopener noreferrer" title="hdhub4uProvider">HDHub4u</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128" alt="Kisskh icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://kisskh.co" target="_blank" rel="noopener noreferrer" title="KisskhProvider">Kisskh</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://multimovies.wtf&sz=128" alt="MultiMovies icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://multimovies.wtf" target="_blank" rel="noopener noreferrer" title="multimoviesProvider">MultiMovies</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://netmirror.app&sz=128" alt="NetMirror icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://netmirror.gg" target="_blank" rel="noopener noreferrer" title="NetMirrorProvider">NetMirror</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/xp-technologies-dev/p-stream/heads/production/public/apple-touch-icon.png" alt="P-Stream icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://zstream.mov" target="_blank" rel="noopener noreferrer" title="PStreamProvider">P-Stream</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://prmovies.recipes&sz=128" alt="PRMovies icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://prmovies.recipes" target="_blank" rel="noopener noreferrer" title="PrmoviesProvider">PRMovies</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://scloudx.lol/&sz=128" alt="SCLOUD icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://scloudx.lol" target="_blank" rel="noopener noreferrer" title="scloudProvider">SCLOUD</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://c.turkish123.website&sz=128" alt="Turkish123 icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://d.turkish123.website/" target="_blank" rel="noopener noreferrer" title="Turkish123Provider">Turkish123</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://turksub24.top&sz=128" alt="Turksub24 icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://turksub24.top" target="_blank" rel="noopener noreferrer" title="Turksub24Provider">Turksub24</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://vegamovie.sn&sz=128" alt="VegaMovies icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://vegamovie.sn" target="_blank" rel="noopener noreferrer" title="VegaProvider">VegaMovies</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-movie">MOVIE</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/Aliucord/Aliucord/6df69dbbe0cadceadabde9ed270492e683c39964/installer/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="Aliucord icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/Aliucord/Aliucord" target="_blank" rel="noopener noreferrer" title="AliucordProvider">Aliucord</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/OxygenCobalt/Auxio/refs/heads/dev/fastlane/metadata/android/en-US/images/icon.png" alt="Auxio icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/OxygenCobalt/Auxio" target="_blank" rel="noopener noreferrer" title="AuxioProvider">Auxio</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png" alt="CloudStream icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/recloudstream/cloudstream" target="_blank" rel="noopener noreferrer" title="CloudStreamProvider">CloudStream</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/ViscousPot/GitSync/heads/main/assets/app_icon.png" alt="GitSync icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/ViscousPot/GitSync" target="_blank" rel="noopener noreferrer" title="GitSyncProvider">GitSync</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/nv95/Kotatsu/9da5bdaad49f0f6b9263a110b8b6189d2e8a2813/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png" alt="Futon icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/AppFuton/Futon/" target="_blank" rel="noopener noreferrer" title="FutonProvider">Futon</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/gedoor/legado/782bdbef5e5e928d3bada2a772f8e18daa7705a7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="Legado icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/gedoor/legado" target="_blank" rel="noopener noreferrer" title="LegadoProvider">Legado</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png" alt="LibreTube icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/libre-tube/LibreTube" target="_blank" rel="noopener noreferrer" title="LibreTubeProvider">LibreTube</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/IReaderorg/IReader/heads/master/android/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="IReader icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/IReaderorg/IReader" target="_blank" rel="noopener noreferrer" title="IReaderProvider">IReader</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png" alt="Miru icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/miru-project/miru-alpha" target="_blank" rel="noopener noreferrer" title="MiruProvider">Miru</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png" alt="Musify icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/gokadzev/Musify" target="_blank" rel="noopener noreferrer" title="MusifyProvider">Musify</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/Spyou/Zangetsu/heads/main/assets/icon/app_icon.png" alt="Zangetsu icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/Spyou/Zangetsu" target="_blank" rel="noopener noreferrer" title="ZangetsuProvider">Zangetsu</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/Riteshp2001/mpvRx/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" alt="mpvRx icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/Riteshp2001/mpvRx" target="_blank" rel="noopener noreferrer" title="mpvRxProvider">mpvRx</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/A-EDev/Flow/heads/main/Assets/logo.png" alt="Flow icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/a-edev/Flow" target="_blank" rel="noopener noreferrer" title="FlowProvider">Flow</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/TeamNewPipe/NewPipe/heads/dev/assets/new_pipe_icon_5.png" alt="NewPipe icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/TeamNewPipe/NewPipe" target="_blank" rel="noopener noreferrer" title="NewPipeProvider">NewPipe</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/ycngmn/NoTubeTV/heads/main/app/src/main/res/mipmap-xxxhdpi-v4/ic_launcher.png" alt="TizenTubeCobalt icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/reisxd/TizenTubeCobalt" target="_blank" rel="noopener noreferrer" title="TizenTubeCobaltProvider">TizenTubeCobalt</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://avatars.githubusercontent.com/u/101597779?s=200&v=4" alt="ReVanced icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://revanced.app" target="_blank" rel="noopener noreferrer" title="ReVancedProvider">ReVanced</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/JunkFood02/Seal/03ac92781e1dc1074297821ff589949cac54b54b/fastlane/metadata/android/en-US/images/icon.png" alt="Seal icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/JunkFood02/Seal" target="_blank" rel="noopener noreferrer" title="SealProvider">Seal</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/maxrave-dev/SimpMusic/jetpack_compose/app/src/main/ic_launcher-playstore.png" alt="SimpMusic icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/maxrave-dev/SimpMusic" target="_blank" rel="noopener noreferrer" title="SimpMusicProvider">SimpMusic</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png" alt="SmartTube icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/yuliskov/SmartTubeNext" target="_blank" rel="noopener noreferrer" title="SmartTubeProvider">SmartTube</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://rawcdn.githack.com/deniscerri/ytdlnis/811f3b07ecaa346cf441012071bf0575ccb1d6f0/app/src/main/ic_launcher-playstore.png" alt="YTDLnis icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://github.com/deniscerri/ytdlnis" target="_blank" rel="noopener noreferrer" title="YTDLnisProvider">YTDLnis</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-app">APP</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://123animes.ru&sz=128" alt="123Anime icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://123animes.ru" target="_blank" rel="noopener noreferrer" title="123AnimeProvider">123Anime</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://animekai.at&sz=128" alt="AnimeKai icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://animekai.at" target="_blank" rel="noopener noreferrer" title="AnimeKaiProvider">AnimeKai</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://animepahe.pw&sz=128" alt="AnimePahe icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://animepahe.pw/" target="_blank" rel="noopener noreferrer" title="AnimepaheProvider">AnimePahe</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://animixstream.com&sz=128" alt="AnimixStream icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://animixstream.com" target="_blank" rel="noopener noreferrer" title="AnimixStreamProvider">AnimixStream</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://hicartoon.to&sz=128" alt="HiCartoon icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://hicartoon.to/home" target="_blank" rel="noopener noreferrer" title="HiCartoonProvider">HiCartoon</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://anidap.se&sz=128" alt="AniDap icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://anidap.se/" target="_blank" rel="noopener noreferrer" title="AniDapProvider">AniDap</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://kartoons.me/logo.png" alt="Kartoons icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://kartoons.me/home" target="_blank" rel="noopener noreferrer" title="KartoonsProvider">Kartoons</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://reanime.to&sz=128" alt="ReAnime icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://reanime.to/home" target="_blank" rel="noopener noreferrer" title="ReAnimeProvider">ReAnime</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.miruro.com&sz=128" alt="Miruro icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.miruro.com" target="_blank" rel="noopener noreferrer" title="MiruroProvider">Miruro</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-anime">ANIME</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://bashweb.pages.dev&sz=128" alt="Bash Lab icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://bashweb.pages.dev" target="_blank" rel="noopener noreferrer" title="BashWebProvider">Bash Lab</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://beginnersbook.com&sz=128" alt="BeginnersBook icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://beginnersbook.com" target="_blank" rel="noopener noreferrer" title="BeginnersBookProvider">BeginnersBook</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://learnxinyminutes.com/&sz=128" alt="LearnxinyMinutes icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://learnxinyminutes.com/" target="_blank" rel="noopener noreferrer" title="learnxinyminutesProvider">LearnxinyMinutes</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://liaoxuefeng.com&sz=128" alt="Liao Xuefeng icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://liaoxuefeng.com" target="_blank" rel="noopener noreferrer" title="LiaoxuefengProvider">Liao Xuefeng</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://piratewallah.pw/&sz=128" alt="PirateWallah icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://piratewallah.pw/" target="_blank" rel="noopener noreferrer" title="PirateWallahProvider">PirateWallah</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.vlab.co.in&sz=128" alt="Virtual Lab icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.vlab.co.in" target="_blank" rel="noopener noreferrer" title="VLabProvider">Virtual Lab</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.w3schools.com&sz=128" alt="W3Schools icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer" title="W3SchoolsProvider">W3Schools</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-learning">LEARNING</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          <div class="nsfw-warning"><i class="bi bi-exclamation-triangle me-1"></i>NSFW</div>
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://javhd.icu&sz=128" alt="JavHD icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://javhd.icu" target="_blank" rel="noopener noreferrer" title="JavHDProvider">JavHD</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-nsfw">NSFW</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          <div class="nsfw-warning"><i class="bi bi-exclamation-triangle me-1"></i>NSFW</div>
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://www.literotica.com&sz=128" alt="Literotica icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://www.literotica.com" target="_blank" rel="noopener noreferrer" title="LiteroticaProvider">Literotica</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-nsfw">NSFW</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          <div class="nsfw-warning"><i class="bi bi-exclamation-triangle me-1"></i>NSFW</div>
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://manga18.me&sz=128" alt="Manga18 icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://manga18.me" target="_blank" rel="noopener noreferrer" title="Manga18Provider">Manga18</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-nsfw">NSFW</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          <div class="nsfw-warning"><i class="bi bi-exclamation-triangle me-1"></i>NSFW</div>
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://nhentai.net&sz=128" alt="Nhentai icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://nhentai.net" target="_blank" rel="noopener noreferrer" title="NhentaiProvider">Nhentai</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-nsfw">NSFW</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          <div class="nsfw-warning"><i class="bi bi-exclamation-triangle me-1"></i>NSFW</div>
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://proxyhub.pages.dev&sz=128" alt="PornHub icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://proxyhub.pages.dev" target="_blank" rel="noopener noreferrer" title="PornHubProvider">PornHub</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-nsfw">NSFW</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="site-card">
+          <div class="nsfw-warning"><i class="bi bi-exclamation-triangle me-1"></i>NSFW</div>
+          <button class="bookmark-btn" title="Add to bookmarks" aria-label="Add to bookmarks">
+            <i class="bi bi-bookmark-star"></i>
+          </button>
+          <div class="card-img-container">
+            <img class="card-thumbnail" src="https://www.google.com/s2/favicons?domain=https://spankbang.com&sz=128" alt="SpankBang icon" loading="lazy" onerror="this.src='https://imgpx.com/en/QoMXS9MOaUQY.webp'" />
+          </div>
+          <div class="card-body">
+            <a class="site-name" href="https://spankbang.com" target="_blank" rel="noopener noreferrer" title="SpankBangProvider">SpankBang</a>
+            <div class="health-status health-online"><i class="bi bi-check-circle-fill"></i> Online</div>
+            <span class="site-type type-nsfw">NSFW</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <p>Website Indexer © 2026 OshekharO</p>
+      <p><a href="https://github.com/OshekharO/Web-Indexer" style="color:#e9ecef;">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
