@@ -12,7 +12,7 @@
   <a href="https://github.com/OshekharO/Web-Indexer/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Unlicense-blue?style=for-the-badge" alt="License"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/issues"><img src="https://img.shields.io/github/issues/OshekharO/Web-Indexer?style=for-the-badge" alt="Issues"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/stargazers"><img src="https://img.shields.io/github/stars/OshekharO/Web-Indexer?style=for-the-badge" alt="Stars"></a>
-  <a href="https://pagespeed.web.dev/url?url=https%3A%2F%2Findexer.is-an.app"><img src="https://img.shields.io/badge/Performance-A-brightgreen?style=for-the-badge" alt="Performance"></a>
+  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Findexer.is-an.app%2F"><img src="https://img.shields.io/badge/Performance-A-brightgreen?style=for-the-badge" alt="Performance"></a>
 </p>
 
 ---
