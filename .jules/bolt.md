@@ -1,3 +1,0 @@
-## 2026-03-30 - Lowercase string caching & O(1) Set lookups in client-side search filtering
-**Learning:** Calling `.toLowerCase()` inside array filtering callbacks on every keystroke/filter change creates unnecessary GC pressure and CPU overhead (~1.5x-1.8x slower filtering). Also, using `Array.prototype.includes()` for checking bookmarked IDs during filtering is O(N*M) instead of O(N) with a `Set`.
-**Action:** Always pre-compute static lowercased strings on data ingestion (`keyLower`, `nameLower`, `typeLower`) and construct a `Set` for collection membership checks outside of tight filter loops.
