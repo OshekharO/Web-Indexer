@@ -119,12 +119,16 @@ function filterAndDisplaySites(typeFilter, searchFilter) {
     return;
   }
 
+  // ⚡ Optimization: Pre-create Set for O(1) bookmark lookups and use pre-lowercased fields
+  const bookmarkSet = typeFilter === 'bookmarked' ? new Set(bookmarkedSites) : null;
+
   filteredSites = allSites.filter(site => {
     const matchesType = typeFilter === 'all' || 
-                       (typeFilter === 'bookmarked' ? bookmarkedSites.includes(site.key) : 
-                       site.type.toLowerCase().includes(typeFilter));
-    const matchesSearch = site.name.toLowerCase().includes(searchFilter) || 
-                         site.key.toLowerCase().includes(searchFilter);
+                       (typeFilter === 'bookmarked' ? bookmarkSet.has(site.key) :
+                       site.typeLower.includes(typeFilter));
+    const matchesSearch = searchFilter === '' ||
+                         site.nameLower.includes(searchFilter) ||
+                         site.keyLower.includes(searchFilter);
     
     const isNsfwSite = site.status === 7;
     const hideNsfw = isNsfwSite && !nsfwConsent && typeFilter !== 'nsfw';
@@ -722,7 +726,11 @@ document.addEventListener('DOMContentLoaded', function() {
           status: site.status,
           icon: site.icon,
           type: typeInfo.type,
-          typeClass: typeInfo.typeClass
+          typeClass: typeInfo.typeClass,
+          // ⚡ Pre-computed lowercased values to avoid string allocations during search/filtering
+          keyLower: key.toLowerCase(),
+          nameLower: site.name.toLowerCase(),
+          typeLower: typeInfo.type.toLowerCase()
         };
       });
       
