@@ -1,0 +1,3 @@
+## 2026-09-10 - O(1) Map Lookup for Scroll-triggered Health Check Observer
+**Learning:** `IntersectionObserver` callbacks fired on fast scrolling was invoking $O(N)$ linear `Array.prototype.find` operations multiple times per visible card to look up provider data in `allSites`. Replacing `allSites.find(...)` with a pre-indexed `siteMap` (`Map<string, Site>`) converts lookups to $O(1)$ constant time, eliminating linear scanning overhead during scrolling.
+**Action:** Always maintain a key-indexed Map or Hash Map alongside array state when frequent lookups by ID/key are needed in event handlers or IntersectionObserver callbacks.

@@ -4,6 +4,8 @@ const mainContainer = document.getElementById("siteList");
 const searchInput = document.getElementById("searchInput");
 let currentFilter = "all";
 let allSites = [];
+// Map for O(1) site lookup by key (avoids expensive O(N) Array.prototype.find on scroll/events)
+let siteMap = new Map();
 let filteredSites = [];
 let bookmarkedSites = JSON.parse(localStorage.getItem('bookmarkedSites')) || [];
 let nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
@@ -262,9 +264,12 @@ function setupHealthCheckObserver() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const healthKey = entry.target.getAttribute('data-health-key');
-        if (healthKey && allSites.find(s => s.key === healthKey)) {
-          const site = allSites.find(s => s.key === healthKey);
-          scheduleHealthCheck(site);
+        // ⚡ Optimization: O(1) Map lookup instead of twice calling O(N) allSites.find(...) on scroll events
+        if (healthKey) {
+          const site = siteMap.get(healthKey);
+          if (site) {
+            scheduleHealthCheck(site);
+          }
         }
       }
     });
@@ -422,7 +427,8 @@ document.getElementById('submitIssueReport').addEventListener('click', function(
   }
 
   const selectedSite = document.getElementById('issueSite').value;
-  const siteData = allSites.find(site => site.key === selectedSite);
+  // ⚡ Optimization: O(1) Map lookup for selected site
+  const siteData = siteMap.get(selectedSite);
 
   const issueData = {
     siteName: siteData ? siteData.name : 'Not specified',
@@ -719,7 +725,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const site = data[key];
         const typeInfo = TYPE_MAPPING[site.status] || DEFAULT_TYPE;
         
-        return {
+        const siteObj = {
           key: key,
           name: site.name,
           url: site.url,
@@ -732,6 +738,9 @@ document.addEventListener('DOMContentLoaded', function() {
           nameLower: site.name.toLowerCase(),
           typeLower: typeInfo.type.toLowerCase()
         };
+        // Populate O(1) lookup Map
+        siteMap.set(key, siteObj);
+        return siteObj;
       });
       
       filteredSites = [...allSites];
