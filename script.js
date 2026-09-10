@@ -629,27 +629,48 @@ function displaySites(sites) {
   }, 100);
 }
 
+// ⚡ Cache DOM elements for statistics counter updates to prevent repetitive DOM queries
+let statsElements = null;
+
+function initStatsElements() {
+  statsElements = {
+    total: document.getElementById('totalCount'),
+    1: document.getElementById('mangaCount'),
+    2: document.getElementById('lnCount'),
+    3: document.getElementById('movieCount'),
+    4: document.getElementById('appCount'),
+    5: document.getElementById('animeCount'),
+    6: document.getElementById('learningCount'),
+    7: document.getElementById('nsfwCount'),
+    bookmark: document.getElementById('bookmarkCount')
+  };
+}
+
 function updateStats() {
+  if (!statsElements) {
+    initStatsElements();
+  }
+
   const total = allSites.length;
   const bookmarks = bookmarkedSites.length;
   
   const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
-  for (let i = 0; i < allSites.length; i++) {
+  for (let i = 0; i < total; i++) {
     const statusCode = allSites[i].status;
-    if (counts.hasOwnProperty(statusCode)) {
+    if (counts[statusCode] !== undefined) {
       counts[statusCode]++;
     }
   }
   
-  document.getElementById('totalCount').textContent = total;
-  document.getElementById('mangaCount').textContent = counts[1];
-  document.getElementById('lnCount').textContent = counts[2];
-  document.getElementById('movieCount').textContent = counts[3];
-  document.getElementById('appCount').textContent = counts[4];
-  document.getElementById('animeCount').textContent = counts[5];
-  document.getElementById('learningCount').textContent = counts[6];
-  document.getElementById('nsfwCount').textContent = counts[7];
-  document.getElementById('bookmarkCount').textContent = bookmarks;
+  if (statsElements.total) statsElements.total.textContent = total;
+  if (statsElements[1]) statsElements[1].textContent = counts[1];
+  if (statsElements[2]) statsElements[2].textContent = counts[2];
+  if (statsElements[3]) statsElements[3].textContent = counts[3];
+  if (statsElements[4]) statsElements[4].textContent = counts[4];
+  if (statsElements[5]) statsElements[5].textContent = counts[5];
+  if (statsElements[6]) statsElements[6].textContent = counts[6];
+  if (statsElements[7]) statsElements[7].textContent = counts[7];
+  if (statsElements.bookmark) statsElements.bookmark.textContent = bookmarks;
 }
 
 // Initialize
