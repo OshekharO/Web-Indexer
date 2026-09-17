@@ -82,10 +82,20 @@ nsfwModalEl.addEventListener('hidden.bs.modal', function () {
   }
 });
 
+// Helper: Debounce utility to rate-limit frequent execution
+function debounce(fn, delay) {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
 // Search
-searchInput.addEventListener('input', function() {
+// ⚡ Optimization: Debounce search input (150ms) to avoid expensive array filtering and DOM rebuilds on every keystroke
+searchInput.addEventListener('input', debounce(function() {
   filterAndDisplaySites(currentFilter, this.value.toLowerCase());
-});
+}, 150));
 
 document.getElementById('clearSearch').addEventListener('click', function() {
   searchInput.value = '';
