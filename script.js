@@ -243,8 +243,7 @@ function processHealthCheckQueue() {
     const healthElement = document.querySelector(`[data-health-key="${site.key}"]`);
     if (!healthElement) {
       activeHealthChecks--;
-      processHealthCheckQueue();
-      return;
+      continue;
     }
     
     healthElement.innerHTML = '<i class="bi bi-circle-fill"></i> Checking...';
