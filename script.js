@@ -7,15 +7,29 @@ let allSites = [];
 // Map for O(1) site lookup by key (avoids expensive O(N) Array.prototype.find on scroll/events)
 let siteMap = new Map();
 let filteredSites = [];
-let bookmarkedSites = JSON.parse(localStorage.getItem('bookmarkedSites')) || [];
+let bookmarkedSites = [];
+
+// Safeguard localStorage parsing against SyntaxError on corrupted values
+try {
+  const savedBookmarks = localStorage.getItem('bookmarkedSites');
+  if (savedBookmarks) {
+    const parsed = JSON.parse(savedBookmarks);
+    if (Array.isArray(parsed)) {
+      bookmarkedSites = parsed;
+    }
+  }
+} catch (e) {
+  console.warn('Failed to parse bookmarkedSites from localStorage:', e);
+}
+
 let nsfwConsent = localStorage.getItem('nsfwConsent') === 'true';
 let currentSiteForActions = null;
 let statusTimeout;
 let healthCheckQueue = [];
-let activeHealthChecks = 0;
 const MAX_CONCURRENT_HEALTH_CHECKS = 5;
 let healthCheckObserver = null;
 let processedHealthKeys = new Set();
+let activeAbortControllers = new Map();
 
 const DEFAULT_IMAGE = "https://imgpx.com/en/QoMXS9MOaUQY.webp";
 
@@ -214,18 +228,45 @@ function toggleBookmark(siteKey) {
   }
 }
 
-// Health checks with concurrency limit and IntersectionObserver
-async function checkSiteHealth(url) {
+// Health checks with concurrency limit, 5s timeout, and IntersectionObserver
+async function checkSiteHealth(url, externalSignal) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+  const onExternalAbort = () => controller.abort();
+  if (externalSignal) {
+    if (externalSignal.aborted) {
+      clearTimeout(timeoutId);
+      return 'offline';
+    }
+    externalSignal.addEventListener('abort', onExternalAbort, { once: true });
+  }
+
   try {
-    const response = await fetch(url, { 
+    await fetch(url, {
       method: 'HEAD',
       mode: 'no-cors',
-      cache: 'no-cache'
+      cache: 'no-cache',
+      signal: controller.signal
     });
     return 'online';
   } catch (error) {
     return 'offline';
+  } finally {
+    clearTimeout(timeoutId);
+    if (externalSignal) {
+      externalSignal.removeEventListener('abort', onExternalAbort);
+    }
   }
+}
+
+function resetHealthCheckQueue() {
+  for (const controller of activeAbortControllers.values()) {
+    controller.abort();
+  }
+  activeAbortControllers.clear();
+  healthCheckQueue = [];
+  processedHealthKeys.clear();
 }
 
 function scheduleHealthCheck(site) {
@@ -236,30 +277,43 @@ function scheduleHealthCheck(site) {
 }
 
 function processHealthCheckQueue() {
-  while (activeHealthChecks < MAX_CONCURRENT_HEALTH_CHECKS && healthCheckQueue.length > 0) {
+  while (activeAbortControllers.size < MAX_CONCURRENT_HEALTH_CHECKS && healthCheckQueue.length > 0) {
     const site = healthCheckQueue.shift();
-    activeHealthChecks++;
     
     const healthElement = document.querySelector(`[data-health-key="${site.key}"]`);
     if (!healthElement) {
-      activeHealthChecks--;
       continue;
     }
     
     healthElement.innerHTML = '<i class="bi bi-circle-fill"></i> Checking...';
     healthElement.className = 'health-status health-checking';
     
-    checkSiteHealth(site.url).then(health => {
-      healthElement.innerHTML = health === 'online' ? 
-        '<i class="bi bi-check-circle-fill"></i> Online' : 
-        '<i class="bi bi-x-circle-fill"></i> Offline';
-      healthElement.className = `health-status ${health === 'online' ? 'health-online' : 'health-offline'}`;
+    const controller = new AbortController();
+    activeAbortControllers.set(site.key, controller);
+
+    checkSiteHealth(site.url, controller.signal).then(health => {
+      if (activeAbortControllers.get(site.key) === controller) {
+        const el = document.querySelector(`[data-health-key="${site.key}"]`);
+        if (el) {
+          el.innerHTML = health === 'online' ?
+            '<i class="bi bi-check-circle-fill"></i> Online' :
+            '<i class="bi bi-x-circle-fill"></i> Offline';
+          el.className = `health-status ${health === 'online' ? 'health-online' : 'health-offline'}`;
+        }
+      }
     }).catch(() => {
-      healthElement.innerHTML = '<i class="bi bi-x-circle-fill"></i> Offline';
-      healthElement.className = 'health-status health-offline';
+      if (activeAbortControllers.get(site.key) === controller) {
+        const el = document.querySelector(`[data-health-key="${site.key}"]`);
+        if (el) {
+          el.innerHTML = '<i class="bi bi-x-circle-fill"></i> Offline';
+          el.className = 'health-status health-offline';
+        }
+      }
     }).finally(() => {
-      activeHealthChecks--;
-      processHealthCheckQueue();
+      if (activeAbortControllers.get(site.key) === controller) {
+        activeAbortControllers.delete(site.key);
+        processHealthCheckQueue();
+      }
     });
   }
 }
@@ -491,6 +545,12 @@ document.getElementById('actionReportSite').addEventListener('click', function()
 
 // Utilities
 function showTempAlert(message, type = 'info') {
+  // ⚡ Optimization: Remove existing temp alert to prevent DOM element stacking
+  const existingAlert = document.querySelector('.temp-alert');
+  if (existingAlert) {
+    existingAlert.remove();
+  }
+
   const alert = document.createElement('div');
   alert.className = `alert alert-${type} alert-dismissible fade show temp-alert`;
   alert.setAttribute('role', 'alert');
@@ -517,11 +577,13 @@ function populateIssueSiteDropdown() {
 }
 
 function displaySites(sites) {
+  resetHealthCheckQueue();
   mainContainer.innerHTML = '';
-  processedHealthKeys.clear();
-  healthCheckQueue = [];
-  activeHealthChecks = 0;
   
+  if (healthCheckObserver) {
+    healthCheckObserver.disconnect();
+  }
+
   if (sites.length === 0) {
     document.getElementById('noResults').classList.remove('d-none');
     const noResultsTitle = document.querySelector('#noResults h3');
@@ -700,13 +762,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // Scroll to top button
   const scrollToTopBtn = document.getElementById('scrollToTop');
   if (scrollToTopBtn) {
+    let scrollTicking = false;
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.classList.add('visible');
-      } else {
-        scrollToTopBtn.classList.remove('visible');
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+          } else {
+            scrollToTopBtn.classList.remove('visible');
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
       }
-    });
+    }, { passive: true });
     
     scrollToTopBtn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -742,13 +811,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setupHealthCheckObserver();
 
-  // Load sites
-  fetch('https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json')
+  // Load sites: try local file first, fall back to GitHub CDN
+  fetch('providers.json')
     .then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Local providers.json not found');
       }
       return response.json();
+    })
+    .catch(() => {
+      return fetch('https://raw.githack.com/OshekharO/Web-Indexer/main/providers.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        });
     })
     .then(data => {
       allSites = Object.keys(data).map(key => {
