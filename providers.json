@@ -11,17 +11,17 @@
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://comix.to&sz=128"
   },
-  "MangaDotNetProvider": {
-    "name": "MangaDotNet",
-    "url": "https://mangadot.net/",
-    "status": 1,
-    "icon": "https://www.google.com/s2/favicons?domain=https://mangadot.net&sz=128"
-  },
   "KaganeProvider": {
     "name": "Kagane",
     "url": "https://kagane.to",
     "status": 1,
     "icon": "https://www.google.com/s2/favicons?domain=https://kagane.to&sz=128"
+  },
+  "MangaDotNetProvider": {
+    "name": "MangaDotNet",
+    "url": "https://mangadot.net/",
+    "status": 1,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mangadot.net&sz=128"
   },
   "MangaFoxProvider": {
     "name": "MangaFox",
@@ -113,18 +113,6 @@
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128"
   },
-  "MKVBaseProvider": {
-    "name": "MKVBase",
-    "url": "https://mkvbase.site",
-    "status": 3,
-    "icon": "https://mkvbase.site/logo.png"
-  },
-  "OverLookProvider": {
-    "name": "OverLook",
-    "url": "https://overlook.cx",
-    "status": 3,
-    "icon": "https://overlook.cx/logo.png"
-  },
   "DahmerProvider": {
     "name": "Dahmer",
     "url": "https://a.111477.xyz",
@@ -167,6 +155,12 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://kisskh.co&sz=128"
   },
+  "MKVBaseProvider": {
+    "name": "MKVBase",
+    "url": "https://mkvbase.site",
+    "status": 3,
+    "icon": "https://mkvbase.site/logo.png"
+  },
   "multimoviesProvider": {
     "name": "MultiMovies",
     "url": "https://multimovies.wtf",
@@ -178,6 +172,12 @@
     "url": "https://netmirror.gg",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://netmirror.app&sz=128"
+  },
+  "OverLookProvider": {
+    "name": "OverLook",
+    "url": "https://overlook.cx",
+    "status": 3,
+    "icon": "https://overlook.cx/logo.png"
   },
   "PStreamProvider": {
     "name": "P-Stream",
@@ -233,17 +233,29 @@
     "status": 4,
     "icon": "https://rawcdn.githack.com/recloudstream/cloudstream/2ff90c03cadb97741b0cc08d3ff91b03aa8aad7a/app/src/main/ic_launcher-playstore.png"
   },
-  "GitSyncProvider": {
-    "name": "GitSync",
-    "url": "https://github.com/ViscousPot/GitSync",
+  "FlowProvider": {
+    "name": "Flow",
+    "url": "https://github.com/a-edev/Flow",
     "status": 4,
-    "icon": "https://raw.githubusercontent.com/ViscousPot/GitSync/heads/main/assets/app_icon.png"
+    "icon": "https://raw.githubusercontent.com/A-EDev/Flow/heads/main/Assets/logo.png"
   },
   "FutonProvider": {
     "name": "Futon",
     "url": "https://github.com/AppFuton/Futon/",
     "status": 4,
     "icon": "https://rawcdn.githack.com/nv95/Kotatsu/9da5bdaad49f0f6b9263a110b8b6189d2e8a2813/app/src/main/res/drawable-xxxhdpi/ic_shortcut_default.png"
+  },
+  "GitSyncProvider": {
+    "name": "GitSync",
+    "url": "https://github.com/ViscousPot/GitSync",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/ViscousPot/GitSync/heads/main/assets/app_icon.png"
+  },
+  "IReaderProvider": {
+    "name": "IReader",
+    "url": "https://github.com/IReaderorg/IReader",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/IReaderorg/IReader/heads/master/android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
   },
   "LegadoProvider": {
     "name": "Legado",
@@ -257,29 +269,11 @@
     "status": 4,
     "icon": "https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
   },
-  "IReaderProvider": {
-    "name": "IReader",
-    "url": "https://github.com/IReaderorg/IReader",
-    "status": 4,
-    "icon": "https://raw.githubusercontent.com/IReaderorg/IReader/heads/master/android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-  },
   "MiruProvider": {
     "name": "Miru",
     "url": "https://github.com/miru-project/miru-alpha",
     "status": 4,
     "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
-  },
-  "MusifyProvider": {
-    "name": "Musify",
-    "url": "https://github.com/gokadzev/Musify",
-    "status": 4,
-    "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
-  },
-  "ZangetsuProvider": {
-    "name": "Zangetsu",
-    "url": "https://github.com/Spyou/Zangetsu",
-    "status": 4,
-    "icon": "https://raw.githubusercontent.com/Spyou/Zangetsu/heads/main/assets/icon/app_icon.png"
   },
   "mpvRxProvider": {
     "name": "mpvRx",
@@ -287,23 +281,17 @@
     "status": 4,
     "icon": "https://raw.githubusercontent.com/Riteshp2001/mpvRx/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
   },
-  "FlowProvider": {
-    "name": "Flow",
-    "url": "https://github.com/a-edev/Flow",
+  "MusifyProvider": {
+    "name": "Musify",
+    "url": "https://github.com/gokadzev/Musify",
     "status": 4,
-    "icon": "https://raw.githubusercontent.com/A-EDev/Flow/heads/main/Assets/logo.png"
+    "icon": "https://rawcdn.githack.com/gokadzev/Musify/18f96936c597b3c057297df3c8ae384e05efe2ea/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
   },
   "NewPipeProvider": {
     "name": "NewPipe",
     "url": "https://github.com/TeamNewPipe/NewPipe",
     "status": 4,
     "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/heads/dev/assets/new_pipe_icon_5.png"
-  },
-  "TizenTubeCobaltProvider": {
-    "name": "TizenTubeCobalt",
-    "url": "https://github.com/reisxd/TizenTubeCobalt",
-    "status": 4,
-    "icon": "https://raw.githubusercontent.com/ycngmn/NoTubeTV/heads/main/app/src/main/res/mipmap-xxxhdpi-v4/ic_launcher.png"
   },
   "ReVancedProvider": {
     "name": "ReVanced",
@@ -329,17 +317,35 @@
     "status": 4,
     "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
   },
+  "TizenTubeCobaltProvider": {
+    "name": "TizenTubeCobalt",
+    "url": "https://github.com/reisxd/TizenTubeCobalt",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/ycngmn/NoTubeTV/heads/main/app/src/main/res/mipmap-xxxhdpi-v4/ic_launcher.png"
+  },
   "YTDLnisProvider": {
     "name": "YTDLnis",
     "url": "https://github.com/deniscerri/ytdlnis",
     "status": 4,
     "icon": "https://rawcdn.githack.com/deniscerri/ytdlnis/811f3b07ecaa346cf441012071bf0575ccb1d6f0/app/src/main/ic_launcher-playstore.png"
   },
+  "ZangetsuProvider": {
+    "name": "Zangetsu",
+    "url": "https://github.com/Spyou/Zangetsu",
+    "status": 4,
+    "icon": "https://raw.githubusercontent.com/Spyou/Zangetsu/heads/main/assets/icon/app_icon.png"
+  },
   "123AnimeProvider": {
     "name": "123Anime",
     "url": "https://123animes.ru",
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://123animes.ru&sz=128"
+  },
+  "AniDapProvider": {
+    "name": "AniDap",
+    "url": "https://anidap.se/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://anidap.se&sz=128"
   },
   "AnimeKaiProvider": {
     "name": "AnimeKai",
@@ -365,29 +371,29 @@
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://hicartoon.to&sz=128"
   },
-  "AniDapProvider": {
-    "name": "AniDap",
-    "url": "https://anidap.se/",
-    "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://anidap.se&sz=128"
-  },
   "KartoonsProvider": {
     "name": "Kartoons",
     "url": "https://kartoons.me/home",
     "status": 5,
     "icon": "https://kartoons.me/logo.png"
   },
-  "ReAnimeProvider": {
-    "name": "ReAnime",
-    "url": "https://reanime.to/home",
+  "kuronoProvider": {
+    "name": "Kurono",
+    "url": "https://kurono.nl/",
     "status": 5,
-    "icon": "https://www.google.com/s2/favicons?domain=https://reanime.to&sz=128"
+    "icon": "https://www.google.com/s2/favicons?domain=https://kurono.nl/&sz=128"
   },
   "MiruroProvider": {
     "name": "Miruro",
     "url": "https://www.miruro.com",
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.com&sz=128"
+  },
+  "ReAnimeProvider": {
+    "name": "ReAnime",
+    "url": "https://reanime.to/home",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://reanime.to&sz=128"
   },
   "BashWebProvider": {
     "name": "Bash Lab",
