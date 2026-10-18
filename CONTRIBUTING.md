@@ -33,7 +33,7 @@ The easiest way to contribute is by suggesting new websites to add to the index!
 
 #### Via Web Interface (Recommended)
 
-1. Visit [indexer.is-an.app](https://indexer.is-an.app)
+1. Visit [indexer.moe.page](https://indexer.moe.page)
 2. Click the **"Suggest Site"** button in the quick actions bar
 3. Fill out the form with the following information:
    - Site Name
@@ -386,7 +386,7 @@ When suggesting sites, please ensure:
 - We do not host any content; we only provide links
 - All links are user-submitted and community-curated
 - We respect DMCA and intellectual property rights
-- Report copyright concerns via the DMCA policy available in the footer of the [live site](https://indexer.is-an.app) or contact sakshamshekher@outlook.com
+- Report copyright concerns via the DMCA policy available in the footer of the [live site](https://indexer.moe.page) or contact sakshamshekher@outlook.com
 
 ### Questions?
 

@@ -63,7 +63,7 @@ const snapshotHtml = `<!DOCTYPE html>
   <title>Web Indexer — Manga, Anime, Movies & Apps Directory</title>
   <meta name="description" content="A comprehensive directory of websites for manga, light novels, movies, anime, learning resources, and apps." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://indexer.is-an.app/" />
+  <link rel="canonical" href="https://indexer.moe.page/" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
   <style>
