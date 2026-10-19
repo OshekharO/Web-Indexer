@@ -1,6 +1,6 @@
 <h1 align="center">
   <img alt="logo" src="https://i.ibb.co/VjDjNhr/indexer-high-resolution-logo-black-on-transparent-background.png" width="300px"/><br/>
-  ⭐️ <a href="https://indexer.is-an.app">Web Indexer</a> ⭐️
+  ⭐️ <a href="https://indexer.moe.page">Web Indexer</a> ⭐️
 </h1>
 
 <p align="center">
@@ -8,11 +8,11 @@
 </p>
 
 <p align="center">
-  <a href="https://indexer.is-an.app"><img src="https://img.shields.io/badge/Live-Demo-success?style=for-the-badge" alt="Live Demo"></a>
+  <a href="https://indexer.moe.page"><img src="https://img.shields.io/badge/Live-Demo-success?style=for-the-badge" alt="Live Demo"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Unlicense-blue?style=for-the-badge" alt="License"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/issues"><img src="https://img.shields.io/github/issues/OshekharO/Web-Indexer?style=for-the-badge" alt="Issues"></a>
   <a href="https://github.com/OshekharO/Web-Indexer/stargazers"><img src="https://img.shields.io/github/stars/OshekharO/Web-Indexer?style=for-the-badge" alt="Stars"></a>
-  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Findexer.is-an.app%2F"><img src="https://img.shields.io/badge/Performance-A-brightgreen?style=for-the-badge" alt="Performance"></a>
+  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Findexer.moe.page%2F"><img src="https://img.shields.io/badge/Performance-A-brightgreen?style=for-the-badge" alt="Performance"></a>
 </p>
 
 ---
@@ -42,7 +42,7 @@ Get recommended sites to watch/read movies, series, anime, manga, light novels, 
 
 ## 🚀 Live Demo
 
-Visit the live application: **[indexer.is-an.app](https://indexer.is-an.app)**
+Visit the live application: **[indexer.moe.page](https://indexer.moe.page)**
 
 ## 📂 Categories
 
@@ -130,7 +130,7 @@ Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on ho
 
 ### Suggesting a New Site
 
-1. Visit the [live site](https://indexer.is-an.app)
+1. Visit the [live site](https://indexer.moe.page)
 2. Click "Suggest Site" button
 3. Fill out the form with site details
 4. Submit via GitHub Issues

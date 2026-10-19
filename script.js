@@ -365,24 +365,24 @@ function showQuickActions(site) {
 // Social sharing
 function shareOnTwitter() {
   const text = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
-  const url = encodeURIComponent('https://indexer.is-an.app');
+  const url = encodeURIComponent('https://indexer.moe.page');
   window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=550,height=420,noopener');
 }
 
 function shareOnReddit() {
   const title = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
-  const url = encodeURIComponent('https://indexer.is-an.app');
+  const url = encodeURIComponent('https://indexer.moe.page');
   window.open(`https://www.reddit.com/submit?title=${title}&url=${url}`, '_blank', 'width=550,height=600,noopener');
 }
 
 function shareOnTelegram() {
   const text = encodeURIComponent('Web Indexer — One destination for all your favorite websites and applications');
-  const url = encodeURIComponent('https://indexer.is-an.app');
+  const url = encodeURIComponent('https://indexer.moe.page');
   window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=550,height=420,noopener');
 }
 
 function copyShareLink() {
-  navigator.clipboard.writeText('https://indexer.is-an.app').then(() => {
+  navigator.clipboard.writeText('https://indexer.moe.page').then(() => {
     showTempAlert('Link copied to clipboard!', 'success');
   });
 }
