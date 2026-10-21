@@ -251,6 +251,12 @@
     "status": 4,
     "icon": "https://raw.githubusercontent.com/ViscousPot/GitSync/heads/main/assets/app_icon.png"
   },
+  "HikariProvider": {
+    "name": "Hikari",
+    "url": "https://github.com/codegeasse1/hikari",
+    "status": 4,
+    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/codegeasse1/hikari&sz=128"
+  },
   "IReaderProvider": {
     "name": "IReader",
     "url": "https://github.com/IReaderorg/IReader",
@@ -263,17 +269,35 @@
     "status": 4,
     "icon": "https://rawcdn.githack.com/gedoor/legado/782bdbef5e5e928d3bada2a772f8e18daa7705a7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
   },
+  "LibreCutsProvider": {
+    "name": "LibreCuts",
+    "url": "https://github.com/tharunbirla/LibreCuts",
+    "status": 4,
+    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/tharunbirla/LibreCuts&sz=128"
+  },
   "LibreTubeProvider": {
     "name": "LibreTube",
     "url": "https://github.com/libre-tube/LibreTube",
     "status": 4,
     "icon": "https://rawcdn.githack.com/libre-tube/LibreTube/8e737afc7211b58ed845d3f8e7b635a252c7d2d4/app/src/main/res/mipmap-xxxhdpi/ic_gradient.png"
   },
+  "MeTubeProvider": {
+    "name": "MeTube",
+    "url": "https://github.com/yashoncode/metube",
+    "status": 4,
+    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/yashoncode/metube&sz=128"
+  },
   "MiruProvider": {
     "name": "Miru",
     "url": "https://github.com/miru-project/miru-alpha",
     "status": 4,
     "icon": "https://raw.githubusercontent.com/miru-project/miru-app/dev/assets/icon/logo.png"
+  },
+  "MPManagerProvider": {
+    "name": "MP-Manager",
+    "url": "https://github.com/AbdurazaaqMohammed/MP-Manager",
+    "status": 4,
+    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/AbdurazaaqMohammed/MP-Manager&sz=128"
   },
   "mpvRxProvider": {
     "name": "mpvRx",
@@ -292,6 +316,12 @@
     "url": "https://github.com/TeamNewPipe/NewPipe",
     "status": 4,
     "icon": "https://raw.githubusercontent.com/TeamNewPipe/NewPipe/heads/dev/assets/new_pipe_icon_5.png"
+  },
+  "NewTubeProvider": {
+    "name": "NewTube",
+    "url": "https://github.com/aleixrodriala/newtube",
+    "status": 4,
+    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/aleixrodriala/newtube&sz=128"
   },
   "ReVancedProvider": {
     "name": "ReVanced",
@@ -316,6 +346,12 @@
     "url": "https://github.com/yuliskov/SmartTubeNext",
     "status": 4,
     "icon": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/ststable/res/mipmap-nodpi/app_icon.png"
+  },
+  "StreambertProvider": {
+    "name": "Streambert",
+    "url": "https://github.com/truelockmc/streambert",
+    "status": 4,
+    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/truelockmc/streambert&sz=128"
   },
   "TizenTubeCobaltProvider": {
     "name": "TizenTubeCobalt",
