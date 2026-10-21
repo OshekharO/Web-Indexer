@@ -255,7 +255,7 @@
     "name": "Hikari",
     "url": "https://github.com/codegeasse1/hikari",
     "status": 4,
-    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/codegeasse1/hikari&sz=128"
+    "icon": "https://raw.githubusercontent.com/codegeasse1/hikari/refs/heads/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_v10.webp"
   },
   "IReaderProvider": {
     "name": "IReader",
@@ -273,7 +273,7 @@
     "name": "LibreCuts",
     "url": "https://github.com/tharunbirla/LibreCuts",
     "status": 4,
-    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/tharunbirla/LibreCuts&sz=128"
+    "icon": "https://raw.githubusercontent.com/tharunbirla/LibreCuts/refs/heads/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
   },
   "LibreTubeProvider": {
     "name": "LibreTube",
@@ -285,7 +285,7 @@
     "name": "MeTube",
     "url": "https://github.com/yashoncode/metube",
     "status": 4,
-    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/yashoncode/metube&sz=128"
+    "icon": "https://raw.githubusercontent.com/yashoncode/metube/refs/heads/main/.github/assets/metube/icon.png"
   },
   "MiruProvider": {
     "name": "Miru",
@@ -297,7 +297,7 @@
     "name": "MP-Manager",
     "url": "https://github.com/AbdurazaaqMohammed/MP-Manager",
     "status": 4,
-    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/AbdurazaaqMohammed/MP-Manager&sz=128"
+    "icon": "https://raw.githubusercontent.com/AbdurazaaqMohammed/MP-Manager/refs/heads/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
   },
   "mpvRxProvider": {
     "name": "mpvRx",
@@ -321,7 +321,7 @@
     "name": "NewTube",
     "url": "https://github.com/aleixrodriala/newtube",
     "status": 4,
-    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/aleixrodriala/newtube&sz=128"
+    "icon": "https://raw.githubusercontent.com/aleixrodriala/newtube/refs/heads/main/.github/assets/icon.png"
   },
   "ReVancedProvider": {
     "name": "ReVanced",
@@ -351,7 +351,7 @@
     "name": "Streambert",
     "url": "https://github.com/truelockmc/streambert",
     "status": 4,
-    "icon": "https://www.google.com/s2/favicons?domain=https://github.com/truelockmc/streambert&sz=128"
+    "icon": "https://raw.githubusercontent.com/truelockmc/streambert/refs/heads/main/public/icon.png"
   },
   "TizenTubeCobaltProvider": {
     "name": "TizenTubeCobalt",
