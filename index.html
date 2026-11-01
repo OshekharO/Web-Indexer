@@ -49,26 +49,148 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Web Indexer",
-    "url": "https://indexer.moe.page",
-    "description": "A comprehensive directory of websites for manga, light novels, movies, anime, learning resources, and apps.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript enabled",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://indexer.moe.page/#website",
+      "url": "https://indexer.moe.page/",
+      "name": "Web Indexer",
+      "description": "Comprehensive curated directory of websites and applications for manga, light novels, movies, anime, learning resources, and software tools.",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://indexer.moe.page/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://indexer.moe.page/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "ratingCount": "1"
+    {
+      "@type": "Organization",
+      "@id": "https://indexer.moe.page/#organization",
+      "name": "Web Indexer",
+      "url": "https://indexer.moe.page/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://indexer.moe.page/#logo",
+        "url": "https://indexer.moe.page/img/apple-touch-icon.png",
+        "caption": "Web Indexer Logo"
+      },
+      "sameAs": [
+        "https://github.com/OshekharO/Web-Indexer",
+        "https://t.me/OshekherO"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://indexer.moe.page/#creator"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://indexer.moe.page/#creator",
+      "name": "Saksham Shekher",
+      "alternateName": "OshekharO",
+      "url": "https://github.com/OshekharO",
+      "sameAs": [
+        "https://github.com/OshekharO",
+        "https://t.me/OshekherO"
+      ],
+      "knowsAbout": [
+        "Web Directories",
+        "Manga & Anime Streaming",
+        "Web Development",
+        "Open Source Software",
+        "Resource Indexing"
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://indexer.moe.page/#webapp",
+      "name": "Web Indexer",
+      "url": "https://indexer.moe.page/",
+      "description": "A comprehensive directory for manga, light novels, movies, anime, learning resources, and apps with real-time health checks, bookmarking, and instant search.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript enabled",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-11-01",
+      "author": {
+        "@type": "Person",
+        "@id": "https://indexer.moe.page/#creator"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://indexer.moe.page/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Curated collection of 85+ websites and tools",
+        "Real-time site health status checks",
+        "Browser-local bookmarking system",
+        "Categorized navigation for Manga, LN, Movies, Apps, Anime, Learning, and NSFW",
+        "Dark and Light color theme modes",
+        "Server-rendered static snapshot fallback"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://indexer.moe.page/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Web Indexer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web Indexer is a free, open-source web directory that curates and categorizes top online destinations for manga, light novels, anime streaming, movies, software applications, and interactive learning resources in one unified hub."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do real-time health checks work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web Indexer monitors resource availability directly in the browser by performing lightweight asynchronous network ping checks. Sites currently reachable display an Online badge, while unresponsive domains indicate offline status so users avoid broken links."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I suggest a new website or application?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the Suggest Site button in the quick action bar or open an issue on our GitHub repository. Suggestions are reviewed and automatically validated before merging into the directory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I browse Web Indexer without JavaScript?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We provide a static, server-rendered snapshot at indexer.moe.page/snapshot.html containing all indexed sites grouped by category, fully readable by search engine crawlers and users with JavaScript disabled."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Web Indexer free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Web Indexer is 100% free and open-source under the Unlicense license. No registration, payment, or subscription is required."
+          }
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 </head>
 
@@ -140,6 +262,7 @@
 
   <!-- Search and Filter Section -->
   <section class="filter-section py-3">
+    <h2 class="visually-hidden">Search and Filter Directory</h2>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 mb-3">
@@ -229,9 +352,9 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title text-warning" id="nsfwWarningModalLabel">
+          <h2 class="modal-title text-warning" id="nsfwWarningModalLabel">
             <i class="bi bi-exclamation-triangle-fill me-2"></i>NSFW Content Warning
-          </h5>
+          </h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -261,9 +384,9 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="suggestSiteModalLabel">
+          <h2 class="modal-title" id="suggestSiteModalLabel">
             <i class="bi bi-plus-circle me-2"></i>Suggest New Website
-          </h5>
+          </h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -337,9 +460,9 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="reportIssueModalLabel">
+          <h2 class="modal-title" id="reportIssueModalLabel">
             <i class="bi bi-bug me-2"></i>Report Issue
-          </h5>
+          </h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -386,7 +509,7 @@
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <h6 class="modal-title" id="quickActionsModalLabel">Quick Actions</h6>
+          <h2 class="modal-title" id="quickActionsModalLabel">Quick Actions</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
@@ -411,6 +534,7 @@
 
   <!-- Main Content -->
   <main class="py-4" id="mainContent">
+    <h2 class="visually-hidden">Websites and Applications Directory</h2>
     <noscript>
       <div class="container">
         <div class="alert alert-warning">
@@ -451,6 +575,113 @@
         </div>
       </div>
     </div>
+    <!-- Directory Guide & FAQ Section (AEO/GEO Structured Answers) -->
+    <section class="directory-guide-section py-5 border-top border-secondary-subtle" id="directoryGuide">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2 class="h3 fw-bold mb-3 text-center">Directory Guide &amp; Frequently Asked Questions</h2>
+            <p class="text-secondary text-center mb-5">
+              Everything you need to know about Web Indexer, our indexed categories, and real-time site health monitoring.
+            </p>
+
+            <div class="row g-4 mb-5">
+              <div class="col-md-4">
+                <div class="card h-100 bg-dark-subtle border-0 shadow-sm p-3">
+                  <div class="card-body">
+                    <h3 class="h5 fw-bold mb-2"><i class="bi bi-collection-play text-primary me-2"></i>85+ Curated Sites</h3>
+                    <p class="small text-secondary mb-0">Hand-curated digital resources spanning 7 distinct categories including Manga, Light Novels, Anime, Movies, Apps, and Learning.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100 bg-dark-subtle border-0 shadow-sm p-3">
+                  <div class="card-body">
+                    <h3 class="h5 fw-bold mb-2"><i class="bi bi-activity text-success me-2"></i>Real-Time Health</h3>
+                    <p class="small text-secondary mb-0">Automated online status detection verifies whether target mirrors and domains are actively reachable before you click.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100 bg-dark-subtle border-0 shadow-sm p-3">
+                  <div class="card-body">
+                    <h3 class="h5 fw-bold mb-2"><i class="bi bi-shield-check text-warning me-2"></i>Safe &amp; Accessible</h3>
+                    <p class="small text-secondary mb-0">Strict content warning badges (ads, pop-ups, registration) and NSFW gates protect browsing comfort and safety.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item bg-dark border-secondary">
+                <h3 class="accordion-header" id="faqHeadingOne">
+                  <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+                    What is Web Indexer?
+                  </button>
+                </h3>
+                <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-secondary">
+                    Web Indexer is a free, open-source web directory that curates and categorizes top online destinations for manga, light novels, anime streaming, movies, software applications, and interactive learning resources in one unified hub.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-dark border-secondary">
+                <h3 class="accordion-header" id="faqHeadingTwo">
+                  <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                    How do real-time health checks work?
+                  </button>
+                </h3>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-secondary">
+                    Web Indexer monitors resource availability directly in the browser by performing lightweight asynchronous network ping checks. Sites currently reachable display an <strong class="text-success">Online</strong> badge, while unresponsive domains indicate offline status so users avoid broken links.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-dark border-secondary">
+                <h3 class="accordion-header" id="faqHeadingThree">
+                  <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                    How can I suggest a new website or application?
+                  </button>
+                </h3>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-secondary">
+                    Click the <strong>Suggest Site</strong> button in the quick action bar or open an issue on our <a href="https://github.com/OshekharO/Web-Indexer/issues" class="text-primary" target="_blank" rel="noopener noreferrer">GitHub repository</a>. Suggestions are reviewed and automatically validated before merging into the directory.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-dark border-secondary">
+                <h3 class="accordion-header" id="faqHeadingFour">
+                  <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                    Can I browse Web Indexer without JavaScript?
+                  </button>
+                </h3>
+                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-secondary">
+                    Yes. We provide a static, server-rendered snapshot at <a href="https://indexer.moe.page/snapshot.html" class="text-primary">indexer.moe.page/snapshot.html</a> containing all indexed sites grouped by category, fully readable by search engine crawlers and users with JavaScript disabled.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-dark border-secondary">
+                <h3 class="accordion-header" id="faqHeadingFive">
+                  <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                    Is Web Indexer free to use?
+                  </button>
+                </h3>
+                <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-secondary">
+                    Yes, Web Indexer is 100% free and open-source under the Unlicense license. No registration, payment, or subscription is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -482,7 +713,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="aboutModalLabel">About Website Indexer</h5>
+          <h2 class="modal-title" id="aboutModalLabel">About Website Indexer</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -513,7 +744,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+          <h2 class="modal-title" id="privacyModalLabel">Privacy Policy</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -551,7 +782,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="dmcaModalLabel">DMCA Copyright Policy</h5>
+          <h2 class="modal-title" id="dmcaModalLabel">DMCA Copyright Policy</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
