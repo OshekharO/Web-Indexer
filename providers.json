@@ -53,6 +53,12 @@
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.4kushuwu.com&sz=128"
   },
+  "8bookProvider": {
+    "name": "8book",
+    "url": "https://8book.com/",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://8book.com/&sz=128"
+  },
   "BixiangeProvider": {
     "name": "Bixiange",
     "url": "https://bixiange.xyz/",
@@ -70,6 +76,18 @@
     "url": "https://fictionzone.net",
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://fictionzone.net&sz=128"
+  },
+  "FsuzwProvider": {
+    "name": "Fsuzw",
+    "url": "https://www.fsuzw.com/",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.fsuzw.com/&sz=128"
+  },
+  "Ixdzs8Provider": {
+    "name": "Ixdzs8",
+    "url": "https://ixdzs8.com/",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://ixdzs8.com/&sz=128"
   },
   "Jpxs123Provider": {
     "name": "Jpxs123",
@@ -101,6 +119,12 @@
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.zhaoshuyuan.net&sz=128"
   },
+  "WfxsProvider": {
+    "name": "Wfxs",
+    "url": "https://m.wfxs.tw/",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://m.wfxs.tw/&sz=128"
+  },
   "Wtrlabrovider": {
     "name": "WTR LAB",
     "url": "https://wtr-lab.com",
@@ -112,6 +136,12 @@
     "url": "https://www.wuxiabox.com",
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128"
+  },
+  "WuxiaSpotProvider": {
+    "name": "WuxiaSpot",
+    "url": "https://www.wuxiaspot.com/",
+    "status": 2,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiaspot.com/&sz=128"
   },
   "CatazProvider": {
     "name": "Cataz",
