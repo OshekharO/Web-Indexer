@@ -113,6 +113,12 @@
     "status": 2,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.wuxiabox.com&sz=128"
   },
+  "CatazProvider": {
+    "name": "Cataz",
+    "url": "https://cataz.li/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://cataz.li/&sz=128"
+  },
   "DahmerProvider": {
     "name": "Dahmer",
     "url": "https://a.111477.xyz",
@@ -149,6 +155,12 @@
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://hdhub4u.gd/&sz=128"
   },
+  "KinogoProvider": {
+    "name": "Kinogo",
+    "url": "https://kinogo.ec/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://kinogo.ec/&sz=128"
+  },
   "KisskhProvider": {
     "name": "Kisskh",
     "url": "https://kisskh.co",
@@ -160,6 +172,24 @@
     "url": "https://mkvbase.site",
     "status": 3,
     "icon": "https://mkvbase.site/logo.png"
+  },
+  "MLFBDProvider": {
+    "name": "MLFBD",
+    "url": "https://mlfbd.best/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://mlfbd.best/&sz=128"
+  },
+  "MoviehaxProvider": {
+    "name": "Moviehax",
+    "url": "https://moviehax.run/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://moviehax.run/&sz=128"
+  },
+  "MovieHuntBDProvider": {
+    "name": "MovieHuntBD",
+    "url": "https://moviehuntbd.site/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://moviehuntbd.site/&sz=128"
   },
   "multimoviesProvider": {
     "name": "MultiMovies",
@@ -196,6 +226,12 @@
     "url": "https://scloudx.lol",
     "status": 3,
     "icon": "https://www.google.com/s2/favicons?domain=https://scloudx.lol/&sz=128"
+  },
+  "Streamm4uProvider": {
+    "name": "Streamm4u",
+    "url": "https://streamm4u.vip/",
+    "status": 3,
+    "icon": "https://www.google.com/s2/favicons?domain=https://streamm4u.vip/&sz=128"
   },
   "Turkish123Provider": {
     "name": "Turkish123",
@@ -383,6 +419,12 @@
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://anidap.se&sz=128"
   },
+  "AnimeSaltProvider": {
+    "name": "Anime Salt",
+    "url": "https://animesalt.cx/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://animesalt.cx/&sz=128"
+  },
   "AnimeKaiProvider": {
     "name": "AnimeKai",
     "url": "https://animekai.at",
@@ -400,6 +442,18 @@
     "url": "https://animixstream.com",
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://animixstream.com&sz=128"
+  },
+  "CartoonsareaProvider": {
+    "name": "Cartoonsarea",
+    "url": "https://www.cartoonsarea.cc/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.cartoonsarea.cc/&sz=128"
+  },
+  "DeadtoonsProvider": {
+    "name": "Deadtoons",
+    "url": "https://deadtoons.org/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://deadtoons.org/&sz=128"
   },
   "HiCartoonProvider": {
     "name": "HiCartoon",
@@ -419,17 +473,35 @@
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://kurono.nl/&sz=128"
   },
+  "LordsAnimeProvider": {
+    "name": "LordsAnime",
+    "url": "https://www.lordsanime.com/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.lordsanime.com/&sz=128"
+  },
   "MiruroProvider": {
     "name": "Miruro",
     "url": "https://www.miruro.com",
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://www.miruro.com&sz=128"
   },
+  "RareAnimesProvider": {
+    "name": "Rare Animes",
+    "url": "https://www.rareanimes.fans/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://www.rareanimes.fans/&sz=128"
+  },
   "ReAnimeProvider": {
     "name": "ReAnime",
     "url": "https://reanime.to/home",
     "status": 5,
     "icon": "https://www.google.com/s2/favicons?domain=https://reanime.to&sz=128"
+  },
+  "TOONoProvider": {
+    "name": "TOONo",
+    "url": "https://toono.app/",
+    "status": 5,
+    "icon": "https://www.google.com/s2/favicons?domain=https://toono.app/&sz=128"
   },
   "BashWebProvider": {
     "name": "Bash Lab",
